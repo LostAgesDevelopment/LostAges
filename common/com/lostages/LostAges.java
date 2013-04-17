@@ -26,7 +26,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = "lostages", name = "Lost Ages", version = "MC1.5.1, LA 0.1")
+@Mod(modid = "lostages", name = "Lost Ages", version = "LA-0.1")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class LostAges
 {

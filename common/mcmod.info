@@ -1,0 +1,14 @@
+[
+{
+  "modid": "lostages",
+  "name": "Lost Ages",
+  "description": "Adds biomes, dimensions and other cool things!",
+  "version": "LA-0.1",
+  "credits": "People :P",
+  "logoFile": "",
+  "mcversion": "MC - 1.5.1",
+  "authors": ["xLithiumIon, RCMiner, Blfngl, ExperienceBar"],
+  "screenshots": [],
+  "dependencies": ["Minecraft Forge"]
+}
+]

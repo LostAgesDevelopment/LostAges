@@ -40,11 +40,7 @@ public class LostAges
 	public static CommonProxy proxy;
 	
 	//Going to name it Wasteland for now
-	public static final BiomeGenBase Wasteland = (new BiomeWasteland(100)).setColor(16421912)
-							.setBiomeName("Wasteland").setDisableRain()
-							.setTemperatureRainfall(2.0F, 0.0F)
-							.setMinMaxHeight(0.1F, 0.2F);
-
+	public static final BiomeGenBase Wasteland = (new BiomeWasteland(100));
 	
 	@PreInit
 	public static void preLoad(FMLPreInitializationEvent event)

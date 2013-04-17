@@ -21,7 +21,7 @@ public class ItemLostAgesShovel extends ItemSpade {
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister iconRegister) 
 	{
-		itemIcon = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":" + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
+		iconIndex = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":" + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
 	}
 
 }

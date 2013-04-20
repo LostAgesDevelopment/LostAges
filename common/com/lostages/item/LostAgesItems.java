@@ -36,7 +36,6 @@ public class LostAgesItems {
 		axeBone = new ItemLostAgesAxe(ItemIDs.AXE_BONE, LostAgesMaterials.BONE).setUnlocalizedName(ItemStrings.AXE_BONE_NAME);
 	
 		//TODO add new enum for these tools.
-		//TODO add Adamant Ore block
 		ingotAdamant = new ItemLostAgesItems(4006).setUnlocalizedName("AdamantIngot");
 		swordAdamant = new ItemLostAgesSword(4007, EnumToolMaterial.EMERALD).setUnlocalizedName("AdamantSword");
 		pickaxeAdamant = new ItemLostAgesPickaxe(4008, EnumToolMaterial.EMERALD).setUnlocalizedName("AdamantPick");

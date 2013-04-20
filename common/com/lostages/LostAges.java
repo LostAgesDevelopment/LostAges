@@ -5,6 +5,7 @@ import java.util.logging.Level;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.world.biome.BiomeGenBase;
 
+import com.lostages.block.LostAgesBlocks;
 import com.lostages.core.creativetab.TabLostAgesBlocks;
 import com.lostages.core.creativetab.TabLostAgesMisc;
 import com.lostages.core.creativetab.TabLostAgesTools;
@@ -53,6 +54,8 @@ public class LostAges
 	public static void load(FMLInitializationEvent event)
 	{
 		LostAgesItems.init();
+		
+		LostAgesBlocks.init();
 		
 		GameRegistry.addBiome(Wasteland);
 	}

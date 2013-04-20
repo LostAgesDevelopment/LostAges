@@ -25,7 +25,6 @@ public class LostAgesItems {
 	public static Item pickaxeAdamant;
 	public static Item shovelAdamant;
 	public static Item axeAdamant;
-	//No one likes more hoes. Lets remove 'em
 	
 	public static void init()
 	{

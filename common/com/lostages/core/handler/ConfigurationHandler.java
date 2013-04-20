@@ -3,6 +3,8 @@ package com.lostages.core.handler;
 import java.io.File;
 import java.util.logging.Level;
 
+import com.lostages.lib.BlockIDs;
+import com.lostages.lib.BlockStrings;
 import com.lostages.lib.ItemIDs;
 import com.lostages.lib.ItemStrings;
 import com.lostages.lib.Reference;
@@ -22,7 +24,8 @@ public class ConfigurationHandler {
 			ItemIDs.PICKAXE_BONE = config.getItem(ItemStrings.PICKAXE_BONE_NAME, ItemIDs.PICKAXE_BONE_DEFAULT).getInt();
 			ItemIDs.SHOVEL_BONE = config.getItem(ItemStrings.SHOVEL_BONE_NAME, ItemIDs.SHOVEL_BONE_DEFAULT).getInt();
 			ItemIDs.AXE_BONE = config.getItem(ItemStrings.AXE_BONE_NAME, ItemIDs.AXE_BONE_DEFAULT).getInt();
-			ItemIDs.HOE_BONE = config.getItem(ItemStrings.HOE_BONE_NAME, ItemIDs.HOE_BONE_DEFAULT).getInt();
+			
+			BlockIDs.ORE_ADAMANT = config.getBlock(BlockStrings.ORE_ADAMANT_NAME, BlockIDs.ORE_ADAMANT_DEFAULT).getInt();
 		} catch(Exception e) {
 			LoggerHandler.log(Level.CONFIG, Reference.MOD_NAME + " has encountered a problem loading it's config!");
 		} finally {

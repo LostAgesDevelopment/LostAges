@@ -1,5 +1,6 @@
 package com.lostages.item;
 
+import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
@@ -19,7 +20,7 @@ public class LostAgesItems {
 	public static Item pickaxeBone;
 	public static Item shovelBone;
 	public static Item axeBone;
-	public static Item hoeBone;
+	
 	public static Item swordAdamant;
 	public static Item pickaxeAdamant;
 	public static Item shovelAdamant;
@@ -34,7 +35,6 @@ public class LostAgesItems {
 		pickaxeBone = new ItemLostAgesPickaxe(ItemIDs.PICKAXE_BONE, LostAgesMaterials.BONE).setUnlocalizedName(ItemStrings.PICKAXE_BONE_NAME);
 		shovelBone = new ItemLostAgesShovel(ItemIDs.SHOVEL_BONE, LostAgesMaterials.BONE).setUnlocalizedName(ItemStrings.SHOVEL_BONE_NAME);
 		axeBone = new ItemLostAgesAxe(ItemIDs.AXE_BONE, LostAgesMaterials.BONE).setUnlocalizedName(ItemStrings.AXE_BONE_NAME);
-		hoeBone = new ItemLostAgesHoe(ItemIDs.HOE_BONE, LostAgesMaterials.BONE).setUnlocalizedName(ItemStrings.HOE_BONE_NAME);
 	
 		//TODO add new enum for these tools.
 		//TODO add Adamant Ore block

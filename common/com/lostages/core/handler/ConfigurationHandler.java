@@ -19,11 +19,17 @@ public class ConfigurationHandler {
 		try {
 			config.load();
 			ItemIDs.BONE_INGOT = config.getItem(ItemStrings.BONE_INGOT_NAME, ItemIDs.BONE_INGOT_DEFAULT).getInt();
+			ItemIDs.ADAMANT_INGOT = config.getItem(ItemStrings.ADAMANT_INGOT_NAME, ItemIDs.ADAMANT_INGOT_DEFAULT).getInt();
 			
 			ItemIDs.SWORD_BONE = config.getItem(ItemStrings.SWORD_BONE_NAME, ItemIDs.SWORD_BONE_DEFAULT).getInt();
 			ItemIDs.PICKAXE_BONE = config.getItem(ItemStrings.PICKAXE_BONE_NAME, ItemIDs.PICKAXE_BONE_DEFAULT).getInt();
 			ItemIDs.SHOVEL_BONE = config.getItem(ItemStrings.SHOVEL_BONE_NAME, ItemIDs.SHOVEL_BONE_DEFAULT).getInt();
 			ItemIDs.AXE_BONE = config.getItem(ItemStrings.AXE_BONE_NAME, ItemIDs.AXE_BONE_DEFAULT).getInt();
+			
+			ItemIDs.SWORD_ADAMANT = config.getItem(ItemStrings.SWORD_ADAMANT_NAME, ItemIDs.SWORD_ADAMANT_DEFAULT).getInt();
+			ItemIDs.PICKAXE_ADAMANT = config.getItem(ItemStrings.PICKAXE_ADAMANT_NAME, ItemIDs.PICKAXE_ADAMANT_DEFAULT).getInt();
+			ItemIDs.SHOVEL_ADAMANT = config.getItem(ItemStrings.SHOVEL_ADAMANT_NAME, ItemIDs.SHOVEL_ADAMANT_DEFAULT).getInt();
+			ItemIDs.AXE_ADAMANT = config.getItem(ItemStrings.AXE_ADAMANT_NAME, ItemIDs.AXE_ADAMANT_DEFAULT).getInt();
 			
 			BlockIDs.ORE_ADAMANT = config.getBlock(BlockStrings.ORE_ADAMANT_NAME, BlockIDs.ORE_ADAMANT_DEFAULT).getInt();
 		} catch(Exception e) {

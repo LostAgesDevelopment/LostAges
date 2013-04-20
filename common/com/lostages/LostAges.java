@@ -6,9 +6,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.world.biome.BiomeGenBase;
 
 import com.lostages.block.LostAgesBlocks;
-import com.lostages.core.creativetab.TabLostAgesBlocks;
-import com.lostages.core.creativetab.TabLostAgesMisc;
-import com.lostages.core.creativetab.TabLostAgesTools;
+import com.lostages.core.creativetab.TabLostAges;
 import com.lostages.core.handler.ConfigurationHandler;
 import com.lostages.core.handler.LoggerHandler;
 import com.lostages.core.proxy.CommonProxy;
@@ -33,9 +31,9 @@ public class LostAges
 {
 	
 	//we may want to make more than one tab.
-	public static CreativeTabs tabLostAgesBlocks = new TabLostAgesBlocks(CreativeTabs.getNextID(), "LostAgesBlocksTab");
-	public static CreativeTabs tabLostAgesTools = new TabLostAgesTools(CreativeTabs.getNextID(), "LostAgesToolsTab");
-	public static CreativeTabs tabLostAgesMisc = new TabLostAgesMisc(CreativeTabs.getNextID(), "LostAgesMiscTab");
+	public static CreativeTabs tabLostAgesBlocks = new TabLostAges(CreativeTabs.getNextID(), Reference.TAB_BLOCK);
+	public static CreativeTabs tabLostAgesTools = new TabLostAges(CreativeTabs.getNextID(), Reference.TAB_TOOL);
+	public static CreativeTabs tabLostAgesMisc = new TabLostAges(CreativeTabs.getNextID(), Reference.TAB_MISC);
 
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY, serverSide = Reference.COMMON_PROXY)
 	public static CommonProxy proxy;

@@ -50,7 +50,6 @@ public class LostAgesItems {
 		LanguageRegistry.addName(pickaxeBone, ItemStrings.PICKAXE_BONE_TRANSNAME);
 		LanguageRegistry.addName(shovelBone, ItemStrings.SHOVEL_BONE_TRANSNAME);
 		LanguageRegistry.addName(axeBone, ItemStrings.AXE_BONE_TRANSNAME);
-		LanguageRegistry.addName(hoeBone, ItemStrings.HOE_BONE_TRANSNAME);
 		
 		LanguageRegistry.addName(ingotAdamant, "Adamant Ingot");
 		LanguageRegistry.addName(swordAdamant, "Adamant Sword");
@@ -64,7 +63,6 @@ public class LostAgesItems {
 		GameRegistry.addRecipe(new ItemStack(pickaxeBone), new Object[]{"III", " B ", " B ", 'I', ingotBone, 'B', Item.bone});
 		GameRegistry.addRecipe(new ItemStack(shovelBone), new Object[]{"I", "B", "B", 'I', ingotBone, 'B', Item.bone});
 		GameRegistry.addRecipe(new ItemStack(axeBone), new Object[]{"II", "IB", " B", 'I', ingotBone, 'B', Item.bone});
-		GameRegistry.addRecipe(new ItemStack(hoeBone), new Object[]{"II", " B", " B", 'I', ingotBone, 'B', Item.bone});
 		
 		GameRegistry.addRecipe(new ItemStack(pickaxeAdamant), new Object [] {"XXX", " * ", " * ", 'X', ingotAdamant, '*', Item.stick});
 		GameRegistry.addRecipe(new ItemStack(shovelAdamant), new Object [] {"X", "*", "*", 'X', ingotAdamant, '*', Item.stick});

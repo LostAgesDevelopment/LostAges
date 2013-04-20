@@ -9,7 +9,6 @@ public class ItemStrings
 	public static final String PICKAXE_BONE_NAME = "pickaxeBone";
 	public static final String SHOVEL_BONE_NAME = "shovelBone";
 	public static final String AXE_BONE_NAME = "axeBone";
-	public static final String HOE_BONE_NAME = "hoeBone";
 	
 	//Names appear in-game
 	public static final String BONE_INGOT_TRANSNAME = "Bone Ingot";
@@ -17,6 +16,5 @@ public class ItemStrings
 	public static final String PICKAXE_BONE_TRANSNAME = "Bone Pickaxe";
 	public static final String SHOVEL_BONE_TRANSNAME = "Bone Shovel";
 	public static final String AXE_BONE_TRANSNAME = "Bone Axe";
-	public static final String HOE_BONE_TRANSNAME = "Bone Hoe";
 	
 }

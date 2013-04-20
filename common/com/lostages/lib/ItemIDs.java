@@ -10,7 +10,6 @@ public class ItemIDs
 	public static int PICKAXE_BONE_DEFAULT = 4002;
 	public static int SHOVEL_BONE_DEFAULT = 4003;
 	public static int AXE_BONE_DEFAULT = 4004;
-	public static int HOE_BONE_DEFAULT = 4005;
 
 	//ID
 	public static int BONE_INGOT;
@@ -18,6 +17,5 @@ public class ItemIDs
 	public static int PICKAXE_BONE;
 	public static int SHOVEL_BONE;
 	public static int AXE_BONE;
-	public static int HOE_BONE;
 	
 }

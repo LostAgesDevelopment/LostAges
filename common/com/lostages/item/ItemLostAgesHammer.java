@@ -1,8 +1,10 @@
 package com.lostages.item;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
@@ -24,16 +26,19 @@ public class ItemLostAgesHammer extends Item {
 	{
 		super(par1);
 		setCreativeTab(LostAges.tabLostAgesTools);
+		setMaxDamage((par2EnumToolMaterial.getMaxUses()));
 		toolMaterial = par2EnumToolMaterial;
-        this.weaponDamage = 4 + toolMaterial.getDamageVsEntity();
-	}
-	
-	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister iconRegister)
-	{
-		itemIcon = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":" + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
+        weaponDamage = 4 + par2EnumToolMaterial.getDamageVsEntity();
+        maxStackSize = 1;
 	}
     
+	@Override
+    public boolean hitEntity(ItemStack par1ItemStack, EntityLiving par2EntityLiving, EntityLiving par3EntityLiving)
+    {
+        par1ItemStack.damageItem(1, par3EntityLiving);
+        return true;
+    }
+	
 	@Override
     public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer enitityplayer, World world, int X, int Y, int Z, int par7, float par8, float par9, float par10)
     {
@@ -41,7 +46,7 @@ public class ItemLostAgesHammer extends Item {
 
             if (i1 == Block.stone.blockID)
             {
-                world.playSoundEffect((double)X + 0.5D, (double)Y + 0.5D, (double)Z + 0.5D, "stone.dig", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
+                world.playSoundEffect((double)X + 0.5D, (double)Y + 0.5D, (double)Z + 0.5D, "dig.stone", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
                 world.setBlock(X, Y, Z, Block.cobblestone.blockID);
             }
 
@@ -60,4 +65,28 @@ public class ItemLostAgesHammer extends Item {
         	return (int) (weaponDamage * (double)0.75);    
         }
     }
+	
+	public String getToolMaterialName()
+    {
+        return this.toolMaterial.toString();
+    }
+	
+	@Override
+    public boolean canHarvestBlock(Block par1Block)
+    {
+        return par1Block.blockID == Block.cobblestone.blockID;
+    }
+	
+	@Override
+    public int getItemEnchantability()
+    {
+        return this.toolMaterial.getEnchantability();
+    }
+	
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(IconRegister iconRegister)
+	{
+		itemIcon = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":" + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
+	}
+	
 }

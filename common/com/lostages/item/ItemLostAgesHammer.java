@@ -5,8 +5,8 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumToolMaterial;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemSword;
 import net.minecraft.world.World;
 
 import com.lostages.LostAges;
@@ -15,15 +15,17 @@ import com.lostages.lib.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemLostAgesHammer extends ItemSword {
+public class ItemLostAgesHammer extends Item {
 	
 	private int weaponDamage;
-
+	private EnumToolMaterial toolMaterial;
+	
 	public ItemLostAgesHammer(int par1, EnumToolMaterial par2EnumToolMaterial) 
 	{
-		super(par1, par2EnumToolMaterial);
+		super(par1);
 		setCreativeTab(LostAges.tabLostAgesTools);
-        this.weaponDamage = 4 + par2EnumToolMaterial.getDamageVsEntity();
+		toolMaterial = par2EnumToolMaterial;
+        this.weaponDamage = 4 + toolMaterial.getDamageVsEntity();
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -37,9 +39,9 @@ public class ItemLostAgesHammer extends ItemSword {
     {
             int i1 = world.getBlockId(X, Y, Z);
 
-            if (i1 == Block.cobblestone.blockID)
+            if (i1 == Block.stone.blockID)
             {
-                world.playSoundEffect((double)X + 0.5D, (double)Y + 0.5D, (double)Z + 0.5D, "dig.stone", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
+                world.playSoundEffect((double)X + 0.5D, (double)Y + 0.5D, (double)Z + 0.5D, "stone.dig", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
                 world.setBlock(X, Y, Z, Block.cobblestone.blockID);
             }
 

@@ -1,11 +1,8 @@
 package com.lostages.item;
 
 import net.minecraft.block.Block;
-import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityList;
-import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
@@ -35,11 +32,12 @@ public class ItemLostAgesHammer extends ItemSword {
 		itemIcon = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":" + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
 	}
     
+	@Override
     public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer enitityplayer, World world, int X, int Y, int Z, int par7, float par8, float par9, float par10)
     {
             int i1 = world.getBlockId(X, Y, Z);
 
-            if (i1 == 1)
+            if (i1 == Block.cobblestone.blockID)
             {
                 world.playSoundEffect((double)X + 0.5D, (double)Y + 0.5D, (double)Z + 0.5D, "dig.stone", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
                 world.setBlock(X, Y, Z, Block.cobblestone.blockID);
@@ -49,14 +47,14 @@ public class ItemLostAgesHammer extends ItemSword {
             return true;
     }
 
-		
+	@Override
     public int getDamageVsEntity(Entity par1Entity)
     {
     	String name = par1Entity.getEntityName();    	
     	if (name.equals("Skeleton")){
     		return (int) (weaponDamage * (double)1.5);
-    		}
-        else{         
+    	}
+        else {         
         	return (int) (weaponDamage * (double)0.75);    
         }
     }

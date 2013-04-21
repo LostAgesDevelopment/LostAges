@@ -1,7 +1,6 @@
 package com.lostages.item;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
@@ -26,12 +25,25 @@ public class ItemLostAgesHammer extends Item {
 	{
 		super(par1);
 		setCreativeTab(LostAges.tabLostAgesTools);
-		setMaxDamage((par2EnumToolMaterial.getMaxUses()));
+		setMaxDamage(par2EnumToolMaterial.getMaxUses());
 		toolMaterial = par2EnumToolMaterial;
         weaponDamage = 4 + par2EnumToolMaterial.getDamageVsEntity();
         maxStackSize = 1;
 	}
     
+	@Override
+	public float getStrVsBlock(ItemStack par1ItemStack, Block par2Block)
+	{
+		if (par2Block == Block.stone || par2Block == Block.cobblestone)
+		{
+			return 10.0F;
+		} 
+		else 
+		{
+			return 1.0F;
+		}
+	}
+	
 	@Override
     public boolean hitEntity(ItemStack par1ItemStack, EntityLiving par2EntityLiving, EntityLiving par3EntityLiving)
     {
@@ -48,6 +60,10 @@ public class ItemLostAgesHammer extends Item {
             {
                 world.playSoundEffect((double)X + 0.5D, (double)Y + 0.5D, (double)Z + 0.5D, "dig.stone", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
                 world.setBlock(X, Y, Z, Block.cobblestone.blockID);
+            } 
+            else 
+            {
+            	return false;
             }
 
             par1ItemStack.damageItem(1, enitityplayer);
@@ -74,7 +90,21 @@ public class ItemLostAgesHammer extends Item {
 	@Override
     public boolean canHarvestBlock(Block par1Block)
     {
-        return par1Block.blockID == Block.cobblestone.blockID;
+		if (par1Block == Block.stone || par1Block == Block.cobblestone)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+    }
+	
+	@Override
+    public boolean onBlockDestroyed(ItemStack par1ItemStack, World par2World, int par3, int par4, int par5, int par6, EntityLiving par7EntityLiving)
+    {
+		par1ItemStack.damageItem(1, par7EntityLiving);
+        return true;
     }
 	
 	@Override

@@ -20,7 +20,7 @@ public class ItemLostAgesHammer extends Item {
 	
 	private int weaponDamage;
 	private EnumToolMaterial toolMaterial;
-	
+	//TODO Fix enchanting
 	public ItemLostAgesHammer(int par1, EnumToolMaterial par2EnumToolMaterial) 
 	{
 		super(par1);

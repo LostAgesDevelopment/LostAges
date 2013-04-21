@@ -1,6 +1,7 @@
 package com.lostages.item;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
@@ -34,9 +35,9 @@ public class ItemLostAgesHammer extends Item {
 	@Override
 	public float getStrVsBlock(ItemStack par1ItemStack, Block par2Block)
 	{
-		if (par2Block == Block.stone || par2Block == Block.cobblestone)
+		if (par2Block.blockMaterial == Material.rock)
 		{
-			return 10.0F;
+			return toolMaterial.getEfficiencyOnProperMaterial() + 1;
 		} 
 		else 
 		{
@@ -90,7 +91,7 @@ public class ItemLostAgesHammer extends Item {
 	@Override
     public boolean canHarvestBlock(Block par1Block)
     {
-		if (par1Block == Block.stone || par1Block == Block.cobblestone)
+		if (par1Block.blockMaterial == Material.rock)
 		{
 			return true;
 		}
@@ -103,7 +104,7 @@ public class ItemLostAgesHammer extends Item {
 	@Override
     public boolean onBlockDestroyed(ItemStack par1ItemStack, World par2World, int par3, int par4, int par5, int par6, EntityLiving par7EntityLiving)
     {
-		par1ItemStack.damageItem(1, par7EntityLiving);
+		par1ItemStack.damageItem(3, par7EntityLiving);
         return true;
     }
 	

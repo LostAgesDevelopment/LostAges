@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.oredict.OreDictionary;
 
 import com.lostages.item.LostAgesItems;
 import com.lostages.lib.BlockIDs;
@@ -30,6 +31,9 @@ public class LostAgesBlocks
 		GameRegistry.registerBlock(oreAdamant);
 		GameRegistry.registerBlock(oreCopper);
 		GameRegistry.registerBlock(oreTin);
+		
+		OreDictionary.registerOre("oreCopper", oreCopper);
+		OreDictionary.registerOre("oreTine", oreTin);
 
 		LanguageRegistry.addName(oreAdamant, BlockStrings.ORE_ADAMANT_TRANSNAME);
 		LanguageRegistry.addName(oreCopper, BlockStrings.ORE_COPPER_TRANSNAME);

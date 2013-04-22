@@ -20,32 +20,28 @@ public class TabLostAges extends CreativeTabs
 	@Override
 	public String getTranslatedTabLabel() 
 	{
-		switch (tabName) 
-		{
-			case Reference.TAB_BLOCK:
-				return Reference.MOD_NAME + " Blocks";
-			case Reference.TAB_MISC:
-				return Reference.MOD_NAME + " Items";
-			case Reference.TAB_TOOL:
-				return Reference.MOD_NAME + " Tools";
-			default: 
-				return Reference.MOD_NAME; 
+		if (tabName.equals(Reference.TAB_BLOCK)) {
+			return Reference.MOD_NAME + " Blocks";
+		} else if (tabName.equals(Reference.TAB_TOOL)) {
+			return Reference.MOD_NAME + " Tools";
+		} else if (tabName.equals(Reference.TAB_MISC)) {
+			return Reference.MOD_ID + " Items";
+		} else {
+			return Reference.MOD_NAME;
 		}
 	}
 	
 	@Override
 	public int getTabIconItemIndex()
 	{
-		switch (tabName)
-		{
-			case Reference.TAB_BLOCK:
-				return LostAgesBlocks.oreAdamant.blockID;
-			case Reference.TAB_MISC:
-				return LostAgesItems.ingotBone.itemID;
-			case Reference.TAB_TOOL:
-				return LostAgesItems.swordBone.itemID;
-			default:
-				return Item.diamond.itemID;
+		if (tabName.equals(Reference.TAB_BLOCK)) {
+			return LostAgesBlocks.oreAdamant.blockID;
+		} else if (tabName.equals(Reference.TAB_MISC)) {
+			return LostAgesItems.ingotBone.itemID;
+		} else if (tabName.equals(Reference.TAB_TOOL)) {
+			return LostAgesItems.swordBone.itemID;
+		} else {
+			return Item.diamond.itemID;
 		}
 	}
 	

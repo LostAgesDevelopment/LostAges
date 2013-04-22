@@ -37,7 +37,7 @@ public class TabLostAges extends CreativeTabs
 		if (tabName.equals(Reference.TAB_BLOCK)) {
 			return LostAgesBlocks.oreAdamant.blockID;
 		} else if (tabName.equals(Reference.TAB_MISC)) {
-			return LostAgesItems.ingotBone.itemID;
+			return LostAgesItems.ingotSteel.itemID;
 		} else if (tabName.equals(Reference.TAB_TOOL)) {
 			return LostAgesItems.swordBone.itemID;
 		} else {

@@ -14,8 +14,10 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class LostAgesItems {
 	
-	public static Item ingotBone;
+	public static Item smeltedbone;
 	public static Item ingotAdamant;
+	public static Item ingotBronze;
+	public static Item ingotSteel;
 	
 	public static Item swordBone;
 	public static Item pickaxeBone;
@@ -40,9 +42,11 @@ public class LostAgesItems {
 	
 	public static void init()
 	{
-		//Item Junk
-		ingotBone = new ItemLostAgesItems(ItemIDs.BONE_INGOT).setUnlocalizedName(ItemStrings.BONE_INGOT_NAME);
+		//Ingots
+		smeltedbone = new ItemLostAgesItems(ItemIDs.SMELTEDBONE).setUnlocalizedName(ItemStrings.SMELTEDBONE_NAME);
 		ingotAdamant = new ItemLostAgesItems(ItemIDs.ADAMANT_INGOT).setUnlocalizedName(ItemStrings.ADAMANT_INGOT_NAME);
+		ingotBronze = new ItemLostAgesItems(ItemIDs.BRONZE_INGOT).setUnlocalizedName(ItemStrings.BRONZE_INGOT_NAME);
+		ingotSteel = new ItemLostAgesItems(ItemIDs.STEEL_INGOT).setUnlocalizedName(ItemStrings.STEEL_INGOT_NAME);
 		
 		//Hammers
 		hammerWood = new ItemLostAgesHammer(ItemIDs.HAMMER_WOOD, EnumToolMaterial.WOOD).setUnlocalizedName(ItemStrings.HAMMER_WOOD_NAME);
@@ -50,7 +54,6 @@ public class LostAgesItems {
 		hammerIron = new ItemLostAgesHammer(ItemIDs.HAMMER_IRON, EnumToolMaterial.IRON).setUnlocalizedName(ItemStrings.HAMMER_IRON_NAME);
 		hammerGold = new ItemLostAgesHammer(ItemIDs.HAMMER_GOLD, EnumToolMaterial.GOLD).setUnlocalizedName(ItemStrings.HAMMER_GOLD_NAME);
 		hammerDiamond = new ItemLostAgesHammer(ItemIDs.HAMMER_DIAMOND, EnumToolMaterial.EMERALD).setUnlocalizedName(ItemStrings.HAMMER_DIAMOND_NAME);
-
 		
 		//Bone Tools
 		swordBone = new ItemLostAgesSword(ItemIDs.SWORD_BONE, LostAgesMaterials.BONE).setUnlocalizedName(ItemStrings.SWORD_BONE_NAME);
@@ -59,7 +62,7 @@ public class LostAgesItems {
 		axeBone = new ItemLostAgesAxe(ItemIDs.AXE_BONE, LostAgesMaterials.BONE).setUnlocalizedName(ItemStrings.AXE_BONE_NAME);
 		hammerBone = new ItemLostAgesHammer(ItemIDs.HAMMER_BONE, LostAgesMaterials.BONE).setUnlocalizedName(ItemStrings.HAMMER_BONE_NAME);
 
-		//TODO add new enum for these tools.
+		//Adamant Tools  //TODO add new enum for these tools.
 		swordAdamant = new ItemLostAgesSword(ItemIDs.SWORD_ADAMANT, EnumToolMaterial.EMERALD).setUnlocalizedName(ItemStrings.SWORD_ADAMANT_NAME);
 		pickaxeAdamant = new ItemLostAgesPickaxe(ItemIDs.PICKAXE_ADAMANT, EnumToolMaterial.EMERALD).setUnlocalizedName(ItemStrings.PICKAXE_ADAMANT_NAME);
 		shovelAdamant = new ItemLostAgesShovel(ItemIDs.SHOVEL_ADAMANT, EnumToolMaterial.EMERALD).setUnlocalizedName(ItemStrings.SHOVEL_ADAMANT_NAME);
@@ -67,8 +70,10 @@ public class LostAgesItems {
 		hammerAdamant = new ItemLostAgesHammer(ItemIDs.HAMMER_ADAMANT, EnumToolMaterial.EMERALD).setUnlocalizedName(ItemStrings.HAMMER_ADAMANT_NAME);
 
 		//Item Names
-		LanguageRegistry.addName(ingotBone, ItemStrings.BONE_INGOT_TRANSNAME);
+		LanguageRegistry.addName(smeltedbone, ItemStrings.SMELTEDBONE_TRANSNAME);
 		LanguageRegistry.addName(ingotAdamant, ItemStrings.ADAMANT_INGOT_TRANSNAME);
+		LanguageRegistry.addName(ingotBronze, ItemStrings.BRONZE_INGOT_TRANSNAME);
+		LanguageRegistry.addName(ingotSteel, ItemStrings.STEEL_INGOT_TRANSNAME);
 		
 		LanguageRegistry.addName(swordBone, ItemStrings.SWORD_BONE_TRANSNAME);
 		LanguageRegistry.addName(pickaxeBone, ItemStrings.PICKAXE_BONE_TRANSNAME);
@@ -88,15 +93,16 @@ public class LostAgesItems {
 		LanguageRegistry.addName(hammerGold, ItemStrings.HAMMER_GOLD_TRANSNAME);
 		LanguageRegistry.addName(hammerDiamond, ItemStrings.HAMMER_DIAMOND_TRANSNAME);
 
-
+		//Smelting Recipes
+        GameRegistry.addSmelting(Item.bone.itemID, new ItemStack(smeltedbone), 0.3F);
+		
 		
 		//Recipes
-		GameRegistry.addRecipe(new ItemStack(ingotBone), new Object[]{"BBB", "BBB", 'B', Item.bone});
-		GameRegistry.addRecipe(new ItemStack(swordBone), new Object[]{"I", "I", "B", 'I', ingotBone, 'B', Item.bone});
-		GameRegistry.addRecipe(new ItemStack(pickaxeBone), new Object[]{"III", " B ", " B ", 'I', ingotBone, 'B', Item.bone});
-		GameRegistry.addRecipe(new ItemStack(shovelBone), new Object[]{"I", "B", "B", 'I', ingotBone, 'B', Item.bone});
-		GameRegistry.addRecipe(new ItemStack(axeBone), new Object[]{"II", "IB", " B", 'I', ingotBone, 'B', Item.bone});
-		GameRegistry.addRecipe(new ItemStack(hammerBone), new Object[]{"XXX", "*", 'X', Item.bone , '*', Item.stick});
+		GameRegistry.addRecipe(new ItemStack(swordBone), new Object[]{"I", "I", "B", 'I', smeltedbone, 'B', Item.bone});
+		GameRegistry.addRecipe(new ItemStack(pickaxeBone), new Object[]{"III", " B ", " B ", 'I', smeltedbone, 'B', Item.bone});
+		GameRegistry.addRecipe(new ItemStack(shovelBone), new Object[]{"I", "B", "B", 'I', smeltedbone, 'B', Item.bone});
+		GameRegistry.addRecipe(new ItemStack(axeBone), new Object[]{"II", "IB", " B", 'I', smeltedbone, 'B', Item.bone});
+		GameRegistry.addRecipe(new ItemStack(hammerBone), new Object[]{"XXX", "*", 'X', smeltedbone , '*', Item.stick});
 
 		GameRegistry.addRecipe(new ItemStack(pickaxeAdamant), new Object[]{"XXX", " * ", " * ", 'X', ingotAdamant, '*', Item.stick});
 		GameRegistry.addRecipe(new ItemStack(shovelAdamant), new Object[]{"X", "*", "*", 'X', ingotAdamant, '*', Item.stick});

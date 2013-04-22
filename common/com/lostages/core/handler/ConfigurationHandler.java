@@ -18,8 +18,10 @@ public class ConfigurationHandler {
 		Configuration config = new Configuration(file);
 		try {
 			config.load();
-			ItemIDs.BONE_INGOT = config.getItem(ItemStrings.BONE_INGOT_NAME, ItemIDs.BONE_INGOT_DEFAULT).getInt();
+			ItemIDs.SMELTEDBONE = config.getItem(ItemStrings.SMELTEDBONE_NAME, ItemIDs.SMELTEDBONE_DEFAULT).getInt();
 			ItemIDs.ADAMANT_INGOT = config.getItem(ItemStrings.ADAMANT_INGOT_NAME, ItemIDs.ADAMANT_INGOT_DEFAULT).getInt();
+			ItemIDs.BRONZE_INGOT = config.getItem(ItemStrings.BRONZE_INGOT_NAME, ItemIDs.BRONZE_INGOT_DEFAULT).getInt();
+			ItemIDs.STEEL_INGOT = config.getItem(ItemStrings.STEEL_INGOT_NAME, ItemIDs.STEEL_INGOT_DEFAULT).getInt();
 			
 			ItemIDs.SWORD_BONE = config.getItem(ItemStrings.SWORD_BONE_NAME, ItemIDs.SWORD_BONE_DEFAULT).getInt();
 			ItemIDs.PICKAXE_BONE = config.getItem(ItemStrings.PICKAXE_BONE_NAME, ItemIDs.PICKAXE_BONE_DEFAULT).getInt();
@@ -40,6 +42,9 @@ public class ConfigurationHandler {
 			ItemIDs.HAMMER_DIAMOND = config.getItem(ItemStrings.HAMMER_DIAMOND_NAME, ItemIDs.HAMMER_DIAMOND_DEFAULT).getInt();
 			
 			BlockIDs.ORE_ADAMANT = config.getBlock(BlockStrings.ORE_ADAMANT_NAME, BlockIDs.ORE_ADAMANT_DEFAULT).getInt();
+			BlockIDs.ORE_COPPER = config.getBlock(BlockStrings.ORE_COPPER_NAME, BlockIDs.ORE_COPPER_DEFAULT).getInt();
+			BlockIDs.ORE_TIN = config.getBlock(BlockStrings.ORE_TIN_NAME, BlockIDs.ORE_TIN_DEFAULT).getInt();
+
 		} catch(Exception e) {
 			LoggerHandler.log(Level.CONFIG, Reference.MOD_NAME + " has encountered a problem loading it's config!");
 		} finally {

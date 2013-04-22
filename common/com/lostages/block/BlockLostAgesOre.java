@@ -1,12 +1,13 @@
 package com.lostages.block;
 
 import com.lostages.LostAges;
+import com.lostages.lib.Reference;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 
-public class BlockLostAgesOre extends Block 
+public class BlockLostAgesOre extends Block
 {
 
 	public BlockLostAgesOre(int par1, Material par2Material) 
@@ -18,7 +19,6 @@ public class BlockLostAgesOre extends Block
 	@Override
 	public void registerIcons(IconRegister iconRegister) 
 	{
-		blockIcon = iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
+		blockIcon = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":" + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
 	}
-
 }

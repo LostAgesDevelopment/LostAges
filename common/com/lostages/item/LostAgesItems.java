@@ -50,7 +50,6 @@ public class LostAgesItems {
 	public static Item axeAdamant;
 	public static Item hammerAdamant;
 
-	
 	public static Item hammerWood;
 	public static Item hammerStone;
 	public static Item hammerIron;
@@ -124,25 +123,25 @@ public class LostAgesItems {
 		LanguageRegistry.addName(hammerBone, ItemStrings.HAMMER_BONE_TRANSNAME);
 		
 		//Strong Gold tools
-		LanguageRegistry.addName(swordBone, ItemStrings.SWORD_BONE_TRANSNAME);
-		LanguageRegistry.addName(pickaxeBone, ItemStrings.PICKAXE_BONE_TRANSNAME);
-		LanguageRegistry.addName(shovelBone, ItemStrings.SHOVEL_BONE_TRANSNAME);
-		LanguageRegistry.addName(axeBone, ItemStrings.AXE_BONE_TRANSNAME);
-		LanguageRegistry.addName(hammerBone, ItemStrings.HAMMER_BONE_TRANSNAME);
+		LanguageRegistry.addName(swordStrongGold, ItemStrings.SWORD_STRONGGOLD_TRANSNAME);
+		LanguageRegistry.addName(pickaxeStrongGold, ItemStrings.PICKAXE_STRONGGOLD_TRANSNAME);
+		LanguageRegistry.addName(shovelStrongGold, ItemStrings.SHOVEL_STRONGGOLD_TRANSNAME);
+		LanguageRegistry.addName(axeStrongGold, ItemStrings.AXE_STRONGGOLD_TRANSNAME);
+		LanguageRegistry.addName(hammerStrongGold, ItemStrings.HAMMER_STRONGGOLD_TRANSNAME);
 		
 		//Bronze tools
-		LanguageRegistry.addName(swordBone, ItemStrings.SWORD_BONE_TRANSNAME);
-		LanguageRegistry.addName(pickaxeBone, ItemStrings.PICKAXE_BONE_TRANSNAME);
-		LanguageRegistry.addName(shovelBone, ItemStrings.SHOVEL_BONE_TRANSNAME);
-		LanguageRegistry.addName(axeBone, ItemStrings.AXE_BONE_TRANSNAME);
-		LanguageRegistry.addName(hammerBone, ItemStrings.HAMMER_BONE_TRANSNAME);
+		LanguageRegistry.addName(swordBronze, ItemStrings.SWORD_BRONZE_TRANSNAME);
+		LanguageRegistry.addName(pickaxeBronze, ItemStrings.PICKAXE_BRONZE_TRANSNAME);
+		LanguageRegistry.addName(shovelBronze, ItemStrings.SHOVEL_BRONZE_TRANSNAME);
+		LanguageRegistry.addName(axeBronze, ItemStrings.AXE_BRONZE_TRANSNAME);
+		LanguageRegistry.addName(hammerBronze, ItemStrings.HAMMER_BRONZE_TRANSNAME);
 		
 		//Steel tools
-		LanguageRegistry.addName(swordBone, ItemStrings.SWORD_BONE_TRANSNAME);
-		LanguageRegistry.addName(pickaxeBone, ItemStrings.PICKAXE_BONE_TRANSNAME);
-		LanguageRegistry.addName(shovelBone, ItemStrings.SHOVEL_BONE_TRANSNAME);
-		LanguageRegistry.addName(axeBone, ItemStrings.AXE_BONE_TRANSNAME);
-		LanguageRegistry.addName(hammerBone, ItemStrings.HAMMER_BONE_TRANSNAME);
+		LanguageRegistry.addName(swordSteel, ItemStrings.SWORD_STEEL_TRANSNAME);
+		LanguageRegistry.addName(pickaxeSteel, ItemStrings.PICKAXE_STEEL_TRANSNAME);
+		LanguageRegistry.addName(shovelSteel, ItemStrings.SHOVEL_STEEL_TRANSNAME);
+		LanguageRegistry.addName(axeSteel, ItemStrings.AXE_STEEL_TRANSNAME);
+		LanguageRegistry.addName(hammerSteel, ItemStrings.HAMMER_STEEL_TRANSNAME);
 		
 		//Adamant tools
 		LanguageRegistry.addName(swordAdamant, ItemStrings.SWORD_ADAMANT_TRANSNAME);
@@ -200,7 +199,7 @@ public class LostAgesItems {
 		
 		//Hammers
 		GameRegistry.addRecipe(new ItemStack(hammerWood), new Object[]{"XXX", "*", 'X', Block.planks , '*', Item.stick});
-		GameRegistry.addRecipe(new ItemStack(hammerStone), new Object[]{"XXX", "*", 'X', Block.stone , '*', Item.stick});
+		GameRegistry.addRecipe(new ItemStack(hammerStone), new Object[]{"XXX", "*", 'X', Block.cobblestone , '*', Item.stick});
 		GameRegistry.addRecipe(new ItemStack(hammerIron), new Object[]{"XXX", "*", 'X', Item.ingotIron , '*', Item.stick});
 		GameRegistry.addRecipe(new ItemStack(hammerGold), new Object[]{"XXX", "*", 'X', Item.ingotGold , '*', Item.stick});
 		GameRegistry.addRecipe(new ItemStack(hammerDiamond), new Object[]{"XXX", "*", 'X', Item.diamond , '*', Item.stick});

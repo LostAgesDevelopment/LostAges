@@ -10,15 +10,15 @@ public class ItemStrings
 	public static final String BRONZE_INGOT_NAME = "ingotBronze";
 	public static final String STEEL_INGOT_NAME = "ingotSteel";
 	public static final String STRONGGOLD_INGOT_NAME = "ingotStrongGold";
-
+	
 	//Bone tools
 	public static final String SWORD_BONE_NAME = "swordBone";
 	public static final String PICKAXE_BONE_NAME = "pickaxeBone";
 	public static final String SHOVEL_BONE_NAME = "shovelBone";
 	public static final String AXE_BONE_NAME = "axeBone";
 	public static final String HAMMER_BONE_NAME = "hammerBone";
-	
-	//Strong gold tools
+
+	//Strong Gold tools
 	public static final String SWORD_STRONGGOLD_NAME = "swordStrongGold";
 	public static final String PICKAXE_STRONGGOLD_NAME = "pickaxeStrongGold";
 	public static final String SHOVEL_STRONGGOLD_NAME = "shovelStrongGold";
@@ -68,6 +68,27 @@ public class ItemStrings
 	public static final String AXE_BONE_TRANSNAME = "Bone Axe";
 	public static final String HAMMER_BONE_TRANSNAME = "Bone Hammer";
 	
+	//Strong Gold tools
+	public static final String SWORD_STRONGGOLD_TRANSNAME = "Strong Gold Sword";
+	public static final String PICKAXE_STRONGGOLD_TRANSNAME = "Strong Gold Pickaxe";
+	public static final String SHOVEL_STRONGGOLD_TRANSNAME = "Strong Gold Shovel";
+	public static final String AXE_STRONGGOLD_TRANSNAME = "Strong Gold Axe";
+	public static final String HAMMER_STRONGGOLD_TRANSNAME = "Strong Gold Hammer";
+	
+	//Bronze tools
+	public static final String SWORD_BRONZE_TRANSNAME = "Bronze Sword";
+	public static final String PICKAXE_BRONZE_TRANSNAME = "Bronze Pickaxe";
+	public static final String SHOVEL_BRONZE_TRANSNAME = "Bronze Shovel";
+	public static final String AXE_BRONZE_TRANSNAME = "Bronze Axe";
+	public static final String HAMMER_BRONZE_TRANSNAME = "Bronze Hammer";
+	
+	//Steel tools
+	public static final String SWORD_STEEL_TRANSNAME = "Steel Sword";
+	public static final String PICKAXE_STEEL_TRANSNAME = "Steel Pickaxe";
+	public static final String SHOVEL_STEEL_TRANSNAME = "Steel Shovel";
+	public static final String AXE_STEEL_TRANSNAME = "Steel Axe";
+	public static final String HAMMER_STEEL_TRANSNAME = "Steel Hammer";
+	
 	//Adamant tools
 	public static final String SWORD_ADAMANT_TRANSNAME = "Adamant Sword";
 	public static final String PICKAXE_ADAMANT_TRANSNAME = "Adamant Pickaxe";
@@ -80,5 +101,5 @@ public class ItemStrings
 	public static final String HAMMER_STONE_TRANSNAME = "Stone Hammer";
 	public static final String HAMMER_IRON_TRANSNAME = "Iron Hammer";
 	public static final String HAMMER_GOLD_TRANSNAME = "Golden Hammer";
-	public static final String HAMMER_DIAMOND_TRANSNAME = "Diamond Hammer";	
+	public static final String HAMMER_DIAMOND_TRANSNAME = "Diamond Hammer";
 }

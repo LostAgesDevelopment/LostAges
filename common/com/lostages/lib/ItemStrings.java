@@ -9,13 +9,35 @@ public class ItemStrings
 	public static final String ADAMANT_INGOT_NAME = "ingotAdamant";
 	public static final String BRONZE_INGOT_NAME = "ingotBronze";
 	public static final String STEEL_INGOT_NAME = "ingotSteel";
-	
+	public static final String STRONGGOLD_INGOT_NAME = "ingotStrongGold";
+
 	//Bone tools
 	public static final String SWORD_BONE_NAME = "swordBone";
 	public static final String PICKAXE_BONE_NAME = "pickaxeBone";
 	public static final String SHOVEL_BONE_NAME = "shovelBone";
 	public static final String AXE_BONE_NAME = "axeBone";
 	public static final String HAMMER_BONE_NAME = "hammerBone";
+	
+	//Strong gold tools
+	public static final String SWORD_STRONGGOLD_NAME = "swordStrongGold";
+	public static final String PICKAXE_STRONGGOLD_NAME = "pickaxeStrongGold";
+	public static final String SHOVEL_STRONGGOLD_NAME = "shovelStrongGold";
+	public static final String AXE_STRONGGOLD_NAME = "axeStrongGold";
+	public static final String HAMMER_STRONGGOLD_NAME = "hammerStrongGold";
+	
+	//Bronze tools
+	public static final String SWORD_BRONZE_NAME = "swordBronze";
+	public static final String PICKAXE_BRONZE_NAME = "pickaxeBronze";
+	public static final String SHOVEL_BRONZE_NAME = "shovelBronze";
+	public static final String AXE_BRONZE_NAME = "axeBronze";
+	public static final String HAMMER_BRONZE_NAME = "hammerBronze";
+	
+	//Steel tools
+	public static final String SWORD_STEEL_NAME = "swordSteel";
+	public static final String PICKAXE_STEEL_NAME = "pickaxeSteel";
+	public static final String SHOVEL_STEEL_NAME = "shovelSteel";
+	public static final String AXE_STEEL_NAME = "axeSteel";
+	public static final String HAMMER_STEEL_NAME = "hammerSteel";
 	
 	//Adamant tools
 	public static final String SWORD_ADAMANT_NAME = "swordAdamant";
@@ -58,6 +80,5 @@ public class ItemStrings
 	public static final String HAMMER_STONE_TRANSNAME = "Stone Hammer";
 	public static final String HAMMER_IRON_TRANSNAME = "Iron Hammer";
 	public static final String HAMMER_GOLD_TRANSNAME = "Golden Hammer";
-	public static final String HAMMER_DIAMOND_TRANSNAME = "Diamond Hammer";
-	
+	public static final String HAMMER_DIAMOND_TRANSNAME = "Diamond Hammer";	
 }

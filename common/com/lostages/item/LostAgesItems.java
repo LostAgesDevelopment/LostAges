@@ -163,18 +163,42 @@ public class LostAgesItems {
         GameRegistry.addSmelting(Item.bone.itemID, new ItemStack(smeltedbone), 0.3F);
 				
 		//Recipes
+        //Bone tools
 		GameRegistry.addRecipe(new ItemStack(swordBone), new Object[]{"I", "I", "B", 'I', smeltedbone, 'B', Item.bone});
 		GameRegistry.addRecipe(new ItemStack(pickaxeBone), new Object[]{"III", " B ", " B ", 'I', smeltedbone, 'B', Item.bone});
 		GameRegistry.addRecipe(new ItemStack(shovelBone), new Object[]{"I", "B", "B", 'I', smeltedbone, 'B', Item.bone});
 		GameRegistry.addRecipe(new ItemStack(axeBone), new Object[]{"II", "IB", " B", 'I', smeltedbone, 'B', Item.bone});
-		GameRegistry.addRecipe(new ItemStack(hammerBone), new Object[]{"XXX", "*", 'X', smeltedbone , '*', Item.stick});
+		GameRegistry.addRecipe(new ItemStack(hammerBone), new Object[]{"XXX", "*", 'X', smeltedbone , '*', Item.bone});
 
+        //Strong Gold tools
+		GameRegistry.addRecipe(new ItemStack(swordStrongGold), new Object[]{"I", "I", "B", 'I', ingotStrongGold, 'B', Item.stick});
+		GameRegistry.addRecipe(new ItemStack(pickaxeStrongGold), new Object[]{"III", " B ", " B ", 'I', ingotStrongGold, 'B', Item.stick});
+		GameRegistry.addRecipe(new ItemStack(shovelStrongGold), new Object[]{"I", "B", "B", 'I', ingotStrongGold, 'B', Item.stick});
+		GameRegistry.addRecipe(new ItemStack(axeStrongGold), new Object[]{"II", "IB", " B", 'I', ingotStrongGold, 'B', Item.stick});
+		GameRegistry.addRecipe(new ItemStack(hammerStrongGold), new Object[]{"XXX", "*", 'X', ingotStrongGold , '*', Item.stick});
+
+        //Bronze tools
+		GameRegistry.addRecipe(new ItemStack(swordBronze), new Object[]{"I", "I", "B", 'I', ingotBronze, 'B', Item.stick});
+		GameRegistry.addRecipe(new ItemStack(pickaxeBronze), new Object[]{"III", " B ", " B ", 'I', ingotBronze, 'B', Item.stick});
+		GameRegistry.addRecipe(new ItemStack(shovelBronze), new Object[]{"I", "B", "B", 'I', ingotBronze, 'B', Item.stick});
+		GameRegistry.addRecipe(new ItemStack(axeBronze), new Object[]{"II", "IB", " B", 'I', ingotBronze, 'B', Item.stick});
+		GameRegistry.addRecipe(new ItemStack(hammerBronze), new Object[]{"XXX", "*", 'X', ingotBronze , '*', Item.stick});
+
+        //Steel tools
+		GameRegistry.addRecipe(new ItemStack(swordSteel), new Object[]{"I", "I", "B", 'I', ingotSteel, 'B', Item.stick});
+		GameRegistry.addRecipe(new ItemStack(pickaxeSteel), new Object[]{"III", " B ", " B ", 'I', ingotSteel, 'B', Item.stick});
+		GameRegistry.addRecipe(new ItemStack(shovelSteel), new Object[]{"I", "B", "B", 'I', ingotSteel, 'B', Item.stick});
+		GameRegistry.addRecipe(new ItemStack(axeSteel), new Object[]{"II", "IB", " B", 'I', ingotSteel, 'B', Item.stick});
+		GameRegistry.addRecipe(new ItemStack(hammerSteel), new Object[]{"XXX", "*", 'X', ingotSteel , '*', Item.stick});
+		
+		//Adamant tools
 		GameRegistry.addRecipe(new ItemStack(pickaxeAdamant), new Object[]{"XXX", " * ", " * ", 'X', ingotAdamant, '*', Item.stick});
 		GameRegistry.addRecipe(new ItemStack(shovelAdamant), new Object[]{"X", "*", "*", 'X', ingotAdamant, '*', Item.stick});
 		GameRegistry.addRecipe(new ItemStack(axeAdamant), new Object[]{"XX", "X*", " *", 'X', ingotAdamant, '*', Item.stick});
 		GameRegistry.addRecipe(new ItemStack(swordAdamant), new Object[]{"X", "X", "*", 'X', ingotAdamant, '*', Item.stick});
 		GameRegistry.addRecipe(new ItemStack(hammerAdamant), new Object[]{"XXX", "*", 'X', ingotAdamant , '*', Item.stick});
-
+		
+		//Hammers
 		GameRegistry.addRecipe(new ItemStack(hammerWood), new Object[]{"XXX", "*", 'X', Block.planks , '*', Item.stick});
 		GameRegistry.addRecipe(new ItemStack(hammerStone), new Object[]{"XXX", "*", 'X', Block.stone , '*', Item.stick});
 		GameRegistry.addRecipe(new ItemStack(hammerIron), new Object[]{"XXX", "*", 'X', Item.ingotIron , '*', Item.stick});

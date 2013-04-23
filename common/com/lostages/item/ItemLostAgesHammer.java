@@ -28,8 +28,8 @@ public class ItemLostAgesHammer extends Item {
 		setCreativeTab(LostAges.tabLostAgesTools);
 		setMaxDamage(par2EnumToolMaterial.getMaxUses());
 		toolMaterial = par2EnumToolMaterial;
-        	weaponDamage = 4 + par2EnumToolMaterial.getDamageVsEntity();
-        	maxStackSize = 1;
+        weaponDamage = 4 + par2EnumToolMaterial.getDamageVsEntity();
+        maxStackSize = 1;
 	}
     
 	@Override

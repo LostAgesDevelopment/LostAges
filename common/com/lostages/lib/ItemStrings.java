@@ -18,6 +18,11 @@ public class ItemStrings
 	public static final String AXE_BONE_NAME = "axeBone";
 	public static final String HAMMER_BONE_NAME = "hammerBone";
 
+	//Flint tools
+	public static final String PICKAXE_FLINT_NAME = "pickaxeFlint";
+	public static final String SHOVEL_FLINT_NAME = "shovelFlint";
+	public static final String AXE_FLINT_NAME = "axeFlint";
+	
 	//Strong Gold tools
 	public static final String SWORD_STRONGGOLD_NAME = "swordStrongGold";
 	public static final String PICKAXE_STRONGGOLD_NAME = "pickaxeStrongGold";
@@ -54,6 +59,9 @@ public class ItemStrings
 	public static final String HAMMER_DIAMOND_NAME = "hammerDiamond";
 
 	
+	
+	
+	
 	//Names appear in-game
 	//Ingots
 	public static final String SMELTEDBONE_TRANSNAME = "Smelted Bone";
@@ -67,6 +75,11 @@ public class ItemStrings
 	public static final String SHOVEL_BONE_TRANSNAME = "Bone Shovel";
 	public static final String AXE_BONE_TRANSNAME = "Bone Axe";
 	public static final String HAMMER_BONE_TRANSNAME = "Bone Hammer";
+	
+	//Flint tools
+	public static final String PICKAXE_FLINT_TRANSNAME = "Flint Pickaxe";
+	public static final String SHOVEL_FLINT_TRANSNAME = "Flint Shovel";
+	public static final String AXE_FLINT_TRANSNAME = "Flint Axe";
 	
 	//Strong Gold tools
 	public static final String SWORD_STRONGGOLD_TRANSNAME = "Strong Gold Sword";

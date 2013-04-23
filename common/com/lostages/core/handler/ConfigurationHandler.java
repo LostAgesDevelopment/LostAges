@@ -31,6 +31,11 @@ public class ConfigurationHandler {
 			ItemIDs.AXE_BONE = config.getItem(ItemStrings.AXE_BONE_NAME, ItemIDs.AXE_BONE_DEFAULT).getInt();
 			ItemIDs.HAMMER_BONE = config.getItem(ItemStrings.HAMMER_BONE_NAME, ItemIDs.HAMMER_BONE_DEFAULT).getInt();
 			
+			//Flint tools
+			ItemIDs.PICKAXE_FLINT = config.getItem(ItemStrings.PICKAXE_FLINT_NAME, ItemIDs.PICKAXE_FLINT_DEFAULT).getInt();
+			ItemIDs.SHOVEL_FLINT = config.getItem(ItemStrings.SHOVEL_FLINT_NAME, ItemIDs.SHOVEL_FLINT_DEFAULT).getInt();
+			ItemIDs.AXE_FLINT = config.getItem(ItemStrings.AXE_FLINT_NAME, ItemIDs.AXE_FLINT_DEFAULT).getInt();
+			
 			//Strong Gold tools
 			ItemIDs.SWORD_STRONGGOLD = config.getItem(ItemStrings.SWORD_STRONGGOLD_NAME, ItemIDs.SWORD_STRONGGOLD_DEFAULT).getInt();
 			ItemIDs.PICKAXE_STRONGGOLD = config.getItem(ItemStrings.PICKAXE_STRONGGOLD_NAME, ItemIDs.PICKAXE_STRONGGOLD_DEFAULT).getInt();

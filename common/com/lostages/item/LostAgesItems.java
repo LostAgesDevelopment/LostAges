@@ -26,6 +26,10 @@ public class LostAgesItems {
 	public static Item axeBone;
 	public static Item hammerBone;
 
+	public static Item pickaxeFlint;
+	public static Item shovelFlint;
+	public static Item axeFlint;
+	
 	public static Item swordStrongGold;
 	public static Item pickaxeStrongGold;
 	public static Item shovelStrongGold;
@@ -80,6 +84,11 @@ public class LostAgesItems {
 		axeBone = new ItemLostAgesAxe(ItemIDs.AXE_BONE, LostAgesMaterials.BONE).setUnlocalizedName(ItemStrings.AXE_BONE_NAME);
 		hammerBone = new ItemLostAgesHammer(ItemIDs.HAMMER_BONE, LostAgesMaterials.BONE).setUnlocalizedName(ItemStrings.HAMMER_BONE_NAME);
 
+		//Flint Tools
+		pickaxeFlint = new ItemLostAgesPickaxe(ItemIDs.PICKAXE_FLINT, LostAgesMaterials.FLINT).setUnlocalizedName(ItemStrings.PICKAXE_FLINT_NAME);
+		shovelFlint = new ItemLostAgesShovel(ItemIDs.SHOVEL_FLINT, LostAgesMaterials.FLINT).setUnlocalizedName(ItemStrings.SHOVEL_FLINT_NAME);
+		axeFlint = new ItemLostAgesAxe(ItemIDs.AXE_FLINT, LostAgesMaterials.FLINT).setUnlocalizedName(ItemStrings.AXE_FLINT_NAME);
+		
 		//Strong Gold Tools
 		swordStrongGold = new ItemLostAgesSword(ItemIDs.SWORD_STRONGGOLD, LostAgesMaterials.STRONGGOLD).setUnlocalizedName(ItemStrings.SWORD_STRONGGOLD_NAME);
 		pickaxeStrongGold = new ItemLostAgesPickaxe(ItemIDs.PICKAXE_STRONGGOLD, LostAgesMaterials.STRONGGOLD).setUnlocalizedName(ItemStrings.PICKAXE_STRONGGOLD_NAME);
@@ -121,6 +130,11 @@ public class LostAgesItems {
 		LanguageRegistry.addName(shovelBone, ItemStrings.SHOVEL_BONE_TRANSNAME);
 		LanguageRegistry.addName(axeBone, ItemStrings.AXE_BONE_TRANSNAME);
 		LanguageRegistry.addName(hammerBone, ItemStrings.HAMMER_BONE_TRANSNAME);
+		
+		//Flint tools
+		LanguageRegistry.addName(pickaxeFlint, ItemStrings.PICKAXE_FLINT_TRANSNAME);
+		LanguageRegistry.addName(shovelFlint, ItemStrings.SHOVEL_FLINT_TRANSNAME);
+		LanguageRegistry.addName(axeFlint, ItemStrings.AXE_FLINT_TRANSNAME);
 		
 		//Strong Gold tools
 		LanguageRegistry.addName(swordStrongGold, ItemStrings.SWORD_STRONGGOLD_TRANSNAME);
@@ -169,6 +183,11 @@ public class LostAgesItems {
 		GameRegistry.addRecipe(new ItemStack(axeBone), new Object[]{"II", "IB", " B", 'I', smeltedbone, 'B', Item.bone});
 		GameRegistry.addRecipe(new ItemStack(hammerBone), new Object[]{"XXX", "*", 'X', smeltedbone , '*', Item.bone});
 
+        //Bone tools
+		GameRegistry.addRecipe(new ItemStack(pickaxeFlint), new Object[]{"III", " B ", " B ", 'I', Item.flint, 'B', Item.stick});
+		GameRegistry.addRecipe(new ItemStack(shovelFlint), new Object[]{"I", "B", "B", 'I', Item.flint, 'B', Item.stick});
+		GameRegistry.addRecipe(new ItemStack(axeFlint), new Object[]{"II", "IB", " B", 'I', Item.flint, 'B', Item.stick});
+		
         //Strong Gold tools
 		GameRegistry.addRecipe(new ItemStack(swordStrongGold), new Object[]{"I", "I", "B", 'I', ingotStrongGold, 'B', Item.stick});
 		GameRegistry.addRecipe(new ItemStack(pickaxeStrongGold), new Object[]{"III", " B ", " B ", 'I', ingotStrongGold, 'B', Item.stick});

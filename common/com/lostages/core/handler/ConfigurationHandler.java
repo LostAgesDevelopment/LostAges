@@ -44,6 +44,8 @@ public class ConfigurationHandler {
 			BlockIDs.ORE_ADAMANT = config.getBlock(BlockStrings.ORE_ADAMANT_NAME, BlockIDs.ORE_ADAMANT_DEFAULT).getInt();
 			BlockIDs.ORE_COPPER = config.getBlock(BlockStrings.ORE_COPPER_NAME, BlockIDs.ORE_COPPER_DEFAULT).getInt();
 			BlockIDs.ORE_TIN = config.getBlock(BlockStrings.ORE_TIN_NAME, BlockIDs.ORE_TIN_DEFAULT).getInt();
+			
+			BlockIDs.DOUBLE_FURNACE = config.get("Machines", BlockStrings.DOUBLE_FURNACE_NAME, BlockIDs.DOUBLE_FURNACE_DEFAULT).getInt();
 
 		} catch(Exception e) {
 			LoggerHandler.log(Level.CONFIG, Reference.MOD_NAME + " has encountered a problem loading it's config!");

@@ -27,8 +27,8 @@ public class GuiDoubleFurnace extends GuiContainer {
 	@Override
 	protected void drawGuiContainerForegroundLayer(int x, int y) {
 		String containerName = tileFurnace.isInvNameLocalized() ? tileFurnace.getInvName() : StatCollector.translateToLocal(tileFurnace.getInvName());
-		fontRenderer.drawString(containerName, xSize / 2 - fontRenderer.getStringWidth(containerName) / 2, 6, 4210752);
-		fontRenderer.drawString("container.inventory", 8, ySize - 93, 4210752);
+		fontRenderer.drawString(containerName, xSize / 2 - fontRenderer.getStringWidth(containerName) / 2, 5, 4210752);
+		fontRenderer.drawString("Inventory", 8, ySize - 93, 4210752);
 	}
 	
 	@Override

@@ -5,6 +5,7 @@ import net.minecraft.world.World;
 
 import com.lostages.client.gui.inventory.GuiDoubleFurnace;
 import com.lostages.inventory.ContainerDoubleFurnace;
+import com.lostages.lib.BlockStrings;
 import com.lostages.lib.GuiIDs;
 import com.lostages.tile.TileDoubleFurnace;
 
@@ -14,7 +15,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class CommonProxy implements IGuiHandler
 {
 	public void registerTileEntities() {
-		GameRegistry.registerTileEntity(TileDoubleFurnace.class, "furnaceDouble");
+		GameRegistry.registerTileEntity(TileDoubleFurnace.class, BlockStrings.DOUBLE_FURNACE_NAME);
 	}
 
 	@Override

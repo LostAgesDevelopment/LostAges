@@ -7,17 +7,21 @@ import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
 import com.lostages.LostAges;
+import com.lostages.lib.BlockStrings;
+import com.lostages.lib.GuiIDs;
 import com.lostages.tile.TileDoubleFurnace;
 
 public class BlockDoubleFurnace extends BlockContainer {
 	
 	protected BlockDoubleFurnace(int par1) {
 		super(par1, Material.iron);
+		setUnlocalizedName(BlockStrings.DOUBLE_FURNACE_NAME);
+		setHardness(3.0F);
+		setResistance(5.0F);
 		setCreativeTab(LostAges.tabLostAgesBlocks);
 	}
 	
@@ -40,7 +44,7 @@ public class BlockDoubleFurnace extends BlockContainer {
             if (!world.isRemote) {
             	TileDoubleFurnace tileFurnace = (TileDoubleFurnace) world.getBlockTileEntity(x, y, z);
             	if (tileFurnace != null) {
-            		player.openGui(LostAges.instance, 1, world, x, y, z);
+            		player.openGui(LostAges.instance, GuiIDs.DOUBLE_FURNACE_GUI_ID, world, x, y, z);
             	}
             }
         }

@@ -66,7 +66,7 @@ public class TileDoubleFurnace extends TileEntity implements IInventory {
 
 	@Override
 	public String getInvName() {
-		return "";
+		return "Double Furnace";
 	}
 
 	@Override

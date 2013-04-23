@@ -20,6 +20,8 @@ public class LostAgesBlocks
 	public static Block oreAdamant;
 	public static Block oreCopper;
 	public static Block oreTin;
+	
+	public static Block furnaceDouble;
 
 	@SuppressWarnings("deprecation")
 	public static void init()
@@ -27,6 +29,10 @@ public class LostAgesBlocks
 		oreAdamant = new BlockLostAgesOre(BlockIDs.ORE_ADAMANT, Material.rock).setUnlocalizedName(BlockStrings.ORE_ADAMANT_NAME).setHardness(3.0F).setResistance(5.0F);
 		oreCopper = new BlockLostAgesOre(BlockIDs.ORE_COPPER, Material.rock).setUnlocalizedName(BlockStrings.ORE_COPPER_NAME).setHardness(2.0F).setResistance(5.0F);
 		oreTin = new BlockLostAgesOre(BlockIDs.ORE_TIN, Material.rock).setUnlocalizedName(BlockStrings.ORE_TIN_NAME).setHardness(1.5F).setResistance(5.0F);
+		
+		furnaceDouble = new BlockDoubleFurnace(2000);
+		
+		GameRegistry.registerBlock(furnaceDouble);
 
 		GameRegistry.registerBlock(oreAdamant);
 		GameRegistry.registerBlock(oreCopper);

@@ -16,19 +16,25 @@ import com.lostages.world.BiomeWasteland;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
+import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.Mod.PostInit;
 import cpw.mods.fml.common.Mod.PreInit;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.IGuiHandler;
 import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = "lostages", name = "Lost Ages", version = "LA-0.1")
+@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.MOD_VERSION)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class LostAges
 {
+	
+	@Instance(Reference.MOD_ID)
+	public static LostAges instance;
 	
 	//we may want to make more than one tab.
 	public static CreativeTabs tabLostAgesBlocks = new TabLostAges(CreativeTabs.getNextID(), Reference.TAB_BLOCK);
@@ -51,11 +57,15 @@ public class LostAges
 	@Init
 	public static void load(FMLInitializationEvent event)
 	{
+		NetworkRegistry.instance().registerGuiHandler(instance, proxy);
+		
 		LostAgesItems.init();
 		
 		LostAgesBlocks.init();
 		
 		GameRegistry.addBiome(Wasteland);
+		
+		proxy.registerTileEntities();
 	}
 	
 	@PostInit

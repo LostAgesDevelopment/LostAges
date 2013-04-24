@@ -79,6 +79,9 @@ public class ItemLostAgesHammer extends Item {
     	if (name.equals("Skeleton")){
     		return (int) (weaponDamage * (double)1.5);
     	}
+    	else if (name.equals("Spider")){
+    		return (int) (weaponDamage * (double)1.5);
+    	}
         else {         
         	return (int) (weaponDamage * (double)0.75);    
         }
@@ -103,9 +106,17 @@ public class ItemLostAgesHammer extends Item {
     }
 	
 	@Override
-    public boolean onBlockDestroyed(ItemStack par1ItemStack, World par2World, int par3, int par4, int par5, int par6, EntityLiving par7EntityLiving)
+    public boolean onBlockDestroyed(ItemStack par1ItemStack, World world, int X, int Y, int Z, int par6, EntityLiving par7EntityLiving)
     {
-		par1ItemStack.damageItem(3, par7EntityLiving);
+        int i2 = world.getBlockId(X, Y, Z);
+		
+        if (i2 == Block.stone.blockID)
+        {
+    		par1ItemStack.damageItem(3, par7EntityLiving);
+        }
+        else if (i2 != Block.tallGrass.blockID){
+    		par1ItemStack.damageItem(1, par7EntityLiving);
+        }
         return true;
     }
 	

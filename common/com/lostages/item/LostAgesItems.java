@@ -1,8 +1,10 @@
 package com.lostages.item;
 
 import net.minecraft.block.Block;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemStack;
 
 import com.lostages.lib.ItemIDs;
@@ -19,6 +21,8 @@ public class LostAgesItems {
 	public static Item ingotBronze;
 	public static Item ingotSteel;
 	public static Item ingotStrongGold;
+	
+	public static Item bowJungle;
 	
 	public static Item swordBone;
 	public static Item pickaxeBone;
@@ -59,6 +63,7 @@ public class LostAgesItems {
 	public static Item hammerIron;
 	public static Item hammerGold;
 	public static Item hammerDiamond;
+	
 
 	
 	public static void init()
@@ -70,6 +75,9 @@ public class LostAgesItems {
 		ingotSteel = new ItemLostAgesItems(ItemIDs.STEEL_INGOT).setUnlocalizedName(ItemStrings.STEEL_INGOT_NAME);
 		ingotStrongGold = new ItemLostAgesItems(ItemIDs.STRONGGOLD_INGOT).setUnlocalizedName(ItemStrings.STRONGGOLD_INGOT_NAME);
 
+		//Other Items
+	    bowJungle = new ItemBow(ItemIDs.BOW_JUNGLE).setUnlocalizedName(ItemStrings.BOW_JUNGLE_NAME);
+		
 		//Hammers
 		hammerWood = new ItemLostAgesHammer(ItemIDs.HAMMER_WOOD, EnumToolMaterial.WOOD).setUnlocalizedName(ItemStrings.HAMMER_WOOD_NAME);
 		hammerStone = new ItemLostAgesHammer(ItemIDs.HAMMER_STONE, EnumToolMaterial.STONE).setUnlocalizedName(ItemStrings.HAMMER_STONE_NAME);
@@ -171,7 +179,7 @@ public class LostAgesItems {
 		LanguageRegistry.addName(hammerGold, ItemStrings.HAMMER_GOLD_TRANSNAME);
 		LanguageRegistry.addName(hammerDiamond, ItemStrings.HAMMER_DIAMOND_TRANSNAME);
 
-		
+	
 		//Smelting Recipes
         GameRegistry.addSmelting(Item.bone.itemID, new ItemStack(smeltedbone), 0.3F);
 				

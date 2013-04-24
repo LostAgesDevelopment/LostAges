@@ -9,6 +9,7 @@ public class BlockIDs
 	
 	public static int DOUBLE_FURNACE_DEFAULT = 1003;
 
+	
 	public static int ORE_ADAMANT;
 	public static int ORE_COPPER;
 	public static int ORE_TIN;

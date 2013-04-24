@@ -63,11 +63,14 @@ public class ItemIDs
 
 	//Flint tools
 	public static int FLINT_DEFAULT = 5030;
-	public static int PICKAXE_FLINT_DEFAULT = BONE_DEFAULT;
-	public static int SHOVEL_FLINT_DEFAULT = BONE_DEFAULT + 1;
-	public static int AXE_FLINT_DEFAULT = BONE_DEFAULT + 2;
+	public static int PICKAXE_FLINT_DEFAULT = FLINT_DEFAULT;
+	public static int SHOVEL_FLINT_DEFAULT = FLINT_DEFAULT + 1;
+	public static int AXE_FLINT_DEFAULT = FLINT_DEFAULT + 2;
 	
-	//public static int WHATEVERISNEXT_DEFAULT = 5033;
+	//Bows
+	public static int BOW_JUNGLE_DEFAULT = FLINT_DEFAULT + 3;
+	
+	//public static int WHATEVERISNEXT_DEFAULT = 5034;
 
 		
 	//ID
@@ -125,4 +128,7 @@ public class ItemIDs
 	public static int HAMMER_IRON;
 	public static int HAMMER_GOLD;
 	public static int HAMMER_DIAMOND;	
+	
+	//Bows
+	public static int BOW_JUNGLE;
 }

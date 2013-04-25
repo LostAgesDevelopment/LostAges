@@ -3,6 +3,7 @@ package com.lostages.inventory;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
+import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
@@ -10,13 +11,22 @@ import net.minecraft.tileentity.TileEntityFurnace;
 
 import com.lostages.tile.TileDoubleFurnace;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
 public class ContainerDoubleFurnace extends Container {
 
-	public ContainerDoubleFurnace(InventoryPlayer inventoryPlayer, TileDoubleFurnace furnace) {
-		this.addSlotToContainer(new Slot(furnace, TileDoubleFurnace.INGOT_SLOT_1_INDEX, 26, 17));
-		this.addSlotToContainer(new Slot(furnace, TileDoubleFurnace.INGOT_SLOT_2_INDEX, 64, 17));
-		this.addSlotToContainer(new Slot(furnace, TileDoubleFurnace.FUEL_INVENTORY_INDEX, 45, 53));
-		this.addSlotToContainer(new Slot(furnace, TileDoubleFurnace.OUTPUT_INVENTORY_INDEX, 126, 35));
+    private TileDoubleFurnace furnace;
+    private int lastCookTime = 0;
+    private int lastBurnTime = 0;
+    private int lastItemBurnTime = 0;
+	
+	public ContainerDoubleFurnace(InventoryPlayer inventoryPlayer, TileDoubleFurnace tileFurnace) {
+		this.furnace = tileFurnace;
+		this.addSlotToContainer(new Slot(tileFurnace, TileDoubleFurnace.INGOT_SLOT_1_INDEX, 26, 17));
+		this.addSlotToContainer(new Slot(tileFurnace, TileDoubleFurnace.INGOT_SLOT_2_INDEX, 64, 17));
+		this.addSlotToContainer(new Slot(tileFurnace, TileDoubleFurnace.FUEL_INVENTORY_INDEX, 45, 53));
+		this.addSlotToContainer(new Slot(tileFurnace, TileDoubleFurnace.OUTPUT_INVENTORY_INDEX, 126, 35));
 		
 		for (int invRow = 0; invRow < 3; ++invRow) {
 			for (int invCol = 0; invCol < 9; ++invCol) {
@@ -28,6 +38,54 @@ public class ContainerDoubleFurnace extends Container {
 			this.addSlotToContainer(new Slot(inventoryPlayer, actionBar, 8 + actionBar * 18, 142));
 		}
 	}
+	
+	@Override
+    public void addCraftingToCrafters(ICrafting par1ICrafting) {
+        super.addCraftingToCrafters(par1ICrafting);
+        par1ICrafting.sendProgressBarUpdate(this, 0, this.furnace.furnaceCookTime);
+        par1ICrafting.sendProgressBarUpdate(this, 1, this.furnace.furnaceBurnTime);
+        par1ICrafting.sendProgressBarUpdate(this, 2, this.furnace.currentItemBurnTime);
+    }
+	
+	@Override
+    public void detectAndSendChanges() {
+        super.detectAndSendChanges();
+
+        for (int i = 0; i < this.crafters.size(); ++i) {
+            ICrafting icrafting = (ICrafting)this.crafters.get(i);
+
+            if (this.lastCookTime != this.furnace.furnaceCookTime) {
+                icrafting.sendProgressBarUpdate(this, 0, this.furnace.furnaceCookTime);
+            }
+
+            if (this.lastBurnTime != this.furnace.furnaceBurnTime) {
+                icrafting.sendProgressBarUpdate(this, 1, this.furnace.furnaceBurnTime);
+            }
+
+            if (this.lastItemBurnTime != this.furnace.currentItemBurnTime) {
+                icrafting.sendProgressBarUpdate(this, 2, this.furnace.currentItemBurnTime);
+            }
+        }
+
+        this.lastCookTime = this.furnace.furnaceCookTime;
+        this.lastBurnTime = this.furnace.furnaceBurnTime;
+        this.lastItemBurnTime = this.furnace.currentItemBurnTime;
+    }
+	
+    @SideOnly(Side.CLIENT)
+    public void updateProgressBar(int par1, int par2) {
+        if (par1 == 0) {
+            this.furnace.furnaceCookTime = par2;
+        }
+
+        if (par1 == 1) {
+            this.furnace.furnaceBurnTime = par2;
+        }
+
+        if (par1 == 2) {
+            this.furnace.currentItemBurnTime = par2;
+        }
+    }
 	
 	@Override
 	public boolean canInteractWith(EntityPlayer entityplayer) {

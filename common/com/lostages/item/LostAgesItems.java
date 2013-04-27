@@ -84,7 +84,7 @@ public class LostAgesItems {
 	public static Item helmAdamant;
 	public static Item chestAdamant;
 	public static Item legsAdamant;
-	public static Item greavesAdamant;
+	public static Item bootsAdamant;
 	
 	public static void init()
 	{
@@ -154,11 +154,10 @@ public class LostAgesItems {
 		
 		//Armor
 		//Adamant Armor
-		//TODO create new IDs
-		helmAdamant = new AdamantArmor(542, LostAges.ADAMANT, 1, 0).setUnlocalizedName("AdamantHelm").setCreativeTab(LostAges.tabLostAgesMisc);
-		chestAdamant = new AdamantArmor(543, LostAges.ADAMANT, 1, 1).setUnlocalizedName("AdamantChest").setCreativeTab(LostAges.tabLostAgesMisc);
-		legsAdamant = new AdamantArmor(544, LostAges.ADAMANT, 1, 2).setUnlocalizedName("AdamantLegs").setCreativeTab(LostAges.tabLostAgesMisc);
-		greavesAdamant = new AdamantArmor(545, LostAges.ADAMANT, 1, 3).setUnlocalizedName("AdamantBoots").setCreativeTab(LostAges.tabLostAgesMisc);
+		helmAdamant = new AdamantArmor(ItemIDs.HELM_ADAMANT, LostAges.ADAMANT, 1, 0).setUnlocalizedName(ItemStrings.HELM_ADAMANT_NAME).setCreativeTab(LostAges.tabLostAgesMisc);
+		chestAdamant = new AdamantArmor(ItemIDs.CHEST_ADAMANT, LostAges.ADAMANT, 1, 1).setUnlocalizedName(ItemStrings.CHEST_ADAMANT_NAME).setCreativeTab(LostAges.tabLostAgesMisc);
+		legsAdamant = new AdamantArmor(ItemIDs.LEGS_ADAMANT, LostAges.ADAMANT, 1, 2).setUnlocalizedName(ItemStrings.LEGS_ADAMANT_NAME).setCreativeTab(LostAges.tabLostAgesMisc);
+		bootsAdamant = new AdamantArmor(ItemIDs.BOOTS_ADAMANT, LostAges.ADAMANT, 1, 3).setUnlocalizedName(ItemStrings.BOOTS_ADAMANT_NAME).setCreativeTab(LostAges.tabLostAgesMisc);
 
 		//Item Names
 		//Ingots
@@ -230,7 +229,7 @@ public class LostAgesItems {
 		LanguageRegistry.addName(helmAdamant, "Adamant Helmet");
 		LanguageRegistry.addName(chestAdamant, "Adamant Chestplate");
 		LanguageRegistry.addName(legsAdamant, "Adamant Leggings");
-		LanguageRegistry.addName(greavesAdamant, "Adamant Greaves");
+		LanguageRegistry.addName(bootsAdamant, "Adamant Boots");
 	
 	
 		//Smelting Recipes

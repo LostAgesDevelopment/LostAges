@@ -5,6 +5,9 @@ public class ItemIDs
 	//Default id that is written to configuration file
 	//Default id must be above 3850
 	
+
+	
+	
 	//Ingots
 	public static int ITEMS_DEFAULT = 4000;
 	public static int SMELTEDBONE_DEFAULT = ITEMS_DEFAULT;
@@ -12,12 +15,20 @@ public class ItemIDs
 	public static int BRONZE_INGOT_DEFAULT = ITEMS_DEFAULT + 2;
 	public static int STEEL_INGOT_DEFAULT = ITEMS_DEFAULT + 3;
 	public static int STRONGGOLD_INGOT_DEFAULT = ITEMS_DEFAULT + 4;
-	
+
 	//Other Items
 	public static int STACKEDCOAL2_DEFAULT = ITEMS_DEFAULT + 5;
 	public static int STACKEDCOAL4_DEFAULT = ITEMS_DEFAULT + 6;
 	public static int STACKEDCOAL6_DEFAULT = ITEMS_DEFAULT + 7;
 	public static int STACKEDCOAL8_DEFAULT = ITEMS_DEFAULT + 8;
+
+	//Armor
+	//Adamant Armor
+	public static int ARMOR_ADAMANT_DEFAULT = 4100;
+	public static int HELM_ADAMANT_DEFAULT = ARMOR_ADAMANT_DEFAULT;
+	public static int CHEST_ADAMANT_DEFAULT = ARMOR_ADAMANT_DEFAULT + 1;
+	public static int LEGS_ADAMANT_DEFAULT = ARMOR_ADAMANT_DEFAULT + 2;
+	public static int BOOTS_ADAMANT_DEFAULT = ARMOR_ADAMANT_DEFAULT + 3;
 
 	
 	//Bone tools
@@ -95,6 +106,14 @@ public class ItemIDs
 	public static int STACKEDCOAL4;
 	public static int STACKEDCOAL6;
 	public static int STACKEDCOAL8;
+	
+	//Armor
+	//Adamant Armor
+	public static int HELM_ADAMANT;
+	public static int CHEST_ADAMANT;
+	public static int LEGS_ADAMANT;
+	public static int BOOTS_ADAMANT;
+
 	
 	//Bone tools
 	public static int SWORD_BONE;

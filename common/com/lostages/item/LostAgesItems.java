@@ -192,6 +192,11 @@ public class LostAgesItems {
 		LanguageRegistry.addName(hammerDiamond, ItemStrings.HAMMER_DIAMOND_TRANSNAME);
 		LanguageRegistry.addName(hammerMagic, ItemStrings.HAMMER_MAGIC_TRANSNAME);
 
+		//Adamant Armor
+		LanguageRegistry.addName(helmAdamant, "Adamant Helmet");
+		LanguageRegistry.addName(chestAdamant, "Adamant Chestplate");
+		LanguageRegistry.addName(legsAdamant, "Adamant Leggings");
+		LanguageRegistry.addName(greavesAdamant, "Adamant Greaves");
 	
 		//Smelting Recipes
         GameRegistry.addSmelting(Item.bone.itemID, new ItemStack(smeltedbone), 0.3F);

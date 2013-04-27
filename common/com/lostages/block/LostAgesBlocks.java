@@ -32,10 +32,11 @@ public class LostAgesBlocks
 		oreCopper = new BlockLostAgesOre(BlockIDs.ORE_COPPER, Material.rock).setUnlocalizedName(BlockStrings.ORE_COPPER_NAME).setHardness(2.0F).setResistance(5.0F);
 		oreTin = new BlockLostAgesOre(BlockIDs.ORE_TIN, Material.rock).setUnlocalizedName(BlockStrings.ORE_TIN_NAME).setHardness(1.5F).setResistance(5.0F);
 		
-		furnaceIdleDouble = new BlockDoubleFurnace(BlockIDs.DOUBLE_FURNACE_IDLE, false).setUnlocalizedName(BlockStrings.DOUBLE_FURNACE_IDLE_NAME);
-		furnaceActiveDouble = new BlockDoubleFurnace(BlockIDs.DOUBLE_FURNACE_ACTIVE, true).setUnlocalizedName(BlockStrings.DOUBLE_FURNACE_ACTIVE_NAME).setLightValue(0.875F);
+		furnaceIdleDouble = new BlockDoubleFurnace(BlockIDs.DOUBLE_FURNACE_IDLE, false).setUnlocalizedName(BlockStrings.DOUBLE_FURNACE_NAME);
+		furnaceActiveDouble = new BlockDoubleFurnace(BlockIDs.DOUBLE_FURNACE_ACTIVE, true).setUnlocalizedName(BlockStrings.DOUBLE_FURNACE_NAME).setLightValue(0.875F);
 		
 		GameRegistry.registerBlock(furnaceIdleDouble);
+		GameRegistry.registerBlock(furnaceActiveDouble);
 
 		GameRegistry.registerBlock(oreAdamant);
 		GameRegistry.registerBlock(oreCopper);

@@ -7,8 +7,7 @@ public class BlockStrings
 	public static final String ORE_COPPER_NAME = "oreCopper";
 	public static final String ORE_TIN_NAME = "oreTin";
 	
-	public static final String DOUBLE_FURNACE_IDLE_NAME = "furnaceIdleDouble";
-	public static final String DOUBLE_FURNACE_ACTIVE_NAME = "furnaceActiveDouble";
+	public static final String DOUBLE_FURNACE_NAME = "furnaceDouble";
 
 	
 	//In-Game Names

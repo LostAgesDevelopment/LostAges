@@ -123,7 +123,7 @@ public class ItemLostAgesHammer extends Item {
 	@Override
     public int getItemEnchantability()
     {
-        return this.toolMaterial.getEnchantability();
+        return ItemLostAgesHammer.toolMaterial.getEnchantability();
     }
 	
 	@SideOnly(Side.CLIENT)
@@ -139,10 +139,10 @@ public class ItemLostAgesHammer extends Item {
 
 
     /**
-     * Return whether this item is repairable in an anvil.
-     */
+	 * Return whether this item is repairable in an anvil.
+	 */
     public boolean getIsRepairable(ItemStack par1ItemStack, ItemStack par2ItemStack)
     {
-        return this.toolMaterial.getToolCraftingMaterial() == par2ItemStack.itemID ? true : super.getIsRepairable(par1ItemStack, par2ItemStack);
+        return ItemLostAgesHammer.toolMaterial.getToolCraftingMaterial() == par2ItemStack.itemID ? true : super.getIsRepairable(par1ItemStack, par2ItemStack);
     }	
 }

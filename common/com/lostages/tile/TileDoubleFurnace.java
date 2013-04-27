@@ -213,6 +213,8 @@ public class TileDoubleFurnace extends TileEntity implements IInventory {
             
             if (itemstack == null) return false;
             if (this.inventory[3] == null) return true;
+            if (this.inventory[0].stackSize < DoubleFurnaceRecipes.smelting().getSlot1ReduceAmount(this.inventory[0]).stackSize) return false;
+            if (this.inventory[1].stackSize < DoubleFurnaceRecipes.smelting().getSlot2ReduceAmount(this.inventory[1]).stackSize) return false;
             if (!this.inventory[3].isItemEqual(itemstack)) return false;
             int result = inventory[3].stackSize + itemstack.stackSize;
             return (result <= getInventoryStackLimit() && result <= itemstack.getMaxStackSize());
@@ -228,9 +230,9 @@ public class TileDoubleFurnace extends TileEntity implements IInventory {
             } else if (this.inventory[3].isItemEqual(itemstack)) {
                 inventory[3].stackSize += itemstack.stackSize;
             }
-
-            --this.inventory[0].stackSize;
-            --this.inventory[1].stackSize;
+            
+            this.inventory[0].stackSize -= DoubleFurnaceRecipes.smelting().getSlot1ReduceAmount(this.inventory[0]).stackSize;
+            this.inventory[1].stackSize -= DoubleFurnaceRecipes.smelting().getSlot2ReduceAmount(this.inventory[1]).stackSize;
 
             if (this.inventory[0].stackSize <= 0) {
                 this.inventory[0] = null;

@@ -76,7 +76,8 @@ public class ConfigurationHandler {
 			BlockIDs.ORE_COPPER = config.getBlock(BlockStrings.ORE_COPPER_NAME, BlockIDs.ORE_COPPER_DEFAULT).getInt();
 			BlockIDs.ORE_TIN = config.getBlock(BlockStrings.ORE_TIN_NAME, BlockIDs.ORE_TIN_DEFAULT).getInt();
 			
-			BlockIDs.DOUBLE_FURNACE = config.get("Machines", BlockStrings.DOUBLE_FURNACE_NAME, BlockIDs.DOUBLE_FURNACE_DEFAULT).getInt();
+			BlockIDs.DOUBLE_FURNACE_IDLE = config.get("Machines", BlockStrings.DOUBLE_FURNACE_IDLE_NAME, BlockIDs.DOUBLE_FURNACE_IDLE_DEFAULT).getInt();
+			BlockIDs.DOUBLE_FURNACE_ACTIVE = config.get("Machines", BlockStrings.DOUBLE_FURNACE_ACTIVE_NAME, BlockIDs.DOUBLE_FURNACE_ACTIVE_DEFAULT).getInt();
 
 		} catch(Exception e) {
 			LoggerHandler.log(Level.CONFIG, Reference.MOD_NAME + " has encountered a problem loading it's config!");

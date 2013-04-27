@@ -13,6 +13,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 
+import com.lostages.block.BlockDoubleFurnace;
 import com.lostages.recipe.DoubleFurnaceRecipes;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -180,6 +181,7 @@ public class TileDoubleFurnace extends TileEntity implements IInventory {
             
             if (flag1) {
             	this.onInventoryChanged();
+            	BlockDoubleFurnace.updateFurnaceBlockState(this.furnaceBurnTime > 0, this.worldObj, this.xCoord, this.yCoord, this.zCoord);
             }
         }
     }

@@ -1,11 +1,13 @@
 package com.lostages.item;
 
 import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemStack;
 
+import com.lostages.LostAges;
 import com.lostages.lib.ItemIDs;
 import com.lostages.lib.ItemStrings;
 import com.lostages.lib.LostAgesMaterials;
@@ -15,48 +17,63 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class LostAgesItems {
 	
+	//Ingots
 	public static Item smeltedbone;
 	public static Item ingotAdamant;
 	public static Item ingotBronze;
 	public static Item ingotSteel;
 	public static Item ingotStrongGold;
 	
+	//Other Items
+	public static Item stackedCoal2;
+	public static Item stackedCoal4;
+	public static Item stackedCoal6;
+	public static Item stackedCoal8;
+
+	//Bows
 	public static Item bowJungle;
 	
+	//Bone Tools
 	public static Item swordBone;
 	public static Item pickaxeBone;
 	public static Item shovelBone;
 	public static Item axeBone;
 	public static Item hammerBone;
 
+	//Flint Tools	
 	public static Item pickaxeFlint;
 	public static Item shovelFlint;
 	public static Item axeFlint;
 	
+	//Strong Gold Tools
 	public static Item swordStrongGold;
 	public static Item pickaxeStrongGold;
 	public static Item shovelStrongGold;
 	public static Item axeStrongGold;
 	public static Item hammerStrongGold;
 	
+	//Bronze Tools
 	public static Item swordBronze;
 	public static Item pickaxeBronze;
 	public static Item shovelBronze;
 	public static Item axeBronze;
 	public static Item hammerBronze;
 	
+	//Steel Tools
 	public static Item swordSteel;
 	public static Item pickaxeSteel;
 	public static Item shovelSteel;
 	public static Item axeSteel;
 	public static Item hammerSteel;
 	
+	//Adamant Tools
 	public static Item swordAdamant;
 	public static Item pickaxeAdamant;
 	public static Item shovelAdamant;
 	public static Item axeAdamant;
 	public static Item hammerAdamant;
 
+	//Hammers
 	public static Item hammerWood;
 	public static Item hammerStone;
 	public static Item hammerIron;
@@ -64,11 +81,11 @@ public class LostAgesItems {
 	public static Item hammerDiamond;
 	public static Item hammerMagic;	
 	
+	//Armor
 	public static Item helmAdamant;
 	public static Item chestAdamant;
 	public static Item legsAdamant;
 	public static Item greavesAdamant;
-
 	
 	public static void init()
 	{
@@ -78,8 +95,14 @@ public class LostAgesItems {
 		ingotBronze = new ItemLostAgesItems(ItemIDs.BRONZE_INGOT).setUnlocalizedName(ItemStrings.BRONZE_INGOT_NAME);
 		ingotSteel = new ItemLostAgesItems(ItemIDs.STEEL_INGOT).setUnlocalizedName(ItemStrings.STEEL_INGOT_NAME);
 		ingotStrongGold = new ItemLostAgesItems(ItemIDs.STRONGGOLD_INGOT).setUnlocalizedName(ItemStrings.STRONGGOLD_INGOT_NAME);
-
-		//Other Items
+		
+		//Other items
+	    stackedCoal2 = new ItemLostAgesCoal(ItemIDs.STACKEDCOAL2).setUnlocalizedName(ItemStrings.STACKEDCOAL2_NAME).setMaxStackSize(32);
+	    stackedCoal4 = new ItemLostAgesCoal(ItemIDs.STACKEDCOAL4).setUnlocalizedName(ItemStrings.STACKEDCOAL4_NAME).setMaxStackSize(16);
+	    stackedCoal6 = new ItemLostAgesCoal(ItemIDs.STACKEDCOAL6).setUnlocalizedName(ItemStrings.STACKEDCOAL6_NAME).setMaxStackSize(11);
+	    stackedCoal8 = new ItemLostAgesCoal(ItemIDs.STACKEDCOAL8).setUnlocalizedName(ItemStrings.STACKEDCOAL8_NAME).setMaxStackSize(8);
+	    
+		//Bows
 	    bowJungle = new ItemBow(ItemIDs.BOW_JUNGLE).setUnlocalizedName(ItemStrings.BOW_JUNGLE_NAME);
 		
 		//Hammers
@@ -129,20 +152,30 @@ public class LostAgesItems {
 		shovelAdamant = new ItemLostAgesShovel(ItemIDs.SHOVEL_ADAMANT, EnumToolMaterial.EMERALD).setUnlocalizedName(ItemStrings.SHOVEL_ADAMANT_NAME);
 		axeAdamant = new ItemLostAgesAxe(ItemIDs.AXE_ADAMANT, EnumToolMaterial.EMERALD).setUnlocalizedName(ItemStrings.AXE_ADAMANT_NAME);
 		hammerAdamant = new ItemLostAgesHammer(ItemIDs.HAMMER_ADAMANT, EnumToolMaterial.EMERALD).setUnlocalizedName(ItemStrings.HAMMER_ADAMANT_NAME);
-
+		
+		//Armor
 		//Adamant Armor
 		//TODO create new IDs
-		public static final Item helmAdamant = (new NewArmor(542, LostAges.ADAMANT, 1, 0)).setUnlocalizedName("AdamantHelm").setCreativeTab(LostAges.tabLostAgesMisc);
-		public static final Item chestAdamant = (new NewArmor(543, LostAges.ADAMANT, 1, 1)).setUnlocalizedName("AdamantChest").setCreativeTab(LostAges.tabLostAgesMisc);
-		public static final Item legsAdamant = (new NewArmor(544, LostAges.ADAMANT, 1, 2)).setUnlocalizedName("AdamantLegs").setCreativeTab(LostAges.tabLostAgesMisc);
-		public static final Item greavesAdamant = (new NewArmor(545, LostAges.ADAMANT, 1, 3)).setUnlocalizedName("AdamantBoots").setCreativeTab(LostAges.tabLostAgesMisc);
-		
+		helmAdamant = new AdamantArmor(542, LostAges.ADAMANT, 1, 0).setUnlocalizedName("AdamantHelm").setCreativeTab(LostAges.tabLostAgesMisc);
+		chestAdamant = new AdamantArmor(543, LostAges.ADAMANT, 1, 1).setUnlocalizedName("AdamantChest").setCreativeTab(LostAges.tabLostAgesMisc);
+		legsAdamant = new AdamantArmor(544, LostAges.ADAMANT, 1, 2).setUnlocalizedName("AdamantLegs").setCreativeTab(LostAges.tabLostAgesMisc);
+		greavesAdamant = new AdamantArmor(545, LostAges.ADAMANT, 1, 3).setUnlocalizedName("AdamantBoots").setCreativeTab(LostAges.tabLostAgesMisc);
+
 		//Item Names
 		//Ingots
 		LanguageRegistry.addName(smeltedbone, ItemStrings.SMELTEDBONE_TRANSNAME);
 		LanguageRegistry.addName(ingotAdamant, ItemStrings.ADAMANT_INGOT_TRANSNAME);
 		LanguageRegistry.addName(ingotBronze, ItemStrings.BRONZE_INGOT_TRANSNAME);
 		LanguageRegistry.addName(ingotSteel, ItemStrings.STEEL_INGOT_TRANSNAME);
+		
+		//Other Items
+		LanguageRegistry.addName(stackedCoal2, ItemStrings.STACKEDCOAL2_TRANSNAME);
+		LanguageRegistry.addName(stackedCoal4, ItemStrings.STACKEDCOAL4_TRANSNAME);
+		LanguageRegistry.addName(stackedCoal6, ItemStrings.STACKEDCOAL6_TRANSNAME);
+		LanguageRegistry.addName(stackedCoal8, ItemStrings.STACKEDCOAL8_TRANSNAME);
+
+		
+		//Bows
 		
 		//Bone tools
 		LanguageRegistry.addName(swordBone, ItemStrings.SWORD_BONE_TRANSNAME);
@@ -192,11 +225,14 @@ public class LostAgesItems {
 		LanguageRegistry.addName(hammerDiamond, ItemStrings.HAMMER_DIAMOND_TRANSNAME);
 		LanguageRegistry.addName(hammerMagic, ItemStrings.HAMMER_MAGIC_TRANSNAME);
 
+		
+		//Armor
 		//Adamant Armor
 		LanguageRegistry.addName(helmAdamant, "Adamant Helmet");
 		LanguageRegistry.addName(chestAdamant, "Adamant Chestplate");
 		LanguageRegistry.addName(legsAdamant, "Adamant Leggings");
 		LanguageRegistry.addName(greavesAdamant, "Adamant Greaves");
+	
 	
 		//Smelting Recipes
         GameRegistry.addSmelting(Item.bone.itemID, new ItemStack(smeltedbone), 0.3F);

@@ -6,11 +6,19 @@ public class ItemIDs
 	//Default id must be above 3850
 	
 	//Ingots
-	public static int SMELTEDBONE_DEFAULT = 4000;
-	public static int ADAMANT_INGOT_DEFAULT = 4001;
-	public static int BRONZE_INGOT_DEFAULT = 4002;
-	public static int STEEL_INGOT_DEFAULT = 4003;
-	public static int STRONGGOLD_INGOT_DEFAULT = 4004;
+	public static int ITEMS_DEFAULT = 4000;
+	public static int SMELTEDBONE_DEFAULT = ITEMS_DEFAULT;
+	public static int ADAMANT_INGOT_DEFAULT = ITEMS_DEFAULT + 1;
+	public static int BRONZE_INGOT_DEFAULT = ITEMS_DEFAULT + 2;
+	public static int STEEL_INGOT_DEFAULT = ITEMS_DEFAULT + 3;
+	public static int STRONGGOLD_INGOT_DEFAULT = ITEMS_DEFAULT + 4;
+	
+	//Other Items
+	public static int STACKEDCOAL2_DEFAULT = ITEMS_DEFAULT + 5;
+	public static int STACKEDCOAL4_DEFAULT = ITEMS_DEFAULT + 6;
+	public static int STACKEDCOAL6_DEFAULT = ITEMS_DEFAULT + 7;
+	public static int STACKEDCOAL8_DEFAULT = ITEMS_DEFAULT + 8;
+
 	
 	//Bone tools
 	public static int BONE_DEFAULT = 5000;
@@ -82,6 +90,12 @@ public class ItemIDs
 	public static int STEEL_INGOT;
 	public static int STRONGGOLD_INGOT;
 
+	//Other Items
+	public static int STACKEDCOAL2;
+	public static int STACKEDCOAL4;
+	public static int STACKEDCOAL6;
+	public static int STACKEDCOAL8;
+	
 	//Bone tools
 	public static int SWORD_BONE;
 	public static int PICKAXE_BONE;

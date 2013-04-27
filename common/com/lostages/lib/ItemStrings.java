@@ -11,6 +11,15 @@ public class ItemStrings
 	public static final String STEEL_INGOT_NAME = "ingotSteel";
 	public static final String STRONGGOLD_INGOT_NAME = "ingotStrongGold";
 	
+	//Bows
+	public static final String BOW_JUNGLE_NAME = "bowJungle";
+	
+	//Other Items
+	public static final String STACKEDCOAL2_NAME = "stackedCoal2";
+	public static final String STACKEDCOAL4_NAME = "stackedCoal4";
+	public static final String STACKEDCOAL6_NAME = "stackedCoal6";
+	public static final String STACKEDCOAL8_NAME = "stackedCoal8";
+
 	//Bone tools
 	public static final String SWORD_BONE_NAME = "swordBone";
 	public static final String PICKAXE_BONE_NAME = "pickaxeBone";
@@ -57,13 +66,7 @@ public class ItemStrings
 	public static final String HAMMER_IRON_NAME = "hammerIron";
 	public static final String HAMMER_GOLD_NAME = "hammerGold";
 	public static final String HAMMER_DIAMOND_NAME = "hammerDiamond";
-	public static final String HAMMER_MAGIC_NAME = "hammerMagic";
-
-	//Bows
-	public static final String BOW_JUNGLE_NAME = "bowJungle";
-
-	
-	
+	public static final String HAMMER_MAGIC_NAME = "hammerMagic";	
 	
 	
 	//Names appear in-game
@@ -72,6 +75,16 @@ public class ItemStrings
 	public static final String ADAMANT_INGOT_TRANSNAME = "Adamant Ingot";
 	public static final String BRONZE_INGOT_TRANSNAME = "Bronze Ingot";
 	public static final String STEEL_INGOT_TRANSNAME = "Steel Ingot";
+	
+	//Other Items
+	public static final String STACKEDCOAL2_TRANSNAME = "Two Coal";
+	public static final String STACKEDCOAL4_TRANSNAME = "Four Coal";
+	public static final String STACKEDCOAL6_TRANSNAME = "Six Coal";
+	public static final String STACKEDCOAL8_TRANSNAME = "Eight Coal";
+
+
+	//Bows
+	public static final String BOW_JUNGLE_TRANSNAME = "Jungle Bow";	
 	
 	//Bone tools
 	public static final String SWORD_BONE_TRANSNAME = "Bone Sword";
@@ -120,7 +133,4 @@ public class ItemStrings
 	public static final String HAMMER_GOLD_TRANSNAME = "Golden Hammer";
 	public static final String HAMMER_DIAMOND_TRANSNAME = "Diamond Hammer";
 	public static final String HAMMER_MAGIC_TRANSNAME = "Magic Hammer";
-
-	//Bows
-	public static final String BOW_JUNGLE_TRANSNAME = "Jungle Bow";
 }

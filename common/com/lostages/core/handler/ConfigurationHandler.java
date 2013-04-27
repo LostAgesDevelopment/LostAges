@@ -24,6 +24,16 @@ public class ConfigurationHandler {
 			ItemIDs.BRONZE_INGOT = config.getItem(ItemStrings.BRONZE_INGOT_NAME, ItemIDs.BRONZE_INGOT_DEFAULT).getInt();
 			ItemIDs.STEEL_INGOT = config.getItem(ItemStrings.STEEL_INGOT_NAME, ItemIDs.STEEL_INGOT_DEFAULT).getInt();
 			
+			//Other Items
+			ItemIDs.STACKEDCOAL2 = config.getItem(ItemStrings.STACKEDCOAL2_NAME, ItemIDs.STACKEDCOAL2_DEFAULT).getInt();
+			ItemIDs.STACKEDCOAL4 = config.getItem(ItemStrings.STACKEDCOAL4_NAME, ItemIDs.STACKEDCOAL4_DEFAULT).getInt();
+			ItemIDs.STACKEDCOAL6 = config.getItem(ItemStrings.STACKEDCOAL6_NAME, ItemIDs.STACKEDCOAL6_DEFAULT).getInt();
+			ItemIDs.STACKEDCOAL8 = config.getItem(ItemStrings.STACKEDCOAL8_NAME, ItemIDs.STACKEDCOAL8_DEFAULT).getInt();
+
+			
+			//Bows
+			ItemIDs.BOW_JUNGLE = config.getItem(ItemStrings.BOW_JUNGLE_NAME, ItemIDs.BOW_JUNGLE_DEFAULT).getInt();
+			
 			//Bone tools
 			ItemIDs.SWORD_BONE = config.getItem(ItemStrings.SWORD_BONE_NAME, ItemIDs.SWORD_BONE_DEFAULT).getInt();
 			ItemIDs.PICKAXE_BONE = config.getItem(ItemStrings.PICKAXE_BONE_NAME, ItemIDs.PICKAXE_BONE_DEFAULT).getInt();

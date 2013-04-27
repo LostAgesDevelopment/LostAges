@@ -62,7 +62,7 @@ public class LostAgesItems {
 	public static Item hammerIron;
 	public static Item hammerGold;
 	public static Item hammerDiamond;
-	
+	public static Item hammerMagic;	
 
 	
 	public static void init()
@@ -83,6 +83,7 @@ public class LostAgesItems {
 		hammerIron = new ItemLostAgesHammer(ItemIDs.HAMMER_IRON, EnumToolMaterial.IRON).setUnlocalizedName(ItemStrings.HAMMER_IRON_NAME);
 		hammerGold = new ItemLostAgesHammer(ItemIDs.HAMMER_GOLD, EnumToolMaterial.GOLD).setUnlocalizedName(ItemStrings.HAMMER_GOLD_NAME);
 		hammerDiamond = new ItemLostAgesHammer(ItemIDs.HAMMER_DIAMOND, EnumToolMaterial.EMERALD).setUnlocalizedName(ItemStrings.HAMMER_DIAMOND_NAME);
+		hammerMagic = new ItemLostAgesMagicHammer(ItemIDs.HAMMER_MAGIC, EnumToolMaterial.EMERALD).setUnlocalizedName(ItemStrings.HAMMER_MAGIC_NAME);
 		
 		//Bone Tools
 		swordBone = new ItemLostAgesSword(ItemIDs.SWORD_BONE, LostAgesMaterials.BONE).setUnlocalizedName(ItemStrings.SWORD_BONE_NAME);
@@ -177,6 +178,7 @@ public class LostAgesItems {
 		LanguageRegistry.addName(hammerIron, ItemStrings.HAMMER_IRON_TRANSNAME);
 		LanguageRegistry.addName(hammerGold, ItemStrings.HAMMER_GOLD_TRANSNAME);
 		LanguageRegistry.addName(hammerDiamond, ItemStrings.HAMMER_DIAMOND_TRANSNAME);
+		LanguageRegistry.addName(hammerMagic, ItemStrings.HAMMER_MAGIC_TRANSNAME);
 
 	
 		//Smelting Recipes
@@ -229,6 +231,7 @@ public class LostAgesItems {
 		GameRegistry.addRecipe(new ItemStack(hammerIron), new Object[]{"XXX", " * ", 'X', Item.ingotIron , '*', Item.stick});
 		GameRegistry.addRecipe(new ItemStack(hammerGold), new Object[]{"XXX", " * ", 'X', Item.ingotGold , '*', Item.stick});
 		GameRegistry.addRecipe(new ItemStack(hammerDiamond), new Object[]{"XXX", " * ", 'X', Item.diamond , '*', Item.stick});
+		//TODO Add magic hammer recipe
 	}
 	
 }

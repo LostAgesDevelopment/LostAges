@@ -70,7 +70,8 @@ public class ConfigurationHandler {
 			ItemIDs.HAMMER_IRON = config.getItem(ItemStrings.HAMMER_IRON_NAME, ItemIDs.HAMMER_IRON_DEFAULT).getInt();
 			ItemIDs.HAMMER_GOLD = config.getItem(ItemStrings.HAMMER_GOLD_NAME, ItemIDs.HAMMER_GOLD_DEFAULT).getInt();
 			ItemIDs.HAMMER_DIAMOND = config.getItem(ItemStrings.HAMMER_DIAMOND_NAME, ItemIDs.HAMMER_DIAMOND_DEFAULT).getInt();
-			
+			ItemIDs.HAMMER_MAGIC = config.getItem(ItemStrings.HAMMER_MAGIC_NAME, ItemIDs.HAMMER_MAGIC_DEFAULT).getInt();
+
 			//Blocks
 			BlockIDs.ORE_ADAMANT = config.getBlock(BlockStrings.ORE_ADAMANT_NAME, BlockIDs.ORE_ADAMANT_DEFAULT).getInt();
 			BlockIDs.ORE_COPPER = config.getBlock(BlockStrings.ORE_COPPER_NAME, BlockIDs.ORE_COPPER_DEFAULT).getInt();

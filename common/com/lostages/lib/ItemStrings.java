@@ -57,6 +57,7 @@ public class ItemStrings
 	public static final String HAMMER_IRON_NAME = "hammerIron";
 	public static final String HAMMER_GOLD_NAME = "hammerGold";
 	public static final String HAMMER_DIAMOND_NAME = "hammerDiamond";
+	public static final String HAMMER_MAGIC_NAME = "hammerMagic";
 
 	//Bows
 	public static final String BOW_JUNGLE_NAME = "bowJungle";
@@ -118,6 +119,7 @@ public class ItemStrings
 	public static final String HAMMER_IRON_TRANSNAME = "Iron Hammer";
 	public static final String HAMMER_GOLD_TRANSNAME = "Golden Hammer";
 	public static final String HAMMER_DIAMOND_TRANSNAME = "Diamond Hammer";
+	public static final String HAMMER_MAGIC_TRANSNAME = "Magic Hammer";
 
 	//Bows
 	public static final String BOW_JUNGLE_TRANSNAME = "Jungle Bow";

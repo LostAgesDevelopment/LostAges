@@ -20,8 +20,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemLostAgesHammer extends Item {
 	
-	private int weaponDamage;
-	private EnumToolMaterial toolMaterial;
+	protected static int weaponDamage;
+	protected static EnumToolMaterial toolMaterial;
 	//TODO Fix enchanting
 	public ItemLostAgesHammer(int par1, EnumToolMaterial par2EnumToolMaterial) 
 	{

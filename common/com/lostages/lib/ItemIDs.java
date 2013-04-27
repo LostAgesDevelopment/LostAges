@@ -5,7 +5,6 @@ public class ItemIDs
 	//Default id that is written to configuration file
 	//Default id must be above 3850
 	
-
 	//Ingots
 	public static int SMELTEDBONE_DEFAULT = 4000;
 	public static int ADAMANT_INGOT_DEFAULT = 4001;
@@ -60,9 +59,10 @@ public class ItemIDs
 	public static int HAMMER_IRON_DEFAULT = HAMMER_DEFAULT + 2;
 	public static int HAMMER_GOLD_DEFAULT = HAMMER_DEFAULT + 3;
 	public static int HAMMER_DIAMOND_DEFAULT = HAMMER_DEFAULT + 4;
+	public static int HAMMER_MAGIC_DEFAULT = HAMMER_DEFAULT + 5;
 
 	//Flint tools
-	public static int FLINT_DEFAULT = 5030;
+	public static int FLINT_DEFAULT = 5031;
 	public static int PICKAXE_FLINT_DEFAULT = FLINT_DEFAULT;
 	public static int SHOVEL_FLINT_DEFAULT = FLINT_DEFAULT + 1;
 	public static int AXE_FLINT_DEFAULT = FLINT_DEFAULT + 2;
@@ -70,7 +70,7 @@ public class ItemIDs
 	//Bows
 	public static int BOW_JUNGLE_DEFAULT = FLINT_DEFAULT + 3;
 	
-	//public static int WHATEVERISNEXT_DEFAULT = 5034;
+	//public static int WHATEVERISNEXT_DEFAULT = 5035;
 
 		
 	//ID
@@ -128,7 +128,8 @@ public class ItemIDs
 	public static int HAMMER_IRON;
 	public static int HAMMER_GOLD;
 	public static int HAMMER_DIAMOND;	
-	
+	public static int HAMMER_MAGIC;	
+
 	//Bows
 	public static int BOW_JUNGLE;
 }

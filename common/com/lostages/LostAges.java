@@ -4,6 +4,7 @@ import java.util.logging.Level;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.item.EnumArmorMaterial;
 
 import com.lostages.block.LostAgesBlocks;
 import com.lostages.core.creativetab.TabLostAges;

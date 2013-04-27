@@ -11,10 +11,10 @@ public class DoubleFurnaceRecipes {
 	private static final DoubleFurnaceRecipes smeltBase = new DoubleFurnaceRecipes();
 	
 	@SuppressWarnings("rawtypes")
-	private Map doubleSmeltingList1 = new HashMap();
+	private Map doubleSmeltingOutputList1 = new HashMap();
 	
 	@SuppressWarnings("rawtypes")
-	private Map doubleSmeltingList2 = new HashMap();
+	private Map doubleSmeltingOutputList2 = new HashMap();
 	
 	@SuppressWarnings("rawtypes")
 	private Map doubleSmeltingExpList = new HashMap();
@@ -24,14 +24,14 @@ public class DoubleFurnaceRecipes {
 	}
 	
 	private DoubleFurnaceRecipes() {
-		this.addDoubleSmelting(Block.oreIron.blockID, Block.oreGold.blockID, new ItemStack(Item.diamond), 0F);
+		this.addDoubleSmelting(Block.oreIron.blockID, Block.oreIron.blockID, new ItemStack(Item.ingotIron, 3), 0F);
 	}
 	
 	@SuppressWarnings("unchecked")
 	public void addDoubleSmelting(int input1, int input2, ItemStack output, float exp) {
-		this.doubleSmeltingList1.put(Integer.valueOf(input1), output);
-		this.doubleSmeltingList2.put(Integer.valueOf(input2), output);
-		this.doubleSmeltingExpList.put(Integer.valueOf(output.itemID), exp);
+		this.doubleSmeltingOutputList1.put(Integer.valueOf(input1), output);
+		this.doubleSmeltingOutputList2.put(Integer.valueOf(input2), output);
+		this.doubleSmeltingExpList.put(Integer.valueOf(output.itemID), Float.valueOf(exp));
 	}
 	
 	public ItemStack getDoubleSmeltingResult(ItemStack item1, ItemStack item2) {
@@ -43,15 +43,14 @@ public class DoubleFurnaceRecipes {
 			return null;
 		}
 		
-		ItemStack outputItem1 = (ItemStack) doubleSmeltingList1.get(Integer.valueOf(item1.itemID));
-		ItemStack outputItem2 = (ItemStack) doubleSmeltingList2.get(Integer.valueOf(item2.itemID));
+		ItemStack outputItem1 = (ItemStack) doubleSmeltingOutputList2.get(Integer.valueOf(item1.itemID));
+		ItemStack outputItem2 = (ItemStack) doubleSmeltingOutputList2.get(Integer.valueOf(item2.itemID));
 		
 		if (outputItem1 == outputItem2) {
 			return outputItem1;
 		} else {
 			return outputItem2;
 		}
-		
 	}
 	
 }

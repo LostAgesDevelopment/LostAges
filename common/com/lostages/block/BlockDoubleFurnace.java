@@ -3,19 +3,25 @@ package com.lostages.block;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
 import com.lostages.LostAges;
 import com.lostages.lib.BlockStrings;
 import com.lostages.lib.GuiIDs;
+import com.lostages.lib.Reference;
 import com.lostages.tile.TileDoubleFurnace;
 
 public class BlockDoubleFurnace extends BlockContainer {
+	
+	private Icon doubleFurnaceTop;
+	private Icon doubleFurnaceFront;
 	
 	protected BlockDoubleFurnace(int par1) {
 		super(par1, Material.iron);
@@ -101,6 +107,27 @@ public class BlockDoubleFurnace extends BlockContainer {
             par1World.setBlockMetadataWithNotify(par2, par3, par4, 4, 2);
         }
 
+    }
+    
+    @Override
+    public void registerIcons(IconRegister iconRegister) {
+    	blockIcon = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":doublefurnace_side");
+    	doubleFurnaceTop = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":doublefurnace_top");
+    	doubleFurnaceFront = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":doublefurnace_front");
+    }
+    
+    @Override
+    public Icon getIcon(int par1, int par2) {
+    	switch (par1) {
+			case 0:
+				return doubleFurnaceTop;
+    		case 1:
+    			return doubleFurnaceTop;
+    		case 2:
+    			return doubleFurnaceFront;
+    		default:
+    			return blockIcon;
+    	}
     }
 
 }

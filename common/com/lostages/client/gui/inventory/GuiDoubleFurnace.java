@@ -40,8 +40,7 @@ public class GuiDoubleFurnace extends GuiContainer {
 		this.drawTexturedModalRect(xStart, yStart, 0, 0, xSize, ySize);
 		int i1;
 		
-        if (this.inventoryFurnace.isBurning())
-        {
+        if (this.inventoryFurnace.isBurning()) {
         	i1 = this.inventoryFurnace.getBurnTimeRemainingScaled(12);
             this.drawTexturedModalRect(xStart + 46, yStart + 36 + 12 - i1, 176, 12 - i1, 14, i1 + 2);
         }

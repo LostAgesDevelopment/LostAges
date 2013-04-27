@@ -208,6 +208,7 @@ public class TileDoubleFurnace extends TileEntity implements IInventory {
         	return false;
         } else {
             ItemStack itemstack = DoubleFurnaceRecipes.smelting().getDoubleSmeltingResult(this.inventory[0], this.inventory[1]);
+            
             if (itemstack == null) return false;
             if (this.inventory[3] == null) return true;
             if (!this.inventory[3].isItemEqual(itemstack)) return false;
@@ -275,7 +276,11 @@ public class TileDoubleFurnace extends TileEntity implements IInventory {
 	
 	@Override
 	public boolean isStackValidForSlot(int i, ItemStack itemstack) {
-		return true;
+		if (i == 3) {
+			return false;
+		} else {
+			return true;
+		}
 	}
 	
 	@Override

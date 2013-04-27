@@ -43,6 +43,8 @@ public class LostAges
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY, serverSide = Reference.COMMON_PROXY)
 	public static CommonProxy proxy;
 	
+	public static EnumArmorMaterial ADAMANT = EnumHelper.addArmorMaterial("ADAMANT", 35, new int[]{2, 6, 5, 2}, 25);
+
 	//Going to name it Wasteland for now
 	public static final BiomeGenBase Wasteland = (new BiomeWasteland(100));
 	

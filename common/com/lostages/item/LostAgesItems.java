@@ -63,6 +63,11 @@ public class LostAgesItems {
 	public static Item hammerGold;
 	public static Item hammerDiamond;
 	public static Item hammerMagic;	
+	
+	public static Item helmAdamant;
+	public static Item chestAdamant;
+	public static Item legsAdamant;
+	public static Item greavesAdamant;
 
 	
 	public static void init()
@@ -125,6 +130,13 @@ public class LostAgesItems {
 		axeAdamant = new ItemLostAgesAxe(ItemIDs.AXE_ADAMANT, EnumToolMaterial.EMERALD).setUnlocalizedName(ItemStrings.AXE_ADAMANT_NAME);
 		hammerAdamant = new ItemLostAgesHammer(ItemIDs.HAMMER_ADAMANT, EnumToolMaterial.EMERALD).setUnlocalizedName(ItemStrings.HAMMER_ADAMANT_NAME);
 
+		//Adamant Armor
+		//TODO create new IDs
+		public static final Item helmAdamant = (new NewArmor(542, LostAges.ADAMANT, 1, 0)).setUnlocalizedName("AdamantHelm").setCreativeTab(LostAges.tabLostAgesMisc);
+		public static final Item chestAdamant = (new NewArmor(543, LostAges.ADAMANT, 1, 1)).setUnlocalizedName("AdamantChest").setCreativeTab(LostAges.tabLostAgesMisc);
+		public static final Item legsAdamant = (new NewArmor(544, LostAges.ADAMANT, 1, 2)).setUnlocalizedName("AdamantLegs").setCreativeTab(LostAges.tabLostAgesMisc);
+		public static final Item greavesAdamant = (new NewArmor(545, LostAges.ADAMANT, 1, 3)).setUnlocalizedName("AdamantBoots").setCreativeTab(LostAges.tabLostAgesMisc);
+		
 		//Item Names
 		//Ingots
 		LanguageRegistry.addName(smeltedbone, ItemStrings.SMELTEDBONE_TRANSNAME);

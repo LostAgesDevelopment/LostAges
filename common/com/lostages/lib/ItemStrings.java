@@ -11,14 +11,22 @@ public class ItemStrings
 	public static final String STEEL_INGOT_NAME = "ingotSteel";
 	public static final String STRONGGOLD_INGOT_NAME = "ingotStrongGold";
 	
-	//Bows
-	public static final String BOW_JUNGLE_NAME = "bowJungle";
-	
 	//Other Items
 	public static final String STACKEDCOAL2_NAME = "stackedCoal2";
 	public static final String STACKEDCOAL4_NAME = "stackedCoal4";
 	public static final String STACKEDCOAL6_NAME = "stackedCoal6";
 	public static final String STACKEDCOAL8_NAME = "stackedCoal8";
+	
+	//Armor
+	//Adamant Armor
+	public static final String HELM_ADAMANT_NAME = "helmAdamant";
+	public static final String CHEST_ADAMANT_NAME = "chestAdamant";
+	public static final String LEGS_ADAMANT_NAME = "legsAdamant";
+	public static final String BOOTS_ADAMANT_NAME = "bootsAdamant";
+
+	//Tools - Weapons
+	//Bows
+	public static final String BOW_JUNGLE_NAME = "bowJungle";
 
 	//Bone tools
 	public static final String SWORD_BONE_NAME = "swordBone";
@@ -81,8 +89,15 @@ public class ItemStrings
 	public static final String STACKEDCOAL4_TRANSNAME = "Four Coal";
 	public static final String STACKEDCOAL6_TRANSNAME = "Six Coal";
 	public static final String STACKEDCOAL8_TRANSNAME = "Eight Coal";
+	
+	//Armor
+	//Adamant Armor
+	public static final String HElM_ADAMANT_TRANSNAME = "Adamant Helmet";
+	public static final String CHEST_ADAMANT_TRANSNAME = "Adamant Chestplate";
+	public static final String LEGS_ADAMANT_TRANSNAME = "Adamant Leggings";
+	public static final String BOOTS_ADAMANT_TRANSNAME = "Adamant Boots";
 
-
+	//Tools - Weapons
 	//Bows
 	public static final String BOW_JUNGLE_TRANSNAME = "Jungle Bow";	
 	

@@ -155,10 +155,10 @@ public class LostAgesItems {
 		
 		//Armor
 		//Adamant Armor
-		helmAdamant = new AdamantArmor(ItemIDs.HELM_ADAMANT, LostAges.ADAMANT, 1, 0).setUnlocalizedName("AdamantHelm").setCreativeTab(LostAges.tabLostAgesMisc);
-		chestAdamant = new AdamantArmor(ItemIDs.CHEST_ADAMANT, LostAges.ADAMANT, 1, 1).setUnlocalizedName("AdamantChest").setCreativeTab(LostAges.tabLostAgesMisc);
-		legsAdamant = new AdamantArmor(ItemIDs.LEGS_ADAMANT, LostAges.ADAMANT, 1, 2).setUnlocalizedName("AdamantLegs").setCreativeTab(LostAges.tabLostAgesMisc);
-		bootsAdamant = new AdamantArmor(ItemIDs.BOOTS_ADAMANT, LostAges.ADAMANT, 1, 3).setUnlocalizedName("AdamantBoots").setCreativeTab(LostAges.tabLostAgesMisc);
+		helmAdamant = new AdamantArmor(ItemIDs.HELM_ADAMANT, LostAges.ADAMANT, 1, 0).setUnlocalizedName(ItemStrings.HELM_ADAMANT_NAME).setCreativeTab(LostAges.tabLostAgesMisc);
+		chestAdamant = new AdamantArmor(ItemIDs.CHEST_ADAMANT, LostAges.ADAMANT, 1, 1).setUnlocalizedName(ItemStrings.CHEST_ADAMANT_NAME).setCreativeTab(LostAges.tabLostAgesMisc);
+		legsAdamant = new AdamantArmor(ItemIDs.LEGS_ADAMANT, LostAges.ADAMANT, 1, 2).setUnlocalizedName(ItemStrings.LEGS_ADAMANT_NAME).setCreativeTab(LostAges.tabLostAgesMisc);
+		bootsAdamant = new AdamantArmor(ItemIDs.BOOTS_ADAMANT, LostAges.ADAMANT, 1, 3).setUnlocalizedName(ItemStrings.BOOTS_ADAMANT_NAME).setCreativeTab(LostAges.tabLostAgesMisc);
 
 		//Item Names
 		//Ingots

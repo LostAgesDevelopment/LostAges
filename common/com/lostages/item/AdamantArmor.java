@@ -3,6 +3,9 @@ package com.lostages.item;
 import com.lostages.LostAges;
 import com.lostages.lib.Reference;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.ItemArmor;
@@ -17,10 +20,12 @@ public class AdamantArmor extends ItemArmor implements IArmorTextureProvider
 		super(par1, par2EnumArmorMaterial, par3, par4);
 	}
 
-	public void registerIcons(IconRegister iconRegister)
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(IconRegister iconRegister) 
 	{
-		itemIcon = iconRegister.registerIcon(Reference.MOD_ID + ":" + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
+		itemIcon = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":" + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
 	}
+
 
 	public String getArmorTextureFile(ItemStack par1)
 	{

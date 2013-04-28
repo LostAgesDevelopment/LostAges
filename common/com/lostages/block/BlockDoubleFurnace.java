@@ -39,7 +39,6 @@ public class BlockDoubleFurnace extends BlockContainer {
 		this.isActive = par2;
 		setHardness(3.0F);
 		setResistance(5.0F);
-		setCreativeTab(LostAges.tabLostAgesBlocks);
 	}
 	
 	@Override

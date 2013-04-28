@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.oredict.OreDictionary;
 
+import com.lostages.LostAges;
 import com.lostages.item.LostAgesItems;
 import com.lostages.lib.BlockIDs;
 import com.lostages.lib.BlockStrings;
@@ -32,7 +33,7 @@ public class LostAgesBlocks
 		oreCopper = new BlockLostAgesOre(BlockIDs.ORE_COPPER, Material.rock).setUnlocalizedName(BlockStrings.ORE_COPPER_NAME).setHardness(2.0F).setResistance(5.0F);
 		oreTin = new BlockLostAgesOre(BlockIDs.ORE_TIN, Material.rock).setUnlocalizedName(BlockStrings.ORE_TIN_NAME).setHardness(1.5F).setResistance(5.0F);
 		
-		furnaceIdleDouble = new BlockDoubleFurnace(BlockIDs.DOUBLE_FURNACE_IDLE, false).setUnlocalizedName(BlockStrings.DOUBLE_FURNACE_NAME);
+		furnaceIdleDouble = new BlockDoubleFurnace(BlockIDs.DOUBLE_FURNACE_IDLE, false).setUnlocalizedName(BlockStrings.DOUBLE_FURNACE_NAME).setCreativeTab(LostAges.tabLostAgesBlocks);
 		furnaceActiveDouble = new BlockDoubleFurnace(BlockIDs.DOUBLE_FURNACE_ACTIVE, true).setUnlocalizedName(BlockStrings.DOUBLE_FURNACE_NAME).setLightValue(0.875F);
 		
 		GameRegistry.registerBlock(furnaceIdleDouble);

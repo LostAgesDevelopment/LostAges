@@ -69,6 +69,7 @@ public class LostAges
 		GameRegistry.addBiome(Wasteland);
 		
 		proxy.registerTileEntities();
+		
 	}
 	
 	@PostInit

@@ -32,6 +32,10 @@ public class ItemLostAgesHammer extends Item {
         weaponDamage = 4 + par2EnumToolMaterial.getDamageVsEntity();
         maxStackSize = 1;
 	}
+	
+	public boolean requiresMultipleRenderPasses() {
+		return true;
+	}
     
 	@Override
 	public float getStrVsBlock(ItemStack par1ItemStack, Block par2Block)

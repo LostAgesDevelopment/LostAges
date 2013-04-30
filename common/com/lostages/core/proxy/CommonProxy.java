@@ -5,7 +5,6 @@ import net.minecraft.world.World;
 
 import com.lostages.client.gui.inventory.GuiDoubleFurnace;
 import com.lostages.inventory.ContainerDoubleFurnace;
-import com.lostages.lib.BlockStrings;
 import com.lostages.lib.GuiIDs;
 import com.lostages.tile.TileDoubleFurnace;
 
@@ -17,7 +16,7 @@ public class CommonProxy implements IGuiHandler
 	public void registerTileEntities() {
 		GameRegistry.registerTileEntity(TileDoubleFurnace.class, "furnaceDoubleGui");
 	}
-
+	
 	@Override
 	public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 		if (ID == GuiIDs.DOUBLE_FURNACE_GUI_ID) {

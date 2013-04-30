@@ -73,26 +73,21 @@ public class BlockDoubleFurnace extends BlockContainer {
         return true;
     }
 
-    public static void updateFurnaceBlockState(boolean par0, World par1World, int par2, int par3, int par4)
-    {
+    public static void updateFurnaceBlockState(boolean par0, World par1World, int par2, int par3, int par4) {
         int l = par1World.getBlockMetadata(par2, par3, par4);
         TileEntity tileentity = par1World.getBlockTileEntity(par2, par3, par4);
         keepFurnaceInventory = true;
 
-        if (par0)
-        {
+        if (par0) {
             par1World.setBlock(par2, par3, par4, LostAgesBlocks.furnaceActiveDouble.blockID);
-        }
-        else
-        {
+        } else {
             par1World.setBlock(par2, par3, par4, LostAgesBlocks.furnaceIdleDouble.blockID);
         }
 
         keepFurnaceInventory = false;
         par1World.setBlockMetadataWithNotify(par2, par3, par4, l, 2);
 
-        if (tileentity != null)
-        {
+        if (tileentity != null) {
             tileentity.validate();
             par1World.setBlockTileEntity(par2, par3, par4, tileentity);
         }

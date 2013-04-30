@@ -11,8 +11,7 @@ import com.lostages.tile.TileDoubleFurnace;
 import cpw.mods.fml.common.network.IGuiHandler;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-public class CommonProxy implements IGuiHandler
-{
+public class CommonProxy implements IGuiHandler {
 	public void registerTileEntities() {
 		GameRegistry.registerTileEntity(TileDoubleFurnace.class, "furnaceDoubleGui");
 	}

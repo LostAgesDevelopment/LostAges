@@ -12,16 +12,14 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class ItemLostAgesItems extends Item {
 	//Generic materials used in crafting and don't have any other uses
 	
-	public ItemLostAgesItems(int par1) 
-	{
+	public ItemLostAgesItems(int par1) {
 		super(par1);
 		setCreativeTab(LostAges.tabLostAgesMisc);
 	}
 	
 	//Texture name = Unlocalized name
 	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister iconRegister)
-	{
+	public void registerIcons(IconRegister iconRegister) {
 		itemIcon = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":" + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
 	}
 

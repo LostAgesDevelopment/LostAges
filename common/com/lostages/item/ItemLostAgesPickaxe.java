@@ -10,18 +10,15 @@ import com.lostages.lib.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemLostAgesPickaxe extends ItemPickaxe
-{
+public class ItemLostAgesPickaxe extends ItemPickaxe {
 
-	public ItemLostAgesPickaxe(int par1, EnumToolMaterial par2EnumToolMaterial)
-	{
+	public ItemLostAgesPickaxe(int par1, EnumToolMaterial par2EnumToolMaterial) {
 		super(par1, par2EnumToolMaterial);
 		setCreativeTab(LostAges.tabLostAgesTools);
 	}
 	
 	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister iconRegister)
-	{
+	public void registerIcons(IconRegister iconRegister) {
 		itemIcon = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":" + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
 	}
 

@@ -1,7 +1,6 @@
 package com.lostages.lib;
 
-public class ItemStrings 
-{
+public class ItemStrings {
 
 	//Unlocalized Names	
 	//Ingots

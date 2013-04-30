@@ -86,8 +86,7 @@ public class LostAgesItems {
 	public static Item legsAdamant;
 	public static Item bootsAdamant;
 	
-	public static void init()
-	{
+	public static void init() {
 		//Ingots
 		smeltedbone = new ItemLostAgesItems(ItemIDs.SMELTEDBONE).setUnlocalizedName(ItemStrings.SMELTEDBONE_NAME);
 		ingotAdamant = new ItemLostAgesItems(ItemIDs.ADAMANT_INGOT).setUnlocalizedName(ItemStrings.ADAMANT_INGOT_NAME);

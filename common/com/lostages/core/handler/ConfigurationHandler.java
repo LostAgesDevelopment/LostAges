@@ -13,8 +13,7 @@ import net.minecraftforge.common.Configuration;
 
 public class ConfigurationHandler {
 	
-	public static void loadConfig(File file)
-	{
+	public static void loadConfig(File file) {
 		Configuration config = new Configuration(file);
 		try {
 			config.load();

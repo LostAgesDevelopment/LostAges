@@ -18,8 +18,7 @@ public class TabLostAges extends CreativeTabs
 	}
 	
 	@Override
-	public String getTranslatedTabLabel() 
-	{
+	public String getTranslatedTabLabel() {
 		if (tabName.equals(Reference.TAB_BLOCK)) {
 			return Reference.MOD_NAME + " Blocks";
 		} else if (tabName.equals(Reference.TAB_TOOL)) {
@@ -32,8 +31,7 @@ public class TabLostAges extends CreativeTabs
 	}
 	
 	@Override
-	public int getTabIconItemIndex()
-	{
+	public int getTabIconItemIndex() {
 		if (tabName.equals(Reference.TAB_BLOCK)) {
 			return LostAgesBlocks.oreAdamant.blockID;
 		} else if (tabName.equals(Reference.TAB_MISC)) {

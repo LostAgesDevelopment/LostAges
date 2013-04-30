@@ -1,12 +1,8 @@
 package com.lostages.lib;
 
-public class ItemIDs
-{
+public class ItemIDs {
 	//Default id that is written to configuration file
 	//Default id must be above 3850
-	
-
-	
 	
 	//Ingots
 	public static int ITEMS_DEFAULT = 4000;

@@ -12,15 +12,13 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemLostAgesSword extends ItemSword {
 	
-	public ItemLostAgesSword(int par1, EnumToolMaterial par2EnumToolMaterial) 
-	{
+	public ItemLostAgesSword(int par1, EnumToolMaterial par2EnumToolMaterial) {
 		super(par1, par2EnumToolMaterial);
 		setCreativeTab(LostAges.tabLostAgesTools);
 	}
 	
 	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister iconRegister)
-	{
+	public void registerIcons(IconRegister iconRegister) {
 		itemIcon = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":" + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
 	}
 

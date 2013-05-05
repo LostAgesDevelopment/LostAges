@@ -211,10 +211,10 @@ public class TileDoubleFurnace extends TileEntity implements IInventory {
         } else {
             ItemStack itemstack = DoubleFurnaceRecipes.smelting().getDoubleSmeltingResult(this.inventory[0], this.inventory[1]);
             
+            if ((this.inventory[0].stackSize < DoubleFurnaceRecipes.smelting().getSlot1ReduceAmount(this.inventory[0]).stackSize)) return false;
+            if ((this.inventory[1].stackSize < DoubleFurnaceRecipes.smelting().getSlot2ReduceAmount(this.inventory[1]).stackSize)) return false;
             if (itemstack == null) return false;
             if (this.inventory[3] == null) return true;
-            if (this.inventory[0].stackSize < DoubleFurnaceRecipes.smelting().getSlot1ReduceAmount(this.inventory[0]).stackSize) return false;
-            if (this.inventory[1].stackSize < DoubleFurnaceRecipes.smelting().getSlot2ReduceAmount(this.inventory[1]).stackSize) return false;
             if (!this.inventory[3].isItemEqual(itemstack)) return false;
             int result = inventory[3].stackSize + itemstack.stackSize;
             return (result <= getInventoryStackLimit() && result <= itemstack.getMaxStackSize());

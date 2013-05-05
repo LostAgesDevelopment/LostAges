@@ -3,11 +3,11 @@ package com.lostages.recipe;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.lostages.item.LostAgesItems;
-
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+
+import com.lostages.item.LostAgesItems;
 
 public class DoubleFurnaceRecipes {
 	private static final DoubleFurnaceRecipes smeltBase = new DoubleFurnaceRecipes();
@@ -54,13 +54,13 @@ public class DoubleFurnaceRecipes {
 			return null;
 		}
 		
-		ItemStack outputItem1 = (ItemStack) doubleSmeltingOutputList2.get(Integer.valueOf(item1.itemID));
+		ItemStack outputItem1 = (ItemStack) doubleSmeltingOutputList1.get(Integer.valueOf(item1.itemID));
 		ItemStack outputItem2 = (ItemStack) doubleSmeltingOutputList2.get(Integer.valueOf(item2.itemID));
 		
 		if (outputItem1 == outputItem2) {
 			return outputItem1;
 		} else {
-			return outputItem2;
+			return null;
 		}
 	}
 	

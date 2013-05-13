@@ -70,6 +70,13 @@ public class LostAgesItems {
 	public static Item axeSteel;
 	public static Item hammerSteel;
 	
+	
+	//Orc Tools
+	public static Item swordOrc;
+	public static Item pickaxeOrc
+	public static Item shovelOrc
+	public static Item axeOrc
+	public static Item hammerOrc
 	//Adamant Tools
 	public static Item swordAdamant;
 	public static Item pickaxeAdamant;
@@ -90,6 +97,7 @@ public class LostAgesItems {
 	public static Item chestAdamant;
 	public static Item legsAdamant;
 	public static Item bootsAdamant;
+	
 	
 	public static void init() {
 		//Ingots

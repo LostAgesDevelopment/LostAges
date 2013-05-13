@@ -8,7 +8,6 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.oredict.OreDictionary;
 
 import com.lostages.LostAges;
-import com.lostages.item.LostAgesItems;
 import com.lostages.lib.BlockIDs;
 import com.lostages.lib.BlockStrings;
 

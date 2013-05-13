@@ -5,11 +5,8 @@ import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.oredict.OreDictionary;
-import net.minecraftforge.oredict.ShapedOreRecipe;
 
 import com.lostages.LostAges;
-import com.lostages.block.LostAgesBlocks;
 import com.lostages.lib.ItemIDs;
 import com.lostages.lib.ItemStrings;
 import com.lostages.lib.LostAgesMaterials;
@@ -253,7 +250,7 @@ public class LostAgesItems {
 	
 	
 		//Smelting Recipes
-				
+		
 		//Recipes
         //Bone tools
 		GameRegistry.addRecipe(new ItemStack(swordBone), new Object[]{"I", "I", "B", 'I', ingotBone, 'B', Item.bone});

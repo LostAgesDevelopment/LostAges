@@ -2,6 +2,7 @@ package com.lostages.lib;
 
 public class BlockStrings {
 	//Unlocalized Names
+	public static final String ORE_BASE_NAME = "oreBase";
 	public static final String ORE_ADAMANT_NAME = "oreAdamant";
 	public static final String ORE_COPPER_NAME = "oreCopper";
 	public static final String ORE_TIN_NAME = "oreTin";

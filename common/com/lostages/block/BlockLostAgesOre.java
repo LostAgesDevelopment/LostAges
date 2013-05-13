@@ -1,27 +1,50 @@
 package com.lostages.block;
 
-import com.lostages.LostAges;
-import com.lostages.lib.Reference;
+import java.util.List;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraftforge.common.MinecraftForge;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.Icon;
 
-public class BlockLostAgesOre extends Block
-{
+import com.lostages.LostAges;
+import com.lostages.lib.BlockIDs;
+import com.lostages.lib.BlockStrings;
+import com.lostages.lib.Reference;
 
-	public BlockLostAgesOre(int par1, Material par2Material) 
-	{
-		super(par1, par2Material);
-		setCreativeTab(LostAges.tabLostAgesBlocks);
-		
-		MinecraftForge.setBlockHarvestLevel(LostAgesBlocks.oreAdamant, "pickaxe", 3);
+public class BlockLostAgesOre extends Block {
+
+	private Icon[] icons;
+	private String[] names = { BlockStrings.ORE_COPPER_NAME, BlockStrings.ORE_TIN_NAME, BlockStrings.ORE_ADAMANT_NAME };
+	
+	public BlockLostAgesOre() {
+		super(BlockIDs.ORE_BASE, Material.rock);
+		this.setUnlocalizedName(BlockStrings.ORE_BASE_NAME);
+		this.setCreativeTab(LostAges.tabLostAgesBlocks);
+		this.setHardness(3.0F);
+		this.setResistance(5.0F);
 	}
 	
 	@Override
-	public void registerIcons(IconRegister iconRegister) 
-	{
-		blockIcon = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":" + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
+	public void registerIcons(IconRegister iconRegister) {
+		icons = new Icon[names.length];
+		for (int i = 0; i < icons.length; i++) {
+			icons[i] = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":" + names[i]);
+		}
+	}
+	
+	@Override
+	public Icon getIcon(int id, int meta) {
+		return icons[meta];
+	}
+	
+	
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public void getSubBlocks(int id, CreativeTabs tab, List list) {
+		for (int i = 0; i < icons.length; i++) {
+			list.add(new ItemStack(id, 1, i));
+		}
 	}
 }

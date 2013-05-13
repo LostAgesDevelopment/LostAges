@@ -33,7 +33,7 @@ public class TabLostAges extends CreativeTabs
 	@Override
 	public int getTabIconItemIndex() {
 		if (tabName.equals(Reference.TAB_BLOCK)) {
-			return LostAgesBlocks.oreAdamant.blockID;
+			return LostAgesBlocks.oreAdamant.itemID;
 		} else if (tabName.equals(Reference.TAB_MISC)) {
 			return LostAgesItems.ingotSteel.itemID;
 		} else if (tabName.equals(Reference.TAB_TOOL)) {

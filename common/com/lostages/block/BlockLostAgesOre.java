@@ -6,6 +6,7 @@ import com.lostages.lib.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraftforge.common.MinecraftForge;
 
 public class BlockLostAgesOre extends Block
 {
@@ -14,6 +15,8 @@ public class BlockLostAgesOre extends Block
 	{
 		super(par1, par2Material);
 		setCreativeTab(LostAges.tabLostAgesBlocks);
+		
+		MinecraftForge.setBlockHarvestLevel(LostAgesBlocks.oreAdamant, "pickaxe", 3);
 	}
 	
 	@Override

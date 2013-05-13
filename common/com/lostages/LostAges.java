@@ -31,13 +31,11 @@ import net.minecraftforge.common.EnumHelper;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.MOD_VERSION)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
-public class LostAges
-{
+public class LostAges {
 	
 	@Instance(Reference.MOD_ID)
 	public static LostAges instance;
 	
-	//we may want to make more than one tab.
 	public static CreativeTabs tabLostAgesBlocks = new TabLostAges(CreativeTabs.getNextID(), Reference.TAB_BLOCK);
 	public static CreativeTabs tabLostAgesTools = new TabLostAges(CreativeTabs.getNextID(), Reference.TAB_TOOL);
 	public static CreativeTabs tabLostAgesMisc = new TabLostAges(CreativeTabs.getNextID(), Reference.TAB_MISC);
@@ -47,34 +45,28 @@ public class LostAges
 	
 	public static EnumArmorMaterial ADAMANT = EnumHelper.addArmorMaterial("ADAMANT", 35, new int[]{2, 6, 5, 2}, 25);
 
-	//Going to name it Wasteland for now
 	public static final BiomeGenBase Wasteland = (new BiomeWasteland(100));
 	
 	@PreInit
-	public static void preLoad(FMLPreInitializationEvent event)
-	{
+	public static void preLoad(FMLPreInitializationEvent event) {
 		LoggerHandler.initLog();
 		ConfigurationHandler.loadConfig(event.getSuggestedConfigurationFile());
+		LostAgesBlocks.initBlocks();
+		LostAgesItems.initItems();
 	}
 	
 	@Init
-	public static void load(FMLInitializationEvent event)
-	{
-		NetworkRegistry.instance().registerGuiHandler(instance, proxy);
-		
-		LostAgesItems.init();
-		
-		LostAgesBlocks.init();
-		
+	public static void load(FMLInitializationEvent event) {
+		LostAgesItems.initItemRecipes();
+		LostAgesBlocks.initBlockRecipes();
 		GameRegistry.addBiome(Wasteland);
-		
 		proxy.registerTileEntities();
+		NetworkRegistry.instance().registerGuiHandler(instance, proxy);
 		
 	}
 	
 	@PostInit
-	public static void postLoad(FMLPostInitializationEvent event)
-	{
+	public static void postLoad(FMLPostInitializationEvent event) {
 		LoggerHandler.log(Level.INFO, "Lost Ages has successfully loaded!");
 	}
 	

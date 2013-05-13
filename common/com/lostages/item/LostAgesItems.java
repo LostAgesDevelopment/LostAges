@@ -5,6 +5,7 @@ import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
 
 import com.lostages.LostAges;
 import com.lostages.lib.ItemIDs;
@@ -98,7 +99,7 @@ public class LostAgesItems {
 	public static Item bootsAdamant;
 	
 	
-	public static void init() {
+	public static void initItems() {
 		//Ingots
 		ingotBase = new ItemIngotBase();
 		ingotBone = new ItemStack(ingotBase, 1, 0);
@@ -247,11 +248,11 @@ public class LostAgesItems {
 		LanguageRegistry.addName(chestAdamant, "Adamant Chestplate");
 		LanguageRegistry.addName(legsAdamant, "Adamant Leggings");
 		LanguageRegistry.addName(bootsAdamant, "Adamant Boots");
+	}
 	
-	
+	public static void initItemRecipes() {
 		//Smelting Recipes
 		
-		//Recipes
         //Bone tools
 		GameRegistry.addRecipe(new ItemStack(swordBone), new Object[]{"I", "I", "B", 'I', ingotBone, 'B', Item.bone});
 		GameRegistry.addRecipe(new ItemStack(pickaxeBone), new Object[]{"III", " B ", " B ", 'I', ingotBone, 'B', Item.bone});
@@ -299,6 +300,10 @@ public class LostAgesItems {
 		GameRegistry.addRecipe(new ItemStack(hammerGold), new Object[]{"XXX", " * ", 'X', Item.ingotGold , '*', Item.stick});
 		GameRegistry.addRecipe(new ItemStack(hammerDiamond), new Object[]{"XXX", " * ", 'X', Item.diamond , '*', Item.stick});
 		//TODO Add magic hammer recipe
+		
+		//Ore Dictionary
+		OreDictionary.registerOre(ItemStrings.INGOT_COPPER_NAME, new ItemStack(ingotBase, 1, 1));
+		OreDictionary.registerOre(ItemStrings.INGOT_TIN_NAME, new ItemStack(ingotBase, 1, 2));
+		OreDictionary.registerOre(ItemStrings.INGOT_BRONZE_NAME, new ItemStack(ingotBase, 1, 3));
 	}
-	
 }

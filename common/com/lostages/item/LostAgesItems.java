@@ -5,8 +5,11 @@ import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.oredict.ShapedOreRecipe;
 
 import com.lostages.LostAges;
+import com.lostages.block.LostAgesBlocks;
 import com.lostages.lib.ItemIDs;
 import com.lostages.lib.ItemStrings;
 import com.lostages.lib.LostAgesMaterials;
@@ -18,6 +21,8 @@ public class LostAgesItems {
 	
 	//Ingots
 	public static Item smeltedbone;
+	public static Item ingotCopper;
+	public static Item ingotTin;
 	public static Item ingotAdamant;
 	public static Item ingotBronze;
 	public static Item ingotSteel;
@@ -89,6 +94,8 @@ public class LostAgesItems {
 	public static void init() {
 		//Ingots
 		smeltedbone = new ItemLostAgesItems(ItemIDs.SMELTEDBONE).setUnlocalizedName(ItemStrings.SMELTEDBONE_NAME);
+		ingotCopper = new ItemLostAgesItems(7000).setUnlocalizedName("ingotCopper");
+		ingotTin = new ItemLostAgesItems(7001).setUnlocalizedName("ingotTin");
 		ingotAdamant = new ItemLostAgesItems(ItemIDs.ADAMANT_INGOT).setUnlocalizedName(ItemStrings.ADAMANT_INGOT_NAME);
 		ingotBronze = new ItemLostAgesItems(ItemIDs.BRONZE_INGOT).setUnlocalizedName(ItemStrings.BRONZE_INGOT_NAME);
 		ingotSteel = new ItemLostAgesItems(ItemIDs.STEEL_INGOT).setUnlocalizedName(ItemStrings.STEEL_INGOT_NAME);
@@ -282,6 +289,15 @@ public class LostAgesItems {
 		GameRegistry.addRecipe(new ItemStack(hammerGold), new Object[]{"XXX", " * ", 'X', Item.ingotGold , '*', Item.stick});
 		GameRegistry.addRecipe(new ItemStack(hammerDiamond), new Object[]{"XXX", " * ", 'X', Item.diamond , '*', Item.stick});
 		//TODO Add magic hammer recipe
+		
+		//OreDictionary
+		OreDictionary.registerOre("ingotBronze", new ItemStack(ingotBronze));
+		OreDictionary.registerOre("ingotCopper", new ItemStack(ingotCopper));
+		OreDictionary.registerOre("ingotTin", new ItemStack(ingotTin));
+		
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ingotBronze), true, new Object[]{"XX", "XY", 'X', "ingotCopper", 'Y', "ingotTin"}));
+		GameRegistry.addSmelting(LostAgesBlocks.oreCopper.blockID, new ItemStack(ingotCopper), 0.5F);
+		GameRegistry.addSmelting(LostAgesBlocks.oreTin.blockID, new ItemStack(ingotTin), 0.5F);
 	}
 	
 }

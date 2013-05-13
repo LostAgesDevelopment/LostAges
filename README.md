@@ -2,4 +2,4 @@ LostAges
 ========
 
 TODO:
-	- Rewrite double furnace
+- Rewrite double furnace

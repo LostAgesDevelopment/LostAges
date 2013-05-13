@@ -26,13 +26,12 @@ public class AdamantArmor extends ItemArmor implements IArmorTextureProvider
 
 
 	public String getArmorTextureFile(ItemStack par1) {
-    //TODO add texture paths
 		if ( par1.itemID==LostAgesItems.helmAdamant.itemID||par1.itemID==LostAgesItems.chestAdamant.itemID||par1.itemID==LostAgesItems.bootsAdamant.itemID) {
-			return "/LostAges/armor.png";
+			return "/mods/lostages/textures/armor/adamant_1.png";
 		}
 		if(par1.itemID==LostAgesItems.legsAdamant.itemID) {
-			return "/LostAges/armor.png";
+			return "/mods/lostages/textures/armor/adamant_2.png";
 		}
-		return "/LostAges/armor.png";
+		return "/mods/lostages/textures/armor/adamant_1.png";
 	}      
 }

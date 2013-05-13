@@ -52,8 +52,6 @@ public class LostAgesBlocks
 		LanguageRegistry.addName(furnaceIdleDouble, BlockStrings.DOUBLE_FURNACE_TRANSNAME);
 
 		GameRegistry.addRecipe(new ItemStack(furnaceIdleDouble), new Object[]{"III", "FBF", "III", 'I', Item.ingotIron, 'F', Block.furnaceIdle, 'B', Item.bucketEmpty});
-		
-		GameRegistry.addSmelting(oreAdamant.blockID, new ItemStack(LostAgesItems.ingotAdamant), 0.5F);
 
 		MinecraftForge.setBlockHarvestLevel(oreAdamant, "pickaxe", 3);
 	}

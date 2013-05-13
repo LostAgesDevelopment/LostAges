@@ -20,13 +20,14 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 public class LostAgesItems {
 	
 	//Ingots
-	public static Item smeltedbone;
-	public static Item ingotCopper;
-	public static Item ingotTin;
-	public static Item ingotAdamant;
-	public static Item ingotBronze;
-	public static Item ingotSteel;
-	public static Item ingotStrongGold;
+	public static Item ingotBase;
+	public static ItemStack ingotBone;
+	public static ItemStack ingotCopper;
+	public static ItemStack ingotTin;
+	public static ItemStack ingotAdamant;
+	public static ItemStack ingotBronze;
+	public static ItemStack ingotSteel;
+	public static ItemStack ingotStrongGold;
 	
 	//Other Items
 	public static Item stackedCoal2;
@@ -73,10 +74,11 @@ public class LostAgesItems {
 	
 	//Orc Tools
 	public static Item swordOrc;
-	public static Item pickaxeOrc
-	public static Item shovelOrc
-	public static Item axeOrc
-	public static Item hammerOrc
+	public static Item pickaxeOrc;
+	public static Item shovelOrc;
+	public static Item axeOrc;
+	public static Item hammerOrc;
+	
 	//Adamant Tools
 	public static Item swordAdamant;
 	public static Item pickaxeAdamant;
@@ -101,13 +103,14 @@ public class LostAgesItems {
 	
 	public static void init() {
 		//Ingots
-		smeltedbone = new ItemLostAgesItems(ItemIDs.SMELTEDBONE).setUnlocalizedName(ItemStrings.SMELTEDBONE_NAME);
-		ingotCopper = new ItemLostAgesItems(7000).setUnlocalizedName("ingotCopper");
-		ingotTin = new ItemLostAgesItems(7001).setUnlocalizedName("ingotTin");
-		ingotAdamant = new ItemLostAgesItems(ItemIDs.ADAMANT_INGOT).setUnlocalizedName(ItemStrings.ADAMANT_INGOT_NAME);
-		ingotBronze = new ItemLostAgesItems(ItemIDs.BRONZE_INGOT).setUnlocalizedName(ItemStrings.BRONZE_INGOT_NAME);
-		ingotSteel = new ItemLostAgesItems(ItemIDs.STEEL_INGOT).setUnlocalizedName(ItemStrings.STEEL_INGOT_NAME);
-		ingotStrongGold = new ItemLostAgesItems(ItemIDs.STRONGGOLD_INGOT).setUnlocalizedName(ItemStrings.STRONGGOLD_INGOT_NAME);
+		ingotBase = new ItemIngotBase();
+		ingotBone = new ItemStack(ingotBase, 1, 0);
+		ingotCopper = new ItemStack(ingotBase, 1, 1);
+		ingotTin = new ItemStack(ingotBase, 1, 2);
+		ingotBronze = new ItemStack(ingotBase, 1, 3);
+		ingotAdamant = new ItemStack(ingotBase, 1, 4);
+		ingotSteel = new ItemStack(ingotBase, 1, 5);
+		ingotStrongGold = new ItemStack(ingotBase, 1, 6);
 		
 		//Other items
 	    stackedCoal2 = new ItemLostAgesCoal(ItemIDs.STACKEDCOAL2).setUnlocalizedName(ItemStrings.STACKEDCOAL2_NAME).setMaxStackSize(32);
@@ -175,10 +178,13 @@ public class LostAgesItems {
 
 		//Item Names
 		//Ingots
-		LanguageRegistry.addName(smeltedbone, ItemStrings.SMELTEDBONE_TRANSNAME);
-		LanguageRegistry.addName(ingotAdamant, ItemStrings.ADAMANT_INGOT_TRANSNAME);
-		LanguageRegistry.addName(ingotBronze, ItemStrings.BRONZE_INGOT_TRANSNAME);
-		LanguageRegistry.addName(ingotSteel, ItemStrings.STEEL_INGOT_TRANSNAME);
+		LanguageRegistry.addName(new ItemStack(ingotBase, 1, 0), ItemStrings.INGOT_BONE_TRANSNAME);
+		LanguageRegistry.addName(new ItemStack(ingotBase, 1, 1), ItemStrings.INGOT_COPPER_TRANSNAME);
+		LanguageRegistry.addName(new ItemStack(ingotBase, 1, 2), ItemStrings.INGOT_TIN_TRANSNAME);
+		LanguageRegistry.addName(new ItemStack(ingotBase, 1, 3), ItemStrings.INGOT_BRONZE_TRANSNAME);
+		LanguageRegistry.addName(new ItemStack(ingotBase, 1, 4), ItemStrings.INGOT_ADAMANT_TRANSNAME);
+		LanguageRegistry.addName(new ItemStack(ingotBase, 1, 5), ItemStrings.INGOT_STEEL_TRANSNAME);
+		LanguageRegistry.addName(new ItemStack(ingotBase, 1, 6), ItemStrings.INGOT_STRONGGOLD_TRANSNAME);
 		
 		//Other Items
 		LanguageRegistry.addName(stackedCoal2, ItemStrings.STACKEDCOAL2_TRANSNAME);
@@ -247,15 +253,14 @@ public class LostAgesItems {
 	
 	
 		//Smelting Recipes
-        GameRegistry.addSmelting(Item.bone.itemID, new ItemStack(smeltedbone), 0.3F);
 				
 		//Recipes
         //Bone tools
-		GameRegistry.addRecipe(new ItemStack(swordBone), new Object[]{"I", "I", "B", 'I', smeltedbone, 'B', Item.bone});
-		GameRegistry.addRecipe(new ItemStack(pickaxeBone), new Object[]{"III", " B ", " B ", 'I', smeltedbone, 'B', Item.bone});
-		GameRegistry.addRecipe(new ItemStack(shovelBone), new Object[]{"I", "B", "B", 'I', smeltedbone, 'B', Item.bone});
-		GameRegistry.addRecipe(new ItemStack(axeBone), new Object[]{"II", "IB", " B", 'I', smeltedbone, 'B', Item.bone});
-		GameRegistry.addRecipe(new ItemStack(hammerBone), new Object[]{"XXX", " * ", 'X', smeltedbone , '*', Item.bone});
+		GameRegistry.addRecipe(new ItemStack(swordBone), new Object[]{"I", "I", "B", 'I', ingotBone, 'B', Item.bone});
+		GameRegistry.addRecipe(new ItemStack(pickaxeBone), new Object[]{"III", " B ", " B ", 'I', ingotBone, 'B', Item.bone});
+		GameRegistry.addRecipe(new ItemStack(shovelBone), new Object[]{"I", "B", "B", 'I', ingotBone, 'B', Item.bone});
+		GameRegistry.addRecipe(new ItemStack(axeBone), new Object[]{"II", "IB", " B", 'I', ingotBone, 'B', Item.bone});
+		GameRegistry.addRecipe(new ItemStack(hammerBone), new Object[]{"XXX", " * ", 'X', ingotBone , '*', Item.bone});
 
         //Bone tools
 		GameRegistry.addRecipe(new ItemStack(pickaxeFlint), new Object[]{"III", " B ", " B ", 'I', Item.flint, 'B', Item.stick});
@@ -297,15 +302,6 @@ public class LostAgesItems {
 		GameRegistry.addRecipe(new ItemStack(hammerGold), new Object[]{"XXX", " * ", 'X', Item.ingotGold , '*', Item.stick});
 		GameRegistry.addRecipe(new ItemStack(hammerDiamond), new Object[]{"XXX", " * ", 'X', Item.diamond , '*', Item.stick});
 		//TODO Add magic hammer recipe
-		
-		//OreDictionary
-		OreDictionary.registerOre("ingotBronze", new ItemStack(ingotBronze));
-		OreDictionary.registerOre("ingotCopper", new ItemStack(ingotCopper));
-		OreDictionary.registerOre("ingotTin", new ItemStack(ingotTin));
-		
-		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ingotBronze), true, new Object[]{"XX", "XY", 'X', "ingotCopper", 'Y', "ingotTin"}));
-		GameRegistry.addSmelting(LostAgesBlocks.oreCopper.blockID, new ItemStack(ingotCopper), 0.5F);
-		GameRegistry.addSmelting(LostAgesBlocks.oreTin.blockID, new ItemStack(ingotTin), 0.5F);
 	}
 	
 }

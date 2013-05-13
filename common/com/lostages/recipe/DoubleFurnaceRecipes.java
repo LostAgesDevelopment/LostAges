@@ -32,8 +32,7 @@ public class DoubleFurnaceRecipes {
 	}
 	
 	private DoubleFurnaceRecipes() {
-		this.addDoubleSmelting(new ItemStack(Block.oreIron), new ItemStack(Block.oreIron), new ItemStack(Item.ingotIron, 3), 0F);
-		this.addDoubleSmelting(new ItemStack(Item.ingotIron), new ItemStack(Item.coal, 2), new ItemStack(LostAgesItems.ingotSteel), 0F);
+
 	}
 	
 	@SuppressWarnings("unchecked")

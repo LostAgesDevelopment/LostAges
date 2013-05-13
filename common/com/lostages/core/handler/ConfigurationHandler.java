@@ -19,10 +19,7 @@ public class ConfigurationHandler {
 			config.load();
 			//Items
 			//Ingots
-			ItemIDs.SMELTEDBONE = config.getItem(ItemStrings.SMELTEDBONE_TRANSNAME, ItemIDs.SMELTEDBONE_DEFAULT).getInt();
-			ItemIDs.ADAMANT_INGOT = config.getItem(ItemStrings.ADAMANT_INGOT_TRANSNAME, ItemIDs.ADAMANT_INGOT_DEFAULT).getInt();
-			ItemIDs.BRONZE_INGOT = config.getItem(ItemStrings.BRONZE_INGOT_TRANSNAME, ItemIDs.BRONZE_INGOT_DEFAULT).getInt();
-			ItemIDs.STEEL_INGOT = config.getItem(ItemStrings.STEEL_INGOT_TRANSNAME, ItemIDs.STEEL_INGOT_DEFAULT).getInt();
+			ItemIDs.INGOT_BASE = config.getItem(ItemStrings.INGOT_BASE_NAME, ItemIDs.INGOT_BASE_DEFAULT).getInt();
 			
 			//Other Items
 			ItemIDs.STACKEDCOAL2 = config.getItem(ItemStrings.STACKEDCOAL2_TRANSNAME, ItemIDs.STACKEDCOAL2_DEFAULT).getInt();

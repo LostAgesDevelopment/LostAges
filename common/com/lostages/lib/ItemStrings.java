@@ -4,11 +4,14 @@ public class ItemStrings {
 
 	//Unlocalized Names	
 	//Ingots
-	public static final String SMELTEDBONE_NAME = "smeltedbone";
-	public static final String ADAMANT_INGOT_NAME = "ingotAdamant";
-	public static final String BRONZE_INGOT_NAME = "ingotBronze";
-	public static final String STEEL_INGOT_NAME = "ingotSteel";
-	public static final String STRONGGOLD_INGOT_NAME = "ingotStrongGold";
+	public static final String INGOT_BASE_NAME = "ingotBase";
+	public static final String INGOT_BONE_NAME = "ingotBone";
+	public static final String INGOT_COPPER_NAME = "ingotCopper";
+	public static final String INGOT_TIN_NAME = "ingotTin";
+	public static final String INGOT_BRONZE_NAME = "ingotBronze";
+	public static final String INGOT_ADAMANT_NAME = "ingotAdamant";
+	public static final String INGOT_STEEL_NAME = "ingotSteel";
+	public static final String INGOT_STRONGGOLD_NAME = "ingotStrongGold";
 	
 	//Other Items
 	public static final String STACKEDCOAL2_NAME = "stackedCoal2";
@@ -78,10 +81,13 @@ public class ItemStrings {
 	
 	//Names appear in-game
 	//Ingots
-	public static final String SMELTEDBONE_TRANSNAME = "Smelted Bone";
-	public static final String ADAMANT_INGOT_TRANSNAME = "Adamant Ingot";
-	public static final String BRONZE_INGOT_TRANSNAME = "Bronze Ingot";
-	public static final String STEEL_INGOT_TRANSNAME = "Steel Ingot";
+	public static final String INGOT_BONE_TRANSNAME = "Smelted Bone";
+	public static final String INGOT_COPPER_TRANSNAME = "Copper Ingot";
+	public static final String INGOT_TIN_TRANSNAME = "Tin Ingot";
+	public static final String INGOT_BRONZE_TRANSNAME = "Bronze Ingot";
+	public static final String INGOT_ADAMANT_TRANSNAME = "Adamant Ingot";
+	public static final String INGOT_STEEL_TRANSNAME = "Steel Ingot";
+	public static final String INGOT_STRONGGOLD_TRANSNAME = "Strong Gold Ingot";
 	
 	//Other Items
 	public static final String STACKEDCOAL2_TRANSNAME = "Two Coal";

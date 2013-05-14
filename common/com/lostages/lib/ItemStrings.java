@@ -13,12 +13,6 @@ public class ItemStrings {
 	public static final String INGOT_STEEL_NAME = "ingotSteel";
 	public static final String INGOT_STRONGGOLD_NAME = "ingotStrongGold";
 	
-	//Other Items
-	public static final String STACKEDCOAL2_NAME = "stackedCoal2";
-	public static final String STACKEDCOAL4_NAME = "stackedCoal4";
-	public static final String STACKEDCOAL6_NAME = "stackedCoal6";
-	public static final String STACKEDCOAL8_NAME = "stackedCoal8";
-	
 	//Armor
 	//Adamant Armor
 	public static final String HELM_ADAMANT_NAME = "helmAdamant";
@@ -88,12 +82,6 @@ public class ItemStrings {
 	public static final String INGOT_ADAMANT_TRANSNAME = "Adamant Ingot";
 	public static final String INGOT_STEEL_TRANSNAME = "Steel Ingot";
 	public static final String INGOT_STRONGGOLD_TRANSNAME = "Strong Gold Ingot";
-	
-	//Other Items
-	public static final String STACKEDCOAL2_TRANSNAME = "Two Coal";
-	public static final String STACKEDCOAL4_TRANSNAME = "Four Coal";
-	public static final String STACKEDCOAL6_TRANSNAME = "Six Coal";
-	public static final String STACKEDCOAL8_TRANSNAME = "Eight Coal";
 	
 	//Armor
 	//Adamant Armor

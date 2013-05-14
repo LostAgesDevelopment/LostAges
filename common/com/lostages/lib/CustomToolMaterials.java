@@ -3,8 +3,7 @@ package com.lostages.lib;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraftforge.common.EnumHelper;
 
-public class LostAgesMaterials
-{
+public class CustomToolMaterials {
 	//NAME(harvestlevel, uses, speed, damage, enchant)	
 	//GOLD(0, 32, 12.0F, 0, 22);
 	//WOOD(0, 59, 2.0F, 0, 15),
@@ -16,5 +15,5 @@ public class LostAgesMaterials
 	public static EnumToolMaterial STEEL = EnumHelper.addToolMaterial("STEEL", 2, 500, 7.0F, 3, 16);
 	public static EnumToolMaterial STRONGGOLD = EnumHelper.addToolMaterial("STRONGGOLD", 3, 800, 12.0F, 3, 18);
 	public static EnumToolMaterial ADAMANT = EnumHelper.addToolMaterial("ADAMANT", 3, 1561, 8.0F, 3, 10);
-	//EMERALD(3, 1561, 8.0F, 3, 10),	
+	//EMERALD(3, 1561, 8.0F, 3, 10)
 }

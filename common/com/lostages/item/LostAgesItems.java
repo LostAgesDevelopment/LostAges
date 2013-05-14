@@ -7,10 +7,10 @@ import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
-import com.lostages.LostAges;
+import com.lostages.lib.CustomArmorMaterials;
+import com.lostages.lib.CustomToolMaterials;
 import com.lostages.lib.ItemIDs;
 import com.lostages.lib.ItemStrings;
-import com.lostages.lib.LostAgesMaterials;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
@@ -26,12 +26,6 @@ public class LostAgesItems {
 	public static ItemStack ingotBronze;
 	public static ItemStack ingotSteel;
 	public static ItemStack ingotStrongGold;
-	
-	//Other Items
-	public static Item stackedCoal2;
-	public static Item stackedCoal4;
-	public static Item stackedCoal6;
-	public static Item stackedCoal8;
 
 	//Bows
 	public static Item bowJungle;
@@ -101,7 +95,7 @@ public class LostAgesItems {
 	
 	public static void initItems() {
 		//Ingots
-		ingotBase = new ItemIngotBase();
+		ingotBase = new ItemBaseIngot();
 		ingotBone = new ItemStack(ingotBase, 1, 0);
 		ingotCopper = new ItemStack(ingotBase, 1, 1);
 		ingotTin = new ItemStack(ingotBase, 1, 2);
@@ -109,70 +103,64 @@ public class LostAgesItems {
 		ingotAdamant = new ItemStack(ingotBase, 1, 4);
 		ingotSteel = new ItemStack(ingotBase, 1, 5);
 		ingotStrongGold = new ItemStack(ingotBase, 1, 6);
-		
-		//Other items
-	    stackedCoal2 = new ItemLostAgesCoal(ItemIDs.STACKEDCOAL2).setUnlocalizedName(ItemStrings.STACKEDCOAL2_NAME).setMaxStackSize(32);
-	    stackedCoal4 = new ItemLostAgesCoal(ItemIDs.STACKEDCOAL4).setUnlocalizedName(ItemStrings.STACKEDCOAL4_NAME).setMaxStackSize(16);
-	    stackedCoal6 = new ItemLostAgesCoal(ItemIDs.STACKEDCOAL6).setUnlocalizedName(ItemStrings.STACKEDCOAL6_NAME).setMaxStackSize(11);
-	    stackedCoal8 = new ItemLostAgesCoal(ItemIDs.STACKEDCOAL8).setUnlocalizedName(ItemStrings.STACKEDCOAL8_NAME).setMaxStackSize(8);
 	    
 		//Bows
 	    bowJungle = new ItemBow(ItemIDs.BOW_JUNGLE).setUnlocalizedName(ItemStrings.BOW_JUNGLE_NAME);
 		
 		//Hammers
-		hammerWood = new ItemLostAgesHammer(ItemIDs.HAMMER_WOOD, EnumToolMaterial.WOOD, new ItemStack(Block.cobblestone)).setUnlocalizedName(ItemStrings.HAMMER_WOOD_NAME);
-		hammerStone = new ItemLostAgesHammer(ItemIDs.HAMMER_STONE, EnumToolMaterial.STONE, new ItemStack(Block.cobblestone)).setUnlocalizedName(ItemStrings.HAMMER_STONE_NAME);
-		hammerIron = new ItemLostAgesHammer(ItemIDs.HAMMER_IRON, EnumToolMaterial.IRON, new ItemStack(Block.cobblestone)).setUnlocalizedName(ItemStrings.HAMMER_IRON_NAME);
-		hammerGold = new ItemLostAgesHammer(ItemIDs.HAMMER_GOLD, EnumToolMaterial.GOLD, new ItemStack(Block.cobblestone)).setUnlocalizedName(ItemStrings.HAMMER_GOLD_NAME);
-		hammerDiamond = new ItemLostAgesHammer(ItemIDs.HAMMER_DIAMOND, EnumToolMaterial.EMERALD, new ItemStack(Block.cobblestone)).setUnlocalizedName(ItemStrings.HAMMER_DIAMOND_NAME);
-		hammerMagic = new ItemLostAgesHammer(ItemIDs.HAMMER_MAGIC, EnumToolMaterial.EMERALD, new ItemStack(Block.stoneBrick)).setUnlocalizedName(ItemStrings.HAMMER_MAGIC_NAME);
+		hammerWood = new ItemHammer(ItemIDs.HAMMER_WOOD, EnumToolMaterial.WOOD, new ItemStack(Block.cobblestone)).setUnlocalizedName(ItemStrings.HAMMER_WOOD_NAME);
+		hammerStone = new ItemHammer(ItemIDs.HAMMER_STONE, EnumToolMaterial.STONE, new ItemStack(Block.cobblestone)).setUnlocalizedName(ItemStrings.HAMMER_STONE_NAME);
+		hammerIron = new ItemHammer(ItemIDs.HAMMER_IRON, EnumToolMaterial.IRON, new ItemStack(Block.cobblestone)).setUnlocalizedName(ItemStrings.HAMMER_IRON_NAME);
+		hammerGold = new ItemHammer(ItemIDs.HAMMER_GOLD, EnumToolMaterial.GOLD, new ItemStack(Block.cobblestone)).setUnlocalizedName(ItemStrings.HAMMER_GOLD_NAME);
+		hammerDiamond = new ItemHammer(ItemIDs.HAMMER_DIAMOND, EnumToolMaterial.EMERALD, new ItemStack(Block.cobblestone)).setUnlocalizedName(ItemStrings.HAMMER_DIAMOND_NAME);
+		hammerMagic = new ItemHammer(ItemIDs.HAMMER_MAGIC, EnumToolMaterial.EMERALD, new ItemStack(Block.stoneBrick)).setUnlocalizedName(ItemStrings.HAMMER_MAGIC_NAME);
 		
 		//Bone Tools
-		swordBone = new ItemLostAgesSword(ItemIDs.SWORD_BONE, LostAgesMaterials.BONE).setUnlocalizedName(ItemStrings.SWORD_BONE_NAME);
-		pickaxeBone = new ItemLostAgesPickaxe(ItemIDs.PICKAXE_BONE, LostAgesMaterials.BONE).setUnlocalizedName(ItemStrings.PICKAXE_BONE_NAME);
-		shovelBone = new ItemLostAgesShovel(ItemIDs.SHOVEL_BONE, LostAgesMaterials.BONE).setUnlocalizedName(ItemStrings.SHOVEL_BONE_NAME);
-		axeBone = new ItemLostAgesAxe(ItemIDs.AXE_BONE, LostAgesMaterials.BONE).setUnlocalizedName(ItemStrings.AXE_BONE_NAME);
-		hammerBone = new ItemLostAgesHammer(ItemIDs.HAMMER_BONE, LostAgesMaterials.BONE, new ItemStack(Block.cobblestone)).setUnlocalizedName(ItemStrings.HAMMER_BONE_NAME);
+		swordBone = new ItemCustomSword(ItemIDs.SWORD_BONE, CustomToolMaterials.BONE).setUnlocalizedName(ItemStrings.SWORD_BONE_NAME);
+		pickaxeBone = new ItemCustomPickaxe(ItemIDs.PICKAXE_BONE, CustomToolMaterials.BONE).setUnlocalizedName(ItemStrings.PICKAXE_BONE_NAME);
+		shovelBone = new ItemCustomShovel(ItemIDs.SHOVEL_BONE, CustomToolMaterials.BONE).setUnlocalizedName(ItemStrings.SHOVEL_BONE_NAME);
+		axeBone = new ItemCustomAxe(ItemIDs.AXE_BONE, CustomToolMaterials.BONE).setUnlocalizedName(ItemStrings.AXE_BONE_NAME);
+		hammerBone = new ItemHammer(ItemIDs.HAMMER_BONE, CustomToolMaterials.BONE, new ItemStack(Block.cobblestone)).setUnlocalizedName(ItemStrings.HAMMER_BONE_NAME);
 
 		//Flint Tools
-		pickaxeFlint = new ItemLostAgesPickaxe(ItemIDs.PICKAXE_FLINT, LostAgesMaterials.FLINT).setUnlocalizedName(ItemStrings.PICKAXE_FLINT_NAME);
-		shovelFlint = new ItemLostAgesShovel(ItemIDs.SHOVEL_FLINT, LostAgesMaterials.FLINT).setUnlocalizedName(ItemStrings.SHOVEL_FLINT_NAME);
-		axeFlint = new ItemLostAgesAxe(ItemIDs.AXE_FLINT, LostAgesMaterials.FLINT).setUnlocalizedName(ItemStrings.AXE_FLINT_NAME);
+		pickaxeFlint = new ItemCustomPickaxe(ItemIDs.PICKAXE_FLINT, CustomToolMaterials.FLINT).setUnlocalizedName(ItemStrings.PICKAXE_FLINT_NAME);
+		shovelFlint = new ItemCustomShovel(ItemIDs.SHOVEL_FLINT, CustomToolMaterials.FLINT).setUnlocalizedName(ItemStrings.SHOVEL_FLINT_NAME);
+		axeFlint = new ItemCustomAxe(ItemIDs.AXE_FLINT, CustomToolMaterials.FLINT).setUnlocalizedName(ItemStrings.AXE_FLINT_NAME);
 		
 		//Strong Gold Tools
-		swordStrongGold = new ItemLostAgesSword(ItemIDs.SWORD_STRONGGOLD, LostAgesMaterials.STRONGGOLD).setUnlocalizedName(ItemStrings.SWORD_STRONGGOLD_NAME);
-		pickaxeStrongGold = new ItemLostAgesPickaxe(ItemIDs.PICKAXE_STRONGGOLD, LostAgesMaterials.STRONGGOLD).setUnlocalizedName(ItemStrings.PICKAXE_STRONGGOLD_NAME);
-		shovelStrongGold = new ItemLostAgesShovel(ItemIDs.SHOVEL_STRONGGOLD, LostAgesMaterials.STRONGGOLD).setUnlocalizedName(ItemStrings.SHOVEL_STRONGGOLD_NAME);
-		axeStrongGold = new ItemLostAgesAxe(ItemIDs.AXE_STRONGGOLD, LostAgesMaterials.STRONGGOLD).setUnlocalizedName(ItemStrings.AXE_STRONGGOLD_NAME);
-		hammerStrongGold = new ItemLostAgesHammer(ItemIDs.HAMMER_STRONGGOLD, LostAgesMaterials.STRONGGOLD, new ItemStack(Block.cobblestone)).setUnlocalizedName(ItemStrings.HAMMER_STRONGGOLD_NAME);
+		swordStrongGold = new ItemCustomSword(ItemIDs.SWORD_STRONGGOLD, CustomToolMaterials.STRONGGOLD).setUnlocalizedName(ItemStrings.SWORD_STRONGGOLD_NAME);
+		pickaxeStrongGold = new ItemCustomPickaxe(ItemIDs.PICKAXE_STRONGGOLD, CustomToolMaterials.STRONGGOLD).setUnlocalizedName(ItemStrings.PICKAXE_STRONGGOLD_NAME);
+		shovelStrongGold = new ItemCustomShovel(ItemIDs.SHOVEL_STRONGGOLD, CustomToolMaterials.STRONGGOLD).setUnlocalizedName(ItemStrings.SHOVEL_STRONGGOLD_NAME);
+		axeStrongGold = new ItemCustomAxe(ItemIDs.AXE_STRONGGOLD, CustomToolMaterials.STRONGGOLD).setUnlocalizedName(ItemStrings.AXE_STRONGGOLD_NAME);
+		hammerStrongGold = new ItemHammer(ItemIDs.HAMMER_STRONGGOLD, CustomToolMaterials.STRONGGOLD, new ItemStack(Block.cobblestone)).setUnlocalizedName(ItemStrings.HAMMER_STRONGGOLD_NAME);
 		
 		//Bronze Tools
-		swordBronze = new ItemLostAgesSword(ItemIDs.SWORD_BRONZE, LostAgesMaterials.BRONZE).setUnlocalizedName(ItemStrings.SWORD_BRONZE_NAME);
-		pickaxeBronze = new ItemLostAgesPickaxe(ItemIDs.PICKAXE_BRONZE, LostAgesMaterials.BRONZE).setUnlocalizedName(ItemStrings.PICKAXE_BRONZE_NAME);
-		shovelBronze = new ItemLostAgesShovel(ItemIDs.SHOVEL_BRONZE, LostAgesMaterials.BRONZE).setUnlocalizedName(ItemStrings.SHOVEL_BRONZE_NAME);
-		axeBronze = new ItemLostAgesAxe(ItemIDs.AXE_BRONZE, LostAgesMaterials.BRONZE).setUnlocalizedName(ItemStrings.AXE_BRONZE_NAME);
-		hammerBronze = new ItemLostAgesHammer(ItemIDs.HAMMER_BRONZE, LostAgesMaterials.BRONZE, new ItemStack(Block.cobblestone)).setUnlocalizedName(ItemStrings.HAMMER_BRONZE_NAME);
+		swordBronze = new ItemCustomSword(ItemIDs.SWORD_BRONZE, CustomToolMaterials.BRONZE).setUnlocalizedName(ItemStrings.SWORD_BRONZE_NAME);
+		pickaxeBronze = new ItemCustomPickaxe(ItemIDs.PICKAXE_BRONZE, CustomToolMaterials.BRONZE).setUnlocalizedName(ItemStrings.PICKAXE_BRONZE_NAME);
+		shovelBronze = new ItemCustomShovel(ItemIDs.SHOVEL_BRONZE, CustomToolMaterials.BRONZE).setUnlocalizedName(ItemStrings.SHOVEL_BRONZE_NAME);
+		axeBronze = new ItemCustomAxe(ItemIDs.AXE_BRONZE, CustomToolMaterials.BRONZE).setUnlocalizedName(ItemStrings.AXE_BRONZE_NAME);
+		hammerBronze = new ItemHammer(ItemIDs.HAMMER_BRONZE, CustomToolMaterials.BRONZE, new ItemStack(Block.cobblestone)).setUnlocalizedName(ItemStrings.HAMMER_BRONZE_NAME);
 		
 		//Steel Tools
-		swordSteel = new ItemLostAgesSword(ItemIDs.SWORD_STEEL, LostAgesMaterials.STEEL).setUnlocalizedName(ItemStrings.SWORD_STEEL_NAME);
-		pickaxeSteel = new ItemLostAgesPickaxe(ItemIDs.PICKAXE_STEEL, LostAgesMaterials.STEEL).setUnlocalizedName(ItemStrings.PICKAXE_STEEL_NAME);
-		shovelSteel = new ItemLostAgesShovel(ItemIDs.SHOVEL_STEEL, LostAgesMaterials.STEEL).setUnlocalizedName(ItemStrings.SHOVEL_STEEL_NAME);
-		axeSteel = new ItemLostAgesAxe(ItemIDs.AXE_STEEL, LostAgesMaterials.STEEL).setUnlocalizedName(ItemStrings.AXE_STEEL_NAME);
-		hammerSteel = new ItemLostAgesHammer(ItemIDs.HAMMER_STEEL, LostAgesMaterials.STEEL, new ItemStack(Block.cobblestone)).setUnlocalizedName(ItemStrings.HAMMER_STEEL_NAME);
+		swordSteel = new ItemCustomSword(ItemIDs.SWORD_STEEL, CustomToolMaterials.STEEL).setUnlocalizedName(ItemStrings.SWORD_STEEL_NAME);
+		pickaxeSteel = new ItemCustomPickaxe(ItemIDs.PICKAXE_STEEL, CustomToolMaterials.STEEL).setUnlocalizedName(ItemStrings.PICKAXE_STEEL_NAME);
+		shovelSteel = new ItemCustomShovel(ItemIDs.SHOVEL_STEEL, CustomToolMaterials.STEEL).setUnlocalizedName(ItemStrings.SHOVEL_STEEL_NAME);
+		axeSteel = new ItemCustomAxe(ItemIDs.AXE_STEEL, CustomToolMaterials.STEEL).setUnlocalizedName(ItemStrings.AXE_STEEL_NAME);
+		hammerSteel = new ItemHammer(ItemIDs.HAMMER_STEEL, CustomToolMaterials.STEEL, new ItemStack(Block.cobblestone)).setUnlocalizedName(ItemStrings.HAMMER_STEEL_NAME);
 		
 		//Adamant Tools
-		swordAdamant = new ItemLostAgesSword(ItemIDs.SWORD_ADAMANT, EnumToolMaterial.EMERALD).setUnlocalizedName(ItemStrings.SWORD_ADAMANT_NAME);
-		pickaxeAdamant = new ItemLostAgesPickaxe(ItemIDs.PICKAXE_ADAMANT, EnumToolMaterial.EMERALD).setUnlocalizedName(ItemStrings.PICKAXE_ADAMANT_NAME);
-		shovelAdamant = new ItemLostAgesShovel(ItemIDs.SHOVEL_ADAMANT, EnumToolMaterial.EMERALD).setUnlocalizedName(ItemStrings.SHOVEL_ADAMANT_NAME);
-		axeAdamant = new ItemLostAgesAxe(ItemIDs.AXE_ADAMANT, EnumToolMaterial.EMERALD).setUnlocalizedName(ItemStrings.AXE_ADAMANT_NAME);
-		hammerAdamant = new ItemLostAgesHammer(ItemIDs.HAMMER_ADAMANT, EnumToolMaterial.EMERALD, new ItemStack(Block.cobblestone)).setUnlocalizedName(ItemStrings.HAMMER_ADAMANT_NAME);
+		swordAdamant = new ItemCustomSword(ItemIDs.SWORD_ADAMANT, EnumToolMaterial.EMERALD).setUnlocalizedName(ItemStrings.SWORD_ADAMANT_NAME);
+		pickaxeAdamant = new ItemCustomPickaxe(ItemIDs.PICKAXE_ADAMANT, EnumToolMaterial.EMERALD).setUnlocalizedName(ItemStrings.PICKAXE_ADAMANT_NAME);
+		shovelAdamant = new ItemCustomShovel(ItemIDs.SHOVEL_ADAMANT, EnumToolMaterial.EMERALD).setUnlocalizedName(ItemStrings.SHOVEL_ADAMANT_NAME);
+		axeAdamant = new ItemCustomAxe(ItemIDs.AXE_ADAMANT, EnumToolMaterial.EMERALD).setUnlocalizedName(ItemStrings.AXE_ADAMANT_NAME);
+		hammerAdamant = new ItemHammer(ItemIDs.HAMMER_ADAMANT, EnumToolMaterial.EMERALD, new ItemStack(Block.cobblestone)).setUnlocalizedName(ItemStrings.HAMMER_ADAMANT_NAME);
 		
 		//Armor
 		//Adamant Armor
-		helmAdamant = new AdamantArmor(ItemIDs.HELM_ADAMANT, LostAges.ADAMANT, 1, 0).setUnlocalizedName(ItemStrings.HELM_ADAMANT_NAME).setCreativeTab(LostAges.tabLostAgesMisc);
-		chestAdamant = new AdamantArmor(ItemIDs.CHEST_ADAMANT, LostAges.ADAMANT, 1, 1).setUnlocalizedName(ItemStrings.CHEST_ADAMANT_NAME).setCreativeTab(LostAges.tabLostAgesMisc);
-		legsAdamant = new AdamantArmor(ItemIDs.LEGS_ADAMANT, LostAges.ADAMANT, 1, 2).setUnlocalizedName(ItemStrings.LEGS_ADAMANT_NAME).setCreativeTab(LostAges.tabLostAgesMisc);
-		bootsAdamant = new AdamantArmor(ItemIDs.BOOTS_ADAMANT, LostAges.ADAMANT, 1, 3).setUnlocalizedName(ItemStrings.BOOTS_ADAMANT_NAME).setCreativeTab(LostAges.tabLostAgesMisc);
+		helmAdamant = new ItemCustomArmor(ItemIDs.HELM_ADAMANT, CustomArmorMaterials.ADAMANT, 1, 0).setUnlocalizedName(ItemStrings.HELM_ADAMANT_NAME);
+		chestAdamant = new ItemCustomArmor(ItemIDs.CHEST_ADAMANT, CustomArmorMaterials.ADAMANT, 1, 1).setUnlocalizedName(ItemStrings.CHEST_ADAMANT_NAME);
+		legsAdamant = new ItemCustomArmor(ItemIDs.LEGS_ADAMANT, CustomArmorMaterials.ADAMANT, 1, 2).setUnlocalizedName(ItemStrings.LEGS_ADAMANT_NAME);
+		bootsAdamant = new ItemCustomArmor(ItemIDs.BOOTS_ADAMANT, CustomArmorMaterials.ADAMANT, 1, 3).setUnlocalizedName(ItemStrings.BOOTS_ADAMANT_NAME);
 
 		//Item Names
 		//Ingots
@@ -183,13 +171,6 @@ public class LostAgesItems {
 		LanguageRegistry.addName(new ItemStack(ingotBase, 1, 4), ItemStrings.INGOT_ADAMANT_TRANSNAME);
 		LanguageRegistry.addName(new ItemStack(ingotBase, 1, 5), ItemStrings.INGOT_STEEL_TRANSNAME);
 		LanguageRegistry.addName(new ItemStack(ingotBase, 1, 6), ItemStrings.INGOT_STRONGGOLD_TRANSNAME);
-		
-		//Other Items
-		LanguageRegistry.addName(stackedCoal2, ItemStrings.STACKEDCOAL2_TRANSNAME);
-		LanguageRegistry.addName(stackedCoal4, ItemStrings.STACKEDCOAL4_TRANSNAME);
-		LanguageRegistry.addName(stackedCoal6, ItemStrings.STACKEDCOAL6_TRANSNAME);
-		LanguageRegistry.addName(stackedCoal8, ItemStrings.STACKEDCOAL8_TRANSNAME);
-
 		
 		//Bows
 		

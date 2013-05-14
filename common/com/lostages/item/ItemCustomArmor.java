@@ -6,17 +6,19 @@ import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.IArmorTextureProvider;
 
+import com.lostages.LostAges;
 import com.lostages.lib.Reference;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 @SuppressWarnings("deprecation")
-public class AdamantArmor extends ItemArmor implements IArmorTextureProvider
+public class ItemCustomArmor extends ItemArmor implements IArmorTextureProvider
 {
 
-	public AdamantArmor(int par1, EnumArmorMaterial par2EnumArmorMaterial, int par3, int par4) {
+	public ItemCustomArmor(int par1, EnumArmorMaterial par2EnumArmorMaterial, int par3, int par4) {
 		super(par1, par2EnumArmorMaterial, par3, par4);
+		this.setCreativeTab(LostAges.tabLostAgesMisc);
 	}
 
 	@SideOnly(Side.CLIENT)

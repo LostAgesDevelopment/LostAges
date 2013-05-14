@@ -18,13 +18,13 @@ import com.lostages.lib.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemLostAgesHammer extends Item {
+public class ItemHammer extends Item {
 	
 	protected int weaponDamage;
 	protected ItemStack blockChange;
 	protected EnumToolMaterial toolMaterial;
 	//TODO Fix enchanting
-	public ItemLostAgesHammer(int par1, EnumToolMaterial par2EnumToolMaterial, ItemStack itemStack) {
+	public ItemHammer(int par1, EnumToolMaterial par2EnumToolMaterial, ItemStack itemStack) {
 		super(par1);
 		setCreativeTab(LostAges.tabLostAgesTools);
 		setMaxDamage(par2EnumToolMaterial.getMaxUses());

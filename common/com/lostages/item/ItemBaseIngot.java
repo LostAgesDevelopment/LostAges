@@ -13,12 +13,12 @@ import com.lostages.lib.ItemIDs;
 import com.lostages.lib.ItemStrings;
 import com.lostages.lib.Reference;
 
-public class ItemIngotBase extends Item {
+public class ItemBaseIngot extends Item {
 
 	private Icon[] icons;
 	private String[] names = { ItemStrings.INGOT_BONE_NAME, ItemStrings.INGOT_COPPER_NAME, ItemStrings.INGOT_TIN_NAME, ItemStrings.INGOT_BRONZE_NAME, ItemStrings.INGOT_ADAMANT_NAME, ItemStrings.INGOT_STEEL_NAME, ItemStrings.INGOT_STRONGGOLD_NAME };
 	
-	public ItemIngotBase() {
+	public ItemBaseIngot() {
 		super(ItemIDs.INGOT_BASE);
 		this.setUnlocalizedName(ItemStrings.INGOT_BASE_NAME);
 		this.setCreativeTab(LostAges.tabLostAgesMisc);

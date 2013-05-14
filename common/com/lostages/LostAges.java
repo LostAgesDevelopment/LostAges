@@ -1,9 +1,9 @@
 package com.lostages;
 
 import java.util.logging.Level;
+
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.world.biome.BiomeGenBase;
-import net.minecraft.item.EnumArmorMaterial;
 
 import com.lostages.block.LostAgesBlocks;
 import com.lostages.core.creativetab.TabLostAges;
@@ -27,8 +27,6 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-import net.minecraftforge.common.EnumHelper;
-
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.MOD_VERSION)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class LostAges {
@@ -42,8 +40,6 @@ public class LostAges {
 
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY, serverSide = Reference.COMMON_PROXY)
 	public static CommonProxy proxy;
-	
-	public static EnumArmorMaterial ADAMANT = EnumHelper.addArmorMaterial("ADAMANT", 35, new int[]{2, 6, 5, 2}, 25);
 
 	public static final BiomeGenBase Wasteland = (new BiomeWasteland(100));
 	

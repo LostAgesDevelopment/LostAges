@@ -1,13 +1,13 @@
 package com.lostages.block;
 
-import com.lostages.lib.BlockStrings;
-
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
-public class ItemBlockLostAgesOre extends ItemBlock {
+import com.lostages.lib.BlockStrings;
 
-	public ItemBlockLostAgesOre(int par1) {
+public class ItemBlockBaseOre extends ItemBlock {
+
+	public ItemBlockBaseOre(int par1) {
 		super(par1);
 		this.setMaxDamage(0);
 		this.setHasSubtypes(true);

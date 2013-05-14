@@ -1,18 +1,18 @@
 package com.lostages.item;
 
-import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.item.EnumToolMaterial;
-import net.minecraft.item.ItemSword;
-
 import com.lostages.LostAges;
 import com.lostages.lib.Reference;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemLostAgesSword extends ItemSword {
-	
-	public ItemLostAgesSword(int par1, EnumToolMaterial par2EnumToolMaterial) {
+import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.item.EnumToolMaterial;
+import net.minecraft.item.ItemAxe;
+
+public class ItemCustomAxe extends ItemAxe {
+
+	public ItemCustomAxe(int par1, EnumToolMaterial par2EnumToolMaterial) {
 		super(par1, par2EnumToolMaterial);
 		setCreativeTab(LostAges.tabLostAgesTools);
 	}

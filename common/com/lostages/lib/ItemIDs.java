@@ -7,12 +7,6 @@ public class ItemIDs {
 	//Ingots
 	public static int INGOT_BASE_DEFAULT = 4000;
 	
-	//Other Items
-	public static int STACKEDCOAL2_DEFAULT = 4001;
-	public static int STACKEDCOAL4_DEFAULT = 4002;
-	public static int STACKEDCOAL6_DEFAULT = 4003;
-	public static int STACKEDCOAL8_DEFAULT = 4004;
-
 	//Armor
 	//Adamant Armor
 	public static int ARMOR_ADAMANT_DEFAULT = 4100;

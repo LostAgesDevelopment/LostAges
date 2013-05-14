@@ -14,12 +14,12 @@ import com.lostages.lib.BlockIDs;
 import com.lostages.lib.BlockStrings;
 import com.lostages.lib.Reference;
 
-public class BlockLostAgesOre extends Block {
+public class BlockBaseOre extends Block {
 
 	private Icon[] icons;
 	private String[] names = { BlockStrings.ORE_COPPER_NAME, BlockStrings.ORE_TIN_NAME, BlockStrings.ORE_ADAMANT_NAME };
 	
-	public BlockLostAgesOre() {
+	public BlockBaseOre() {
 		super(BlockIDs.ORE_BASE, Material.rock);
 		this.setUnlocalizedName(BlockStrings.ORE_BASE_NAME);
 		this.setCreativeTab(LostAges.tabLostAgesBlocks);

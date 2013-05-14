@@ -20,12 +20,6 @@ public class ConfigurationHandler {
 			//Items
 			//Ingots
 			ItemIDs.INGOT_BASE = config.getItem(ItemStrings.INGOT_BASE_NAME, ItemIDs.INGOT_BASE_DEFAULT).getInt();
-			
-			//Other Items
-			ItemIDs.STACKEDCOAL2 = config.getItem(ItemStrings.STACKEDCOAL2_TRANSNAME, ItemIDs.STACKEDCOAL2_DEFAULT).getInt();
-			ItemIDs.STACKEDCOAL4 = config.getItem(ItemStrings.STACKEDCOAL4_TRANSNAME, ItemIDs.STACKEDCOAL4_DEFAULT).getInt();
-			ItemIDs.STACKEDCOAL6 = config.getItem(ItemStrings.STACKEDCOAL6_TRANSNAME, ItemIDs.STACKEDCOAL6_DEFAULT).getInt();
-			ItemIDs.STACKEDCOAL8 = config.getItem(ItemStrings.STACKEDCOAL8_TRANSNAME, ItemIDs.STACKEDCOAL8_DEFAULT).getInt();
 
 			//Armor
 			//Adamant Armor

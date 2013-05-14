@@ -37,11 +37,6 @@ public class LostAgesItems {
 	public static Item axeBone;
 	public static Item hammerBone;
 
-	//Flint Tools	
-	public static Item pickaxeFlint;
-	public static Item shovelFlint;
-	public static Item axeFlint;
-	
 	//Strong Gold Tools
 	public static Item swordStrongGold;
 	public static Item pickaxeStrongGold;
@@ -121,11 +116,6 @@ public class LostAgesItems {
 		shovelBone = new ItemCustomShovel(ItemIDs.SHOVEL_BONE, CustomToolMaterials.BONE).setUnlocalizedName(ItemStrings.SHOVEL_BONE_NAME);
 		axeBone = new ItemCustomAxe(ItemIDs.AXE_BONE, CustomToolMaterials.BONE).setUnlocalizedName(ItemStrings.AXE_BONE_NAME);
 		hammerBone = new ItemHammer(ItemIDs.HAMMER_BONE, CustomToolMaterials.BONE, new ItemStack(Block.cobblestone)).setUnlocalizedName(ItemStrings.HAMMER_BONE_NAME);
-
-		//Flint Tools
-		pickaxeFlint = new ItemCustomPickaxe(ItemIDs.PICKAXE_FLINT, CustomToolMaterials.FLINT).setUnlocalizedName(ItemStrings.PICKAXE_FLINT_NAME);
-		shovelFlint = new ItemCustomShovel(ItemIDs.SHOVEL_FLINT, CustomToolMaterials.FLINT).setUnlocalizedName(ItemStrings.SHOVEL_FLINT_NAME);
-		axeFlint = new ItemCustomAxe(ItemIDs.AXE_FLINT, CustomToolMaterials.FLINT).setUnlocalizedName(ItemStrings.AXE_FLINT_NAME);
 		
 		//Strong Gold Tools
 		swordStrongGold = new ItemCustomSword(ItemIDs.SWORD_STRONGGOLD, CustomToolMaterials.STRONGGOLD).setUnlocalizedName(ItemStrings.SWORD_STRONGGOLD_NAME);
@@ -157,9 +147,9 @@ public class LostAgesItems {
 		
 		//Armor
 		//Adamant Armor
-		helmAdamant = new ItemCustomArmor(ItemIDs.HELM_ADAMANT, CustomArmorMaterials.ADAMANT, 1, 0).setUnlocalizedName(ItemStrings.HELM_ADAMANT_NAME);
-		chestAdamant = new ItemCustomArmor(ItemIDs.CHEST_ADAMANT, CustomArmorMaterials.ADAMANT, 1, 1).setUnlocalizedName(ItemStrings.CHEST_ADAMANT_NAME);
-		legsAdamant = new ItemCustomArmor(ItemIDs.LEGS_ADAMANT, CustomArmorMaterials.ADAMANT, 1, 2).setUnlocalizedName(ItemStrings.LEGS_ADAMANT_NAME);
+		helmAdamant = new ItemCustomArmor(ItemIDs.HELM_ADAMANT, CustomArmorMaterials.ADAMANT, 1, 0).setUnlocalizedName(ItemStrings.HELMET_ADAMANT_NAME);
+		chestAdamant = new ItemCustomArmor(ItemIDs.CHEST_ADAMANT, CustomArmorMaterials.ADAMANT, 1, 1).setUnlocalizedName(ItemStrings.CHESTPLATE_ADAMANT_NAME);
+		legsAdamant = new ItemCustomArmor(ItemIDs.LEGS_ADAMANT, CustomArmorMaterials.ADAMANT, 1, 2).setUnlocalizedName(ItemStrings.LEGGINGS_ADAMANT_NAME);
 		bootsAdamant = new ItemCustomArmor(ItemIDs.BOOTS_ADAMANT, CustomArmorMaterials.ADAMANT, 1, 3).setUnlocalizedName(ItemStrings.BOOTS_ADAMANT_NAME);
 
 		//Item Names
@@ -180,11 +170,6 @@ public class LostAgesItems {
 		LanguageRegistry.addName(shovelBone, ItemStrings.SHOVEL_BONE_TRANSNAME);
 		LanguageRegistry.addName(axeBone, ItemStrings.AXE_BONE_TRANSNAME);
 		LanguageRegistry.addName(hammerBone, ItemStrings.HAMMER_BONE_TRANSNAME);
-		
-		//Flint tools
-		LanguageRegistry.addName(pickaxeFlint, ItemStrings.PICKAXE_FLINT_TRANSNAME);
-		LanguageRegistry.addName(shovelFlint, ItemStrings.SHOVEL_FLINT_TRANSNAME);
-		LanguageRegistry.addName(axeFlint, ItemStrings.AXE_FLINT_TRANSNAME);
 		
 		//Strong Gold tools
 		LanguageRegistry.addName(swordStrongGold, ItemStrings.SWORD_STRONGGOLD_TRANSNAME);
@@ -225,10 +210,10 @@ public class LostAgesItems {
 		
 		//Armor
 		//Adamant Armor
-		LanguageRegistry.addName(helmAdamant, "Adamant Helmet");
-		LanguageRegistry.addName(chestAdamant, "Adamant Chestplate");
-		LanguageRegistry.addName(legsAdamant, "Adamant Leggings");
-		LanguageRegistry.addName(bootsAdamant, "Adamant Boots");
+		LanguageRegistry.addName(helmAdamant, ItemStrings.HELMET_ADAMANT_TRANSNAME);
+		LanguageRegistry.addName(chestAdamant, ItemStrings.CHESTPLATE_ADAMANT_TRANSNAME);
+		LanguageRegistry.addName(legsAdamant, ItemStrings.LEGGINGS_ADAMANT_TRANSNAME);
+		LanguageRegistry.addName(bootsAdamant, ItemStrings.BOOTS_ADAMANT_TRANSNAME);
 	}
 	
 	public static void initItemRecipes() {
@@ -240,11 +225,6 @@ public class LostAgesItems {
 		GameRegistry.addRecipe(new ItemStack(shovelBone), new Object[]{"I", "B", "B", 'I', ingotBone, 'B', Item.bone});
 		GameRegistry.addRecipe(new ItemStack(axeBone), new Object[]{"II", "IB", " B", 'I', ingotBone, 'B', Item.bone});
 		GameRegistry.addRecipe(new ItemStack(hammerBone), new Object[]{"XXX", " * ", 'X', ingotBone , '*', Item.bone});
-
-        //Bone tools
-		GameRegistry.addRecipe(new ItemStack(pickaxeFlint), new Object[]{"III", " B ", " B ", 'I', Item.flint, 'B', Item.stick});
-		GameRegistry.addRecipe(new ItemStack(shovelFlint), new Object[]{"I", "B", "B", 'I', Item.flint, 'B', Item.stick});
-		GameRegistry.addRecipe(new ItemStack(axeFlint), new Object[]{"II", "IB", " B", 'I', Item.flint, 'B', Item.stick});
 		
         //Strong Gold tools
 		GameRegistry.addRecipe(new ItemStack(swordStrongGold), new Object[]{"I", "I", "B", 'I', ingotStrongGold, 'B', Item.stick});

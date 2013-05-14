@@ -1,94 +1,62 @@
 package com.lostages.lib;
 
 public class ItemIDs {
-	//Default id that is written to configuration file
-	//Default id must be above 3850
-	
 	//Ingots
-	public static int INGOT_BASE_DEFAULT = 4000;
+	public static int INGOT_BASE_DEFAULT = 6000;
 	
-	//Armor
 	//Adamant Armor
-	public static int ARMOR_ADAMANT_DEFAULT = 4100;
-	public static int HELM_ADAMANT_DEFAULT = ARMOR_ADAMANT_DEFAULT;
-	public static int CHEST_ADAMANT_DEFAULT = ARMOR_ADAMANT_DEFAULT + 1;
-	public static int LEGS_ADAMANT_DEFAULT = ARMOR_ADAMANT_DEFAULT + 2;
-	public static int BOOTS_ADAMANT_DEFAULT = ARMOR_ADAMANT_DEFAULT + 3;
+	public static int HELMET_ADAMANT_DEFAULT = 6001;
+	public static int CHESTPLATE_ADAMANT_DEFAULT = 6002;
+	public static int LEGGINGS_ADAMANT_DEFAULT = 6003;
+	public static int BOOTS_ADAMANT_DEFAULT = 6004;
 
 	
 	//Bone tools
-	public static int BONE_DEFAULT = 5000;
-	public static int SWORD_BONE_DEFAULT = BONE_DEFAULT;
-	public static int PICKAXE_BONE_DEFAULT = BONE_DEFAULT + 1;
-	public static int SHOVEL_BONE_DEFAULT = BONE_DEFAULT + 2;
-	public static int AXE_BONE_DEFAULT = BONE_DEFAULT + 3;
-	public static int HAMMER_BONE_DEFAULT = BONE_DEFAULT + 4;
-	
-	//Strong gold tools
-	public static int STRONGGOLD_DEFAULT = 5005;
-	public static int SWORD_STRONGGOLD_DEFAULT = STRONGGOLD_DEFAULT;
-	public static int PICKAXE_STRONGGOLD_DEFAULT = STRONGGOLD_DEFAULT + 1;
-	public static int SHOVEL_STRONGGOLD_DEFAULT = STRONGGOLD_DEFAULT + 2;
-	public static int AXE_STRONGGOLD_DEFAULT = STRONGGOLD_DEFAULT + 3;
-	public static int HAMMER_STRONGGOLD_DEFAULT = STRONGGOLD_DEFAULT + 4;
+	public static int SWORD_BONE_DEFAULT = 6005;
+	public static int PICKAXE_BONE_DEFAULT = 6006;
+	public static int SHOVEL_BONE_DEFAULT = 6007;
+	public static int AXE_BONE_DEFAULT = 6008;
+	public static int HAMMER_BONE_DEFAULT = 6009;
 
 	//Bronze tools
-	public static int BRONZE_DEFAULT = 5010;
-	public static int SWORD_BRONZE_DEFAULT = BRONZE_DEFAULT;
-	public static int PICKAXE_BRONZE_DEFAULT = BRONZE_DEFAULT + 1;
-	public static int SHOVEL_BRONZE_DEFAULT = BRONZE_DEFAULT + 2;
-	public static int AXE_BRONZE_DEFAULT = BRONZE_DEFAULT + 3;
-	public static int HAMMER_BRONZE_DEFAULT = BRONZE_DEFAULT + 4;
+	public static int SWORD_BRONZE_DEFAULT = 6010;
+	public static int PICKAXE_BRONZE_DEFAULT = 6011;
+	public static int SHOVEL_BRONZE_DEFAULT = 6012;
+	public static int AXE_BRONZE_DEFAULT = 6013;
+	public static int HAMMER_BRONZE_DEFAULT = 6014;
 	
 	//Steel tools
-	public static int STEEL_DEFAULT = 5015;
-	public static int SWORD_STEEL_DEFAULT = STEEL_DEFAULT;
-	public static int PICKAXE_STEEL_DEFAULT = STEEL_DEFAULT + 1;
-	public static int SHOVEL_STEEL_DEFAULT = STEEL_DEFAULT + 2;
-	public static int AXE_STEEL_DEFAULT = STEEL_DEFAULT + 3;
-	public static int HAMMER_STEEL_DEFAULT = STEEL_DEFAULT + 4;
+	public static int SWORD_STEEL_DEFAULT = 6015;
+	public static int PICKAXE_STEEL_DEFAULT = 6016;
+	public static int SHOVEL_STEEL_DEFAULT = 6017;
+	public static int AXE_STEEL_DEFAULT = 6018;
+	public static int HAMMER_STEEL_DEFAULT = 6019;
 	
 	//Adamant tools
-	public static int ADAMANT_DEFAULT = 5020;
-	public static int SWORD_ADAMANT_DEFAULT = ADAMANT_DEFAULT;
-	public static int PICKAXE_ADAMANT_DEFAULT = ADAMANT_DEFAULT + 1;
-	public static int SHOVEL_ADAMANT_DEFAULT = ADAMANT_DEFAULT + 2;
-	public static int AXE_ADAMANT_DEFAULT = ADAMANT_DEFAULT + 3;
-	public static int HAMMER_ADAMANT_DEFAULT = ADAMANT_DEFAULT + 4;
+	public static int SWORD_ADAMANT_DEFAULT = 6020;
+	public static int PICKAXE_ADAMANT_DEFAULT = 6021;
+	public static int SHOVEL_ADAMANT_DEFAULT = 6022;
+	public static int AXE_ADAMANT_DEFAULT = 6023;
+	public static int HAMMER_ADAMANT_DEFAULT = 6024;
+	
+	//Strong gold tools
+	public static int SWORD_STRONGGOLD_DEFAULT = 6025;
+	public static int PICKAXE_STRONGGOLD_DEFAULT = 6026;
+	public static int SHOVEL_STRONGGOLD_DEFAULT = 6027;
+	public static int AXE_STRONGGOLD_DEFAULT = 6028;
+	public static int HAMMER_STRONGGOLD_DEFAULT = 6029;
 	
 	//Hammers
-	public static int HAMMER_DEFAULT = 5025;
-	public static int HAMMER_WOOD_DEFAULT = HAMMER_DEFAULT;
-	public static int HAMMER_STONE_DEFAULT = HAMMER_DEFAULT + 1;
-	public static int HAMMER_IRON_DEFAULT = HAMMER_DEFAULT + 2;
-	public static int HAMMER_GOLD_DEFAULT = HAMMER_DEFAULT + 3;
-	public static int HAMMER_DIAMOND_DEFAULT = HAMMER_DEFAULT + 4;
-	public static int HAMMER_MAGIC_DEFAULT = HAMMER_DEFAULT + 5;
-
-	//Flint tools
-	public static int FLINT_DEFAULT = 5031;
-	public static int PICKAXE_FLINT_DEFAULT = FLINT_DEFAULT;
-	public static int SHOVEL_FLINT_DEFAULT = FLINT_DEFAULT + 1;
-	public static int AXE_FLINT_DEFAULT = FLINT_DEFAULT + 2;
-	
-	//Bows
-	public static int BOW_JUNGLE_DEFAULT = FLINT_DEFAULT + 3;
-	
-	//public static int WHATEVERISNEXT_DEFAULT = 5035;
-
-		
-	//ID
+	public static int HAMMER_WOOD_DEFAULT = 6030;
+	public static int HAMMER_STONE_DEFAULT = 6031;
+	public static int HAMMER_IRON_DEFAULT = 6032;
+	public static int HAMMER_GOLD_DEFAULT = 6033;
+	public static int HAMMER_DIAMOND_DEFAULT = 6034;
+	public static int HAMMER_MAGIC_DEFAULT = 6035;
 	
 	//Ingots
 	public static int INGOT_BASE;
-
-	//Other Items
-	public static int STACKEDCOAL2;
-	public static int STACKEDCOAL4;
-	public static int STACKEDCOAL6;
-	public static int STACKEDCOAL8;
 	
-	//Armor
 	//Adamant Armor
 	public static int HELM_ADAMANT;
 	public static int CHEST_ADAMANT;

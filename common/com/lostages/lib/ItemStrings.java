@@ -15,9 +15,9 @@ public class ItemStrings {
 	
 	//Armor
 	//Adamant Armor
-	public static final String HELM_ADAMANT_NAME = "helmAdamant";
-	public static final String CHEST_ADAMANT_NAME = "chestAdamant";
-	public static final String LEGS_ADAMANT_NAME = "legsAdamant";
+	public static final String HELMET_ADAMANT_NAME = "helmetAdamant";
+	public static final String CHESTPLATE_ADAMANT_NAME = "chestplateAdamant";
+	public static final String LEGGINGS_ADAMANT_NAME = "leggingsAdamant";
 	public static final String BOOTS_ADAMANT_NAME = "bootsAdamant";
 
 	//Tools - Weapons
@@ -85,9 +85,9 @@ public class ItemStrings {
 	
 	//Armor
 	//Adamant Armor
-	public static final String HElM_ADAMANT_TRANSNAME = "Adamant Helmet";
-	public static final String CHEST_ADAMANT_TRANSNAME = "Adamant Chestplate";
-	public static final String LEGS_ADAMANT_TRANSNAME = "Adamant Leggings";
+	public static final String HELMET_ADAMANT_TRANSNAME = "Adamant Helmet";
+	public static final String CHESTPLATE_ADAMANT_TRANSNAME = "Adamant Chestplate";
+	public static final String LEGGINGS_ADAMANT_TRANSNAME = "Adamant Leggings";
 	public static final String BOOTS_ADAMANT_TRANSNAME = "Adamant Boots";
 
 	//Tools - Weapons

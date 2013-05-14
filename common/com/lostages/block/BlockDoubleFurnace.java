@@ -47,6 +47,11 @@ public class BlockDoubleFurnace extends BlockContainer {
 	}
 	
 	@Override
+	public boolean renderAsNormalBlock() {
+		return true;
+	}
+	
+	@Override
 	public TileEntity createNewTileEntity(World world) {
 		return new TileDoubleFurnace();
 	}
@@ -229,16 +234,21 @@ public class BlockDoubleFurnace extends BlockContainer {
         super.breakBlock(par1World, par2, par3, par4, par5, par6);
     }
     
-    @SideOnly(Side.CLIENT)
-    public void registerIcons(IconRegister iconRegister) {
-    	blockIcon = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":doublefurnace_side");
-    	doubleFurnaceTop = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":doublefurnace_top");
-    	doubleFurnaceFront = iconRegister.registerIcon(this.isActive ? Reference.MOD_ID.toLowerCase() + ":doublefurnace_front_lit" : Reference.MOD_ID.toLowerCase() + ":doublefurnace_front");
-    }
-    
-    @SideOnly(Side.CLIENT)
+    @Override
     public Icon getIcon(int par1, int par2) {
     	return par1 == 1 ? this.doubleFurnaceTop : (par1 == 0 ? this.doubleFurnaceTop : (par1 != par2 ? this.blockIcon : this.doubleFurnaceFront));
+    }
+    
+    @Override
+    public void registerIcons(IconRegister iconRegister) {
+    	blockIcon = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":doublefurnace_side");
+    	doubleFurnaceFront = iconRegister.registerIcon(this.isActive ? Reference.MOD_ID.toLowerCase() + ":doublefurance_front_lit" : Reference.MOD_ID.toLowerCase() + ":doublefurnace_front");
+    	doubleFurnaceTop = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":doublefurnace_top");
+    }
+    
+    @Override
+    public int idPicked(World world, int x, int y, int z) {
+    	return LostAgesBlocks.furnaceIdleDouble.blockID;
     }
 
 }

@@ -23,15 +23,13 @@ public class ConfigurationHandler {
 
 			//Armor
 			//Adamant Armor
-			ItemIDs.HELM_ADAMANT = config.getItem("Adamant Helmet", ItemIDs.HELM_ADAMANT_DEFAULT).getInt();
-			ItemIDs.CHEST_ADAMANT = config.getItem("Adamant Chestplate", ItemIDs.CHEST_ADAMANT_DEFAULT).getInt();
-			ItemIDs.LEGS_ADAMANT = config.getItem("Adamant Leggings", ItemIDs.LEGS_ADAMANT_DEFAULT).getInt();
-			ItemIDs.BOOTS_ADAMANT = config.getItem("Adamant Boots", ItemIDs.BOOTS_ADAMANT_DEFAULT).getInt();
-
+			ItemIDs.HELM_ADAMANT = config.getItem(ItemStrings.HELMET_ADAMANT_NAME, ItemIDs.HELMET_ADAMANT_DEFAULT).getInt();
+			ItemIDs.CHEST_ADAMANT = config.getItem(ItemStrings.CHESTPLATE_ADAMANT_NAME, ItemIDs.CHESTPLATE_ADAMANT_DEFAULT).getInt();
+			ItemIDs.LEGS_ADAMANT = config.getItem(ItemStrings.LEGGINGS_ADAMANT_NAME, ItemIDs.LEGGINGS_ADAMANT_DEFAULT).getInt();
+			ItemIDs.BOOTS_ADAMANT = config.getItem(ItemStrings.BOOTS_ADAMANT_NAME, ItemIDs.BOOTS_ADAMANT_DEFAULT).getInt();
 			
 			//Tools - Weapons			
 			//Bows
-			ItemIDs.BOW_JUNGLE = config.getItem(ItemStrings.BOW_JUNGLE_TRANSNAME, ItemIDs.BOW_JUNGLE_DEFAULT).getInt();
 			
 			//Bone tools
 			ItemIDs.SWORD_BONE = config.getItem(ItemStrings.SWORD_BONE_TRANSNAME, ItemIDs.SWORD_BONE_DEFAULT).getInt();
@@ -39,11 +37,6 @@ public class ConfigurationHandler {
 			ItemIDs.SHOVEL_BONE = config.getItem(ItemStrings.SHOVEL_BONE_TRANSNAME, ItemIDs.SHOVEL_BONE_DEFAULT).getInt();
 			ItemIDs.AXE_BONE = config.getItem(ItemStrings.AXE_BONE_TRANSNAME, ItemIDs.AXE_BONE_DEFAULT).getInt();
 			ItemIDs.HAMMER_BONE = config.getItem(ItemStrings.HAMMER_BONE_TRANSNAME, ItemIDs.HAMMER_BONE_DEFAULT).getInt();
-			
-			//Flint tools
-			ItemIDs.PICKAXE_FLINT = config.getItem(ItemStrings.PICKAXE_FLINT_TRANSNAME, ItemIDs.PICKAXE_FLINT_DEFAULT).getInt();
-			ItemIDs.SHOVEL_FLINT = config.getItem(ItemStrings.SHOVEL_FLINT_TRANSNAME, ItemIDs.SHOVEL_FLINT_DEFAULT).getInt();
-			ItemIDs.AXE_FLINT = config.getItem(ItemStrings.AXE_FLINT_TRANSNAME, ItemIDs.AXE_FLINT_DEFAULT).getInt();
 			
 			//Strong Gold tools
 			ItemIDs.SWORD_STRONGGOLD = config.getItem(ItemStrings.SWORD_STRONGGOLD_TRANSNAME, ItemIDs.SWORD_STRONGGOLD_DEFAULT).getInt();

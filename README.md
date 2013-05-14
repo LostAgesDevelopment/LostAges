@@ -2,5 +2,7 @@ LostAges
 ========
 
 TODO:
-- Rewrite double furnace
-- Add world gen
+- Fix Crash When Shift Click In Double Furnace
+- Rewrite Double Furnace
+- Add World Gen
+- Add Dimensions

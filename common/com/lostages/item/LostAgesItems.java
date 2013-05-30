@@ -103,47 +103,47 @@ public class LostAgesItems {
 	    bowJungle = new ItemBow(ItemIDs.BOW_JUNGLE).setUnlocalizedName(ItemStrings.BOW_JUNGLE_NAME);
 		
 		//Hammers
-		hammerWood = new ItemHammer(ItemIDs.HAMMER_WOOD, EnumToolMaterial.WOOD, new ItemStack(Block.cobblestone)).setUnlocalizedName(ItemStrings.HAMMER_WOOD_NAME);
-		hammerStone = new ItemHammer(ItemIDs.HAMMER_STONE, EnumToolMaterial.STONE, new ItemStack(Block.cobblestone)).setUnlocalizedName(ItemStrings.HAMMER_STONE_NAME);
-		hammerIron = new ItemHammer(ItemIDs.HAMMER_IRON, EnumToolMaterial.IRON, new ItemStack(Block.cobblestone)).setUnlocalizedName(ItemStrings.HAMMER_IRON_NAME);
-		hammerGold = new ItemHammer(ItemIDs.HAMMER_GOLD, EnumToolMaterial.GOLD, new ItemStack(Block.cobblestone)).setUnlocalizedName(ItemStrings.HAMMER_GOLD_NAME);
-		hammerDiamond = new ItemHammer(ItemIDs.HAMMER_DIAMOND, EnumToolMaterial.EMERALD, new ItemStack(Block.cobblestone)).setUnlocalizedName(ItemStrings.HAMMER_DIAMOND_NAME);
-		hammerMagic = new ItemHammer(ItemIDs.HAMMER_MAGIC, EnumToolMaterial.EMERALD, new ItemStack(Block.stoneBrick)).setUnlocalizedName(ItemStrings.HAMMER_MAGIC_NAME);
+		hammerWood = new ItemHammer(ItemIDs.HAMMER_WOOD, EnumToolMaterial.WOOD, Block.cobblestone).setUnlocalizedName(ItemStrings.HAMMER_WOOD_NAME);
+		hammerStone = new ItemHammer(ItemIDs.HAMMER_STONE, EnumToolMaterial.STONE, Block.cobblestone).setUnlocalizedName(ItemStrings.HAMMER_STONE_NAME);
+		hammerIron = new ItemHammer(ItemIDs.HAMMER_IRON, EnumToolMaterial.IRON, Block.cobblestone).setUnlocalizedName(ItemStrings.HAMMER_IRON_NAME);
+		hammerGold = new ItemHammer(ItemIDs.HAMMER_GOLD, EnumToolMaterial.GOLD, Block.cobblestone).setUnlocalizedName(ItemStrings.HAMMER_GOLD_NAME);
+		hammerDiamond = new ItemHammer(ItemIDs.HAMMER_DIAMOND, EnumToolMaterial.EMERALD, Block.cobblestone).setUnlocalizedName(ItemStrings.HAMMER_DIAMOND_NAME);
+		hammerMagic = new ItemHammer(ItemIDs.HAMMER_MAGIC, EnumToolMaterial.EMERALD, Block.stoneBrick).setUnlocalizedName(ItemStrings.HAMMER_MAGIC_NAME);
 		
 		//Bone Tools
 		swordBone = new ItemCustomSword(ItemIDs.SWORD_BONE, CustomToolMaterials.BONE).setUnlocalizedName(ItemStrings.SWORD_BONE_NAME);
 		pickaxeBone = new ItemCustomPickaxe(ItemIDs.PICKAXE_BONE, CustomToolMaterials.BONE).setUnlocalizedName(ItemStrings.PICKAXE_BONE_NAME);
 		shovelBone = new ItemCustomShovel(ItemIDs.SHOVEL_BONE, CustomToolMaterials.BONE).setUnlocalizedName(ItemStrings.SHOVEL_BONE_NAME);
 		axeBone = new ItemCustomAxe(ItemIDs.AXE_BONE, CustomToolMaterials.BONE).setUnlocalizedName(ItemStrings.AXE_BONE_NAME);
-		hammerBone = new ItemHammer(ItemIDs.HAMMER_BONE, CustomToolMaterials.BONE, new ItemStack(Block.cobblestone)).setUnlocalizedName(ItemStrings.HAMMER_BONE_NAME);
+		hammerBone = new ItemHammer(ItemIDs.HAMMER_BONE, CustomToolMaterials.BONE, Block.cobblestone).setUnlocalizedName(ItemStrings.HAMMER_BONE_NAME);
 		
 		//Strong Gold Tools
 		swordStrongGold = new ItemCustomSword(ItemIDs.SWORD_STRONGGOLD, CustomToolMaterials.STRONGGOLD).setUnlocalizedName(ItemStrings.SWORD_STRONGGOLD_NAME);
 		pickaxeStrongGold = new ItemCustomPickaxe(ItemIDs.PICKAXE_STRONGGOLD, CustomToolMaterials.STRONGGOLD).setUnlocalizedName(ItemStrings.PICKAXE_STRONGGOLD_NAME);
 		shovelStrongGold = new ItemCustomShovel(ItemIDs.SHOVEL_STRONGGOLD, CustomToolMaterials.STRONGGOLD).setUnlocalizedName(ItemStrings.SHOVEL_STRONGGOLD_NAME);
 		axeStrongGold = new ItemCustomAxe(ItemIDs.AXE_STRONGGOLD, CustomToolMaterials.STRONGGOLD).setUnlocalizedName(ItemStrings.AXE_STRONGGOLD_NAME);
-		hammerStrongGold = new ItemHammer(ItemIDs.HAMMER_STRONGGOLD, CustomToolMaterials.STRONGGOLD, new ItemStack(Block.cobblestone)).setUnlocalizedName(ItemStrings.HAMMER_STRONGGOLD_NAME);
+		hammerStrongGold = new ItemHammer(ItemIDs.HAMMER_STRONGGOLD, CustomToolMaterials.STRONGGOLD, Block.cobblestone).setUnlocalizedName(ItemStrings.HAMMER_STRONGGOLD_NAME);
 		
 		//Bronze Tools
 		swordBronze = new ItemCustomSword(ItemIDs.SWORD_BRONZE, CustomToolMaterials.BRONZE).setUnlocalizedName(ItemStrings.SWORD_BRONZE_NAME);
 		pickaxeBronze = new ItemCustomPickaxe(ItemIDs.PICKAXE_BRONZE, CustomToolMaterials.BRONZE).setUnlocalizedName(ItemStrings.PICKAXE_BRONZE_NAME);
 		shovelBronze = new ItemCustomShovel(ItemIDs.SHOVEL_BRONZE, CustomToolMaterials.BRONZE).setUnlocalizedName(ItemStrings.SHOVEL_BRONZE_NAME);
 		axeBronze = new ItemCustomAxe(ItemIDs.AXE_BRONZE, CustomToolMaterials.BRONZE).setUnlocalizedName(ItemStrings.AXE_BRONZE_NAME);
-		hammerBronze = new ItemHammer(ItemIDs.HAMMER_BRONZE, CustomToolMaterials.BRONZE, new ItemStack(Block.cobblestone)).setUnlocalizedName(ItemStrings.HAMMER_BRONZE_NAME);
+		hammerBronze = new ItemHammer(ItemIDs.HAMMER_BRONZE, CustomToolMaterials.BRONZE, Block.cobblestone).setUnlocalizedName(ItemStrings.HAMMER_BRONZE_NAME);
 		
 		//Steel Tools
 		swordSteel = new ItemCustomSword(ItemIDs.SWORD_STEEL, CustomToolMaterials.STEEL).setUnlocalizedName(ItemStrings.SWORD_STEEL_NAME);
 		pickaxeSteel = new ItemCustomPickaxe(ItemIDs.PICKAXE_STEEL, CustomToolMaterials.STEEL).setUnlocalizedName(ItemStrings.PICKAXE_STEEL_NAME);
 		shovelSteel = new ItemCustomShovel(ItemIDs.SHOVEL_STEEL, CustomToolMaterials.STEEL).setUnlocalizedName(ItemStrings.SHOVEL_STEEL_NAME);
 		axeSteel = new ItemCustomAxe(ItemIDs.AXE_STEEL, CustomToolMaterials.STEEL).setUnlocalizedName(ItemStrings.AXE_STEEL_NAME);
-		hammerSteel = new ItemHammer(ItemIDs.HAMMER_STEEL, CustomToolMaterials.STEEL, new ItemStack(Block.cobblestone)).setUnlocalizedName(ItemStrings.HAMMER_STEEL_NAME);
+		hammerSteel = new ItemHammer(ItemIDs.HAMMER_STEEL, CustomToolMaterials.STEEL, Block.cobblestone).setUnlocalizedName(ItemStrings.HAMMER_STEEL_NAME);
 		
 		//Adamant Tools
 		swordAdamant = new ItemCustomSword(ItemIDs.SWORD_ADAMANT, EnumToolMaterial.EMERALD).setUnlocalizedName(ItemStrings.SWORD_ADAMANT_NAME);
 		pickaxeAdamant = new ItemCustomPickaxe(ItemIDs.PICKAXE_ADAMANT, EnumToolMaterial.EMERALD).setUnlocalizedName(ItemStrings.PICKAXE_ADAMANT_NAME);
 		shovelAdamant = new ItemCustomShovel(ItemIDs.SHOVEL_ADAMANT, EnumToolMaterial.EMERALD).setUnlocalizedName(ItemStrings.SHOVEL_ADAMANT_NAME);
 		axeAdamant = new ItemCustomAxe(ItemIDs.AXE_ADAMANT, EnumToolMaterial.EMERALD).setUnlocalizedName(ItemStrings.AXE_ADAMANT_NAME);
-		hammerAdamant = new ItemHammer(ItemIDs.HAMMER_ADAMANT, EnumToolMaterial.EMERALD, new ItemStack(Block.cobblestone)).setUnlocalizedName(ItemStrings.HAMMER_ADAMANT_NAME);
+		hammerAdamant = new ItemHammer(ItemIDs.HAMMER_ADAMANT, EnumToolMaterial.EMERALD, Block.cobblestone).setUnlocalizedName(ItemStrings.HAMMER_ADAMANT_NAME);
 		
 		//Armor
 		//Adamant Armor

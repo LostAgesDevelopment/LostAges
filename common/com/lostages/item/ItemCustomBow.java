@@ -1,11 +1,5 @@
 package com.lostages.item;
 
-import com.lostages.LostAges;
-import com.lostages.lib.Reference;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -20,18 +14,23 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ArrowLooseEvent;
 import net.minecraftforge.event.entity.player.ArrowNockEvent;
 
+import com.lostages.LostAges;
+import com.lostages.lib.Reference;
+
 public class ItemCustomBow extends Item {
 	public static final String[] pullBackNames = {"bowJungle_pull_0", "bowJungle_pull_1", "bowJungle_pull_2"};
 	private Icon[] pullBackIcons;
-	private Icon bowIcon;
 	
 	public ItemCustomBow(int id) {
 		super(id);
 		this.maxStackSize = 1;
 		this.setMaxDamage(300);
-		this.setFull3D();
 		this.setCreativeTab(LostAges.tabLostAgesTools);
 	}
+	
+    public boolean isFull3D() {
+        return true;
+    }
 	
 	@Override
 	public void onPlayerStoppedUsing(ItemStack itemStack, World world, EntityPlayer player, int par4) {

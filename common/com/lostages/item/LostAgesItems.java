@@ -99,7 +99,7 @@ public class LostAgesItems {
 		ingotStrongGold = new ItemStack(ingotBase, 1, 6);
 	    
 		//Bows
-	    bowJungle = new ItemBow(ItemReference.BOW_JUNGLE_ID).setUnlocalizedName(ItemReference.BOW_JUNGLE_NAME);
+	    bowJungle = new ItemCustomBow(ItemReference.BOW_JUNGLE_ID).setUnlocalizedName(ItemReference.BOW_JUNGLE_NAME);
 		
 		//Hammers
 		hammerWood = new ItemHammer(ItemReference.HAMMER_WOOD_ID, EnumToolMaterial.WOOD, Block.cobblestone).setUnlocalizedName(ItemReference.HAMMER_WOOD_NAME);

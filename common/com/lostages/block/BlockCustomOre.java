@@ -10,18 +10,17 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 
 import com.lostages.LostAges;
-import com.lostages.lib.BlockIDs;
-import com.lostages.lib.BlockStrings;
+import com.lostages.lib.BlockReference;
 import com.lostages.lib.Reference;
 
-public class BlockBaseOre extends Block {
+public class BlockCustomOre extends Block {
 
 	private Icon[] icons;
-	private String[] names = { BlockStrings.ORE_COPPER_NAME, BlockStrings.ORE_TIN_NAME, BlockStrings.ORE_ADAMANT_NAME };
+	private String[] names = { BlockReference.ORE_COPPER_NAME, BlockReference.ORE_TIN_NAME, BlockReference.ORE_ADAMANT_NAME };
 	
-	public BlockBaseOre() {
-		super(BlockIDs.ORE_BASE, Material.rock);
-		this.setUnlocalizedName(BlockStrings.ORE_BASE_NAME);
+	public BlockCustomOre() {
+		super(BlockReference.ORE_BASE, Material.rock);
+		this.setUnlocalizedName(BlockReference.ORE_BASE_NAME);
 		this.setCreativeTab(LostAges.tabLostAgesBlocks);
 		this.setHardness(3.0F);
 		this.setResistance(5.0F);

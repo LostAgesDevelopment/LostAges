@@ -9,18 +9,17 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 
 import com.lostages.LostAges;
-import com.lostages.lib.ItemIDs;
-import com.lostages.lib.ItemStrings;
+import com.lostages.lib.ItemReference;
 import com.lostages.lib.Reference;
 
-public class ItemBaseIngot extends Item {
+public class ItemCustomIngot extends Item {
 
 	private Icon[] icons;
-	private String[] names = { ItemStrings.INGOT_BONE_NAME, ItemStrings.INGOT_COPPER_NAME, ItemStrings.INGOT_TIN_NAME, ItemStrings.INGOT_BRONZE_NAME, ItemStrings.INGOT_ADAMANT_NAME, ItemStrings.INGOT_STEEL_NAME, ItemStrings.INGOT_STRONGGOLD_NAME };
+	private String[] names = { ItemReference.INGOT_BONE_NAME, ItemReference.INGOT_COPPER_NAME, ItemReference.INGOT_TIN_NAME, ItemReference.INGOT_BRONZE_NAME, ItemReference.INGOT_ADAMANT_NAME, ItemReference.INGOT_STEEL_NAME, ItemReference.INGOT_STRONGGOLD_NAME };
 	
-	public ItemBaseIngot() {
-		super(ItemIDs.INGOT_BASE);
-		this.setUnlocalizedName(ItemStrings.INGOT_BASE_NAME);
+	public ItemCustomIngot() {
+		super(ItemReference.INGOT_BASE_ID);
+		this.setUnlocalizedName(ItemReference.INGOT_BASE_NAME);
 		this.setCreativeTab(LostAges.tabLostAgesMisc);
 		this.setMaxDamage(0);
 		this.setHasSubtypes(true);
@@ -34,14 +33,14 @@ public class ItemBaseIngot extends Item {
 	@Override
 	public String getUnlocalizedName(ItemStack itemStack) {
 		switch (itemStack.getItemDamage()) {
-			default: return ItemStrings.INGOT_BASE_NAME;
-			case 0: return ItemStrings.INGOT_BONE_NAME;
-			case 1: return ItemStrings.INGOT_COPPER_NAME;
-			case 2: return ItemStrings.INGOT_TIN_NAME;
-			case 3: return ItemStrings.INGOT_BRONZE_NAME;
-			case 4: return ItemStrings.INGOT_ADAMANT_NAME;
-			case 5: return ItemStrings.INGOT_STEEL_NAME;
-			case 6: return ItemStrings.INGOT_STRONGGOLD_NAME;
+			default: return ItemReference.INGOT_BASE_NAME;
+			case 0: return ItemReference.INGOT_BONE_NAME;
+			case 1: return ItemReference.INGOT_COPPER_NAME;
+			case 2: return ItemReference.INGOT_TIN_NAME;
+			case 3: return ItemReference.INGOT_BRONZE_NAME;
+			case 4: return ItemReference.INGOT_ADAMANT_NAME;
+			case 5: return ItemReference.INGOT_STEEL_NAME;
+			case 6: return ItemReference.INGOT_STRONGGOLD_NAME;
 		}
 	}
 	

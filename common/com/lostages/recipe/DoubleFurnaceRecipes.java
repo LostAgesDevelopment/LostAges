@@ -25,6 +25,7 @@ public class DoubleFurnaceRecipes {
 	private DoubleFurnaceRecipes() {
 		this.addDoubleSmelting(new ItemStack(LostAgesItems.ingotBase, 3, 1), new ItemStack(LostAgesItems.ingotBase, 1, 2), new ItemStack(LostAgesItems.ingotBase, 2, 3));
 		this.addDoubleSmelting(new ItemStack(Block.oreIron), new ItemStack(Block.oreIron), new ItemStack(Item.ingotIron, 3));
+		this.addDoubleSmelting(new ItemStack(Block.oreGold), new ItemStack(Block.oreGold), new ItemStack(Item.ingotGold, 3));
 	}
 	
 	public void addDoubleSmelting(ItemStack input1, ItemStack input2, ItemStack output) {

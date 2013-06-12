@@ -4,6 +4,7 @@ import mods.lostages.configuration.LABlocks;
 import mods.lostages.configuration.LAConfiguration;
 import mods.lostages.configuration.LAItems;
 import mods.lostages.helper.OreDictionaryHelper;
+import mods.lostages.helper.RecipeHelper;
 import mods.lostages.helper.TabLA;
 import net.minecraft.creativetab.CreativeTabs;
 import cpw.mods.fml.common.Mod;
@@ -40,6 +41,7 @@ public class LostAges {
 	
 	@Init
 	public void load(FMLInitializationEvent event) {
+		RecipeHelper.init();
 		OreDictionaryHelper.init();
 		LABlocks.initMiningLevel();
 		

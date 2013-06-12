@@ -1,6 +1,5 @@
 package mods.lostages.configuration;
 
-import mods.lostages.api.Items;
 import mods.lostages.item.ItemCustomArmor;
 import mods.lostages.item.ItemCustomAxe;
 import mods.lostages.item.ItemCustomBow;
@@ -9,6 +8,7 @@ import mods.lostages.item.ItemCustomPickaxe;
 import mods.lostages.item.ItemCustomShovel;
 import mods.lostages.item.ItemCustomSword;
 import mods.lostages.item.ItemHammer;
+import mods.lostages.util.Items;
 import net.minecraft.block.Block;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.EnumToolMaterial;
@@ -101,7 +101,11 @@ public class LAItems {
 		LanguageRegistry.addName(new ItemStack(Items.ingotBase.get(), 1, 2), "Tin Ingot");
 		LanguageRegistry.addName(new ItemStack(Items.ingotBase.get(), 1, 3), "Bronze Ingot");
 		LanguageRegistry.addName(new ItemStack(Items.ingotBase.get(), 1, 4), "Steel Ingot");
-		LanguageRegistry.addName(new ItemStack(Items.ingotBase.get(), 1, 5), "Adamant Ingot");
+		LanguageRegistry.addName(new ItemStack(Items.ingotBase.get(), 1, 5), "Strong Gold Ingot");
+		LanguageRegistry.addName(new ItemStack(Items.ingotBase.get(), 1, 6), "Adamant Ingot");
+		
+		//Bows
+		LanguageRegistry.addName(Items.bowJungle.get(), "Jungle Bow");
 		
 		//Bone Tools
 		LanguageRegistry.addName(Items.swordBone.get(), "Bone Sword");

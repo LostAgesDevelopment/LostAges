@@ -11,6 +11,7 @@ import net.minecraftforge.common.Configuration;
 public class LAConfiguration {
 	//Blocks
 	public static int oreBaseID;
+	public static int blockStorageID;
 	public static int furnaceDoubleID;
 	
 	//Items
@@ -66,11 +67,12 @@ public class LAConfiguration {
 		try {
 			config.load();
 			//Blocks
-			oreBaseID = config.getBlock("Base Ore ID", 1000, null).getInt();
-			furnaceDoubleID = config.getBlock("furnaceDouble", 2000, null).getInt();
+			oreBaseID = config.getBlock("Base Ore ID", 1000).getInt();
+			blockStorageID = config.getBlock("Base Storage Block ID", 1001).getInt();
+			furnaceDoubleID = config.getBlock("furnaceDouble", 2000).getInt();
 			
 			//Items
-			ingotBaseID = config.getItem("Base Ingot ID", 7000, null).getInt();
+			ingotBaseID = config.getItem("Base Ingot ID", 7000).getInt();
 			
 			//Bows
 			bowJungleID = config.get("Bows", "bowJungle", 5000).getInt();

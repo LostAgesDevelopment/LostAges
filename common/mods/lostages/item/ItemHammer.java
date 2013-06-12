@@ -1,7 +1,7 @@
 package mods.lostages.item;
 
 import mods.lostages.LostAges;
-import mods.lostages.api.Items;
+import mods.lostages.util.Items;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -48,6 +48,11 @@ public class ItemHammer extends Item {
         maxStackSize = 1;
 	}
     
+	@Override
+	public boolean isFull3D() {
+		return true;
+	}
+	
 	@Override
 	public float getStrVsBlock(ItemStack par1ItemStack, Block par2Block) {
 		if (par2Block.blockMaterial == Material.rock) {

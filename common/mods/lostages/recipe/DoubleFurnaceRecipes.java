@@ -4,9 +4,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-import mods.lostages.api.Items;
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 public class DoubleFurnaceRecipes {
@@ -21,13 +18,7 @@ public class DoubleFurnaceRecipes {
 		return smeltBase;
 	}
 	
-	private DoubleFurnaceRecipes() {
-		this.addDoubleSmelting(new ItemStack(Items.ingotBase.get(), 3, 1), new ItemStack(Items.ingotBase.get(), 1, 2), new ItemStack(Items.ingotBase.get(), 2, 3));
-		this.addDoubleSmelting(new ItemStack(Item.coal, 2), new ItemStack(Item.ingotIron), new ItemStack(Items.ingotBase.get(), 2, 5));
-		this.addDoubleSmelting(new ItemStack(Item.ingotIron), new ItemStack(Item.coal, 2), new ItemStack(Items.ingotBase.get(), 2, 5));
-		this.addDoubleSmelting(new ItemStack(Block.oreIron), new ItemStack(Block.oreIron), new ItemStack(Item.ingotIron, 3));
-		this.addDoubleSmelting(new ItemStack(Block.oreGold), new ItemStack(Block.oreGold), new ItemStack(Item.ingotGold, 3));
-	}
+	private DoubleFurnaceRecipes() {}
 	
 	public void addDoubleSmelting(ItemStack input1, ItemStack input2, ItemStack output) {
 		this.metaSmeltingList1.put(Arrays.asList(input1.itemID, input1.getItemDamage()), output);

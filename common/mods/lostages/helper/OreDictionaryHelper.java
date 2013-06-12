@@ -1,7 +1,7 @@
 package mods.lostages.helper;
 
-import mods.lostages.api.Blocks;
-import mods.lostages.api.Items;
+import mods.lostages.util.Blocks;
+import mods.lostages.util.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
@@ -14,5 +14,7 @@ public class OreDictionaryHelper {
 		//Items
 		OreDictionary.registerOre("ingotCopper", new ItemStack(Items.ingotBase.get(), 1, 1));
 		OreDictionary.registerOre("ingotTin", new ItemStack(Items.ingotBase.get(), 1, 2));
+		OreDictionary.registerOre("ingotBronze", new ItemStack(Items.ingotBase.get(), 1, 3));
+		OreDictionary.registerOre("ingotSteel", new ItemStack(Items.ingotBase.get(), 1, 4));
 	}
 }

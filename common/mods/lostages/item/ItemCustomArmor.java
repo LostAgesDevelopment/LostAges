@@ -1,7 +1,7 @@
 package mods.lostages.item;
 
 import mods.lostages.LostAges;
-import mods.lostages.api.Items;
+import mods.lostages.util.Items;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.ItemArmor;

@@ -13,7 +13,7 @@ public class ItemCustomIngot extends Item {
 
 	private Icon[] icons;
 	private String[] names = {
-			"ingotBone", "ingotCopper", "ingotTin", "ingotBronze", "ingotSteel", "ingotAdamant"
+			"ingotBone", "ingotCopper", "ingotTin", "ingotBronze", "ingotSteel", "ingotStrongGold", "ingotAdamant"
 	};
 	
 	public ItemCustomIngot(int par1) {
@@ -23,7 +23,7 @@ public class ItemCustomIngot extends Item {
 		this.setUnlocalizedName("ingotBase");
 		this.setCreativeTab(LostAges.tabLAMisc);
 	}
-
+	
 	@Override
 	public int getMetadata(int meta) {
 		return meta;

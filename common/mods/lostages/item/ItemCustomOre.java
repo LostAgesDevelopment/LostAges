@@ -1,11 +1,11 @@
-package mods.lostages.block;
+package mods.lostages.item;
 
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
-public class ItemBlockCustomOre extends ItemBlock {
+public class ItemCustomOre extends ItemBlock {
 
-	public ItemBlockCustomOre(int par1) {
+	public ItemCustomOre(int par1) {
 		super(par1);
 		this.setMaxDamage(0);
 		this.setHasSubtypes(true);

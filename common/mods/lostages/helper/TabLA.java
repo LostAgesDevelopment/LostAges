@@ -1,7 +1,7 @@
 package mods.lostages.helper;
 
-import mods.lostages.api.Blocks;
-import mods.lostages.api.Items;
+import mods.lostages.util.Blocks;
+import mods.lostages.util.Items;
 import net.minecraft.creativetab.CreativeTabs;
 
 public class TabLA extends CreativeTabs {

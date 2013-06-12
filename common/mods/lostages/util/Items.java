@@ -1,4 +1,4 @@
-package mods.lostages.api;
+package mods.lostages.util;
 
 import net.minecraft.item.Item;
 

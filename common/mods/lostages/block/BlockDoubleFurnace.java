@@ -3,7 +3,6 @@ package mods.lostages.block;
 import java.util.Random;
 
 import mods.lostages.LostAges;
-import mods.lostages.configuration.LAConfiguration;
 import mods.lostages.tile.TileDoubleFurnace;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -26,11 +25,12 @@ public class BlockDoubleFurnace extends BlockContainer {
 	public static final int META_DIR_EAST = 0x00000003;
 	public static final int META_DIR_WEST = 0x00000000;
 	
-	private Icon faceIconUnlit;
-	private Icon faceIconLit;
+	private Icon iconFrontUnlit;
+	private Icon iconFrontLit;
+	private Icon iconTop;
 	
-	public BlockDoubleFurnace() {
-		super(LAConfiguration.furnaceDoubleID, Material.rock);
+	public BlockDoubleFurnace(int id, Material material) {
+		super(id, material);
 		this.setUnlocalizedName("furnaceDouble");
 		this.setHardness(3.5F);
 		this.setCreativeTab(mods.lostages.LostAges.tabLABlocks);
@@ -38,14 +38,15 @@ public class BlockDoubleFurnace extends BlockContainer {
 	
 	@Override
 	public int getLightValue(IBlockAccess world, int x, int y, int z) {
-		return ((world.getBlockMetadata(x, y, z) >> 3) == 0 ? 0 : 13);
+		return ((world.getBlockMetadata(x, y, z) >> 3) == 0 ? 0 : 15);
 	}
 	
 	@Override
 	public void registerIcons(IconRegister iconRegister) {
-		faceIconUnlit = iconRegister.registerIcon("lostages:" + this.getUnlocalizedName2() + "_Front");
-		faceIconLit = iconRegister.registerIcon("lostages:" + this.getUnlocalizedName2() + "_FrontLit");
-		blockIcon = iconRegister.registerIcon("lostages:" + this.getUnlocalizedName2());
+		iconFrontUnlit = iconRegister.registerIcon("lostages:" + this.getUnlocalizedName2() + "_Front");
+		iconFrontLit = iconRegister.registerIcon("lostages:" + this.getUnlocalizedName2() + "_FrontLit");
+		iconTop = iconRegister.registerIcon("lostages:" + this.getUnlocalizedName2() + "_Top");
+		blockIcon = iconRegister.registerIcon("lostages:" + this.getUnlocalizedName2() + "_Side");
 	}
 	
 	@Override
@@ -72,7 +73,7 @@ public class BlockDoubleFurnace extends BlockContainer {
 		boolean isActive = ((metadata >> 3) == 1);
 		int facing = (metadata & MASK_DIR);
 		
-		return (side == getSideFromFacing(facing) ? (isActive ? faceIconLit : faceIconUnlit) : blockIcon);
+		return (side == getSideFromFacing(facing) ? (isActive ? iconFrontLit : iconFrontUnlit) : (side == 0 || side == 1 ? iconTop : blockIcon));
 	}
 	
 	@Override

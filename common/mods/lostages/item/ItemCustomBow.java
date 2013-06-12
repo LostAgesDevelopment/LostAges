@@ -19,7 +19,11 @@ public class ItemCustomBow extends ItemBow {
 	public ItemCustomBow(int par1) {
 		super(par1);
 		this.setCreativeTab(LostAges.tabLATools);
-		this.bFull3D = true;
+	}
+	
+	@Override
+	public boolean isFull3D() {
+		return true;
 	}
 	
 	@Override

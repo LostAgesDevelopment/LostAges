@@ -4,16 +4,15 @@ import java.util.Random;
 
 import mods.lostages.LostAges;
 import mods.lostages.tile.TileDoubleFurnace;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Icon;
-import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
@@ -43,35 +42,42 @@ public class BlockDoubleFurnace extends BlockContainer {
 	
 	@Override
 	public void registerIcons(IconRegister iconRegister) {
-		iconFrontUnlit = iconRegister.registerIcon("lostages:" + this.getUnlocalizedName2() + "_Front");
-		iconFrontLit = iconRegister.registerIcon("lostages:" + this.getUnlocalizedName2() + "_FrontLit");
-		iconTop = iconRegister.registerIcon("lostages:" + this.getUnlocalizedName2() + "_Top");
-		blockIcon = iconRegister.registerIcon("lostages:" + this.getUnlocalizedName2() + "_Side");
+		iconFrontUnlit = iconRegister.registerIcon("lostages:" + this.getUnlocalizedName().substring(5) + "_Front");
+		iconFrontLit = iconRegister.registerIcon("lostages:" + this.getUnlocalizedName().substring(5) + "_FrontLit");
+		iconTop = iconRegister.registerIcon("lostages:" + this.getUnlocalizedName().substring(5) + "_Top");
+		blockIcon = iconRegister.registerIcon("lostages:" + this.getUnlocalizedName().substring(5) + "_Side");
 	}
 	
 	@Override
-	public void onBlockPlacedBy(World world, int x, int y, int z, EntityLiving entity, ItemStack itemStack) {
-		int metadata = 0;
-		int facing = META_DIR_WEST;
-		
-		int dir = MathHelper.floor_double((double)(entity.rotationYaw * 4F / 360F) + 0.5) & 3;
-		if (dir == 0)
-			facing = META_DIR_NORTH;
-		if (dir == 1)
-			facing = META_DIR_EAST;
-		if (dir == 2)
-			facing = META_DIR_SOUTH;
-		if (dir == 3)
-			facing = META_DIR_WEST;
-		
-		metadata |= facing;
-		world.setBlockMetadataWithNotify(x, y, z, metadata, 2);
+	public void onBlockAdded(World world, int x, int y, int z) {
+		super.onBlockAdded(world, x, y, z);
+		if (!world.isRemote) {
+			int l = world.getBlockId(x, y, z - 1);
+			int i1 = world.getBlockId(x, y, z + 1);
+			int j1 = world.getBlockId(x - 1, y, z);
+			int k1 = world.getBlockId(x + 1, y, z);
+			byte b0 = 3;
+			
+			if (Block.opaqueCubeLookup[l] && !Block.opaqueCubeLookup[i1])
+				b0 = 3;
+			
+			if (Block.opaqueCubeLookup[i1] && !Block.opaqueCubeLookup[l])
+				b0 = 2;
+			
+			if (Block.opaqueCubeLookup[j1] && !Block.opaqueCubeLookup[k1])
+				b0 = 5;
+			
+			if (Block.opaqueCubeLookup[k1] && !Block.opaqueCubeLookup[j1])
+				b0 = 4;
+			
+			world.setBlockMetadataWithNotify(x, y, z, b0, 2);
+		}
 	}
 	
 	@Override
 	public Icon getIcon(int side, int metadata) {
 		boolean isActive = ((metadata >> 3) == 1);
-		int facing = (metadata & MASK_DIR);
+		int facing = (metadata + MASK_DIR);
 		
 		return (side == getSideFromFacing(facing) ? (isActive ? iconFrontLit : iconFrontUnlit) : (side == 0 || side == 1 ? iconTop : blockIcon));
 	}

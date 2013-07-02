@@ -14,139 +14,179 @@ import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.EnumHelper;
-
-import com.google.common.base.Optional;
-
+import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 
 public class LAItems {
 	
-	public static EnumToolMaterial ToolMaterialBone;
-	public static EnumToolMaterial ToolMaterialBronze;
-	public static EnumToolMaterial ToolMaterialSteel;
-	public static EnumToolMaterial ToolMaterialAdamant;
+	public static EnumToolMaterial ToolMaterialBone = EnumHelper.addToolMaterial("BONE", 1, 200, 5.0F, 1, 20);
+	public static EnumToolMaterial ToolMaterialBronze = EnumHelper.addToolMaterial("BRONZE", 2, 225, 6.0F, 2, 10);
+	public static EnumToolMaterial ToolMaterialSteel = EnumHelper.addToolMaterial("STEEL", 2, 500, 7.0F, 3, 16);
+	public static EnumToolMaterial ToolMaterialAdamant = EnumHelper.addToolMaterial("ADAMANT", 3, 1561, 8.0F, 3, 10);
 	
-	public static EnumArmorMaterial ArmorMaterialAdamant;
+	public static EnumArmorMaterial ArmorMaterialAdamant = EnumHelper.addArmorMaterial("ADAMANT", 35, new int[]{2, 6, 5, 2}, 25);
 	
 	public static void init() {
-		//Initialize Tool Material
-		ToolMaterialBone = EnumHelper.addToolMaterial("BONE", 1, 200, 5.0F, 1, 20);
-		ToolMaterialBronze = EnumHelper.addToolMaterial("BRONZE", 2, 225, 6.0F, 2, 10);
-		ToolMaterialSteel = EnumHelper.addToolMaterial("STEEL", 2, 500, 7.0F, 3, 16);
-		ToolMaterialAdamant = EnumHelper.addToolMaterial("ADAMANT", 3, 1561, 8.0F, 3, 10);
-		
-		//Initialize Armor Material
-		ArmorMaterialAdamant = EnumHelper.addArmorMaterial("ADAMANT", 35, new int[]{2, 6, 5, 2}, 25);
-		
 		initializeItems();
+		registerItems();
 		
 		registerNames();
 	}
 	
 	private static void initializeItems() {
 		//Items
-		Items.ingotBase = Optional.of(new ItemCustomIngot(LAConfiguration.ingotBaseID));
+		Items.ingotBase =new ItemCustomIngot(LAConfiguration.ingotBaseID);
 		
 		//Bows
-		Items.bowJungle = Optional.of(new ItemCustomBow(LAConfiguration.bowJungleID).setUnlocalizedName("bowJungle"));
+		Items.bowJungle = new ItemCustomBow(LAConfiguration.bowJungleID).setUnlocalizedName("bowJungle");
 		
 		//Bone Tools
-		Items.swordBone = Optional.of(new ItemCustomSword(LAConfiguration.swordBoneID, ToolMaterialBone).setUnlocalizedName("swordBone"));
-		Items.pickaxeBone = Optional.of(new ItemCustomPickaxe(LAConfiguration.pickaxeBoneID, ToolMaterialBone).setUnlocalizedName("pickaxeBone"));
-		Items.shovelBone = Optional.of(new ItemCustomShovel(LAConfiguration.shovelBoneID, ToolMaterialBone).setUnlocalizedName("shovelBone"));
-		Items.axeBone = Optional.of(new ItemCustomAxe(LAConfiguration.axeBoneID, ToolMaterialBone).setUnlocalizedName("axeBone"));
+		Items.swordBone = new ItemCustomSword(LAConfiguration.swordBoneID, ToolMaterialBone).setUnlocalizedName("swordBone");
+		Items.pickaxeBone = new ItemCustomPickaxe(LAConfiguration.pickaxeBoneID, ToolMaterialBone).setUnlocalizedName("pickaxeBone");
+		Items.shovelBone = new ItemCustomShovel(LAConfiguration.shovelBoneID, ToolMaterialBone).setUnlocalizedName("shovelBone");
+		Items.axeBone = new ItemCustomAxe(LAConfiguration.axeBoneID, ToolMaterialBone).setUnlocalizedName("axeBone");
 		
 		//Bronze Tools
-		Items.swordBronze = Optional.of(new ItemCustomSword(LAConfiguration.swordBronzeID, ToolMaterialBronze).setUnlocalizedName("swordBronze"));
-		Items.pickaxeBronze = Optional.of(new ItemCustomPickaxe(LAConfiguration.pickaxeBronzeID, ToolMaterialBronze).setUnlocalizedName("pickaxeBronze"));
-		Items.shovelBronze = Optional.of(new ItemCustomShovel(LAConfiguration.shovelBronzeID, ToolMaterialBronze).setUnlocalizedName("shovelBronze"));
-		Items.axeBronze = Optional.of(new ItemCustomAxe(LAConfiguration.axeBronzeID, ToolMaterialBronze).setUnlocalizedName("axeBronze"));
+		Items.swordBronze = new ItemCustomSword(LAConfiguration.swordBronzeID, ToolMaterialBronze).setUnlocalizedName("swordBronze");
+		Items.pickaxeBronze = new ItemCustomPickaxe(LAConfiguration.pickaxeBronzeID, ToolMaterialBronze).setUnlocalizedName("pickaxeBronze");
+		Items.shovelBronze = new ItemCustomShovel(LAConfiguration.shovelBronzeID, ToolMaterialBronze).setUnlocalizedName("shovelBronze");
+		Items.axeBronze = new ItemCustomAxe(LAConfiguration.axeBronzeID, ToolMaterialBronze).setUnlocalizedName("axeBronze");
 		
 		//Steel Tools
-		Items.swordSteel = Optional.of(new ItemCustomSword(LAConfiguration.swordSteelID, ToolMaterialSteel).setUnlocalizedName("swordSteel"));
-		Items.pickaxeSteel = Optional.of(new ItemCustomPickaxe(LAConfiguration.pickaxeSteelID, ToolMaterialSteel).setUnlocalizedName("pickaxeSteel"));
-		Items.shovelSteel = Optional.of(new ItemCustomShovel(LAConfiguration.shovelSteelID, ToolMaterialSteel).setUnlocalizedName("shovelSteel"));
-		Items.axeSteel = Optional.of(new ItemCustomAxe(LAConfiguration.axeSteelID, ToolMaterialSteel).setUnlocalizedName("axeSteel"));
+		Items.swordSteel = new ItemCustomSword(LAConfiguration.swordSteelID, ToolMaterialSteel).setUnlocalizedName("swordSteel");
+		Items.pickaxeSteel = new ItemCustomPickaxe(LAConfiguration.pickaxeSteelID, ToolMaterialSteel).setUnlocalizedName("pickaxeSteel");
+		Items.shovelSteel = new ItemCustomShovel(LAConfiguration.shovelSteelID, ToolMaterialSteel).setUnlocalizedName("shovelSteel");
+		Items.axeSteel = new ItemCustomAxe(LAConfiguration.axeSteelID, ToolMaterialSteel).setUnlocalizedName("axeSteel");
 		
 		//Adamant Tools
-		Items.swordAdamant = Optional.of(new ItemCustomSword(LAConfiguration.swordAdamantID, ToolMaterialAdamant).setUnlocalizedName("swordAdamant"));
-		Items.pickaxeAdamant = Optional.of(new ItemCustomPickaxe(LAConfiguration.pickaxeAdamantID, ToolMaterialAdamant).setUnlocalizedName("pickaxeAdamant"));
-		Items.shovelAdamant = Optional.of(new ItemCustomShovel(LAConfiguration.shovelAdamantID, ToolMaterialAdamant).setUnlocalizedName("shovelAdamant"));
-		Items.axeAdamant = Optional.of(new ItemCustomAxe(LAConfiguration.axeAdamantID, ToolMaterialAdamant).setUnlocalizedName("axeAdamant"));
+		Items.swordAdamant = new ItemCustomSword(LAConfiguration.swordAdamantID, ToolMaterialAdamant).setUnlocalizedName("swordAdamant");
+		Items.pickaxeAdamant = new ItemCustomPickaxe(LAConfiguration.pickaxeAdamantID, ToolMaterialAdamant).setUnlocalizedName("pickaxeAdamant");
+		Items.shovelAdamant = new ItemCustomShovel(LAConfiguration.shovelAdamantID, ToolMaterialAdamant).setUnlocalizedName("shovelAdamant");
+		Items.axeAdamant = new ItemCustomAxe(LAConfiguration.axeAdamantID, ToolMaterialAdamant).setUnlocalizedName("axeAdamant");
 		
 		//Adamant Armor
-		Items.helmetAdamant = Optional.of(new ItemCustomArmor(LAConfiguration.helmetAdamantID, ArmorMaterialAdamant, 1, 0).setUnlocalizedName("helmetAdamant"));
-		Items.plateAdamant =  Optional.of(new ItemCustomArmor(LAConfiguration.plateAdamantID, ArmorMaterialAdamant, 1, 1).setUnlocalizedName("plateAdamant"));
-		Items.legsAdamant = Optional.of(new ItemCustomArmor(LAConfiguration.legsAdamantID, ArmorMaterialAdamant, 1, 2).setUnlocalizedName("legsAdamant"));
-		Items.bootsAdamant = Optional.of(new ItemCustomArmor(LAConfiguration.bootsAdamantID, ArmorMaterialAdamant, 1, 3).setUnlocalizedName("bootsAdamant"));
+		Items.helmetAdamant = new ItemCustomArmor(LAConfiguration.helmetAdamantID, ArmorMaterialAdamant, 1, 0).setUnlocalizedName("helmetAdamant");
+		Items.plateAdamant =  new ItemCustomArmor(LAConfiguration.plateAdamantID, ArmorMaterialAdamant, 1, 1).setUnlocalizedName("plateAdamant");
+		Items.legsAdamant = new ItemCustomArmor(LAConfiguration.legsAdamantID, ArmorMaterialAdamant, 1, 2).setUnlocalizedName("legsAdamant");
+		Items.bootsAdamant = new ItemCustomArmor(LAConfiguration.bootsAdamantID, ArmorMaterialAdamant, 1, 3).setUnlocalizedName("bootsAdamant");
 		
 		//Hammers
-		Items.hammerWood = Optional.of(new ItemHammer(LAConfiguration.hammerWoodID, EnumToolMaterial.WOOD).setUnlocalizedName("hammerWood"));
-		Items.hammerStone = Optional.of(new ItemHammer(LAConfiguration.hammerStoneID, EnumToolMaterial.STONE).setUnlocalizedName("hammerStone"));
-		Items.hammerIron = Optional.of(new ItemHammer(LAConfiguration.hammerIronID, EnumToolMaterial.IRON).setUnlocalizedName("hammerIron"));
-		Items.hammerGold = Optional.of(new ItemHammer(LAConfiguration.hammerGoldID, EnumToolMaterial.GOLD).setUnlocalizedName("hammerGold"));
-		Items.hammerDiamond = Optional.of(new ItemHammer(LAConfiguration.hammerDiamondID, EnumToolMaterial.EMERALD).setUnlocalizedName("hammerDiamond"));
-		Items.hammerBone = Optional.of(new ItemHammer(LAConfiguration.hammerBoneID, ToolMaterialBone).setUnlocalizedName("hammerBone"));
-		Items.hammerBronze = Optional.of(new ItemHammer(LAConfiguration.hammerBronzeID, ToolMaterialBronze).setUnlocalizedName("hammerBronze"));
-		Items.hammerSteel = Optional.of(new ItemHammer(LAConfiguration.hammerSteelID, ToolMaterialSteel).setUnlocalizedName("hammerSteel"));
-		Items.hammerAdamant = Optional.of(new ItemHammer(LAConfiguration.hammerAdamantID, ToolMaterialAdamant).setUnlocalizedName("hammerAdamant"));
-		Items.hammerMagic = Optional.of(new ItemHammer(LAConfiguration.hammerMagicID, EnumToolMaterial.EMERALD, Block.stoneBrick).setUnlocalizedName("hammerMagic"));
+		Items.hammerWood = new ItemHammer(LAConfiguration.hammerWoodID, EnumToolMaterial.WOOD).setUnlocalizedName("hammerWood");
+		Items.hammerStone = new ItemHammer(LAConfiguration.hammerStoneID, EnumToolMaterial.STONE).setUnlocalizedName("hammerStone");
+		Items.hammerIron = new ItemHammer(LAConfiguration.hammerIronID, EnumToolMaterial.IRON).setUnlocalizedName("hammerIron");
+		Items.hammerGold = new ItemHammer(LAConfiguration.hammerGoldID, EnumToolMaterial.GOLD).setUnlocalizedName("hammerGold");
+		Items.hammerDiamond = new ItemHammer(LAConfiguration.hammerDiamondID, EnumToolMaterial.EMERALD).setUnlocalizedName("hammerDiamond");
+		Items.hammerBone = new ItemHammer(LAConfiguration.hammerBoneID, ToolMaterialBone).setUnlocalizedName("hammerBone");
+		Items.hammerBronze = new ItemHammer(LAConfiguration.hammerBronzeID, ToolMaterialBronze).setUnlocalizedName("hammerBronze");
+		Items.hammerSteel = new ItemHammer(LAConfiguration.hammerSteelID, ToolMaterialSteel).setUnlocalizedName("hammerSteel");
+		Items.hammerAdamant = new ItemHammer(LAConfiguration.hammerAdamantID, ToolMaterialAdamant).setUnlocalizedName("hammerAdamant");
+		Items.hammerMagic = new ItemHammer(LAConfiguration.hammerMagicID, EnumToolMaterial.EMERALD, Block.stoneBrick).setUnlocalizedName("hammerMagic");
+	}
+
+	private static void registerItems() {
+		//Items
+		GameRegistry.registerItem(Items.ingotBase, "ingotBase");
+		
+		//Bows
+		GameRegistry.registerItem(Items.bowJungle, "bowJungle");
+		
+		//Bone Tools
+		GameRegistry.registerItem(Items.swordBone, "swordBone");
+		GameRegistry.registerItem(Items.pickaxeBone, "pickaxeBone");
+		GameRegistry.registerItem(Items.shovelBone, "shovelBone");
+		GameRegistry.registerItem(Items.axeBone, "axeBone");
+		
+		//Bronze Tools
+		GameRegistry.registerItem(Items.swordBronze, "swordBronze");
+		GameRegistry.registerItem(Items.pickaxeBronze, "pickaxeBronze");
+		GameRegistry.registerItem(Items.shovelBronze, "shovelBronze");
+		GameRegistry.registerItem(Items.axeBronze, "axeBronze");
+		
+		//Steel Tools
+		GameRegistry.registerItem(Items.swordSteel, "swordSteel");
+		GameRegistry.registerItem(Items.pickaxeSteel, "pickaxeSteel");
+		GameRegistry.registerItem(Items.shovelSteel, "shovelSteel");
+		GameRegistry.registerItem(Items.axeSteel, "axeSteel");
+		
+		//Adamant Tools
+		GameRegistry.registerItem(Items.swordAdamant, "swordAdamant");
+		GameRegistry.registerItem(Items.pickaxeAdamant, "pickaxeAdamant");
+		GameRegistry.registerItem(Items.shovelAdamant, "shovelAdamant");
+		GameRegistry.registerItem(Items.axeAdamant, "axeAdamant");
+		
+		//Adamant Armor
+		GameRegistry.registerItem(Items.helmetAdamant, "helmetAdamant");
+		GameRegistry.registerItem(Items.plateAdamant, "plateAdamant");
+		GameRegistry.registerItem(Items.legsAdamant, "legsAdamant");
+		GameRegistry.registerItem(Items.bootsAdamant, "bootsAdamant");
+		
+		//Hammers
+		GameRegistry.registerItem(Items.hammerWood, "hammerWood");
+		GameRegistry.registerItem(Items.hammerStone, "hammerStone");
+		GameRegistry.registerItem(Items.hammerIron, "hammerIron");
+		GameRegistry.registerItem(Items.hammerGold, "hammerGold");
+		GameRegistry.registerItem(Items.hammerDiamond, "hammerDiamond");
+		GameRegistry.registerItem(Items.hammerBone, "hammerBone");
+		GameRegistry.registerItem(Items.hammerBronze, "hammerBronze");
+		GameRegistry.registerItem(Items.hammerSteel, "hammerSteel");
+		GameRegistry.registerItem(Items.hammerAdamant, "hammerAdamant");
+		GameRegistry.registerItem(Items.hammerMagic, "hammerMagic");
 	}
 	
 	private static void registerNames() {
 		//Items
-		LanguageRegistry.addName(new ItemStack(Items.ingotBase.get(), 1, 0), "Smelted Bone");
-		LanguageRegistry.addName(new ItemStack(Items.ingotBase.get(), 1, 1), "Copper Ingot");
-		LanguageRegistry.addName(new ItemStack(Items.ingotBase.get(), 1, 2), "Tin Ingot");
-		LanguageRegistry.addName(new ItemStack(Items.ingotBase.get(), 1, 3), "Bronze Ingot");
-		LanguageRegistry.addName(new ItemStack(Items.ingotBase.get(), 1, 4), "Steel Ingot");
-		LanguageRegistry.addName(new ItemStack(Items.ingotBase.get(), 1, 5), "Strong Gold Ingot");
-		LanguageRegistry.addName(new ItemStack(Items.ingotBase.get(), 1, 6), "Adamant Ingot");
+		LanguageRegistry.addName(new ItemStack(Items.ingotBase, 1, 0), "Smelted Bone");
+		LanguageRegistry.addName(new ItemStack(Items.ingotBase, 1, 1), "Copper Ingot");
+		LanguageRegistry.addName(new ItemStack(Items.ingotBase, 1, 2), "Tin Ingot");
+		LanguageRegistry.addName(new ItemStack(Items.ingotBase, 1, 3), "Bronze Ingot");
+		LanguageRegistry.addName(new ItemStack(Items.ingotBase, 1, 4), "Steel Ingot");
+		LanguageRegistry.addName(new ItemStack(Items.ingotBase, 1, 5), "Strong Gold Ingot");
+		LanguageRegistry.addName(new ItemStack(Items.ingotBase, 1, 6), "Adamant Ingot");
 		
 		//Bows
-		LanguageRegistry.addName(Items.bowJungle.get(), "Jungle Bow");
+		LanguageRegistry.addName(Items.bowJungle, "Jungle Bow");
 		
 		//Bone Tools
-		LanguageRegistry.addName(Items.swordBone.get(), "Bone Sword");
-		LanguageRegistry.addName(Items.pickaxeBone.get(), "Bone Pickaxe");
-		LanguageRegistry.addName(Items.shovelBone.get(), "Bone Shovel");
-		LanguageRegistry.addName(Items.axeBone.get(), "Bone Axe");
+		LanguageRegistry.addName(Items.swordBone, "Bone Sword");
+		LanguageRegistry.addName(Items.pickaxeBone, "Bone Pickaxe");
+		LanguageRegistry.addName(Items.shovelBone, "Bone Shovel");
+		LanguageRegistry.addName(Items.axeBone, "Bone Axe");
 		
 		//Bronze Tools
-		LanguageRegistry.addName(Items.swordBronze.get(), "Bronze Sword");
-		LanguageRegistry.addName(Items.pickaxeBronze.get(), "Bronze Pickaxe");
-		LanguageRegistry.addName(Items.shovelBronze.get(), "Bronze Shovel");
-		LanguageRegistry.addName(Items.axeBronze.get(), "Bronze Axe");
+		LanguageRegistry.addName(Items.swordBronze, "Bronze Sword");
+		LanguageRegistry.addName(Items.pickaxeBronze, "Bronze Pickaxe");
+		LanguageRegistry.addName(Items.shovelBronze, "Bronze Shovel");
+		LanguageRegistry.addName(Items.axeBronze, "Bronze Axe");
 		
 		//Steel Tools
-		LanguageRegistry.addName(Items.swordSteel.get(), "Steel Sword");
-		LanguageRegistry.addName(Items.pickaxeSteel.get(), "Steel Pickaxe");
-		LanguageRegistry.addName(Items.shovelSteel.get(), "Steel Shovel");
-		LanguageRegistry.addName(Items.axeSteel.get(), "Steel Axe");
+		LanguageRegistry.addName(Items.swordSteel, "Steel Sword");
+		LanguageRegistry.addName(Items.pickaxeSteel, "Steel Pickaxe");
+		LanguageRegistry.addName(Items.shovelSteel, "Steel Shovel");
+		LanguageRegistry.addName(Items.axeSteel, "Steel Axe");
 		
 		//Adamant Tools
-		LanguageRegistry.addName(Items.swordAdamant.get(), "Adamant Sword");
-		LanguageRegistry.addName(Items.pickaxeAdamant.get(), "Adamant Pickaxe");
-		LanguageRegistry.addName(Items.shovelAdamant.get(), "Adamant Shovel");
-		LanguageRegistry.addName(Items.axeAdamant.get(), "Adamant Axe");
+		LanguageRegistry.addName(Items.swordAdamant, "Adamant Sword");
+		LanguageRegistry.addName(Items.pickaxeAdamant, "Adamant Pickaxe");
+		LanguageRegistry.addName(Items.shovelAdamant, "Adamant Shovel");
+		LanguageRegistry.addName(Items.axeAdamant, "Adamant Axe");
 		
 		//Adamant Armor
-		LanguageRegistry.addName(Items.helmetAdamant.get(), "Adamant Helemt");
-		LanguageRegistry.addName(Items.plateAdamant.get(), "Adamant Chestplate");
-		LanguageRegistry.addName(Items.legsAdamant.get(), "Adamant Leggings");
-		LanguageRegistry.addName(Items.bootsAdamant.get(), "Adamant Boots");
+		LanguageRegistry.addName(Items.helmetAdamant, "Adamant Helemt");
+		LanguageRegistry.addName(Items.plateAdamant, "Adamant Chestplate");
+		LanguageRegistry.addName(Items.legsAdamant, "Adamant Leggings");
+		LanguageRegistry.addName(Items.bootsAdamant, "Adamant Boots");
 		
 		//Hammers
-		LanguageRegistry.addName(Items.hammerWood.get(), "Wooden Hammer");
-		LanguageRegistry.addName(Items.hammerStone.get(), "Stone Hammer");
-		LanguageRegistry.addName(Items.hammerIron.get(), "Iron Hammer");
-		LanguageRegistry.addName(Items.hammerGold.get(), "Gold Hammer");
-		LanguageRegistry.addName(Items.hammerDiamond.get(), "Diamond Hammer");
-		LanguageRegistry.addName(Items.hammerBone.get(), "Bone Hammer");
-		LanguageRegistry.addName(Items.hammerBronze.get(), "Bronze Hammer");
-		LanguageRegistry.addName(Items.hammerSteel.get(), "Steel Hammer");
-		LanguageRegistry.addName(Items.hammerAdamant.get(), "Adamant Hammer");
-		LanguageRegistry.addName(Items.hammerMagic.get(), "Magic Hammer");
+		LanguageRegistry.addName(Items.hammerWood, "Wooden Hammer");
+		LanguageRegistry.addName(Items.hammerStone, "Stone Hammer");
+		LanguageRegistry.addName(Items.hammerIron, "Iron Hammer");
+		LanguageRegistry.addName(Items.hammerGold, "Gold Hammer");
+		LanguageRegistry.addName(Items.hammerDiamond, "Diamond Hammer");
+		LanguageRegistry.addName(Items.hammerBone, "Bone Hammer");
+		LanguageRegistry.addName(Items.hammerBronze, "Bronze Hammer");
+		LanguageRegistry.addName(Items.hammerSteel, "Steel Hammer");
+		LanguageRegistry.addName(Items.hammerAdamant, "Adamant Hammer");
+		LanguageRegistry.addName(Items.hammerMagic, "Magic Hammer");
 	}
 }

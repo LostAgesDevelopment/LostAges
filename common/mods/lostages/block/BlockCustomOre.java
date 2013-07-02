@@ -13,11 +13,7 @@ import net.minecraft.util.Icon;
 public class BlockCustomOre extends Block {
 
 	private Icon[] icons;
-	private String[] names = {
-			"oreCopper",
-			"oreTin",
-			"oreAdamant"
-	};
+	private String[] names = { "oreCopper", "oreTin", "oreAdamant" };
 	
 	public BlockCustomOre(int id, Material material) {
 		super(id, material);
@@ -36,7 +32,7 @@ public class BlockCustomOre extends Block {
 	}
 
 	@Override
-	public Icon getIcon(int id, int meta) {
+	public Icon getIcon(int side, int meta) {
 		return icons[meta];
 	}
 	

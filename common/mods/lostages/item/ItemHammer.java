@@ -6,7 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
@@ -25,7 +25,7 @@ public class ItemHammer extends Item {
 	
 	private int blockChange;
 	
-	protected int weaponDamage;
+	protected float weaponDamage;
 	protected EnumToolMaterial toolMaterial;
 	
 	public ItemHammer(int par1, EnumToolMaterial par2EnumToolMaterial) {
@@ -63,8 +63,8 @@ public class ItemHammer extends Item {
 	}
 	
 	@Override
-    public boolean hitEntity(ItemStack par1ItemStack, EntityLiving par2EntityLiving, EntityLiving par3EntityLiving) {
-        par1ItemStack.damageItem(1, par3EntityLiving);
+    public boolean hitEntity(ItemStack itemStack, EntityLivingBase entityLivingBase1, EntityLivingBase entityLivingBase2) {
+		itemStack.damageItem(1, entityLivingBase1);
         return true;
     }
 	
@@ -72,7 +72,7 @@ public class ItemHammer extends Item {
 	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer player) {
 		if (player.isSneaking()) {
 			if (world.isRemote) {
-				if (itemStack.itemID == Items.hammerMagic.get().itemID) {
+				if (itemStack.itemID == Items.hammerMagic.itemID) {
 					changeMode(world, player);
 				}
 			}
@@ -83,7 +83,7 @@ public class ItemHammer extends Item {
 	
 	@Override
     public boolean onItemUse(ItemStack itemStack, EntityPlayer player, World world, int x, int y, int z, int side, float par8, float par9, float par10) {
-		if (itemStack.itemID == Items.hammerMagic.get().itemID) {
+		if (itemStack.itemID == Items.hammerMagic.itemID) {
 			if (hammerMode == HammerMode.STANDARD) {
 				changeStandard(itemStack, world, player, x, y, z);
 				return true;
@@ -103,9 +103,9 @@ public class ItemHammer extends Item {
 	}
 
 	@Override
-    public boolean onBlockDestroyed(ItemStack itemStack, World world, int blockID, int x, int y, int z, EntityLiving entityLiving) {
-		EntityPlayer player = (EntityPlayer) entityLiving;
-		if (itemStack.itemID == Items.hammerMagic.get().itemID) {
+    public boolean onBlockDestroyed(ItemStack itemStack, World world, int blockID, int x, int y, int z, EntityLivingBase entityLivingBase) {
+		EntityPlayer player = (EntityPlayer) entityLivingBase;
+		if (itemStack.itemID == Items.hammerMagic.itemID) {
 			if (hammerMode == HammerMode.CHARGED) {
 				breakCharged(itemStack, world, player, x, y, z);
 				return true;
@@ -123,14 +123,14 @@ public class ItemHammer extends Item {
     }
 	
 	@Override
-    public int getDamageVsEntity(Entity par1Entity) {
+    public float getDamageVsEntity(Entity par1Entity, ItemStack itemStack) {
     	String name = par1Entity.getEntityName();    	
     	if (name.equals("Skeleton")) {
-    		return (int) (weaponDamage * (double)1.5);
+    		return (float) (weaponDamage * (double)1.5);
     	} else if (name.equals("Spider")) {
-    		return (int) (weaponDamage * (double)1.5);
+    		return (float) (weaponDamage * (double)1.5);
     	} else {         
-        	return (int) (weaponDamage * (double)0.75);    
+        	return (float) (weaponDamage * (double)0.75);    
         }
     }
 	
@@ -168,13 +168,13 @@ public class ItemHammer extends Item {
 		if (world.isRemote) {
 			if (hammerMode == HammerMode.STANDARD) {
 				hammerMode = HammerMode.CHARGED;
-				player.sendChatToPlayer("Changed to charged mode.");
+				player.addChatMessage("Changed to charged mode.");
 			} else if (hammerMode == HammerMode.CHARGED) {
 				hammerMode = HammerMode.ULTIMATE;
-				player.sendChatToPlayer("Changed to ultimate mode.");
+				player.addChatMessage("Changed to ultimate mode.");
 			} else {
 				hammerMode = HammerMode.STANDARD;
-				player.sendChatToPlayer("Changed to standard mode.");
+				player.addChatMessage("Changed to standard mode.");
 			}
 		}
 	}

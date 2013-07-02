@@ -3,6 +3,7 @@ package mods.lostages.helper;
 import mods.lostages.util.Blocks;
 import mods.lostages.util.Items;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemStack;
 
 public class TabLA extends CreativeTabs {
 
@@ -27,11 +28,11 @@ public class TabLA extends CreativeTabs {
 	@Override
 	public int getTabIconItemIndex() {
 		if (tabName.equals("LABlockTab")) {
-			return Blocks.oreBase.get().blockID;
+			return new ItemStack(Blocks.blockStorage, 1, 1).itemID;
 		} else if (tabName.equals("LAToolTab")) {
-			return Items.swordBone.get().itemID;
+			return Items.hammerMagic.itemID;
 		} else {
-			return Items.ingotBase.get().itemID;
+			return new ItemStack(Items.ingotBase, 1, 2).itemID;
 		}
 	}
 }

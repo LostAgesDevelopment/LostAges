@@ -2,54 +2,52 @@ package mods.lostages.util;
 
 import net.minecraft.item.Item;
 
-import com.google.common.base.Optional;
-
 public class Items {
 	//Items
-	public static Optional<? extends Item> ingotBase = Optional.absent();
+	public static Item ingotBase;
 	
 	//Bows
-	public static Optional<? extends Item> bowJungle = Optional.absent();
+	public static Item bowJungle;
 	
 	//Hammers
-	public static Optional<? extends Item> hammerWood = Optional.absent();
-	public static Optional<? extends Item> hammerStone = Optional.absent();
-	public static Optional<? extends Item> hammerIron = Optional.absent();
-	public static Optional<? extends Item> hammerGold = Optional.absent();
-	public static Optional<? extends Item> hammerDiamond = Optional.absent();
-	public static Optional<? extends Item> hammerBone = Optional.absent();
-	public static Optional<? extends Item> hammerBronze = Optional.absent();
-	public static Optional<? extends Item> hammerSteel = Optional.absent();
-	public static Optional<? extends Item> hammerAdamant = Optional.absent();
-	public static Optional<? extends Item> hammerMagic = Optional.absent();
+	public static Item hammerWood;
+	public static Item hammerStone;
+	public static Item hammerIron;
+	public static Item hammerGold;
+	public static Item hammerDiamond;
+	public static Item hammerBone;
+	public static Item hammerBronze;
+	public static Item hammerSteel;
+	public static Item hammerAdamant;
+	public static Item hammerMagic;
 	
 	//Bone Tools
-	public static Optional<? extends Item> swordBone = Optional.absent();
-	public static Optional<? extends Item> pickaxeBone = Optional.absent();
-	public static Optional<? extends Item> shovelBone = Optional.absent();
-	public static Optional<? extends Item> axeBone = Optional.absent();
+	public static Item swordBone;
+	public static Item pickaxeBone;
+	public static Item shovelBone;
+	public static Item axeBone;
 	
 	//Bronze Tools
-	public static Optional<? extends Item> swordBronze = Optional.absent();
-	public static Optional<? extends Item> pickaxeBronze = Optional.absent();
-	public static Optional<? extends Item> shovelBronze = Optional.absent();
-	public static Optional<? extends Item> axeBronze = Optional.absent();
+	public static Item swordBronze;
+	public static Item pickaxeBronze;
+	public static Item shovelBronze;
+	public static Item axeBronze;
 	
 	//Steel Tools
-	public static Optional<? extends Item> swordSteel = Optional.absent();
-	public static Optional<? extends Item> pickaxeSteel = Optional.absent();
-	public static Optional<? extends Item> shovelSteel = Optional.absent();
-	public static Optional<? extends Item> axeSteel = Optional.absent();
+	public static Item swordSteel;
+	public static Item pickaxeSteel;
+	public static Item shovelSteel;
+	public static Item axeSteel;
 	
 	//Adamant Tools
-	public static Optional<? extends Item> swordAdamant = Optional.absent();
-	public static Optional<? extends Item> pickaxeAdamant = Optional.absent();
-	public static Optional<? extends Item> shovelAdamant = Optional.absent();
-	public static Optional<? extends Item> axeAdamant = Optional.absent();
+	public static Item swordAdamant;
+	public static Item pickaxeAdamant;
+	public static Item shovelAdamant;
+	public static Item axeAdamant;
 	
 	//Adamant Armor
-	public static Optional<? extends Item> helmetAdamant = Optional.absent();
-	public static Optional<? extends Item> plateAdamant = Optional.absent();
-	public static Optional<? extends Item> legsAdamant = Optional.absent();
-	public static Optional<? extends Item> bootsAdamant = Optional.absent();
+	public static Item helmetAdamant;
+	public static Item plateAdamant;
+	public static Item legsAdamant;
+	public static Item bootsAdamant;
 }

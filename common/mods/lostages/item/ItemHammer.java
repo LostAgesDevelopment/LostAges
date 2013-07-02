@@ -1,5 +1,7 @@
 package mods.lostages.item;
 
+import com.google.common.collect.Multimap;
+
 import mods.lostages.LostAges;
 import mods.lostages.util.Items;
 import net.minecraft.block.Block;
@@ -7,6 +9,8 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
@@ -162,6 +166,13 @@ public class ItemHammer extends Item {
 	@Override
     public boolean getIsRepairable(ItemStack par1ItemStack, ItemStack par2ItemStack) {
         return toolMaterial.getToolCraftingMaterial() == par2ItemStack.itemID ? true : super.getIsRepairable(par1ItemStack, par2ItemStack);
+    }
+	
+	@Override
+    public Multimap func_111205_h() {
+        Multimap multimap = super.func_111205_h();
+        multimap.put(SharedMonsterAttributes.field_111264_e.func_111108_a(), new AttributeModifier(field_111210_e, "Tool modifier", (double)this.weaponDamage, 0));
+        return multimap;
     }
 	
 	private void changeMode(World world, EntityPlayer player) {

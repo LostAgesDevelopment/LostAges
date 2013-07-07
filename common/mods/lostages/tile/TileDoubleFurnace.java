@@ -14,9 +14,9 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class TileDoubleFurnace extends TileEntity implements ISidedInventory {
-	private static final int[] sidedSlotSides = new int[] { 0 };
-	private static final int[] sidedSlotBottom = new int[] { 2, 1 };
-	private static final int[] sidedSlotTop = new int[] { 1 };
+	private static final int[] sidedSlotSides = new int[] { 2 };
+	private static final int[] sidedSlotBottom = new int[] { 3 };
+	private static final int[] sidedSlotTop = new int[] { 0, 1 };
 	
 	private ItemStack[] furnaceItems = new ItemStack[4];
 	public int furnaceBurnTime = 0;
@@ -65,7 +65,6 @@ public class TileDoubleFurnace extends TileEntity implements ISidedInventory {
 				flag1 = true;
 				metadata = getBlockMetadata();
 				isActive = 1;
-				metadata = (isActive << 3) | (metadata & BlockDoubleFurnace.META_ISACTIVE);
 				
 				worldObj.setBlockMetadataWithNotify(xCoord, yCoord, zCoord, metadata, 2);
 			}
@@ -73,6 +72,7 @@ public class TileDoubleFurnace extends TileEntity implements ISidedInventory {
 		
 		if (flag != furnaceBurnTime > 0) {
 			flag1 = true;
+			BlockDoubleFurnace.updateBlockState(this.furnaceBurnTime > 0, this.worldObj, this.xCoord, this.yCoord, this.zCoord);
 		}
 		
 		if (flag1)

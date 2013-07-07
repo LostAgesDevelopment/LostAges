@@ -33,7 +33,7 @@ public class GuiDoubleFurnace extends GuiContainer {
 	@Override
 	protected void drawGuiContainerBackgroundLayer(float f, int i, int j) {
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-		mc.renderEngine.func_110581_b(new ResourceLocation("mods/textures/guis/DoubleFurnaceGUI.png"));
+		mc.renderEngine.func_110577_a(new ResourceLocation("lostages:textures/gui/DoubleFurnaceGUI.png"));
 		int xStart = (width - xSize) / 2;
 		int yStart = (height - ySize) / 2;
 		this.drawTexturedModalRect(xStart, yStart, 0, 0, xSize, ySize);

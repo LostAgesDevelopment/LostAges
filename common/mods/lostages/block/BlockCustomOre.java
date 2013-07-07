@@ -7,8 +7,11 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
+import net.minecraft.util.MovingObjectPosition;
+import net.minecraft.world.World;
 
 public class BlockCustomOre extends Block {
 
@@ -37,10 +40,34 @@ public class BlockCustomOre extends Block {
 	}
 	
 	@Override
+    public ItemStack getPickBlock(MovingObjectPosition target, World world, int x, int y, int z) {
+        int id = idPicked(world, x, y, z);
+
+        if (id == 0)
+        {
+            return null;
+        }
+
+        Item item = Item.itemsList[id];
+        if (item == null)
+        {
+            return null;
+        }
+
+        return new ItemStack(id, 1, getDamageValue(world, x, y, z));
+    }
+	
+	@Override
+    public int damageDropped(int metadata) {
+        return metadata;
+    }
+	
+	@Override
 	@SuppressWarnings({"rawtypes", "unchecked"})
 	public void getSubBlocks(int id, CreativeTabs tab, List list) {
 		for (int i = 0; i < icons.length; i++) {
 			list.add(new ItemStack(id, 1, i));
 		}
 	}
+	
 }

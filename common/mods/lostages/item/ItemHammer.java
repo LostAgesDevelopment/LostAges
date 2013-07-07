@@ -1,7 +1,5 @@
 package mods.lostages.item;
 
-import com.google.common.collect.Multimap;
-
 import mods.lostages.LostAges;
 import mods.lostages.util.Items;
 import net.minecraft.block.Block;
@@ -16,6 +14,9 @@ import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+
+import com.google.common.collect.Multimap;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -169,6 +170,7 @@ public class ItemHammer extends Item {
     }
 	
 	@Override
+	@SuppressWarnings({ "unchecked", "rawtypes" })
     public Multimap func_111205_h() {
         Multimap multimap = super.func_111205_h();
         multimap.put(SharedMonsterAttributes.field_111264_e.func_111108_a(), new AttributeModifier(field_111210_e, "Tool modifier", (double)this.weaponDamage, 0));

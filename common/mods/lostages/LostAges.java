@@ -8,6 +8,7 @@ import mods.lostages.configuration.LAItems;
 import mods.lostages.helper.OreDictionaryHelper;
 import mods.lostages.helper.RecipeHelper;
 import mods.lostages.helper.TabLA;
+import mods.lostages.world.gen.LAOreGen;
 import net.minecraft.creativetab.CreativeTabs;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Mod;
@@ -19,6 +20,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = "lostages", name = "Lost Ages", version = "@VERSION@")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
@@ -47,6 +49,8 @@ public class LostAges {
 		
 		proxy.registerTileEntities();
 		proxy.registerRenderer();
+		
+		GameRegistry.registerWorldGenerator(new LAOreGen());
 		
 		NetworkRegistry.instance().registerGuiHandler(this, proxy);
 	}

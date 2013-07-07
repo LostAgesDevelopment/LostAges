@@ -3,6 +3,7 @@ package mods.lostages.configuration;
 import mods.lostages.block.BlockCustomOre;
 import mods.lostages.block.BlockCustomStorage;
 import mods.lostages.block.BlockDoubleFurnace;
+import mods.lostages.block.BlockLAPortal;
 import mods.lostages.item.ItemCustomOre;
 import mods.lostages.item.ItemCustomStorage;
 import mods.lostages.util.Blocks;
@@ -24,14 +25,23 @@ public class LABlocks extends Blocks {
 	
 	private static void initializeBlocks() {
 		Blocks.oreBase = new BlockCustomOre(LAConfiguration.oreBaseID, Material.rock);
+		Blocks.oreCopper = new ItemStack(Blocks.oreBase, 1, 0);
+		Blocks.oreTin = new ItemStack(Blocks.oreBase, 1, 1);
+		Blocks.oreAdamant = new ItemStack(Blocks.oreBase, 1, 2);
+		
 		Blocks.blockStorage = new BlockCustomStorage(LAConfiguration.blockStorageID, Material.iron);
-		Blocks.furnaceDouble = new BlockDoubleFurnace(LAConfiguration.furnaceDoubleID, Material.rock);
+		Blocks.furnaceDoubleIdle = new BlockDoubleFurnace(LAConfiguration.furnaceDoubleIdleID, false);
+		Blocks.furnaceDoubleActive = new BlockDoubleFurnace(LAConfiguration.furnaceDoubleActiveID, true);
+		
+		Blocks.portalLA = new BlockLAPortal(LAConfiguration.portalLAID);
 	}
 	
 	private static void registerBlocks() {
 		GameRegistry.registerBlock(Blocks.oreBase, ItemCustomOre.class, "oreBase");
 		GameRegistry.registerBlock(Blocks.blockStorage, ItemCustomStorage.class, "blockStorage");
-		GameRegistry.registerBlock(Blocks.furnaceDouble, "furnaceDouble");
+		GameRegistry.registerBlock(Blocks.furnaceDoubleIdle, "furnaceDoubleIdle");
+		GameRegistry.registerBlock(Blocks.furnaceDoubleActive, "furnaceDoubleActive");
+		GameRegistry.registerBlock(Blocks.portalLA, "portalLA");
 	}
 	
 	private static void registerNames() {
@@ -46,6 +56,9 @@ public class LABlocks extends Blocks {
 		LanguageRegistry.addName(new ItemStack(Blocks.blockStorage, 1, 4), "Strong Gold Block");
 		LanguageRegistry.addName(new ItemStack(Blocks.blockStorage, 1, 5), "Adamant Block");
 		
-		LanguageRegistry.addName(new ItemStack(Blocks.furnaceDouble), "Double Furnace");
+		LanguageRegistry.addName(new ItemStack(Blocks.furnaceDoubleIdle), "Double Furnace");
+		LanguageRegistry.addName(new ItemStack(Blocks.furnaceDoubleActive), "Double Furnace");
+		
+		LanguageRegistry.addName(Blocks.portalLA, "Lost Ages Portal");
 	}
 }

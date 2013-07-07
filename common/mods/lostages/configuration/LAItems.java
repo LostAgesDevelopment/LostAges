@@ -66,10 +66,10 @@ public class LAItems {
 		Items.axeAdamant = new ItemCustomAxe(LAConfiguration.axeAdamantID, ToolMaterialAdamant).setUnlocalizedName("axeAdamant");
 		
 		//Adamant Armor
-		Items.helmetAdamant = new ItemCustomArmor(LAConfiguration.helmetAdamantID, ArmorMaterialAdamant, 1, 0).setUnlocalizedName("helmetAdamant");
-		Items.plateAdamant =  new ItemCustomArmor(LAConfiguration.plateAdamantID, ArmorMaterialAdamant, 1, 1).setUnlocalizedName("plateAdamant");
-		Items.legsAdamant = new ItemCustomArmor(LAConfiguration.legsAdamantID, ArmorMaterialAdamant, 1, 2).setUnlocalizedName("legsAdamant");
-		Items.bootsAdamant = new ItemCustomArmor(LAConfiguration.bootsAdamantID, ArmorMaterialAdamant, 1, 3).setUnlocalizedName("bootsAdamant");
+		Items.helmetAdamant = new ItemCustomArmor(LAConfiguration.helmetAdamantID, ArmorMaterialAdamant, 3, 0).setUnlocalizedName("helmetAdamant");
+		Items.plateAdamant =  new ItemCustomArmor(LAConfiguration.plateAdamantID, ArmorMaterialAdamant, 3, 1).setUnlocalizedName("plateAdamant");
+		Items.legsAdamant = new ItemCustomArmor(LAConfiguration.legsAdamantID, ArmorMaterialAdamant, 3, 2).setUnlocalizedName("legsAdamant");
+		Items.bootsAdamant = new ItemCustomArmor(LAConfiguration.bootsAdamantID, ArmorMaterialAdamant, 3, 3).setUnlocalizedName("bootsAdamant");
 		
 		//Hammers
 		Items.hammerWood = new ItemHammer(LAConfiguration.hammerWoodID, EnumToolMaterial.WOOD).setUnlocalizedName("hammerWood");

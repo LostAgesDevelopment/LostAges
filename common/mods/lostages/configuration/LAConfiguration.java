@@ -12,7 +12,14 @@ public class LAConfiguration {
 	//Blocks
 	public static int oreBaseID;
 	public static int blockStorageID;
-	public static int furnaceDoubleID;
+	public static int furnaceDoubleIdleID;
+	public static int furnaceDoubleActiveID;
+	
+	//Portal Blocks
+	public static int portalLAID;
+	
+	//Dimension IDs
+	public static int dimensionLA;
 	
 	//Items
 	public static int ingotBaseID;
@@ -62,6 +69,15 @@ public class LAConfiguration {
 	public static int legsAdamantID;
 	public static int bootsAdamantID;
 	
+	//World Generation
+	public static boolean generateCopperOre;
+	public static int copperVeinAmount;
+	public static int copperVeinSize;
+	
+	public static boolean generateTinOre;
+	public static int tinVeinAmount;
+	public static int tinVeinSize;
+	
 	public static void initConfigFile(File configFile) {
 		Configuration config = new Configuration(configFile);
 		try {
@@ -69,7 +85,14 @@ public class LAConfiguration {
 			//Blocks
 			oreBaseID = config.getBlock("Base Ore ID", 1000).getInt();
 			blockStorageID = config.getBlock("Base Storage Block ID", 1001).getInt();
-			furnaceDoubleID = config.getBlock("furnaceDouble", 2000).getInt();
+			furnaceDoubleIdleID = config.getBlock("furnaceDoubleIdle", 2000).getInt();
+			furnaceDoubleActiveID = config.getBlock("furnaceDoubleActive", 2001).getInt();
+			
+			//Portal Blocks
+			portalLAID = config.getBlock("portalLA", 3000).getInt();
+			
+			//Dimension IDs
+			dimensionLA = config.get("Dimension IDs", "LostAge", 20).getInt();
 			
 			//Items
 			ingotBaseID = config.getItem("Base Ingot ID", 7000).getInt();
@@ -118,6 +141,14 @@ public class LAConfiguration {
 			plateAdamantID = config.get("Adamant Armor", "plateAdamant", 10001).getInt();
 			legsAdamantID = config.get("Adamant Armor", "legsAdamant", 10002).getInt();
 			bootsAdamantID = config.get("Adamant Armor", "bootsAdamant", 10003).getInt();
+			
+			//World Generation
+			generateCopperOre = config.get("World Generation", "generateCopperOre", true).getBoolean(true);
+			copperVeinAmount = config.get("World Generation", "copperVeinAmount", 7).getInt();
+			copperVeinSize = config.get("World Generation", "copperVeinSize", 6).getInt();
+			generateTinOre = config.get("World Generation", "generateTinOre", true).getBoolean(true);
+			tinVeinAmount = config.get("World Generation", "tinVeinAmount", 6).getInt();
+			tinVeinSize = config.get("World Generation", "tinVeinSize", 7).getInt();
 			
 		} catch (Exception e) {
 			e.printStackTrace();

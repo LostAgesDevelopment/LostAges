@@ -1,5 +1,6 @@
 package mods.lostages.helper;
 
+import mods.lostages.configuration.LAConfiguration;
 import mods.lostages.util.Blocks;
 import mods.lostages.util.Items;
 import mods.lostages.util.Recipes;
@@ -24,16 +25,20 @@ public class RecipeHelper {
 		Recipes.addToolRecipe("axe", new ItemStack(Items.axeBone), new ItemStack(Items.ingotBase, 1, 0));
 		
 		//Bronze Tools
-		Recipes.addToolOreRecipe("sword", new ItemStack(Items.swordBronze), "ingotBronze");
-		Recipes.addToolOreRecipe("pickaxe", new ItemStack(Items.pickaxeBronze), "ingotBronze");
-		Recipes.addToolOreRecipe("shovel", new ItemStack(Items.shovelBronze), "ingotBronze");
-		Recipes.addToolOreRecipe("axe", new ItemStack(Items.axeBronze), "ingotBronze");
+		if (LAConfiguration.registerBronzeTools) {
+			Recipes.addToolOreRecipe("sword", new ItemStack(Items.swordBronze), "ingotBronze");
+			Recipes.addToolOreRecipe("pickaxe", new ItemStack(Items.pickaxeBronze), "ingotBronze");
+			Recipes.addToolOreRecipe("shovel", new ItemStack(Items.shovelBronze), "ingotBronze");
+			Recipes.addToolOreRecipe("axe", new ItemStack(Items.axeBronze), "ingotBronze");
+		}
 		
 		//Steel Tools
-		Recipes.addToolOreRecipe("sword", new ItemStack(Items.swordSteel), "ingotSteel");
-		Recipes.addToolOreRecipe("pickaxe", new ItemStack(Items.pickaxeSteel), "ingotSteel");
-		Recipes.addToolOreRecipe("shovel", new ItemStack(Items.shovelSteel), "ingotSteel");
-		Recipes.addToolOreRecipe("axe", new ItemStack(Items.axeSteel), "ingotSteel");
+		if (LAConfiguration.registerSteelTools) {
+			Recipes.addToolOreRecipe("sword", new ItemStack(Items.swordSteel), "ingotSteel");
+			Recipes.addToolOreRecipe("pickaxe", new ItemStack(Items.pickaxeSteel), "ingotSteel");
+			Recipes.addToolOreRecipe("shovel", new ItemStack(Items.shovelSteel), "ingotSteel");
+			Recipes.addToolOreRecipe("axe", new ItemStack(Items.axeSteel), "ingotSteel");
+		}
 		
 		//Adamant Tools
 		Recipes.addToolRecipe("sword", new ItemStack(Items.swordAdamant), new ItemStack(Items.ingotBase, 1, 5));

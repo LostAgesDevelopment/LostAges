@@ -73,10 +73,13 @@ public class LAConfiguration {
 	public static boolean generateCopperOre;
 	public static int copperVeinAmount;
 	public static int copperVeinSize;
-	
 	public static boolean generateTinOre;
 	public static int tinVeinAmount;
 	public static int tinVeinSize;
+	
+	//Item Registration
+	public static boolean registerBronzeTools;
+	public static boolean registerSteelTools;	
 	
 	public static void initConfigFile(File configFile) {
 		Configuration config = new Configuration(configFile);
@@ -150,6 +153,9 @@ public class LAConfiguration {
 			tinVeinAmount = config.get("World Generation", "tinVeinAmount", 6).getInt();
 			tinVeinSize = config.get("World Generation", "tinVeinSize", 7).getInt();
 			
+			//Item Registration
+			registerBronzeTools = config.get("Item Registration", "Register Bronze Tools", true).getBoolean(true);
+			registerSteelTools = config.get("Item Registration", "Register Steel Tools", true).getBoolean(true);
 		} catch (Exception e) {
 			e.printStackTrace();
 			FMLLog.log("Lost Ages", Level.CONFIG, "Lost Ages has encountered an error loading it's config!");

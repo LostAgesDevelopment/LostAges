@@ -48,16 +48,20 @@ public class LAItems {
 		Items.axeBone = new ItemCustomAxe(LAConfiguration.axeBoneID, ToolMaterialBone).setUnlocalizedName("axeBone");
 		
 		//Bronze Tools
-		Items.swordBronze = new ItemCustomSword(LAConfiguration.swordBronzeID, ToolMaterialBronze).setUnlocalizedName("swordBronze");
-		Items.pickaxeBronze = new ItemCustomPickaxe(LAConfiguration.pickaxeBronzeID, ToolMaterialBronze).setUnlocalizedName("pickaxeBronze");
-		Items.shovelBronze = new ItemCustomShovel(LAConfiguration.shovelBronzeID, ToolMaterialBronze).setUnlocalizedName("shovelBronze");
-		Items.axeBronze = new ItemCustomAxe(LAConfiguration.axeBronzeID, ToolMaterialBronze).setUnlocalizedName("axeBronze");
+		if (LAConfiguration.registerBronzeTools) {
+			Items.swordBronze = new ItemCustomSword(LAConfiguration.swordBronzeID, ToolMaterialBronze).setUnlocalizedName("swordBronze");
+			Items.pickaxeBronze = new ItemCustomPickaxe(LAConfiguration.pickaxeBronzeID, ToolMaterialBronze).setUnlocalizedName("pickaxeBronze");
+			Items.shovelBronze = new ItemCustomShovel(LAConfiguration.shovelBronzeID, ToolMaterialBronze).setUnlocalizedName("shovelBronze");
+			Items.axeBronze = new ItemCustomAxe(LAConfiguration.axeBronzeID, ToolMaterialBronze).setUnlocalizedName("axeBronze");
+		}
 		
 		//Steel Tools
-		Items.swordSteel = new ItemCustomSword(LAConfiguration.swordSteelID, ToolMaterialSteel).setUnlocalizedName("swordSteel");
-		Items.pickaxeSteel = new ItemCustomPickaxe(LAConfiguration.pickaxeSteelID, ToolMaterialSteel).setUnlocalizedName("pickaxeSteel");
-		Items.shovelSteel = new ItemCustomShovel(LAConfiguration.shovelSteelID, ToolMaterialSteel).setUnlocalizedName("shovelSteel");
-		Items.axeSteel = new ItemCustomAxe(LAConfiguration.axeSteelID, ToolMaterialSteel).setUnlocalizedName("axeSteel");
+		if (LAConfiguration.registerSteelTools) {
+			Items.swordSteel = new ItemCustomSword(LAConfiguration.swordSteelID, ToolMaterialSteel).setUnlocalizedName("swordSteel");
+			Items.pickaxeSteel = new ItemCustomPickaxe(LAConfiguration.pickaxeSteelID, ToolMaterialSteel).setUnlocalizedName("pickaxeSteel");
+			Items.shovelSteel = new ItemCustomShovel(LAConfiguration.shovelSteelID, ToolMaterialSteel).setUnlocalizedName("shovelSteel");
+			Items.axeSteel = new ItemCustomAxe(LAConfiguration.axeSteelID, ToolMaterialSteel).setUnlocalizedName("axeSteel");
+		}
 		
 		//Adamant Tools
 		Items.swordAdamant = new ItemCustomSword(LAConfiguration.swordAdamantID, ToolMaterialAdamant).setUnlocalizedName("swordAdamant");
@@ -98,16 +102,20 @@ public class LAItems {
 		GameRegistry.registerItem(Items.axeBone, "axeBone");
 		
 		//Bronze Tools
-		GameRegistry.registerItem(Items.swordBronze, "swordBronze");
-		GameRegistry.registerItem(Items.pickaxeBronze, "pickaxeBronze");
-		GameRegistry.registerItem(Items.shovelBronze, "shovelBronze");
-		GameRegistry.registerItem(Items.axeBronze, "axeBronze");
+		if (LAConfiguration.registerBronzeTools) {
+			GameRegistry.registerItem(Items.swordBronze, "swordBronze");
+			GameRegistry.registerItem(Items.pickaxeBronze, "pickaxeBronze");
+			GameRegistry.registerItem(Items.shovelBronze, "shovelBronze");
+			GameRegistry.registerItem(Items.axeBronze, "axeBronze");
+		}
 		
 		//Steel Tools
-		GameRegistry.registerItem(Items.swordSteel, "swordSteel");
-		GameRegistry.registerItem(Items.pickaxeSteel, "pickaxeSteel");
-		GameRegistry.registerItem(Items.shovelSteel, "shovelSteel");
-		GameRegistry.registerItem(Items.axeSteel, "axeSteel");
+		if (LAConfiguration.registerSteelTools) {
+			GameRegistry.registerItem(Items.swordSteel, "swordSteel");
+			GameRegistry.registerItem(Items.pickaxeSteel, "pickaxeSteel");
+			GameRegistry.registerItem(Items.shovelSteel, "shovelSteel");
+			GameRegistry.registerItem(Items.axeSteel, "axeSteel");
+		}
 		
 		//Adamant Tools
 		GameRegistry.registerItem(Items.swordAdamant, "swordAdamant");
@@ -154,16 +162,20 @@ public class LAItems {
 		LanguageRegistry.addName(Items.axeBone, "Bone Axe");
 		
 		//Bronze Tools
-		LanguageRegistry.addName(Items.swordBronze, "Bronze Sword");
-		LanguageRegistry.addName(Items.pickaxeBronze, "Bronze Pickaxe");
-		LanguageRegistry.addName(Items.shovelBronze, "Bronze Shovel");
-		LanguageRegistry.addName(Items.axeBronze, "Bronze Axe");
+		if (LAConfiguration.registerBronzeTools) {
+			LanguageRegistry.addName(Items.swordBronze, "Bronze Sword");
+			LanguageRegistry.addName(Items.pickaxeBronze, "Bronze Pickaxe");
+			LanguageRegistry.addName(Items.shovelBronze, "Bronze Shovel");
+			LanguageRegistry.addName(Items.axeBronze, "Bronze Axe");
+		}
 		
 		//Steel Tools
-		LanguageRegistry.addName(Items.swordSteel, "Steel Sword");
-		LanguageRegistry.addName(Items.pickaxeSteel, "Steel Pickaxe");
-		LanguageRegistry.addName(Items.shovelSteel, "Steel Shovel");
-		LanguageRegistry.addName(Items.axeSteel, "Steel Axe");
+		if (LAConfiguration.registerSteelTools) {
+			LanguageRegistry.addName(Items.swordSteel, "Steel Sword");
+			LanguageRegistry.addName(Items.pickaxeSteel, "Steel Pickaxe");
+			LanguageRegistry.addName(Items.shovelSteel, "Steel Shovel");
+			LanguageRegistry.addName(Items.axeSteel, "Steel Axe");
+		}
 		
 		//Adamant Tools
 		LanguageRegistry.addName(Items.swordAdamant, "Adamant Sword");

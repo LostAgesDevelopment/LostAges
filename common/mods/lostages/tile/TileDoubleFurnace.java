@@ -148,7 +148,7 @@ public class TileDoubleFurnace extends TileEntity implements ISidedInventory {
 	public void closeChest() {}
 	
 	@Override
-	public boolean isStackValidForSlot(int slot, ItemStack itemStack) {
+	public boolean isItemValidForSlot(int slot, ItemStack itemStack) {
 		return slot == 3 ? false : (slot == 2 ? TileEntityFurnace.isItemFuel(itemStack) : true); 
 	}
 	
@@ -159,7 +159,7 @@ public class TileDoubleFurnace extends TileEntity implements ISidedInventory {
 	
 	@Override
 	public boolean canInsertItem(int par1, ItemStack itemStack, int j) {
-		return isStackValidForSlot(par1, itemStack);
+		return isItemValidForSlot(par1, itemStack);
 	}
 	
 	@Override

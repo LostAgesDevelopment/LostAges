@@ -2,12 +2,12 @@ package mods.lostages.util;
 
 import java.util.logging.Level;
 
+import mods.lostages.configuration.LALogger;
 import mods.lostages.recipe.DoubleFurnaceRecipes;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
-import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Recipes {
@@ -24,7 +24,7 @@ public class Recipes {
 		} else if (toolType.equals("hammer")) {
 			GameRegistry.addShapedRecipe(output, new Object[]{"XXX", "XXX", " S ", 'X', toolMaterial, 'S', Item.stick});
 		} else {
-			FMLLog.log("Lost Ages", Level.INFO, "The tool type, " + toolType + " is invalid.  The recipe for " + output.getDisplayName() + " will not work!");
+			LALogger.log(Level.INFO, "The tool type, " + toolType + " is invalid.  The recipe for " + output.getDisplayName() + " will not work!");
 		}
 	}
 	
@@ -40,7 +40,7 @@ public class Recipes {
 		} else if (toolType.equals("hammer")) {
 			GameRegistry.addRecipe(new ShapedOreRecipe(output, new Object[]{"XXX", "XXX", " S ", 'X', toolMaterial, 'S', Item.stick}));
 		} else {
-			FMLLog.log("Lost Ages", Level.INFO, "The tool type, " + toolType + " is invalid.  The recipe for " + output.getDisplayName() + " will not work!");
+			LALogger.log(Level.INFO, "The tool type, " + toolType + " is invalid.  The recipe for " + output.getDisplayName() + " will not work!");
 		}
 	}
 	

@@ -53,9 +53,9 @@ public class RecipeHelper {
 		Recipes.addToolRecipe("hammer", new ItemStack(Items.hammerGold), new ItemStack(Item.ingotGold));
 		Recipes.addToolRecipe("hammer", new ItemStack(Items.hammerDiamond), new ItemStack(Item.diamond));
 		Recipes.addToolRecipe("hammer", new ItemStack(Items.hammerBone), new ItemStack(Items.ingotBase, 1, 0));
+		Recipes.addToolRecipe("hammer", new ItemStack(Items.hammerAdamant), new ItemStack(Items.ingotBase, 1, 5));
 		Recipes.addToolOreRecipe("hammer", new ItemStack(Items.hammerBronze), "ingotBronze");
 		Recipes.addToolOreRecipe("hammer", new ItemStack(Items.hammerSteel), "ingotSteel");
-		Recipes.addToolRecipe("hammer", new ItemStack(Items.hammerAdamant), new ItemStack(Items.ingotBase, 1, 5));
 	}
 	
 	private static void registerBlockRecipes() {

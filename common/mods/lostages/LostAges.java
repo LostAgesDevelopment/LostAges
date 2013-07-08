@@ -5,12 +5,12 @@ import java.util.logging.Level;
 import mods.lostages.configuration.LABlocks;
 import mods.lostages.configuration.LAConfiguration;
 import mods.lostages.configuration.LAItems;
+import mods.lostages.configuration.LALogger;
 import mods.lostages.helper.OreDictionaryHelper;
 import mods.lostages.helper.RecipeHelper;
 import mods.lostages.helper.TabLA;
 import mods.lostages.world.gen.LAOreGen;
 import net.minecraft.creativetab.CreativeTabs;
-import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -37,6 +37,7 @@ public class LostAges {
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
+		LALogger.init();
 		LAConfiguration.initConfigFile(event.getSuggestedConfigurationFile());
 		LABlocks.init();
 		LAItems.init();
@@ -57,6 +58,6 @@ public class LostAges {
 	 
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
-		FMLLog.log(Level.INFO, "Loaded");
+		LALogger.log(Level.INFO, "Lost Ages has loaded!");
 	}
 }

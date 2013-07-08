@@ -26,7 +26,7 @@ public class ItemHammer extends Item {
 		STANDARD, CHARGED, ULTIMATE
 	}
 	
-	private HammerMode hammerMode = HammerMode.STANDARD; 
+	private HammerMode hammerMode = HammerMode.STANDARD;
 	
 	private int blockChange;
 	
@@ -44,13 +44,8 @@ public class ItemHammer extends Item {
 	}
 	
 	public ItemHammer(int par1, EnumToolMaterial par2EnumToolMaterial, Block block) {
-		super(par1);
-		setCreativeTab(LostAges.tabLATools);
-		setMaxDamage(par2EnumToolMaterial.getMaxUses());
-		toolMaterial = par2EnumToolMaterial;
+		this(par1, par2EnumToolMaterial);
 		blockChange = block.blockID;
-        weaponDamage = 4 + par2EnumToolMaterial.getDamageVsEntity();
-        maxStackSize = 1;
 	}
     
 	@Override
@@ -260,4 +255,5 @@ public class ItemHammer extends Item {
 			}
 		}
 	}
+	
 }

@@ -3,7 +3,6 @@ package mods.lostages.configuration;
 import mods.lostages.block.BlockCustomOre;
 import mods.lostages.block.BlockCustomStorage;
 import mods.lostages.block.BlockDoubleFurnace;
-import mods.lostages.block.BlockLAPortal;
 import mods.lostages.item.ItemCustomOre;
 import mods.lostages.item.ItemCustomStorage;
 import mods.lostages.util.Blocks;
@@ -33,7 +32,7 @@ public class LABlocks extends Blocks {
 		Blocks.furnaceDoubleIdle = new BlockDoubleFurnace(LAConfiguration.furnaceDoubleIdleID, false);
 		Blocks.furnaceDoubleActive = new BlockDoubleFurnace(LAConfiguration.furnaceDoubleActiveID, true);
 		
-		Blocks.portalLA = new BlockLAPortal(LAConfiguration.portalLAID);
+		//	Blocks.portalLA = new BlocLAPortal(LAConfiguration.portalLAID);
 	}
 	
 	private static void registerBlocks() {
@@ -41,7 +40,7 @@ public class LABlocks extends Blocks {
 		GameRegistry.registerBlock(Blocks.blockStorage, ItemCustomStorage.class, "blockStorage");
 		GameRegistry.registerBlock(Blocks.furnaceDoubleIdle, "furnaceDoubleIdle");
 		GameRegistry.registerBlock(Blocks.furnaceDoubleActive, "furnaceDoubleActive");
-		GameRegistry.registerBlock(Blocks.portalLA, "portalLA");
+		//	GameRegistry.registerBlock(Blocks.portalLA, "portalLA");
 	}
 	
 	private static void registerNames() {
@@ -59,6 +58,6 @@ public class LABlocks extends Blocks {
 		LanguageRegistry.addName(new ItemStack(Blocks.furnaceDoubleIdle), "Double Furnace");
 		LanguageRegistry.addName(new ItemStack(Blocks.furnaceDoubleActive), "Double Furnace");
 		
-		LanguageRegistry.addName(Blocks.portalLA, "Lost Ages Portal");
+		//	LanguageRegistry.addName(Blocks.portalLA, "Lost Ages Portal");
 	}
 }

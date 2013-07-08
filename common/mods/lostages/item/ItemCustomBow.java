@@ -12,9 +12,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class ItemCustomBow extends ItemBow {
 
 	private Icon[] pullBackIcons;
-	private String[] pullBackNames = {
-			"_pull_0", "_pull_1", "_pull_2"
-	};
+	private String[] pullBackNames = { "_pull_0", "_pull_1", "_pull_2" };
 	
 	public ItemCustomBow(int par1) {
 		super(par1);
@@ -28,10 +26,10 @@ public class ItemCustomBow extends ItemBow {
 	
 	@Override
 	public void registerIcons(IconRegister iconRegister) {
-		itemIcon = iconRegister.registerIcon("lostages:" + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
+		itemIcon = iconRegister.registerIcon("lostages:" + this.getUnlocalizedName().substring(5));
 		pullBackIcons = new Icon[pullBackNames.length];
 		for (int i = 0; i < pullBackIcons.length; i++) {
-			pullBackIcons[i] = iconRegister.registerIcon("lostages:" + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1) + pullBackNames[i]);
+			pullBackIcons[i] = iconRegister.registerIcon("lostages:" + this.getUnlocalizedName().substring(5) + pullBackNames[i]);
 		}
 	}
 	

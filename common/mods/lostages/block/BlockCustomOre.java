@@ -29,9 +29,8 @@ public class BlockCustomOre extends Block {
 	@Override
 	public void registerIcons(IconRegister iconRegister) {
 		icons = new Icon[names.length];
-		for (int i = 0; i < icons.length; i++) {
+		for (int i = 0; i < icons.length; i++)
 			icons[i] = iconRegister.registerIcon("lostages:" + names[i]);
-		}
 	}
 
 	@Override
@@ -44,15 +43,11 @@ public class BlockCustomOre extends Block {
         int id = idPicked(world, x, y, z);
 
         if (id == 0)
-        {
             return null;
-        }
 
         Item item = Item.itemsList[id];
         if (item == null)
-        {
             return null;
-        }
 
         return new ItemStack(id, 1, getDamageValue(world, x, y, z));
     }
@@ -65,9 +60,8 @@ public class BlockCustomOre extends Block {
 	@Override
 	@SuppressWarnings({"rawtypes", "unchecked"})
 	public void getSubBlocks(int id, CreativeTabs tab, List list) {
-		for (int i = 0; i < icons.length; i++) {
+		for (int i = 0; i < icons.length; i++)
 			list.add(new ItemStack(id, 1, i));
-		}
 	}
 	
 }

@@ -5,7 +5,7 @@
 		"version": "@VERSION@",
 		"mcversion": "@MCVERSION@",	
 		"authors": [ "xLithiumIon", "Blfngl", "ExperienceBar", "GamingTutsDK", "Bocaj1000", "keenan407", "xXKoppitoXx" ],
-		"logoFile": "lostages:textures/logo.png",
+		"logoFile": "pack.png",
 		"credits": "The Lost Ages Development Team",
 		"url": "http://www.minecraftforum.net/topic/1828915-the-lost-ages-coming-soon/"
 }]

@@ -9,12 +9,9 @@ import cpw.mods.fml.common.network.IGuiHandler;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class CommonProxy implements IGuiHandler {
+	
 	public void registerTileEntities() {
 		GameRegistry.registerTileEntity(TileDoubleFurnace.class, "furnaceDouble");
-	}
-	
-	public void registerRenderer() {
-		
 	}
 
 	@Override
@@ -36,4 +33,5 @@ public class CommonProxy implements IGuiHandler {
 		
 		return null;
 	}
+	
 }

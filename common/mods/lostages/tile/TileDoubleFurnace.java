@@ -14,6 +14,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class TileDoubleFurnace extends TileEntity implements ISidedInventory {
+	
 	private static final int[] sidedSlotSides = new int[] { 2 };
 	private static final int[] sidedSlotBottom = new int[] { 3 };
 	private static final int[] sidedSlotTop = new int[] { 0, 1 };
@@ -52,7 +53,7 @@ public class TileDoubleFurnace extends TileEntity implements ISidedInventory {
 			if (isBurning() && canSmelt()) {
 				furnaceCookTime++;
 				
-				if (furnaceCookTime == 200) {
+				if (furnaceCookTime == 400) {
 					furnaceCookTime = 0;
 					smeltItem();
 					flag1 = true;
@@ -209,13 +210,13 @@ public class TileDoubleFurnace extends TileEntity implements ISidedInventory {
 	
 	@SideOnly(Side.CLIENT)
 	public int getCookProgressScaled(int val) {
-		return furnaceCookTime * val / 200;
+		return furnaceCookTime * val / 400;
 	}
 	
 	@SideOnly(Side.CLIENT)
 	public int getBurnTimeRemainingScaled(int val) {
 		if (currentItemBurnTime == 0)
-			currentItemBurnTime = 200;
+			currentItemBurnTime = 400;
 		
 		return furnaceBurnTime * val / currentItemBurnTime;
 	}
@@ -256,4 +257,5 @@ public class TileDoubleFurnace extends TileEntity implements ISidedInventory {
 		if (furnaceItems[1].stackSize <= 0)
 			furnaceItems[1] = null;
 	}
+	
 }

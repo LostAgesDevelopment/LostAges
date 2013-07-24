@@ -28,9 +28,8 @@ public class ItemCustomBow extends ItemBow {
 	public void registerIcons(IconRegister iconRegister) {
 		itemIcon = iconRegister.registerIcon("lostages:" + this.getUnlocalizedName().substring(5));
 		pullBackIcons = new Icon[pullBackNames.length];
-		for (int i = 0; i < pullBackIcons.length; i++) {
+		for (int i = 0; i < pullBackIcons.length; i++)
 			pullBackIcons[i] = iconRegister.registerIcon("lostages:" + this.getUnlocalizedName().substring(5) + pullBackNames[i]);
-		}
 	}
 	
 	@Override

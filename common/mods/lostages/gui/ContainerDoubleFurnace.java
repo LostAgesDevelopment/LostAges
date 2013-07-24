@@ -25,14 +25,12 @@ public class ContainerDoubleFurnace extends Container {
 		this.addSlotToContainer(new Slot(tileFurnace, 3, 126, 35));
 		
 		for (int invRow = 0; invRow < 3; ++invRow) {
-			for (int invCol = 0; invCol < 9; ++invCol) {
+			for (int invCol = 0; invCol < 9; ++invCol)
 				this.addSlotToContainer(new Slot(inventoryPlayer, invCol + invRow * 9 + 9, 8 + invCol * 18, 84 + invRow * 18));
-			}
 		}
 		
-		for (int actionBar = 0; actionBar < 9; ++actionBar) {
+		for (int actionBar = 0; actionBar < 9; ++actionBar)
 			this.addSlotToContainer(new Slot(inventoryPlayer, actionBar, 8 + actionBar * 18, 142));
-		}
 	}
 	
 	@Override
@@ -50,17 +48,14 @@ public class ContainerDoubleFurnace extends Container {
         for (int i = 0; i < this.crafters.size(); ++i) {
             ICrafting icrafting = (ICrafting)this.crafters.get(i);
 
-            if (this.lastCookTime != this.furnace.furnaceCookTime) {
+            if (this.lastCookTime != this.furnace.furnaceCookTime)
                 icrafting.sendProgressBarUpdate(this, 0, this.furnace.furnaceCookTime);
-            }
 
-            if (this.lastBurnTime != this.furnace.furnaceBurnTime) {
+            if (this.lastBurnTime != this.furnace.furnaceBurnTime)
                 icrafting.sendProgressBarUpdate(this, 1, this.furnace.furnaceBurnTime);
-            }
 
-            if (this.lastItemBurnTime != this.furnace.currentItemBurnTime) {
+            if (this.lastItemBurnTime != this.furnace.currentItemBurnTime)
                 icrafting.sendProgressBarUpdate(this, 2, this.furnace.currentItemBurnTime);
-            }
         }
 
         this.lastCookTime = this.furnace.furnaceCookTime;
@@ -70,17 +65,14 @@ public class ContainerDoubleFurnace extends Container {
 	
     @SideOnly(Side.CLIENT)
     public void updateProgressBar(int par1, int par2) {
-        if (par1 == 0) {
+        if (par1 == 0)
             this.furnace.furnaceCookTime = par2;
-        }
 
-        if (par1 == 1) {
+        if (par1 == 1)
             this.furnace.furnaceBurnTime = par2;
-        }
 
-        if (par1 == 2) {
+        if (par1 == 2)
             this.furnace.currentItemBurnTime = par2;
-        }
     }
 	
 	@Override

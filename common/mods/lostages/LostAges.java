@@ -25,6 +25,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 @Mod(modid = "lostages", name = "Lost Ages", version = "@VERSION@")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class LostAges {
+	
 	public static CreativeTabs tabLABlocks = new TabLA(CreativeTabs.getNextID(), "LABlockTab");
 	public static CreativeTabs tabLATools = new TabLA(CreativeTabs.getNextID(), "LAToolTab");
 	public static CreativeTabs tabLAMisc = new TabLA(CreativeTabs.getNextID(), "LAItemTab");
@@ -49,7 +50,6 @@ public class LostAges {
 		OreDictionaryHelper.init();
 		
 		proxy.registerTileEntities();
-		proxy.registerRenderer();
 		
 		GameRegistry.registerWorldGenerator(new LAOreGen());
 		
@@ -60,4 +60,5 @@ public class LostAges {
 	public void postInit(FMLPostInitializationEvent event) {
 		LALogger.log(Level.INFO, "Lost Ages has loaded!");
 	}
+	
 }

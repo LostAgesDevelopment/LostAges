@@ -12,7 +12,7 @@ import net.minecraft.util.Icon;
 
 public class BlockCustomStorage extends Block {
 
-	private String[] names = {"blockCopper", "blockTin", "blockBronze", "blockSteel", "blockStrongGold", "blockAdamant"};
+	private String[] names = { "blockCopper", "blockTin", "blockBronze", "blockSteel", "blockStrongGold", "blockAdamant" };
 	private Icon[] icons;
 	
 	public BlockCustomStorage(int id, Material material) {
@@ -26,9 +26,8 @@ public class BlockCustomStorage extends Block {
 	@Override
 	public void registerIcons(IconRegister iconRegister) {
 		icons = new Icon[names.length];
-		for (int i = 0; i < icons.length; i++) {
+		for (int i = 0; i < icons.length; i++)
 			icons[i] = iconRegister.registerIcon("lostages:" + names[i]);
-		}
 	}
 	
 	@Override
@@ -39,9 +38,8 @@ public class BlockCustomStorage extends Block {
 	@Override
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public void getSubBlocks(int id, CreativeTabs tab, List list) {
-		for (int i = 0; i < icons.length; i++) {
+		for (int i = 0; i < icons.length; i++)
 			list.add(new ItemStack(id, 1, i));
-		}
 	}
 	
 }

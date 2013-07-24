@@ -3,6 +3,7 @@ package mods.lostages.util;
 import net.minecraft.item.Item;
 
 public class Items {
+	
 	//Items
 	public static Item ingotBase;
 	
@@ -27,27 +28,40 @@ public class Items {
 	public static Item shovelBone;
 	public static Item axeBone;
 	
-	//Bronze Tools
+	//Copper Armors
+	public static Item helmetCopper;
+	public static Item plateCopper;
+	public static Item legsCopper;
+	public static Item bootsCopper;
+	
+	//Bronze Tools & Armors
 	public static Item swordBronze;
 	public static Item pickaxeBronze;
 	public static Item shovelBronze;
 	public static Item axeBronze;
+	public static Item helmetBronze;
+	public static Item plateBronze;
+	public static Item legsBronze;
+	public static Item bootsBronze;
 	
-	//Steel Tools
+	//Steel Tools & Armors
 	public static Item swordSteel;
 	public static Item pickaxeSteel;
 	public static Item shovelSteel;
 	public static Item axeSteel;
+	public static Item helmetSteel;
+	public static Item plateSteel;
+	public static Item legsSteel;
+	public static Item bootsSteel;
 	
-	//Adamant Tools
+	//Adamant Tools & Armors
 	public static Item swordAdamant;
 	public static Item pickaxeAdamant;
 	public static Item shovelAdamant;
 	public static Item axeAdamant;
-	
-	//Adamant Armor
 	public static Item helmetAdamant;
 	public static Item plateAdamant;
 	public static Item legsAdamant;
 	public static Item bootsAdamant;
+	
 }

@@ -18,6 +18,7 @@ public class LAOreGen implements IWorldGenerator {
 			case 0:
 				if (LAConfiguration.generateCopperOre == true)
 					generateCopper(world, random, chunkX*16, chunkZ*16);
+				
 				if (LAConfiguration.generateTinOre == true)
 					generateTin(world, random, chunkX*16, chunkZ*16);
 		}

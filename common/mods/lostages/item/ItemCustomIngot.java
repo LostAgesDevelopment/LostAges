@@ -12,9 +12,7 @@ import net.minecraft.util.Icon;
 public class ItemCustomIngot extends Item {
 
 	private Icon[] icons;
-	private String[] names = {
-			"ingotBone", "ingotCopper", "ingotTin", "ingotBronze", "ingotSteel", "ingotStrongGold", "ingotAdamant"
-	};
+	private String[] names = { "ingotBone", "ingotCopper", "ingotTin", "ingotBronze", "ingotSteel", "ingotStrongGold", "ingotAdamant" };
 	
 	public ItemCustomIngot(int par1) {
 		super(par1);
@@ -31,15 +29,14 @@ public class ItemCustomIngot extends Item {
 	
 	@Override
 	public String getUnlocalizedName(ItemStack itemStack) {
-		return names[itemStack.getItemDamage()];
+		return "item." + names[itemStack.getItemDamage()];
 	}
 	
 	@Override
 	public void registerIcons(IconRegister iconRegister) {
 		icons = new Icon[names.length];
-		for (int i = 0; i < icons.length; i++) {
+		for (int i = 0; i < icons.length; i++)
 			icons[i] = iconRegister.registerIcon("lostages:" + names[i]);
-		}
 	}
 	
 	@Override
@@ -50,8 +47,8 @@ public class ItemCustomIngot extends Item {
 	@Override
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public void getSubItems(int id, CreativeTabs tab, List list) {
-		for (int i = 0; i < icons.length; i++) {
+		for (int i = 0; i < icons.length; i++)
 			list.add(new ItemStack(id, 1, i));
-		}
 	}
+	
 }

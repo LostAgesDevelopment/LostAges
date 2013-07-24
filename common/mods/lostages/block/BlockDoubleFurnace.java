@@ -18,19 +18,17 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockDoubleFurnace extends BlockContainer {
-	
+
 	private final boolean isActive;
-	
+
 	private static boolean keepInventory;
-	
+
 	private Icon iconFrontUnlit;
 	private Icon iconFrontLit;
 	private Icon iconTop;
-	
+
 	public BlockDoubleFurnace(int id, boolean isActive) {
 		super(id, Material.rock);
 		this.isActive = isActive;
@@ -50,7 +48,6 @@ public class BlockDoubleFurnace extends BlockContainer {
 	}
 	
 	@Override
-	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister iconRegister) {
 		this.blockIcon = iconRegister.registerIcon("lostages:furnaceDouble_Side");
 		this.iconFrontUnlit = iconRegister.registerIcon("lostages:furnaceDouble_Front");
@@ -59,7 +56,6 @@ public class BlockDoubleFurnace extends BlockContainer {
 	}
 	
 	@Override
-	@SideOnly(Side.CLIENT)
 	public Icon getIcon(int side, int metadata) {
 		return side == 1 ? this.iconTop : (side == 0 ? this.iconTop : (side != metadata ? this.blockIcon : (isActive ? iconFrontLit : iconFrontUnlit)));
 	}
@@ -100,9 +96,8 @@ public class BlockDoubleFurnace extends BlockContainer {
 			return false;
 		
 		TileDoubleFurnace tile = (TileDoubleFurnace)world.getBlockTileEntity(x, y, z);
-		if (tile != null) {
+		if (tile != null)
 			player.openGui(LostAges.instance, 1, world, x, y, z);
-		}
 		
 		return true;
 	}

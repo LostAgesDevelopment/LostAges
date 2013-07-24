@@ -1,0 +1,70 @@
+block.oreCopper.name=Copper Ore
+block.oreTin.name=Tin Ore
+block.oreAdamant.name=Adamant Ore
+
+block.blockCopper.name=Copper Block
+block.blockTin.name=Tin Block
+block.blockBronze.name=Bronze Block
+block.blockSteel.name=Steel Block
+block.blockStrongGold.name=Strong Gold Block
+block.blockAdamant.name=Adamant Block
+
+tile.furnaceDouble.name=Double Furnace
+
+item.ingotBone.name=Smelted Bone
+item.ingotCopper.name=Copper Ingot
+item.ingotTin.name=Tin Ingot
+item.ingotBronze.name=Bronze Ingot
+item.ingotSteel.name=Steel Ingot
+item.ingotStrongGold.name=Strong Gold Ingot
+item.ingotAdamant.name=Adamant Ingot
+
+item.bowJungle.name=Jungle Bow
+
+item.swordBone.name=Bone Sword
+item.pickaxeBone.name=Bone Pickaxe
+item.shovelBone.name=Bone Shovel
+item.axeBone.name=Bone Axe
+
+item.helmetCopper.name=Copper Helmet
+item.plateCopper.name=Copper Chestplate
+item.legsCopper.name=Copper Leggings
+item.bootsCopper.name=Copper Boots
+
+item.swordBronze.name=Bronze Sword
+item.pickaxeBronze.name=Bronze Pickaxe
+item.shovelBronze.name=Bronze Shovel
+item.axeBronze.name=Bronze Axe
+item.helmetBronze.name=Bronze Helmet
+item.plateBronze.name=Bronze Chestplate
+item.legsBronze.name=Bronze Leggings
+item.bootsBronze.name=Bronze Boots
+
+item.swordSteel.name=Steel Sword
+item.pickaxeSteel.name=Steel Pickaxe
+item.shovelSteel.name=Steel Shovel
+item.axeSteel.name=Steel Axe
+item.helmetSteel.name=Steel Helmet
+item.plateSteel.name=Steel Chestplate
+item.legsSteel.name=Steel Leggings
+item.bootsSteel.name=Steel Boots
+
+item.swordAdamant.name=Adamant Sword
+item.pickaxeAdamant.name=Adamant Pickaxe
+item.shovelAdamant.name=Adamant Shovel
+item.axeAdamant.name=Adamant Axe
+item.helmetAdamant.name=Adamant Helmet
+item.plateAdamant.name=Adamant Chestplate
+item.legsAdamant.name=Adamant Leggings
+item.bootsAdamant.name=Adamant Boots
+
+item.hammerWood.name=Wooden Hammer
+item.hammerStone.name=Stone Hammer
+item.hammerIron.name=Iron Hammer
+item.hammerGold.name=Gold Hammer
+item.hammerDiamond.name=Diamond Hammer
+item.hammerBone.name=Bone Hammer
+item.hammerBronze.name=Bronze Hammer
+item.hammerSteel.name=Steel Hammer
+item.hammerAdamant.name=Adamant Hammer
+item.hammerMagic.name=Magic Hammer

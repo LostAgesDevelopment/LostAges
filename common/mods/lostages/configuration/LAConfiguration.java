@@ -9,6 +9,7 @@ import net.minecraftforge.common.Configuration;
 
 
 public class LAConfiguration {
+	
 	//Blocks
 	public static int oreBaseID;
 	public static int blockStorageID;
@@ -63,6 +64,24 @@ public class LAConfiguration {
 	public static int hammerAdamantID;
 	public static int hammerMagicID;
 	
+	//Copper Armor
+	public static int helmetCopperID;
+	public static int plateCopperID;
+	public static int legsCopperID;
+	public static int bootsCopperID;
+	
+	//Bronze Armor
+	public static int helmetBronzeID;
+	public static int plateBronzeID;
+	public static int legsBronzeID;
+	public static int bootsBronzeID;
+	
+	//Steel Armor
+	public static int helmetSteelID;
+	public static int plateSteelID;
+	public static int legsSteelID;
+	public static int bootsSteelID;
+	
 	//Adamant Armor
 	public static int helmetAdamantID;
 	public static int plateAdamantID;
@@ -78,8 +97,9 @@ public class LAConfiguration {
 	public static int tinVeinSize;
 	
 	//Item Registration
+	public static boolean registerCopperTools;
 	public static boolean registerBronzeTools;
-	public static boolean registerSteelTools;	
+	public static boolean registerSteelTools;
 	
 	public static void initConfigFile(File configFile) {
 		Configuration config = new Configuration(configFile);
@@ -139,6 +159,24 @@ public class LAConfiguration {
 			hammerAdamantID = config.get("Hammers", "hammerAdamant", 8008).getInt();
 			hammerMagicID = config.get("Hammers", "hammerMagic", 8009).getInt();
 			
+			//Copper Armor
+			helmetCopperID = config.get("Copper Armor", "helmetCopper", 10004).getInt();
+			plateCopperID = config.get("Copper Armor", "plateCopper", 10005).getInt();
+			legsCopperID = config.get("Copper Armor", "legsCopper", 10006).getInt();
+			bootsCopperID = config.get("Copper Armor", "bootsCopper", 10007).getInt();
+			
+			//Bronze Armor
+			helmetBronzeID = config.get("Bronze Armor", "helmetBronze", 10008).getInt();
+			plateBronzeID = config.get("Bronze Armor", "plateBronze", 10009).getInt();
+			legsBronzeID = config.get("Bronze Armor", "legsBronze", 10010).getInt();
+			bootsBronzeID = config.get("Bronze Armor", "bootsBronze", 10011).getInt();
+			
+			//Steel Armor
+			helmetSteelID = config.get("Steel Armor", "helmetSteel", 10012).getInt();
+			plateSteelID = config.get("Steel Armor", "plateSteel", 10013).getInt();
+			legsSteelID = config.get("Steel Armor", "legsSteel", 10014).getInt();
+			bootsSteelID = config.get("Steel Armor", "bootsSteel", 10015).getInt();
+			
 			//Adamant Armor
 			helmetAdamantID = config.get("Adamant Armor", "helmentAdamant", 10000).getInt();
 			plateAdamantID = config.get("Adamant Armor", "plateAdamant", 10001).getInt();
@@ -154,8 +192,9 @@ public class LAConfiguration {
 			tinVeinSize = config.get("World Generation", "tinVeinSize", 7).getInt();
 			
 			//Item Registration
-			registerBronzeTools = config.get("Item Registration", "Register Bronze Tools", true).getBoolean(true);
-			registerSteelTools = config.get("Item Registration", "Register Steel Tools", true).getBoolean(true);
+			registerCopperTools = config.get("Item Registration", "Register Copper Tools & Armors", true).getBoolean(true);
+			registerBronzeTools = config.get("Item Registration", "Register Bronze Tools & Armors", true).getBoolean(true);
+			registerSteelTools = config.get("Item Registration", "Register Steel Tools & Armors", true).getBoolean(true);
 		} catch (Exception e) {
 			e.printStackTrace();
 			FMLLog.log("Lost Ages", Level.CONFIG, "Lost Ages has encountered an error loading it's config!");
@@ -163,4 +202,5 @@ public class LAConfiguration {
 			config.save();
 		}
 	}
+	
 }

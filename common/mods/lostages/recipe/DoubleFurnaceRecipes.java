@@ -7,6 +7,7 @@ import java.util.List;
 import net.minecraft.item.ItemStack;
 
 public class DoubleFurnaceRecipes {
+	
 	private static final DoubleFurnaceRecipes smeltBase = new DoubleFurnaceRecipes();
 	
     private HashMap<List<Integer>, ItemStack> metaSmeltingList1 = new HashMap<List<Integer>, ItemStack>();
@@ -17,8 +18,6 @@ public class DoubleFurnaceRecipes {
 	public static final DoubleFurnaceRecipes smelting() {
 		return smeltBase;
 	}
-	
-	private DoubleFurnaceRecipes() {}
 	
 	public void addDoubleSmelting(ItemStack input1, ItemStack input2, ItemStack output) {
 		this.metaSmeltingList1.put(Arrays.asList(input1.itemID, input1.getItemDamage()), output);
@@ -43,11 +42,10 @@ public class DoubleFurnaceRecipes {
 		if (outputItem2 == null)
 			return null;
 		
-		if (outputItem1 == outputItem2) {
+		if (outputItem1 == outputItem2)
 			return outputItem1;
-		} else {
+		else
 			return outputItem2;
-		}
 	}
 	
 	public ItemStack getSlot1ReduceAmount(ItemStack input) {

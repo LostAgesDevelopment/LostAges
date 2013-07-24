@@ -6,6 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class OreDictionaryHelper {
+	
 	public static void init() {
 		//Blocks
 		OreDictionary.registerOre("oreCopper", new ItemStack(Blocks.oreBase, 1, 0));
@@ -17,4 +18,5 @@ public class OreDictionaryHelper {
 		OreDictionary.registerOre("ingotBronze", new ItemStack(Items.ingotBase, 1, 3));
 		OreDictionary.registerOre("ingotSteel", new ItemStack(Items.ingotBase, 1, 4));
 	}
+	
 }

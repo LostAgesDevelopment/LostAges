@@ -16,23 +16,22 @@ public class TabLA extends CreativeTabs {
 
 	@Override
 	public String getTranslatedTabLabel() {
-		if (tabName.equals("LABlockTab")) {
+		if (tabName.equals("LABlockTab"))
 			return "Lost Ages Blocks";
-		} else if (tabName.equals("LAToolTab")) {
+		else if (tabName.equals("LAToolTab"))
 			return "Lost Ages Tools";
-		} else {
+		else
 			return "Lost Ages Items";
-		}
 	}
 	
 	@Override
 	public int getTabIconItemIndex() {
-		if (tabName.equals("LABlockTab")) {
+		if (tabName.equals("LABlockTab"))
 			return new ItemStack(Blocks.blockStorage, 1, 1).itemID;
-		} else if (tabName.equals("LAToolTab")) {
+		else if (tabName.equals("LAToolTab"))
 			return Items.hammerMagic.itemID;
-		} else {
+		else
 			return new ItemStack(Items.ingotBase, 1, 2).itemID;
-		}
 	}
+	
 }

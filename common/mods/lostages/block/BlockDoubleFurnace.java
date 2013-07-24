@@ -22,7 +22,7 @@ import net.minecraft.world.World;
 public class BlockDoubleFurnace extends BlockContainer {
 
 	private final boolean isActive;
-
+	
 	private static boolean keepInventory;
 
 	private Icon iconFrontUnlit;
@@ -117,6 +117,9 @@ public class BlockDoubleFurnace extends BlockContainer {
 		
 		if (l == 3)
 			world.setBlockMetadataWithNotify(x, y, z, 4, 2);
+		
+		if (itemStack.hasDisplayName())
+			((TileDoubleFurnace)world.getBlockTileEntity(x, y, z)).setGuiDisplayName(itemStack.getDisplayName());
 	}
 	
 	public static void updateBlockState(boolean par0, World world, int x, int y, int z) {

@@ -2,6 +2,7 @@ package mods.lostages.tile;
 
 import mods.lostages.block.BlockDoubleFurnace;
 import mods.lostages.recipe.DoubleFurnaceRecipes;
+import mods.lostages.util.Blocks;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.Item;
@@ -23,6 +24,8 @@ public class TileDoubleFurnace extends TileEntity implements ISidedInventory {
 	public int furnaceBurnTime = 0;
 	public int currentItemBurnTime = 0;
 	public int furnaceCookTime = 0;
+	
+	private String customName;
 	
 	@Override
 	public void updateEntity() {
@@ -124,12 +127,12 @@ public class TileDoubleFurnace extends TileEntity implements ISidedInventory {
 	
 	@Override
 	public String getInvName() {
-		return "Double Furnace";
+		return isInvNameLocalized() ? customName : Blocks.furnaceDoubleIdle.getUnlocalizedName() + ".name";
 	}
 	
 	@Override
 	public boolean isInvNameLocalized() {
-		return true;
+		return customName != null && customName.length() > 0;
 	}
 	
 	@Override
@@ -168,6 +171,10 @@ public class TileDoubleFurnace extends TileEntity implements ISidedInventory {
 		return par3 != 0 || par1 != 1 || itemStack.itemID == Item.bucketEmpty.itemID;
 	}
 	
+	public void setGuiDisplayName(String par1) {
+		customName = par1;
+	}
+	
 	@Override
 	public void readFromNBT(NBTTagCompound tagCompound) {
 		super.readFromNBT(tagCompound);
@@ -186,6 +193,9 @@ public class TileDoubleFurnace extends TileEntity implements ISidedInventory {
 		furnaceBurnTime = tagCompound.getShort("BurnTime");
 		furnaceCookTime = tagCompound.getShort("CookTime");
 		currentItemBurnTime = TileEntityFurnace.getItemBurnTime(furnaceItems[2]);
+		
+		if (tagCompound.hasKey("CustomName"))
+			customName = tagCompound.getString("CustomName");
 	}
 	
 	@Override
@@ -206,6 +216,9 @@ public class TileDoubleFurnace extends TileEntity implements ISidedInventory {
 		}
 		
 		tagCompound.setTag("Items", itemsList);
+		
+		if (isInvNameLocalized())
+			tagCompound.setString("CustomName", customName);
 	}
 	
 	@SideOnly(Side.CLIENT)

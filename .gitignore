@@ -1,8 +1,6 @@
 *.class
 
 # Package Files #
-build_number.*
-build.*
 *.jar
 *.war
 *.ear

@@ -91,10 +91,8 @@ public class LAConfiguration {
 	//World Generation
 	public static boolean generateCopperOre;
 	public static int copperVeinAmount;
-	public static int copperVeinSize;
 	public static boolean generateTinOre;
 	public static int tinVeinAmount;
-	public static int tinVeinSize;
 	
 	//Item Registration
 	public static boolean registerCopperTools;
@@ -185,11 +183,9 @@ public class LAConfiguration {
 			
 			//World Generation
 			generateCopperOre = config.get("World Generation", "generateCopperOre", true).getBoolean(true);
-			copperVeinAmount = config.get("World Generation", "copperVeinAmount", 7).getInt();
-			copperVeinSize = config.get("World Generation", "copperVeinSize", 6).getInt();
+			copperVeinAmount = config.get("World Generation", "copperVeinAmount", 5).getInt();
 			generateTinOre = config.get("World Generation", "generateTinOre", true).getBoolean(true);
-			tinVeinAmount = config.get("World Generation", "tinVeinAmount", 6).getInt();
-			tinVeinSize = config.get("World Generation", "tinVeinSize", 7).getInt();
+			tinVeinAmount = config.get("World Generation", "tinVeinAmount", 5).getInt();
 			
 			//Item Registration
 			registerCopperTools = config.get("Item Registration", "Register Copper Tools & Armors", true).getBoolean(true);

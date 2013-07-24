@@ -9,7 +9,7 @@ import mods.lostages.configuration.LALogger;
 import mods.lostages.helper.OreDictionaryHelper;
 import mods.lostages.helper.RecipeHelper;
 import mods.lostages.helper.TabLA;
-import mods.lostages.world.gen.LAOreGen;
+import mods.lostages.worldgen.WorldGenLA;
 import net.minecraft.creativetab.CreativeTabs;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -51,7 +51,7 @@ public class LostAges {
 		
 		proxy.registerTileEntities();
 		
-		GameRegistry.registerWorldGenerator(new LAOreGen());
+		GameRegistry.registerWorldGenerator(new WorldGenLA());
 		
 		NetworkRegistry.instance().registerGuiHandler(this, proxy);
 	}

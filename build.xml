@@ -19,7 +19,8 @@
 	
 	<target name="replace_tokens">
 		<replace dir="${build.dir.development}\forge\mcp\src\minecraft" token="@VERSION@" value="${build.release.mod.version}"/>
-		<replace dir="${build.dir.development}\forge\mcp\src\minecraft\mods\lostages" token="@VERSION@" value="${build.release.mod.version}"/>
+		<replace dir="${build.dir.development}\forge\mcp\src\minecraft\mods\lostages" token="@FINGERPRINT@" value="${build.release.mod.fingerprint}"/>
+		<replace dir="${build.dir.development}\forge\mcp\src\minecraft\mods\lostages" token="@VERSION@" value="${build.release.mod.version}"/>]
 	</target>
 	
 	<target name="recompile">

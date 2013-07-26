@@ -9,6 +9,7 @@ import mods.lostages.configuration.LALogger;
 import mods.lostages.helper.OreDictionaryHelper;
 import mods.lostages.helper.RecipeHelper;
 import mods.lostages.helper.TabLA;
+import mods.lostages.worldgen.ChestGenLA;
 import mods.lostages.worldgen.WorldGenLA;
 import net.minecraft.creativetab.CreativeTabs;
 import cpw.mods.fml.common.Mod;
@@ -54,6 +55,7 @@ public class LostAges {
 	public void init(FMLInitializationEvent event) {
 		RecipeHelper.init();
 		OreDictionaryHelper.init();
+		ChestGenLA.init();
 		
 		proxy.registerTileEntities();
 		

@@ -1,6 +1,7 @@
 *.class
 
 # Package Files #
+*.keystore
 build.properties
 *.jar
 *.war

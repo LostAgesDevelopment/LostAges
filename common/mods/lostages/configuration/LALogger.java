@@ -3,12 +3,14 @@ package mods.lostages.configuration;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import cpw.mods.fml.common.FMLLog;
+
 public class LALogger {
 
-	private static Logger logLA = Logger.getLogger("Lost Ages");
+	private static Logger logLA = Logger.getLogger("LostAges");
 	
 	public static void init() {
-		logLA.getParent();
+		logLA.setParent(FMLLog.getLogger());
 	}
 	
 	public static void log(Level level, String message) {

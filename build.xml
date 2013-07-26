@@ -20,7 +20,7 @@
 	<target name="replace_tokens">
 		<replace dir="${build.dir.development}\forge\mcp\src\minecraft" token="@VERSION@" value="${build.release.mod.version}"/>
 		<replace dir="${build.dir.development}\forge\mcp\src\minecraft\mods\lostages" token="@FINGERPRINT@" value="${build.release.mod.fingerprint}"/>
-		<replace dir="${build.dir.development}\forge\mcp\src\minecraft\mods\lostages" token="@VERSION@" value="${build.release.mod.version}"/>]
+		<replace dir="${build.dir.development}\forge\mcp\src\minecraft\mods\lostages" token="@VERSION@" value="${build.release.mod.version}"/>
 	</target>
 	
 	<target name="recompile">
@@ -39,6 +39,10 @@
 		<exec dir="${build.dir.development}\forge\mcp" executable="bash" osfamily="unix">
 			<arg line="reobfuscate_srg.sh"/>
 		</exec>
+	</target>
+	
+	<target name="sign_jar">
+		<signjar jar="${build.dir.release}\${build.release.minecraft.version}\${build.release.mod.version}\[${build.release.minecraft.version}]LostAges-${build.release.mod.version}.jar" keystore="${build.keystore.location}" alias="${build.keystore.alias}" storepass="${build.keystore.password}"/>
 	</target>
 	
 	<target name="build">
@@ -70,12 +74,15 @@
 		<antcall target="reobfuscate"/>
 		
 		<!-- Build the jar -->
-		<mkdir dir="${build.dir.release}\${build.release.minecraft.version}\${build.release.modversion}"/>
+		<mkdir dir="${build.dir.release}\${build.release.minecraft.version}\${build.release.mod.version}"/>
 		<jar destfile="${build.dir.release}\${build.release.minecraft.version}\${build.release.mod.version}\[${build.release.minecraft.version}]LostAges-${build.release.mod.version}.jar">
 			<fileset dir="${build.dir.development}\forge\mcp\src\minecraft\" includes="mcmod.info, pack.mcmeta, pack.png"/>
 			<fileset dir="${build.dir.development}\forge\mcp\reobf\minecraft"/>
 			<fileset dir="${build.dir.development}\source\LostAges\resources"/>
 		</jar>
+		
+		<!-- Sign the finished jar -->
+		<antcall target="sign_jar"/>
 		
 		<!-- Clean up the MCP source now that we are done -->
 		<antcall target="clean"/>

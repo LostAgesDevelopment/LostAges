@@ -24,6 +24,13 @@ public class DoubleFurnaceRecipes {
 		this.metaSmeltingList2.put(Arrays.asList(input2.itemID, input2.getItemDamage()), output);
 		this.metaSmeltingCheckList1.put(Arrays.asList(input1.itemID, input1.getItemDamage()), input1);
 		this.metaSmeltingCheckList2.put(Arrays.asList(input2.itemID, input2.getItemDamage()), input2);
+		
+		if (input1 != input2) {
+			this.metaSmeltingList1.put(Arrays.asList(input2.itemID, input2.getItemDamage()), output);
+			this.metaSmeltingList2.put(Arrays.asList(input1.itemID, input1.getItemDamage()), output);
+			this.metaSmeltingCheckList1.put(Arrays.asList(input2.itemID, input2.getItemDamage()), input2);
+			this.metaSmeltingCheckList2.put(Arrays.asList(input1.itemID, input1.getItemDamage()), input1);
+		}
 	}
 	
 	public ItemStack getDoubleSmeltingResult(ItemStack item1, ItemStack item2) {

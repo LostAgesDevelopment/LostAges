@@ -93,6 +93,7 @@ public class LAConfiguration {
 	public static int copperVeinAmount;
 	public static boolean generateTinOre;
 	public static int tinVeinAmount;
+	public static int adamantVeinAmount;
 	
 	//Item Registration
 	public static boolean registerCopperTools;
@@ -186,6 +187,7 @@ public class LAConfiguration {
 			copperVeinAmount = config.get("World Generation", "copperVeinAmount", 5).getInt();
 			generateTinOre = config.get("World Generation", "generateTinOre", true).getBoolean(true);
 			tinVeinAmount = config.get("World Generation", "tinVeinAmount", 5).getInt();
+			adamantVeinAmount = config.get("World Generation", "adamantVeinAmount", 10).getInt();
 			
 			//Item Registration
 			registerCopperTools = config.get("Item Registration", "Register Copper Tools & Armors", true).getBoolean(true);

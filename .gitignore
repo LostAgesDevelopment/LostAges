@@ -3,6 +3,7 @@
 # Package Files #
 *.keystore
 *.bat
+changelog.txt
 build.properties
 *.jar
 *.war

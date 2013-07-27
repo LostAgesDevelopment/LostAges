@@ -1,4 +1,4 @@
-LostAges
+Lost Ages
 ========
 Requires Forge 9.10.0.800+
 

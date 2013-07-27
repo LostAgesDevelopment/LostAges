@@ -1,0 +1,16 @@
+Lost Ages Versioning - <Major>.<Minor><Bug Fix>
+
+Version: 0.1a
+	- Initial "alpha" release
+	- Copper, Tin, and Adamant ore added
+	- Double Furnace added
+	- Hammer added
+	- Ingots of various types added
+	
+Version: 0.2a
+	- Magic Hammer only obtainable through dungeon/village chests
+	- Added jar signing
+	- Changed name loading similar to resource packs
+	- Fixed armor texture loading
+	- Changed textures
+	- Added dimension, but unable to access it

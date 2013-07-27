@@ -2,6 +2,7 @@
 
 # Package Files #
 *.keystore
+*.bat
 build.properties
 *.jar
 *.war

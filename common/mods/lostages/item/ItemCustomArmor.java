@@ -16,7 +16,7 @@ public class ItemCustomArmor extends ItemArmor {
 	public ItemCustomArmor(int par1, EnumArmorMaterial par2EnumArmorMaterial, int par3, int par4) {
 		super(par1, par2EnumArmorMaterial, par3, par4);
 		armorMaterialName = par2EnumArmorMaterial.name().toLowerCase();
-		this.setCreativeTab(LostAges.tabLATools);
+		this.setCreativeTab(LostAges.tabLAItems);
 	}
 
 	@Override

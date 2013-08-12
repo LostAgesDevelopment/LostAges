@@ -1,12 +1,20 @@
 package mods.lostages.dimension;
 
+import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.DUNGEON;
+import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.ICE;
+import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.LAKE;
+import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.LAVA;
+
 import java.util.List;
 import java.util.Random;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockSand;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.util.IProgressUpdate;
+import net.minecraft.util.MathHelper;
 import net.minecraft.world.ChunkPosition;
+import net.minecraft.world.SpawnerAnimals;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.Chunk;
@@ -14,9 +22,12 @@ import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.MapGenBase;
 import net.minecraft.world.gen.MapGenCaves;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
+import net.minecraft.world.gen.feature.WorldGenDungeons;
+import net.minecraft.world.gen.feature.WorldGenLakes;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.Event.Result;
 import net.minecraftforge.event.terraingen.ChunkProviderEvent;
+import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 
 public class ChunkProviderLostAge implements IChunkProvider {
@@ -224,84 +235,233 @@ public class ChunkProviderLostAge implements IChunkProvider {
 		return chunk;
 	}
 	
-	/*private double[] initializeNoiseField(double[] par1, int par2, int par3, int par4, int par5, int par6, int par7) {
+	private double[] initializeNoiseField(double[] par1, int par2, int par3, int par4, int par5, int par6, int par7) {
 		ChunkProviderEvent.InitNoiseField event = new ChunkProviderEvent.InitNoiseField(this, par1, par2, par3, par4, par5, par6, par7);
 		MinecraftForge.EVENT_BUS.post(event);
 		if (event.getResult() == Result.DENY) return event.noisefield;
 		
-		if (par1 == null) {
+		if (par1 == null)
 			par1 = new double[par5 * par6 * par7];
+		
+		if (parabolicField == null)
+			parabolicField = new float[25];
+		
+		for (int k1 = -2; k1 <= 2; k1++) {
+			for (int l1 = -2; l1 <= 2; l1++) {
+				float f = 10.0F / MathHelper.sqrt_float((float)(k1 * k1 + l1 * l1) + 0.2F);
+				parabolicField[k1 + 2 + (l1 + 2) * 5] = f;
+			}
 		}
 		
-		
-	}*/
+		double d0 = 684.412D;
+		double d1 = 684.412D;
+		noise5 = noiseGen5.generateNoiseOctaves(noise5, par2, par4, par5, par7, 1.121D, 1.121D, 0.5D);
+        noise6 = this.noiseGen6.generateNoiseOctaves(this.noise6, par2, par4, par5, par7, 200.0D, 200.0D, 0.5D);
+        noise3 = this.noiseGen3.generateNoiseOctaves(this.noise3, par2, par3, par4, par5, par6, par7, d0 / 80.0D, d1 / 160.0D, d0 / 80.0D);
+        noise1 = this.noiseGen1.generateNoiseOctaves(this.noise1, par2, par3, par4, par5, par6, par7, d0, d1, d0);
+        noise2 = this.noiseGen2.generateNoiseOctaves(this.noise2, par2, par3, par4, par5, par6, par7, d0, d1, d0);
+        boolean flag = false;
+        boolean flag1 = false;
+        int i2 = 0;
+        int j2 = 0;
+        
+        for (int k2 = 0; k2 < par5; k2++) {
+        	for (int l2 = 0; l2 < par7; l2++) {
+        		float f1 = 0.0F;
+        		float f2 = 0.0F;
+        		float f3 = 0.0F;
+        		byte b0 = 2;
+        		BiomeGenBase biomeGenBase = biomesForGeneration[k2 + 2 + (l2 + 2) * (par5 + 5)];
+        		
+        		for (int i3 = -b0; i3 <= b0; i3++) {
+        			for (int j3 = -b0; j3 <= b0; j3++) {
+        				BiomeGenBase biomeGenBase1 = biomesForGeneration[k2 + i3 + 2 + (l2 + j3 + 2) * (par5 + 5)];
+        				float f4 = parabolicField[i3 + 2 + (j3 + 2) * 5] / (biomeGenBase1.minHeight + 2.0F);
+        				
+        				if (biomeGenBase1.minHeight > biomeGenBase.minHeight)
+        					f4 /= 2.0F;
+        				
+        				f1 += biomeGenBase1.maxHeight * f4;
+        				f2 += biomeGenBase1.minHeight * f4;
+        				f3 += f4;
+        			}
+        		}
+        		
+        		f1 /= f3;
+        		f2 /= f3;
+        		f1 = f1 * 0.9F + 0.1F;
+        		f2 = (f2 * 4.0F - 1.0F) / 8.0F;
+        		double d2 = noise6[j2] / 8000.0D;
+        		
+        		if (d2 < 0.0D)
+        			d2 = -d2 * 0.3D;
+        		
+        		d2 = d2 * 3.0D - 2.0D;
+        		
+        		if (d2 < 0.0D) {
+        			d2 /= 2.0D;
+        			
+        			if (d2 < -1.0D)
+        				d1 = -1.0D;
+        			
+        			d2 /= 1.4D;
+        			d2 /= 2.0D;
+        		} else {
+        			if (d2 > 1.0D)
+        				d2 = 1.0D;
+        			
+        			d2 /= 8.0D;
+        		}
+        		
+        		j2++;
+        		
+        		for (int k3 = 0; k3 < par6; k3++) {
+        			double d3 = (double)f2;
+                    double d4 = (double)f1;
+                    d3 += d2 * 0.2D;
+                    d3 = d3 * (double)par6 / 16.0D;
+                    double d5 = (double)par6 / 2.0D + d3 * 4.0D;
+                    double d6 = 0.0D;
+                    double d7 = ((double)k3 - d5) * 12.0D * 128.0D / 128.0D / d4;
+                    
+                    if (d7 < 0.0D)
+                    	d7 *= 4.0D;
+                    
+                    double d8 = this.noise1[i2] / 512.0D;
+                    double d9 = this.noise2[i2] / 512.0D;
+                    double d10 = (this.noise3[i2] / 10.0D + 1.0D) / 2.0D;
+                    
+                    if (d10 < 0.0D)
+                    	d6 = d8;
+                    else if (d10 > 1.0D)
+                    	d6 = d9;
+                    else
+                    	d6 = d8 + (d9 - d8) * d10;
+                    
+                    d6 -= d7;
+                    
+                    if (k3 > par6 - 4) {
+                    	double d11 = (double)((float)(k3 - (par6 - 4)) / 3.0F);
+                    	d6 = d6 * (1.0D - d11) + -10.0D * d11;
+                    }
+                    
+                    par1[i2] = d6;
+                    i2++;
+        		}
+        	}
+        }
+        
+        return par1;
+	}
 	
 	@Override
 	public boolean chunkExists(int i, int j) {
-		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
-	@Override
-	public void populate(IChunkProvider ichunkprovider, int i, int j) {
-		// TODO Auto-generated method stub
-		
-	}
+    public void populate(IChunkProvider par1IChunkProvider, int par2, int par3) {
+        BlockSand.fallInstantly = true;
+        int k = par2 * 16;
+        int l = par3 * 16;
+        BiomeGenBase biomegenbase = this.worldObj.getBiomeGenForCoords(k + 16, l + 16);
+        this.random.setSeed(this.worldObj.getSeed());
+        long i1 = this.random.nextLong() / 2L * 2L + 1L;
+        long j1 = this.random.nextLong() / 2L * 2L + 1L;
+        this.random.setSeed((long)par2 * i1 + (long)par3 * j1 ^ this.worldObj.getSeed());
+        boolean flag = false;
+
+        MinecraftForge.EVENT_BUS.post(new PopulateChunkEvent.Pre(par1IChunkProvider, worldObj, random, par2, par3, flag));
+
+        int k1;
+        int l1;
+        int i2;
+
+        if (biomegenbase != BiomeGenBase.desert && biomegenbase != BiomeGenBase.desertHills && !flag && this.random.nextInt(4) == 0 && TerrainGen.populate(par1IChunkProvider, worldObj, random, par2, par3, flag, LAKE)) {
+            k1 = k + this.random.nextInt(16) + 8;
+            l1 = this.random.nextInt(128);
+            i2 = l + this.random.nextInt(16) + 8;
+            (new WorldGenLakes(Block.waterStill.blockID)).generate(this.worldObj, this.random, k1, l1, i2);
+        }
+
+        if (TerrainGen.populate(par1IChunkProvider, worldObj, random, par2, par3, flag, LAVA) && !flag && this.random.nextInt(8) == 0) {
+            k1 = k + this.random.nextInt(16) + 8;
+            l1 = this.random.nextInt(this.random.nextInt(120) + 8);
+            i2 = l + this.random.nextInt(16) + 8;
+
+            if (l1 < 63 || this.random.nextInt(10) == 0)
+                (new WorldGenLakes(Block.lavaStill.blockID)).generate(this.worldObj, this.random, k1, l1, i2);
+        }
+
+        boolean doGen = TerrainGen.populate(par1IChunkProvider, worldObj, random, par2, par3, flag, DUNGEON);
+        for (k1 = 0; doGen && k1 < 8; ++k1) {
+            l1 = k + this.random.nextInt(16) + 8;
+            i2 = this.random.nextInt(128);
+            int j2 = l + this.random.nextInt(16) + 8;
+            (new WorldGenDungeons()).generate(this.worldObj, this.random, l1, i2, j2);
+        }
+
+        biomegenbase.decorate(this.worldObj, this.random, k, l);
+        SpawnerAnimals.performWorldGenSpawning(this.worldObj, biomegenbase, k + 8, l + 8, 16, 16, this.random);
+        k += 8;
+        l += 8;
+
+        doGen = TerrainGen.populate(par1IChunkProvider, worldObj, random, par2, par3, flag, ICE);
+        for (k1 = 0; doGen && k1 < 16; ++k1) {
+            for (l1 = 0; l1 < 16; ++l1) {
+                i2 = this.worldObj.getPrecipitationHeight(k + k1, l + l1);
+
+                if (this.worldObj.isBlockFreezable(k1 + k, i2 - 1, l1 + l))
+                    this.worldObj.setBlock(k1 + k, i2 - 1, l1 + l, Block.ice.blockID, 0, 2);
+
+                if (this.worldObj.canSnowAt(k1 + k, i2, l1 + l))
+                    this.worldObj.setBlock(k1 + k, i2, l1 + l, Block.snow.blockID, 0, 2);
+            }
+        }
+
+        MinecraftForge.EVENT_BUS.post(new PopulateChunkEvent.Post(par1IChunkProvider, worldObj, random, par2, par3, flag));
+
+        BlockSand.fallInstantly = false;
+    }
 
 	@Override
 	public boolean saveChunks(boolean flag, IProgressUpdate iprogressupdate) {
-		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean unloadQueuedChunks() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean canSave() {
-		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
 	public String makeString() {
-		// TODO Auto-generated method stub
+		return "LostAgeSource";
+	}
+
+	@Override
+	public List getPossibleCreatures(EnumCreatureType enumcreaturetype, int i, int j, int k) {
 		return null;
 	}
 
 	@Override
-	public List getPossibleCreatures(EnumCreatureType enumcreaturetype, int i,
-			int j, int k) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ChunkPosition findClosestStructure(World world, String s, int i,
-			int j, int k) {
-		// TODO Auto-generated method stub
+	public ChunkPosition findClosestStructure(World world, String s, int i, int j, int k) {
 		return null;
 	}
 
 	@Override
 	public int getLoadedChunkCount() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public void recreateStructures(int i, int j) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void recreateStructures(int i, int j) {}
 
 	@Override
-	public void func_104112_b() {
-		// TODO Auto-generated method stub
-		
-	}
+	public void func_104112_b() {}
 
 }

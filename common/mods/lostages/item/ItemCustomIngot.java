@@ -19,7 +19,7 @@ public class ItemCustomIngot extends Item {
 		this.setMaxDamage(0);
 		this.setHasSubtypes(true);
 		this.setUnlocalizedName("ingotBase");
-		this.setCreativeTab(LostAges.tabLAMisc);
+		this.setCreativeTab(LostAges.tabLAItems);
 	}
 	
 	@Override

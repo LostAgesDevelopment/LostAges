@@ -16,7 +16,7 @@ public class ItemCustomBow extends ItemBow {
 	
 	public ItemCustomBow(int par1) {
 		super(par1);
-		this.setCreativeTab(LostAges.tabLATools);
+		this.setCreativeTab(LostAges.tabLAItems);
 	}
 	
 	@Override

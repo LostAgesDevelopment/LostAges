@@ -9,7 +9,7 @@ public class ItemCustomSword extends ItemSword {
 
 	public ItemCustomSword(int id, EnumToolMaterial material) {
 		super(id, material);
-		this.setCreativeTab(LostAges.tabLATools);
+		this.setCreativeTab(LostAges.tabLAItems);
 	}
 
 	@Override

@@ -13,7 +13,7 @@
 	
 	<target name="prep">
 		<copy todir="${build.dir.development}\forge\mcp\src\minecraft">
-			<fileset dir="${build.dir.development}\source\LostAges\common\" excludes="**/mods/lostages/dimension/**, **/mods/lostages/configuration/LADimensions.java"/>
+			<fileset dir="${build.dir.development}\source\LostAges\common\"/>
 		</copy>
 	</target>
 	

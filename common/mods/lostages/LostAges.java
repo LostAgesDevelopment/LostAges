@@ -4,11 +4,12 @@ import java.util.logging.Level;
 
 import mods.lostages.configuration.LABlocks;
 import mods.lostages.configuration.LAConfiguration;
+import mods.lostages.configuration.LADimensions;
 import mods.lostages.configuration.LAItems;
 import mods.lostages.configuration.LALogger;
-import mods.lostages.helper.OreDictionaryHelper;
-import mods.lostages.helper.RecipeHelper;
-import mods.lostages.helper.TabLA;
+import mods.lostages.configuration.LAOreDictionary;
+import mods.lostages.configuration.LARecipes;
+import mods.lostages.configuration.LATab;
 import mods.lostages.worldgen.ChestGenLA;
 import mods.lostages.worldgen.WorldGenLA;
 import net.minecraft.creativetab.CreativeTabs;
@@ -24,13 +25,12 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = "LostAges", name = "Lost Ages", version = "@VERSION@", certificateFingerprint="@FINGERPRINT@")
+@Mod(modid = "LostAges", name = "Lost Ages", version = "@VERSION@", certificateFingerprint = "@FINGERPRINT@")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class LostAges {
 	
-	public static CreativeTabs tabLABlocks = new TabLA(CreativeTabs.getNextID(), "LABlockTab");
-	public static CreativeTabs tabLATools = new TabLA(CreativeTabs.getNextID(), "LAToolTab");
-	public static CreativeTabs tabLAMisc = new TabLA(CreativeTabs.getNextID(), "LAItemTab");
+	public static CreativeTabs tabLABlocks = new LATab(CreativeTabs.getNextID(), "LABlockTab");
+	public static CreativeTabs tabLAItems = new LATab(CreativeTabs.getNextID(), "LAItemTab");
 	
 	@SidedProxy(clientSide = "mods.lostages.ClientProxy", serverSide = "mods.lostages.CommonProxy")
 	public static CommonProxy proxy;
@@ -49,12 +49,13 @@ public class LostAges {
 		LAConfiguration.initConfigFile(event.getSuggestedConfigurationFile());
 		LABlocks.init();
 		LAItems.init();
+		LADimensions.init();
 	}
 	
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
-		RecipeHelper.init();
-		OreDictionaryHelper.init();
+		LARecipes.init();
+		LAOreDictionary.init();
 		ChestGenLA.init();
 		
 		proxy.registerTileEntities();

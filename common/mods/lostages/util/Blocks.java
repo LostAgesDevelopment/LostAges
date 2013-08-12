@@ -14,6 +14,6 @@ public class Blocks {
 	public static Block furnaceDoubleIdle;
 	public static Block furnaceDoubleActive;
 	
-	public static Block portalLA;
+	public static Block portalLostAge;
 	
 }

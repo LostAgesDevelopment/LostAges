@@ -9,7 +9,7 @@ public class ItemCustomAxe extends ItemAxe {
 	
 	public ItemCustomAxe(int id, EnumToolMaterial material) {
 		super(id, material);
-		this.setCreativeTab(LostAges.tabLATools);
+		this.setCreativeTab(LostAges.tabLAItems);
 	}
 	
 	@Override

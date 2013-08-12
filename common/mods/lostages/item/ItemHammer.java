@@ -35,7 +35,7 @@ public class ItemHammer extends Item {
 	
 	public ItemHammer(int par1, EnumToolMaterial par2EnumToolMaterial) {
 		super(par1);
-		this.setCreativeTab(LostAges.tabLATools);
+		this.setCreativeTab(LostAges.tabLAItems);
 		this.setMaxDamage(par2EnumToolMaterial.getMaxUses());
 		toolMaterial = par2EnumToolMaterial;
 		blockChange = Block.cobblestone.blockID;

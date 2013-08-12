@@ -16,11 +16,10 @@ public class LAConfiguration {
 	public static int furnaceDoubleIdleID;
 	public static int furnaceDoubleActiveID;
 	
-	//Portal Blocks
-	public static int portalLAID;
+	public static int portalLostAgeID;
 	
 	//Dimension IDs
-	public static int dimensionLA;
+	public static int dimensionLostAgeID;
 	
 	//Items
 	public static int ingotBaseID;
@@ -109,15 +108,13 @@ public class LAConfiguration {
 			blockStorageID = config.getBlock("Base Storage Block ID", 1001).getInt();
 			furnaceDoubleIdleID = config.getBlock("furnaceDoubleIdle", 2000).getInt();
 			furnaceDoubleActiveID = config.getBlock("furnaceDoubleActive", 2001).getInt();
-			
-			//Portal Blocks
-			portalLAID = config.getBlock("portalLA", 3000).getInt();
+			portalLostAgeID = config.getBlock("portalLostAgeID", 2002).getInt();
 			
 			//Dimension IDs
-			dimensionLA = config.get("Dimension IDs", "LostAge", 20).getInt();
+			dimensionLostAgeID = config.get("Dimension IDs", "LostAge", 20).getInt();
 			
 			//Items
-			ingotBaseID = config.getItem("Base Ingot ID", 7000).getInt();
+			ingotBaseID = config.getItem("Base Ingot ID", 4000).getInt();
 			
 			//Bows
 			bowJungleID = config.get("Bows", "bowJungle", 5000).getInt();

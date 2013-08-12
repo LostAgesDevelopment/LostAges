@@ -6,9 +6,9 @@ import net.minecraftforge.common.DimensionManager;
 public class LADimensions {
 
 	public static void init() {
-		DimensionManager.registerProviderType(LAConfiguration.dimensionLA, WorldProviderLostAge.class, false);
+		DimensionManager.registerProviderType(LAConfiguration.dimensionLostAgeID, WorldProviderLostAge.class, false);
 		
-		DimensionManager.registerDimension(LAConfiguration.dimensionLA, LAConfiguration.dimensionLA);
+		DimensionManager.registerDimension(LAConfiguration.dimensionLostAgeID, LAConfiguration.dimensionLostAgeID);
 	}
 	
 }

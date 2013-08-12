@@ -9,7 +9,7 @@ public class ItemCustomShovel extends ItemSpade {
 
 	public ItemCustomShovel(int id, EnumToolMaterial material) {
 		super(id, material);
-		this.setCreativeTab(LostAges.tabLATools);
+		this.setCreativeTab(LostAges.tabLAItems);
 	}
 
 	@Override

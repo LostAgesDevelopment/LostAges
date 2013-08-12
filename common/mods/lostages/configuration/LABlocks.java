@@ -1,6 +1,7 @@
 package mods.lostages.configuration;
 
 import mods.lostages.block.BlockCustomOre;
+import mods.lostages.block.BlockCustomPortal;
 import mods.lostages.block.BlockCustomStorage;
 import mods.lostages.block.BlockDoubleFurnace;
 import mods.lostages.item.ItemCustomOre;
@@ -29,6 +30,8 @@ public class LABlocks extends Blocks {
 		Blocks.blockStorage = new BlockCustomStorage(LAConfiguration.blockStorageID, Material.iron);
 		Blocks.furnaceDoubleIdle = new BlockDoubleFurnace(LAConfiguration.furnaceDoubleIdleID, false);
 		Blocks.furnaceDoubleActive = new BlockDoubleFurnace(LAConfiguration.furnaceDoubleActiveID, true);
+		
+		Blocks.portalLostAge = new BlockCustomPortal(LAConfiguration.portalLostAgeID);
 	}
 	
 	private static void registerBlocks() {
@@ -36,6 +39,7 @@ public class LABlocks extends Blocks {
 		GameRegistry.registerBlock(Blocks.blockStorage, ItemCustomStorage.class, "blockStorage");
 		GameRegistry.registerBlock(Blocks.furnaceDoubleIdle, "furnaceDoubleIdle");
 		GameRegistry.registerBlock(Blocks.furnaceDoubleActive, "furnaceDoubleActive");
+		GameRegistry.registerBlock(Blocks.portalLostAge, "portalLostAge");
 	}
 	
 }

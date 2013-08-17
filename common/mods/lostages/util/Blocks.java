@@ -11,8 +11,7 @@ public class Blocks {
 	public static ItemStack oreAdamant;
 	
 	public static Block blockStorage;
-	public static Block furnaceDoubleIdle;
-	public static Block furnaceDoubleActive;
+	public static Block furnaceDouble;
 	
 	public static Block portalLostAge;
 	

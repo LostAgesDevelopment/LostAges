@@ -13,8 +13,7 @@ public class LAConfig {
 	//Blocks
 	public static int oreBaseID;
 	public static int blockStorageID;
-	public static int furnaceDoubleIdleID;
-	public static int furnaceDoubleActiveID;
+	public static int furnaceDoubleID;
 	
 	public static int portalLostAgeID;
 	
@@ -106,9 +105,8 @@ public class LAConfig {
 			//Blocks
 			oreBaseID = config.getBlock("Base Ore ID", 1000).getInt();
 			blockStorageID = config.getBlock("Base Storage Block ID", 1001).getInt();
-			furnaceDoubleIdleID = config.getBlock("furnaceDoubleIdle", 2000).getInt();
-			furnaceDoubleActiveID = config.getBlock("furnaceDoubleActive", 2001).getInt();
-			portalLostAgeID = config.getBlock("portalLostAgeID", 2002).getInt();
+			furnaceDoubleID = config.getBlock("furnaceDoubleIdle", 2000).getInt();
+			portalLostAgeID = config.getBlock("portalLostAgeID", 3000).getInt();
 			
 			//Dimension IDs
 			dimensionLostAgeID = config.get("Dimension IDs", "LostAge", 20).getInt();

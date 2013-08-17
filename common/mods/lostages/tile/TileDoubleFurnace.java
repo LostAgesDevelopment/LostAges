@@ -1,6 +1,11 @@
 package mods.lostages.tile;
 
+import java.lang.reflect.Method;
+import java.util.logging.Level;
+
+import scala.collection.generic.BitOperations.Int;
 import mods.lostages.block.BlockDoubleFurnace;
+import mods.lostages.config.LALogger;
 import mods.lostages.recipe.DoubleFurnaceRecipes;
 import mods.lostages.util.Blocks;
 import net.minecraft.entity.player.EntityPlayer;
@@ -11,6 +16,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityFurnace;
+import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -127,7 +133,7 @@ public class TileDoubleFurnace extends TileEntity implements ISidedInventory {
 	
 	@Override
 	public String getInvName() {
-		return isInvNameLocalized() ? customName : Blocks.furnaceDoubleIdle.getUnlocalizedName() + ".name";
+		return isInvNameLocalized() ? customName : Blocks.furnaceDouble.getUnlocalizedName() + ".name";
 	}
 	
 	@Override

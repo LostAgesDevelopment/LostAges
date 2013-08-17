@@ -28,8 +28,7 @@ public class LABlocks extends Blocks {
 		Blocks.oreAdamant = new ItemStack(Blocks.oreBase, 1, 2);
 		
 		Blocks.blockStorage = new BlockCustomStorage(LAConfig.blockStorageID, Material.iron);
-		Blocks.furnaceDoubleIdle = new BlockDoubleFurnace(LAConfig.furnaceDoubleIdleID, false);
-		Blocks.furnaceDoubleActive = new BlockDoubleFurnace(LAConfig.furnaceDoubleActiveID, true);
+		Blocks.furnaceDouble = new BlockDoubleFurnace(LAConfig.furnaceDoubleID);
 		
 		Blocks.portalLostAge = new BlockCustomPortal(LAConfig.portalLostAgeID);
 	}
@@ -37,8 +36,7 @@ public class LABlocks extends Blocks {
 	private static void registerBlocks() {
 		GameRegistry.registerBlock(Blocks.oreBase, ItemCustomOre.class, "oreBase");
 		GameRegistry.registerBlock(Blocks.blockStorage, ItemCustomStorage.class, "blockStorage");
-		GameRegistry.registerBlock(Blocks.furnaceDoubleIdle, "furnaceDoubleIdle");
-		GameRegistry.registerBlock(Blocks.furnaceDoubleActive, "furnaceDoubleActive");
+		GameRegistry.registerBlock(Blocks.furnaceDouble, "furnaceDouble");
 		GameRegistry.registerBlock(Blocks.portalLostAge, "portalLostAge");
 	}
 	

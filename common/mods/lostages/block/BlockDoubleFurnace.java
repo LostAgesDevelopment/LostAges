@@ -17,11 +17,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 public class BlockDoubleFurnace extends BlockContainer {
-
-	private final boolean isActive;
+	
+	private static boolean isActive;
 	
 	private static boolean keepInventory;
 
@@ -29,22 +30,26 @@ public class BlockDoubleFurnace extends BlockContainer {
 	private Icon iconFrontLit;
 	private Icon iconTop;
 
-	public BlockDoubleFurnace(int id, boolean isActive) {
+	public BlockDoubleFurnace(int id) {
 		super(id, Material.rock);
-		this.isActive = isActive;
 		this.setHardness(3.5F);
+		this.setCreativeTab(LostAges.tabLABlocks);
 		this.setUnlocalizedName("furnaceDouble");
 		
-		if (id == LAConfig.furnaceDoubleIdleID)
-			this.setCreativeTab(mods.lostages.LostAges.tabLABlocks);
-		
-		if (id == LAConfig.furnaceDoubleActiveID)
-			this.setLightValue(0.875F);
+		isActive = false;
+	}
+	
+	@Override
+	public int getLightValue(IBlockAccess world, int x, int y, int z) {
+		if (world.getBlockMetadata(x, y, z) >= 6)
+			return 15;
+		else
+			return 0;
 	}
 	
 	@Override
 	public int idDropped(int par1, Random random, int par3) {
-		return Blocks.furnaceDoubleIdle.blockID;
+		return Blocks.furnaceDouble.blockID;
 	}
 	
 	@Override
@@ -57,13 +62,33 @@ public class BlockDoubleFurnace extends BlockContainer {
 	
 	@Override
 	public Icon getIcon(int side, int metadata) {
-		return side == 1 ? this.iconTop : (side == 0 ? this.iconTop : (side != metadata ? this.blockIcon : (isActive ? iconFrontLit : iconFrontUnlit)));
+		if (side == 0 || side == 1)
+			return iconTop;
+		
+		if (metadata <= 5) {
+			if (side != metadata) {
+				return blockIcon;
+			} else {
+				return iconFrontUnlit;
+			}
+		} else if (metadata >= 6) {
+			if (side != metadata - 4) {
+				return blockIcon;
+			} else {
+				return iconFrontLit;
+			}
+		}
+		
+		return blockIcon;
+		
+		//return side == 1 ? this.iconTop : (side == 0 ? this.iconTop : (side != metadata ? this.blockIcon : (isActive ? iconFrontLit : iconFrontUnlit)));
 	}
 	
 	@Override
 	public void onBlockAdded(World world, int x, int y, int z) {
 		super.onBlockAdded(world, x, y, z);
 		this.setDefaultDirection(world, x, y, z);
+		System.out.println(world.getBlockMetadata(x, y, z));
 	}
 	
 	private void setDefaultDirection(World world, int x, int y, int z) {
@@ -74,17 +99,33 @@ public class BlockDoubleFurnace extends BlockContainer {
 			int k1 = world.getBlockId(x + 1, y, z);
 			byte b0 = 4;
 			
-			if (Block.opaqueCubeLookup[l] && !Block.opaqueCubeLookup[i1])
-				b0 = 3;
+			if (Block.opaqueCubeLookup[l] && !Block.opaqueCubeLookup[i1]) {
+				if (isActive)
+					b0 = 7;
+				else
+					b0 = 3;
+			}
 			
-			if (Block.opaqueCubeLookup[i1] && !Block.opaqueCubeLookup[l])
-				b0 = 2;
+			if (Block.opaqueCubeLookup[i1] && !Block.opaqueCubeLookup[l]) {
+				if (isActive)
+					b0 = 6;
+				else
+					b0 = 2;
+			}
 			
-			if (Block.opaqueCubeLookup[j1] && !Block.opaqueCubeLookup[k1])
-				b0 = 5;
+			if (Block.opaqueCubeLookup[j1] && !Block.opaqueCubeLookup[k1]) {
+				if (isActive)
+					b0 = 8;
+				else
+					b0 = 5;
+			}
 			
-			if (Block.opaqueCubeLookup[k1] && !Block.opaqueCubeLookup[j1])
-				b0 = 4;
+			if (Block.opaqueCubeLookup[k1] && !Block.opaqueCubeLookup[j1]) {
+				if (isActive)
+					b0 = 7;
+				else
+					b0 = 4;
+			}
 			
 			world.setBlockMetadataWithNotify(x, y, z, b0, 2);
 		}
@@ -127,13 +168,17 @@ public class BlockDoubleFurnace extends BlockContainer {
 		TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
 		keepInventory = true;
 		
-		if (par0)
-			world.setBlock(x, y, z, Blocks.furnaceDoubleActive.blockID);
-		else
-			world.setBlock(x, y, z, Blocks.furnaceDoubleIdle.blockID);
+		if (par0) {
+			world.setBlock(x, y, z, Blocks.furnaceDouble.blockID);
+			world.setBlockMetadataWithNotify(x, y, z, l + 4, 2);
+			isActive = true;
+		} else {
+			world.setBlock(x, y, z, Blocks.furnaceDouble.blockID);
+			world.setBlockMetadataWithNotify(x, y, z, l - 4, 2);
+			isActive = false;
+		}
 		
 		keepInventory = false;
-		world.setBlockMetadataWithNotify(x, y, z, l, 2);
 		
 		if (tileEntity != null) {
 			tileEntity.validate();
@@ -178,7 +223,7 @@ public class BlockDoubleFurnace extends BlockContainer {
 	
 	@Override
 	public int idPicked(World world, int x, int y, int z) {
-		return Blocks.furnaceDoubleIdle.blockID;
+		return Blocks.furnaceDouble.blockID;
 	}
 	
 }

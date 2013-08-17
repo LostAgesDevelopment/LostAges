@@ -79,15 +79,12 @@ public class BlockDoubleFurnace extends BlockContainer {
 		}
 		
 		return blockIcon;
-		
-		//return side == 1 ? this.iconTop : (side == 0 ? this.iconTop : (side != metadata ? this.blockIcon : (isActive ? iconFrontLit : iconFrontUnlit)));
 	}
 	
 	@Override
 	public void onBlockAdded(World world, int x, int y, int z) {
 		super.onBlockAdded(world, x, y, z);
 		this.setDefaultDirection(world, x, y, z);
-		System.out.println(world.getBlockMetadata(x, y, z));
 	}
 	
 	private void setDefaultDirection(World world, int x, int y, int z) {

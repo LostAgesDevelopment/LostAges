@@ -3,7 +3,6 @@ package mods.lostages.block;
 import java.util.Random;
 
 import mods.lostages.LostAges;
-import mods.lostages.config.LAConfig;
 import mods.lostages.tile.TileDoubleFurnace;
 import mods.lostages.util.Blocks;
 import net.minecraft.block.Block;

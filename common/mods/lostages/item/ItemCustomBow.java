@@ -36,8 +36,8 @@ public class ItemCustomBow extends ItemBow {
 	public Icon getIcon(ItemStack itemStack, int renderPass, EntityPlayer player, ItemStack itemUsing, int remainingUses) {
 		if (itemUsing != null) {
 			int time = 72000 - remainingUses;
-			if (time < 8) return pullBackIcons[0];
-			if (time < 14) return pullBackIcons[1];
+			if (time < 20) return pullBackIcons[0];
+			if (time < 40) return pullBackIcons[1];
 			return pullBackIcons[2];
 		}
 		

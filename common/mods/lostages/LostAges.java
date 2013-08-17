@@ -58,6 +58,7 @@ public class LostAges {
 		LAOreDictionary.init();
 		ChestGenLA.init();
 		
+		proxy.registerRenderers();
 		proxy.registerTileEntities();
 		
 		GameRegistry.registerWorldGenerator(new WorldGenLA());

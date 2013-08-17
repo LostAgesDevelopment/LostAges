@@ -10,6 +10,8 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class CommonProxy implements IGuiHandler {
 	
+	public void registerRenderers() {}
+	
 	public void registerTileEntities() {
 		GameRegistry.registerTileEntity(TileDoubleFurnace.class, "furnaceDouble");
 	}

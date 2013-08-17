@@ -1,4 +1,4 @@
-package mods.lostages.configuration;
+package mods.lostages.config;
 
 import mods.lostages.block.BlockCustomOre;
 import mods.lostages.block.BlockCustomPortal;
@@ -22,16 +22,16 @@ public class LABlocks extends Blocks {
 	}
 	
 	private static void initializeBlocks() {
-		Blocks.oreBase = new BlockCustomOre(LAConfiguration.oreBaseID, Material.rock);
+		Blocks.oreBase = new BlockCustomOre(LAConfig.oreBaseID, Material.rock);
 		Blocks.oreCopper = new ItemStack(Blocks.oreBase, 1, 0);
 		Blocks.oreTin = new ItemStack(Blocks.oreBase, 1, 1);
 		Blocks.oreAdamant = new ItemStack(Blocks.oreBase, 1, 2);
 		
-		Blocks.blockStorage = new BlockCustomStorage(LAConfiguration.blockStorageID, Material.iron);
-		Blocks.furnaceDoubleIdle = new BlockDoubleFurnace(LAConfiguration.furnaceDoubleIdleID, false);
-		Blocks.furnaceDoubleActive = new BlockDoubleFurnace(LAConfiguration.furnaceDoubleActiveID, true);
+		Blocks.blockStorage = new BlockCustomStorage(LAConfig.blockStorageID, Material.iron);
+		Blocks.furnaceDoubleIdle = new BlockDoubleFurnace(LAConfig.furnaceDoubleIdleID, false);
+		Blocks.furnaceDoubleActive = new BlockDoubleFurnace(LAConfig.furnaceDoubleActiveID, true);
 		
-		Blocks.portalLostAge = new BlockCustomPortal(LAConfiguration.portalLostAgeID);
+		Blocks.portalLostAge = new BlockCustomPortal(LAConfig.portalLostAgeID);
 	}
 	
 	private static void registerBlocks() {

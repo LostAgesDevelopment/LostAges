@@ -1,15 +1,15 @@
-package mods.lostages.helper;
+package mods.lostages.config;
 
 import mods.lostages.util.Blocks;
 import mods.lostages.util.Items;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 
-public class TabLA extends CreativeTabs {
+public class LATab extends CreativeTabs {
 
 	private String tabName;
 	
-	public TabLA(int par1, String par2Str) {
+	public LATab(int par1, String par2Str) {
 		super(par1, par2Str);
 		tabName = par2Str;
 	}
@@ -18,20 +18,20 @@ public class TabLA extends CreativeTabs {
 	public String getTranslatedTabLabel() {
 		if (tabName.equals("LABlockTab"))
 			return "Lost Ages Blocks";
-		else if (tabName.equals("LAToolTab"))
-			return "Lost Ages Tools";
-		else
+		else if (tabName.equals("LAItemTab"))
 			return "Lost Ages Items";
+		else
+			return null;
 	}
 	
 	@Override
 	public int getTabIconItemIndex() {
 		if (tabName.equals("LABlockTab"))
 			return new ItemStack(Blocks.blockStorage, 1, 1).itemID;
-		else if (tabName.equals("LAToolTab"))
+		else if (tabName.equals("LAItemTab"))
 			return Items.hammerMagic.itemID;
 		else
-			return new ItemStack(Items.ingotBase, 1, 2).itemID;
+			return 0;
 	}
 	
 }

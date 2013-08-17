@@ -2,14 +2,14 @@ package mods.lostages;
 
 import java.util.logging.Level;
 
-import mods.lostages.configuration.LABlocks;
-import mods.lostages.configuration.LAConfiguration;
-import mods.lostages.configuration.LADimensions;
-import mods.lostages.configuration.LAItems;
-import mods.lostages.configuration.LALogger;
-import mods.lostages.configuration.LAOreDictionary;
-import mods.lostages.configuration.LARecipes;
-import mods.lostages.configuration.LATab;
+import mods.lostages.config.LABlocks;
+import mods.lostages.config.LAConfig;
+import mods.lostages.config.LADimensions;
+import mods.lostages.config.LAItems;
+import mods.lostages.config.LALogger;
+import mods.lostages.config.LAOreDictionary;
+import mods.lostages.config.LARecipes;
+import mods.lostages.config.LATab;
 import mods.lostages.worldgen.ChestGenLA;
 import mods.lostages.worldgen.WorldGenLA;
 import net.minecraft.creativetab.CreativeTabs;
@@ -40,13 +40,13 @@ public class LostAges {
 	
 	@EventHandler
 	public void invalidFingerprint(FMLFingerprintViolationEvent event) {
-		LALogger.log(Level.SEVERE, "Warning: This jar has been modified. I will not take any responsibility for anything that happens with this jar. Don't ask me if this warning appears.");
+		LALogger.log(Level.SEVERE, "Warning: This jar has been modified!");
 	}
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		LALogger.init();
-		LAConfiguration.initConfigFile(event.getSuggestedConfigurationFile());
+		LAConfig.initConfigFile(event.getSuggestedConfigurationFile());
 		LABlocks.init();
 		LAItems.init();
 		LADimensions.init();

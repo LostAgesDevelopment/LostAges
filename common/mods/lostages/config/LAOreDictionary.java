@@ -1,12 +1,12 @@
-package mods.lostages.helper;
+package mods.lostages.config;
 
 import mods.lostages.util.Blocks;
 import mods.lostages.util.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
-public class OreDictionaryHelper {
-	
+public class LAOreDictionary {
+
 	public static void init() {
 		//Blocks
 		OreDictionary.registerOre("oreCopper", new ItemStack(Blocks.oreBase, 1, 0));

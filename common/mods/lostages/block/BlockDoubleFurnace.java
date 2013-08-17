@@ -3,7 +3,7 @@ package mods.lostages.block;
 import java.util.Random;
 
 import mods.lostages.LostAges;
-import mods.lostages.configuration.LAConfiguration;
+import mods.lostages.config.LAConfig;
 import mods.lostages.tile.TileDoubleFurnace;
 import mods.lostages.util.Blocks;
 import net.minecraft.block.Block;
@@ -35,10 +35,10 @@ public class BlockDoubleFurnace extends BlockContainer {
 		this.setHardness(3.5F);
 		this.setUnlocalizedName("furnaceDouble");
 		
-		if (id == LAConfiguration.furnaceDoubleIdleID)
+		if (id == LAConfig.furnaceDoubleIdleID)
 			this.setCreativeTab(mods.lostages.LostAges.tabLABlocks);
 		
-		if (id == LAConfiguration.furnaceDoubleActiveID)
+		if (id == LAConfig.furnaceDoubleActiveID)
 			this.setLightValue(0.875F);
 	}
 	

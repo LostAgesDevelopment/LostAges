@@ -2,7 +2,7 @@ package mods.lostages.block;
 
 import java.util.Random;
 
-import mods.lostages.configuration.LAConfiguration;
+import mods.lostages.config.LAConfig;
 import mods.lostages.dimension.TeleporterLostAge;
 import mods.lostages.util.Blocks;
 import net.minecraft.block.Block;
@@ -176,8 +176,8 @@ public class BlockCustomPortal extends BlockPortal {
 		if (entity.ridingEntity == null && entity.riddenByEntity == null) {
 			if (entity instanceof EntityPlayerMP) {
 				EntityPlayerMP thePlayer = (EntityPlayerMP)entity;
-				if (entity.dimension != LAConfiguration.dimensionLostAgeID) {
-					thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, LAConfiguration.dimensionLostAgeID, new TeleporterLostAge(thePlayer.mcServer.worldServerForDimension(LAConfiguration.dimensionLostAgeID)));
+				if (entity.dimension != LAConfig.dimensionLostAgeID) {
+					thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, LAConfig.dimensionLostAgeID, new TeleporterLostAge(thePlayer.mcServer.worldServerForDimension(LAConfig.dimensionLostAgeID)));
 				} else {
 					thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, 0, new TeleporterLostAge(thePlayer.mcServer.worldServerForDimension(0)));
 				}

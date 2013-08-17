@@ -2,7 +2,7 @@ package mods.lostages.worldgen;
 
 import java.util.Random;
 
-import mods.lostages.configuration.LAConfiguration;
+import mods.lostages.config.LAConfig;
 import mods.lostages.util.Blocks;
 import net.minecraft.block.Block;
 import net.minecraft.world.World;
@@ -17,16 +17,16 @@ public class WorldGenLA implements IWorldGenerator {
 		if (world.provider.dimensionId != 1 || world.provider.dimensionId != -1) {
 			generateAdamant(world, random, chunkX, chunkZ);
 			
-			if (LAConfiguration.generateCopperOre)
+			if (LAConfig.generateCopperOre)
 				generateCopper(world, random, chunkX * 16, chunkZ * 16);
 			
-			if (LAConfiguration.generateTinOre)
+			if (LAConfig.generateTinOre)
 				generateTin(world, random, chunkX * 16, chunkZ * 16);
 		}
 	}
 	
 	private void generateCopper(World world, Random random, int chunkX, int chunkZ) {
-		for (int i = 1; i < LAConfiguration.copperVeinAmount; i++) {
+		for (int i = 1; i < LAConfig.copperVeinAmount; i++) {
 			int xCoord = chunkX + random.nextInt(16);
 			int yCoord = random.nextInt(64);
 			int zCoord = chunkZ + random.nextInt(16);
@@ -36,7 +36,7 @@ public class WorldGenLA implements IWorldGenerator {
 	}
 	
 	private void generateTin(World world, Random random, int chunkX, int chunkZ) {
-		for (int i = 1; i < LAConfiguration.tinVeinAmount; i++) {
+		for (int i = 1; i < LAConfig.tinVeinAmount; i++) {
 			int xCoord = chunkX + random.nextInt(16);
 			int yCoord = random.nextInt(56);
 			int zCoord = chunkZ + random.nextInt(16);
@@ -46,7 +46,7 @@ public class WorldGenLA implements IWorldGenerator {
 	}
 	
 	private void generateAdamant(World world, Random random, int chunkX, int chunkY) {
-		for (int i = 1; i < LAConfiguration.adamantVeinAmount; i++) {
+		for (int i = 1; i < LAConfig.adamantVeinAmount; i++) {
 			int xCoord = chunkX + random.nextInt(16);
 			int yCoord = random.nextInt(16);
 			int zCoord = chunkY + random.nextInt(16);

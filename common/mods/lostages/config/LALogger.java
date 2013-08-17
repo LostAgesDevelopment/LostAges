@@ -1,4 +1,4 @@
-package mods.lostages.configuration;
+package mods.lostages.config;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;

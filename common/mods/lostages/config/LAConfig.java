@@ -1,4 +1,4 @@
-package mods.lostages.configuration;
+package mods.lostages.config;
 
 import java.io.File;
 import java.util.logging.Level;
@@ -8,7 +8,7 @@ import cpw.mods.fml.common.FMLLog;
 import net.minecraftforge.common.Configuration;
 
 
-public class LAConfiguration {
+public class LAConfig {
 	
 	//Blocks
 	public static int oreBaseID;

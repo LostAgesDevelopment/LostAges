@@ -1,6 +1,5 @@
-package mods.lostages.helper;
+package mods.lostages.config;
 
-import mods.lostages.configuration.LAConfiguration;
 import mods.lostages.util.Blocks;
 import mods.lostages.util.Items;
 import mods.lostages.util.Recipes;
@@ -8,9 +7,8 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
+public class LARecipes {
 
-public class RecipeHelper {
-	
 	public static void init() {
 		registerBlockRecipes();
 		registerItemRecipes();
@@ -26,7 +24,7 @@ public class RecipeHelper {
 		Recipes.addToolRecipe("axe", new ItemStack(Items.axeBone), new ItemStack(Items.ingotBase, 1, 0));
 		
 		//Copper Armors
-		if (LAConfiguration.registerCopperTools) {
+		if (LAConfig.registerCopperTools) {
 			Recipes.addArmorOreRecipe("helmet", new ItemStack(Items.helmetCopper), "ingotCopper");
 			Recipes.addArmorOreRecipe("plate", new ItemStack(Items.bootsCopper), "ingotCopper");
 			Recipes.addArmorOreRecipe("legs", new ItemStack(Items.legsCopper), "ingotCopper");
@@ -34,7 +32,7 @@ public class RecipeHelper {
 		}
 		
 		//Bronze Tools & Armors
-		if (LAConfiguration.registerBronzeTools) {
+		if (LAConfig.registerBronzeTools) {
 			Recipes.addToolOreRecipe("sword", new ItemStack(Items.swordBronze), "ingotBronze");
 			Recipes.addToolOreRecipe("pickaxe", new ItemStack(Items.pickaxeBronze), "ingotBronze");
 			Recipes.addToolOreRecipe("shovel", new ItemStack(Items.shovelBronze), "ingotBronze");
@@ -46,7 +44,7 @@ public class RecipeHelper {
 		}
 		
 		//Steel Tools & Armors
-		if (LAConfiguration.registerSteelTools) {
+		if (LAConfig.registerSteelTools) {
 			Recipes.addToolOreRecipe("sword", new ItemStack(Items.swordSteel), "ingotSteel");
 			Recipes.addToolOreRecipe("pickaxe", new ItemStack(Items.pickaxeSteel), "ingotSteel");
 			Recipes.addToolOreRecipe("shovel", new ItemStack(Items.shovelSteel), "ingotSteel");
@@ -58,14 +56,14 @@ public class RecipeHelper {
 		}
 		
 		//Adamant Tools & Armors
-		Recipes.addToolRecipe("sword", new ItemStack(Items.swordAdamant), new ItemStack(Items.ingotBase, 1, 5));
-		Recipes.addToolRecipe("pickaxe", new ItemStack(Items.pickaxeAdamant), new ItemStack(Items.ingotBase, 1, 5));
-		Recipes.addToolRecipe("shovel", new ItemStack(Items.shovelAdamant), new ItemStack(Items.ingotBase, 1, 5));
-		Recipes.addToolRecipe("axe", new ItemStack(Items.axeAdamant), new ItemStack(Items.ingotBase, 1, 5));
-		Recipes.addArmorRecipe("helmet", new ItemStack(Items.helmetAdamant), new ItemStack(Items.ingotBase, 1, 5));
-		Recipes.addArmorRecipe("plate", new ItemStack(Items.plateAdamant), new ItemStack(Items.ingotBase, 1, 5));
-		Recipes.addArmorRecipe("legs", new ItemStack(Items.legsAdamant), new ItemStack(Items.ingotBase, 1, 5));
-		Recipes.addArmorRecipe("boots", new ItemStack(Items.bootsAdamant), new ItemStack(Items.ingotBase, 1, 5));
+		Recipes.addToolRecipe("sword", new ItemStack(Items.swordAdamant), new ItemStack(Items.ingotBase, 1, 6));
+		Recipes.addToolRecipe("pickaxe", new ItemStack(Items.pickaxeAdamant), new ItemStack(Items.ingotBase, 1, 6));
+		Recipes.addToolRecipe("shovel", new ItemStack(Items.shovelAdamant), new ItemStack(Items.ingotBase, 1, 6));
+		Recipes.addToolRecipe("axe", new ItemStack(Items.axeAdamant), new ItemStack(Items.ingotBase, 1, 6));
+		Recipes.addArmorRecipe("helmet", new ItemStack(Items.helmetAdamant), new ItemStack(Items.ingotBase, 1, 6));
+		Recipes.addArmorRecipe("plate", new ItemStack(Items.plateAdamant), new ItemStack(Items.ingotBase, 1, 6));
+		Recipes.addArmorRecipe("legs", new ItemStack(Items.legsAdamant), new ItemStack(Items.ingotBase, 1, 6));
+		Recipes.addArmorRecipe("boots", new ItemStack(Items.bootsAdamant), new ItemStack(Items.ingotBase, 1, 6));
 		
 		//Hammers
 		Recipes.addToolRecipe("hammer", new ItemStack(Items.hammerWood), new ItemStack(Block.planks));
@@ -74,7 +72,7 @@ public class RecipeHelper {
 		Recipes.addToolRecipe("hammer", new ItemStack(Items.hammerGold), new ItemStack(Item.ingotGold));
 		Recipes.addToolRecipe("hammer", new ItemStack(Items.hammerDiamond), new ItemStack(Item.diamond));
 		Recipes.addToolRecipe("hammer", new ItemStack(Items.hammerBone), new ItemStack(Items.ingotBase, 1, 0));
-		Recipes.addToolRecipe("hammer", new ItemStack(Items.hammerAdamant), new ItemStack(Items.ingotBase, 1, 5));
+		Recipes.addToolRecipe("hammer", new ItemStack(Items.hammerAdamant), new ItemStack(Items.ingotBase, 1, 6));
 		Recipes.addToolOreRecipe("hammer", new ItemStack(Items.hammerBronze), "ingotBronze");
 		Recipes.addToolOreRecipe("hammer", new ItemStack(Items.hammerSteel), "ingotSteel");
 	}

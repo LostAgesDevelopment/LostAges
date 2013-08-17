@@ -2,7 +2,7 @@ package mods.lostages.util;
 
 import java.util.logging.Level;
 
-import mods.lostages.configuration.LALogger;
+import mods.lostages.config.LALogger;
 import mods.lostages.recipe.DoubleFurnaceRecipes;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;

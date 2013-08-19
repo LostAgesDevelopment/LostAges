@@ -16,10 +16,11 @@ public class ItemCustomIngot extends Item {
 	
 	public ItemCustomIngot(int par1) {
 		super(par1);
-		this.setMaxDamage(0);
-		this.setHasSubtypes(true);
-		this.setUnlocalizedName("ingotBase");
-		this.setCreativeTab(LostAges.tabLAItems);
+		
+		setMaxDamage(0);
+		setHasSubtypes(true);
+		setUnlocalizedName("ingotBase");
+		setCreativeTab(LostAges.tabLAItems);
 	}
 	
 	@Override
@@ -45,7 +46,6 @@ public class ItemCustomIngot extends Item {
 	}
 	
 	@Override
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public void getSubItems(int id, CreativeTabs tab, List list) {
 		for (int i = 0; i < icons.length; i++)
 			list.add(new ItemStack(id, 1, i));

@@ -21,8 +21,6 @@ import net.minecraft.world.World;
 
 public class BlockDoubleFurnace extends BlockContainer {
 	
-	private static boolean isActive;
-	
 	private static boolean keepInventory;
 
 	private Icon iconFrontUnlit;
@@ -31,11 +29,10 @@ public class BlockDoubleFurnace extends BlockContainer {
 
 	public BlockDoubleFurnace(int id) {
 		super(id, Material.rock);
-		this.setHardness(3.5F);
-		this.setCreativeTab(LostAges.tabLABlocks);
-		this.setUnlocalizedName("furnaceDouble");
 		
-		isActive = false;
+		setHardness(3.5F);
+		setCreativeTab(LostAges.tabLABlocks);
+		setUnlocalizedName("furnaceDouble");
 	}
 	
 	@Override
@@ -53,10 +50,10 @@ public class BlockDoubleFurnace extends BlockContainer {
 	
 	@Override
 	public void registerIcons(IconRegister iconRegister) {
-		this.blockIcon = iconRegister.registerIcon("lostages:furnaceDouble_Side");
-		this.iconFrontUnlit = iconRegister.registerIcon("lostages:furnaceDouble_Front");
-		this.iconFrontLit = iconRegister.registerIcon("lostages:furnaceDouble_FrontLit");
-		this.iconTop = iconRegister.registerIcon("lostages:furnaceDouble_Top");
+		blockIcon = iconRegister.registerIcon("lostages:furnaceDouble_Side");
+		iconFrontUnlit = iconRegister.registerIcon("lostages:furnaceDouble_Front");
+		iconFrontLit = iconRegister.registerIcon("lostages:furnaceDouble_FrontLit");
+		iconTop = iconRegister.registerIcon("lostages:furnaceDouble_Top");
 	}
 	
 	@Override
@@ -65,17 +62,15 @@ public class BlockDoubleFurnace extends BlockContainer {
 			return iconTop;
 		
 		if (metadata <= 5) {
-			if (side != metadata) {
+			if (side != metadata)
 				return blockIcon;
-			} else {
+			else
 				return iconFrontUnlit;
-			}
 		} else if (metadata >= 6) {
-			if (side != metadata - 4) {
+			if (side != metadata - 4)
 				return blockIcon;
-			} else {
+			else
 				return iconFrontLit;
-			}
 		}
 		
 		return blockIcon;
@@ -95,33 +90,17 @@ public class BlockDoubleFurnace extends BlockContainer {
 			int k1 = world.getBlockId(x + 1, y, z);
 			byte b0 = 4;
 			
-			if (Block.opaqueCubeLookup[l] && !Block.opaqueCubeLookup[i1]) {
-				if (isActive)
-					b0 = 7;
-				else
-					b0 = 3;
-			}
+			if (Block.opaqueCubeLookup[l] && !Block.opaqueCubeLookup[i1])
+				b0 = 3;
 			
-			if (Block.opaqueCubeLookup[i1] && !Block.opaqueCubeLookup[l]) {
-				if (isActive)
-					b0 = 6;
-				else
-					b0 = 2;
-			}
+			if (Block.opaqueCubeLookup[i1] && !Block.opaqueCubeLookup[l])
+				b0 = 2;
 			
-			if (Block.opaqueCubeLookup[j1] && !Block.opaqueCubeLookup[k1]) {
-				if (isActive)
-					b0 = 8;
-				else
-					b0 = 5;
-			}
+			if (Block.opaqueCubeLookup[j1] && !Block.opaqueCubeLookup[k1])
+				b0 = 5;
 			
-			if (Block.opaqueCubeLookup[k1] && !Block.opaqueCubeLookup[j1]) {
-				if (isActive)
-					b0 = 7;
-				else
-					b0 = 4;
-			}
+			if (Block.opaqueCubeLookup[k1] && !Block.opaqueCubeLookup[j1])
+				b0 = 4;
 			
 			world.setBlockMetadataWithNotify(x, y, z, b0, 2);
 		}
@@ -167,11 +146,9 @@ public class BlockDoubleFurnace extends BlockContainer {
 		if (par0) {
 			world.setBlock(x, y, z, Blocks.furnaceDouble.blockID);
 			world.setBlockMetadataWithNotify(x, y, z, l + 4, 2);
-			isActive = true;
 		} else {
 			world.setBlock(x, y, z, Blocks.furnaceDouble.blockID);
 			world.setBlockMetadataWithNotify(x, y, z, l - 4, 2);
-			isActive = false;
 		}
 		
 		keepInventory = false;

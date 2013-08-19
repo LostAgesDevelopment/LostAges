@@ -127,7 +127,7 @@ public class TileDoubleFurnace extends TileEntity implements ISidedInventory {
 	
 	@Override
 	public String getInvName() {
-		return isInvNameLocalized() ? customName : Blocks.furnaceDouble.getUnlocalizedName();
+		return isInvNameLocalized() ? customName : Blocks.furnaceDouble.getUnlocalizedName() + ".name";
 	}
 	
 	@Override

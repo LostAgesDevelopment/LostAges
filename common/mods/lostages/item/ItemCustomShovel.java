@@ -9,12 +9,12 @@ public class ItemCustomShovel extends ItemSpade {
 
 	public ItemCustomShovel(int id, EnumToolMaterial material) {
 		super(id, material);
-		this.setCreativeTab(LostAges.tabLAItems);
+		setCreativeTab(LostAges.tabLAItems);
 	}
 
 	@Override
 	public void registerIcons(IconRegister iconRegister) {
-		itemIcon = iconRegister.registerIcon("lostages:" + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
+		itemIcon = iconRegister.registerIcon("lostages:" + this.getUnlocalizedName().substring(5));
 	}
 	
 }

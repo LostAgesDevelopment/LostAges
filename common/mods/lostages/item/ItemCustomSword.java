@@ -14,7 +14,7 @@ public class ItemCustomSword extends ItemSword {
 
 	@Override
 	public void registerIcons(IconRegister iconRegister) { 
-		itemIcon = iconRegister.registerIcon("lostages:" + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
+		itemIcon = iconRegister.registerIcon("lostages:" + this.getUnlocalizedName().substring(5));
 	}
 	
 }

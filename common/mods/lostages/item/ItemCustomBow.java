@@ -16,7 +16,7 @@ public class ItemCustomBow extends ItemBow {
 	
 	public ItemCustomBow(int par1) {
 		super(par1);
-		this.setCreativeTab(LostAges.tabLAItems);
+		setCreativeTab(LostAges.tabLAItems);
 	}
 	
 	@Override
@@ -26,7 +26,7 @@ public class ItemCustomBow extends ItemBow {
 	
 	@Override
 	public void registerIcons(IconRegister iconRegister) {
-		itemIcon = iconRegister.registerIcon("lostages:" + this.getUnlocalizedName().substring(5));
+		itemIcon = iconRegister.registerIcon("lostages:" + getUnlocalizedName().substring(5));
 		pullBackIcons = new Icon[pullBackNames.length];
 		for (int i = 0; i < pullBackIcons.length; i++)
 			pullBackIcons[i] = iconRegister.registerIcon("lostages:" + this.getUnlocalizedName().substring(5) + pullBackNames[i]);

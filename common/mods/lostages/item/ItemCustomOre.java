@@ -9,8 +9,8 @@ public class ItemCustomOre extends ItemBlock {
 	
 	public ItemCustomOre(int par1) {
 		super(par1);
-		this.setMaxDamage(0);
-		this.setHasSubtypes(true);
+		setMaxDamage(0);
+		setHasSubtypes(true);
 	}
 
 	@Override

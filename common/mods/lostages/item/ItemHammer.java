@@ -9,6 +9,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.monster.EntitySkeleton;
+import net.minecraft.entity.monster.EntitySpider;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
@@ -30,16 +32,16 @@ public class ItemHammer extends Item {
 	
 	private int blockChange;
 	
-	protected float weaponDamage;
-	protected EnumToolMaterial toolMaterial;
+	private float weaponDamage;
+	private EnumToolMaterial toolMaterial;
 	
-	public ItemHammer(int par1, EnumToolMaterial par2EnumToolMaterial) {
+	public ItemHammer(int par1, EnumToolMaterial toolMaterial) {
 		super(par1);
-		this.setCreativeTab(LostAges.tabLAItems);
-		this.setMaxDamage(par2EnumToolMaterial.getMaxUses());
-		toolMaterial = par2EnumToolMaterial;
+		this.toolMaterial = toolMaterial;
+		setCreativeTab(LostAges.tabLAItems);
+		setMaxDamage(toolMaterial.getMaxUses());
 		blockChange = Block.cobblestone.blockID;
-		weaponDamage = 4 + par2EnumToolMaterial.getDamageVsEntity();
+		weaponDamage = 4 + toolMaterial.getDamageVsEntity();
 		maxStackSize = 1;
 	}
 	
@@ -54,12 +56,11 @@ public class ItemHammer extends Item {
 	}
 	
 	@Override
-	public float getStrVsBlock(ItemStack par1ItemStack, Block par2Block) {
-		if (par2Block.blockMaterial == Material.rock) {
+	public float getStrVsBlock(ItemStack itemStack, Block block) {
+		if (block.blockMaterial == Material.rock)
 			return toolMaterial.getEfficiencyOnProperMaterial() + 1;
-		} else {
+		else
 			return 1.0F;
-		}
 	}
 	
 	@Override
@@ -71,11 +72,9 @@ public class ItemHammer extends Item {
 	@Override
 	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer player) {
 		if (player.isSneaking()) {
-			if (world.isRemote) {
-				if (itemStack.itemID == Items.hammerMagic.itemID) {
+			if (world.isRemote)
+				if (itemStack.itemID == Items.hammerMagic.itemID)
 					changeMode(world, player);
-				}
-			}
 		}
 		
 		return itemStack;
@@ -123,30 +122,21 @@ public class ItemHammer extends Item {
     }
 	
 	@Override
-    public float getDamageVsEntity(Entity par1Entity, ItemStack itemStack) {
-    	String name = par1Entity.getEntityName();    	
-    	if (name.equals("Skeleton")) {
-    		return (float) (weaponDamage * (double)1.5);
-    	} else if (name.equals("Spider")) {
-    		return (float) (weaponDamage * (double)1.5);
-    	} else {         
-        	return (float) (weaponDamage * (double)0.75);    
-        }
-    }
-	
-	public String getToolMaterialName() {
-        return this.toolMaterial.toString();
+    public float getDamageVsEntity(Entity entity, ItemStack itemStack) {
+		if (entity instanceof EntitySkeleton || entity instanceof EntitySpider)
+			return weaponDamage * 1.5f;
+		
+		return weaponDamage * 0.75f;
     }
 	
 	@Override
     public boolean canHarvestBlock(Block par1Block) {
-		if (par1Block.blockMaterial == Material.rock) {
+		if (par1Block.blockMaterial == Material.rock)
 			return true;
-		} else if (par1Block.blockMaterial == Material.iron) {
+		else if (par1Block.blockMaterial == Material.iron)
 			return true;
-		} else {
+		else
 			return false;
-		}
     }
 	
 	@Override
@@ -156,7 +146,7 @@ public class ItemHammer extends Item {
 	
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister iconRegister) {
-		itemIcon = iconRegister.registerIcon("lostages:" + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
+		itemIcon = iconRegister.registerIcon("lostages:" + this.getUnlocalizedName().substring(5));
 	}
 	
 	@Override
@@ -165,7 +155,6 @@ public class ItemHammer extends Item {
     }
 	
 	@Override
-	@SuppressWarnings({ "unchecked", "rawtypes" })
     public Multimap func_111205_h() {
         Multimap multimap = super.func_111205_h();
         multimap.put(SharedMonsterAttributes.field_111264_e.func_111108_a(), new AttributeModifier(field_111210_e, "Tool modifier", (double)this.weaponDamage, 0));

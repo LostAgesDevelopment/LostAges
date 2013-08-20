@@ -6,16 +6,16 @@ import java.util.List;
 
 import net.minecraft.item.ItemStack;
 
-public class DoubleFurnaceRecipes {
+public class DoubleFurnaceRecipe {
 	
-	private static final DoubleFurnaceRecipes smeltBase = new DoubleFurnaceRecipes();
+	private static final DoubleFurnaceRecipe smeltBase = new DoubleFurnaceRecipe();
 	
     private HashMap<List<Integer>, ItemStack> metaSmeltingList1 = new HashMap<List<Integer>, ItemStack>();
     private HashMap<List<Integer>, ItemStack> metaSmeltingList2 = new HashMap<List<Integer>, ItemStack>();
     private HashMap<List<Integer>, ItemStack> metaSmeltingCheckList1 = new HashMap<List<Integer>, ItemStack>();
     private HashMap<List<Integer>, ItemStack> metaSmeltingCheckList2 = new HashMap<List<Integer>, ItemStack>();
 	
-	public static final DoubleFurnaceRecipes smelting() {
+	public static final DoubleFurnaceRecipe smelting() {
 		return smeltBase;
 	}
 	

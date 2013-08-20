@@ -1,7 +1,7 @@
 package mods.lostages.tile;
 
 import mods.lostages.block.BlockDoubleFurnace;
-import mods.lostages.recipe.DoubleFurnaceRecipes;
+import mods.lostages.recipe.DoubleFurnaceRecipe;
 import mods.lostages.util.Blocks;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
@@ -242,10 +242,10 @@ public class TileDoubleFurnace extends TileEntity implements ISidedInventory {
 		if (furnaceItems[0] == null)
 			return false;
 		else {
-			ItemStack itemStack = DoubleFurnaceRecipes.smelting().getDoubleSmeltingResult(furnaceItems[0], furnaceItems[1]);
+			ItemStack itemStack = DoubleFurnaceRecipe.smelting().getDoubleSmeltingResult(furnaceItems[0], furnaceItems[1]);
 			if (itemStack == null) return false;
-			if (furnaceItems[0].stackSize < DoubleFurnaceRecipes.smelting().getSlot1ReduceAmount(furnaceItems[0]).stackSize) return false;
-			if (furnaceItems[1].stackSize < DoubleFurnaceRecipes.smelting().getSlot2ReduceAmount(furnaceItems[1]).stackSize) return false;
+			if (furnaceItems[0].stackSize < DoubleFurnaceRecipe.smelting().getSlot1ReduceAmount(furnaceItems[0]).stackSize) return false;
+			if (furnaceItems[1].stackSize < DoubleFurnaceRecipe.smelting().getSlot2ReduceAmount(furnaceItems[1]).stackSize) return false;
 			if (furnaceItems[3] == null) return true;
 			if (!furnaceItems[3].isItemEqual(itemStack)) return false;
 			
@@ -255,15 +255,15 @@ public class TileDoubleFurnace extends TileEntity implements ISidedInventory {
 	}
 	
 	public void smeltItem() {
-		ItemStack itemStack = DoubleFurnaceRecipes.smelting().getDoubleSmeltingResult(furnaceItems[0], furnaceItems[1]);
+		ItemStack itemStack = DoubleFurnaceRecipe.smelting().getDoubleSmeltingResult(furnaceItems[0], furnaceItems[1]);
 		
 		if (furnaceItems[3] == null)
 			furnaceItems[3] = itemStack.copy();
 		else if (furnaceItems[3].isItemEqual(itemStack))
 			furnaceItems[3].stackSize += itemStack.stackSize;
 		
-		furnaceItems[0].stackSize -= DoubleFurnaceRecipes.smelting().getSlot1ReduceAmount(furnaceItems[0]).stackSize;
-		furnaceItems[1].stackSize -= DoubleFurnaceRecipes.smelting().getSlot2ReduceAmount(furnaceItems[1]).stackSize;
+		furnaceItems[0].stackSize -= DoubleFurnaceRecipe.smelting().getSlot1ReduceAmount(furnaceItems[0]).stackSize;
+		furnaceItems[1].stackSize -= DoubleFurnaceRecipe.smelting().getSlot2ReduceAmount(furnaceItems[1]).stackSize;
 		
 		if (furnaceItems[0].stackSize <= 0)
 			furnaceItems[0] = null;

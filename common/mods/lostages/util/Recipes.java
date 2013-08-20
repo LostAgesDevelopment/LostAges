@@ -3,7 +3,7 @@ package mods.lostages.util;
 import java.util.logging.Level;
 
 import mods.lostages.config.LALogger;
-import mods.lostages.recipe.DoubleFurnaceRecipes;
+import mods.lostages.recipe.DoubleFurnaceRecipe;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -69,7 +69,7 @@ public class Recipes {
 	}
 	
 	public static void addDoubleFurnaceRecipe(ItemStack input1, ItemStack input2, ItemStack output) {
-		DoubleFurnaceRecipes.smelting().addDoubleSmelting(input1, input2, output);
+		DoubleFurnaceRecipe.smelting().addDoubleSmelting(input1, input2, output);
 	}
 	
 	public static void addStorageRecipe(Block output, int outputMetadata, Item input, int inputMetadata) {

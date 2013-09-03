@@ -2,7 +2,7 @@ package mods.lostages.util;
 
 import net.minecraft.item.Item;
 
-public class Items {
+public class LAItems {
 	
 	//Items
 	public static Item ingotBase;

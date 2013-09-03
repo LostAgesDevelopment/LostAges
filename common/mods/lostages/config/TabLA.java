@@ -1,15 +1,15 @@
 package mods.lostages.config;
 
-import mods.lostages.util.Blocks;
-import mods.lostages.util.Items;
+import mods.lostages.util.LABlocks;
+import mods.lostages.util.LAItems;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 
-public class LATab extends CreativeTabs {
+public class TabLA extends CreativeTabs {
 
 	private String tabName;
 	
-	public LATab(int par1, String par2Str) {
+	public TabLA(int par1, String par2Str) {
 		super(par1, par2Str);
 		tabName = par2Str;
 	}
@@ -27,9 +27,9 @@ public class LATab extends CreativeTabs {
 	@Override
 	public int getTabIconItemIndex() {
 		if (tabName.equals("LABlockTab"))
-			return new ItemStack(Blocks.blockStorage, 1, 1).itemID;
+			return new ItemStack(LABlocks.blockStorage, 1, 1).itemID;
 		else if (tabName.equals("LAItemTab"))
-			return Items.hammerMagic.itemID;
+			return LAItems.hammerMagic.itemID;
 		else
 			return 0;
 	}

@@ -2,7 +2,7 @@ package mods.lostages.util;
 
 import java.util.logging.Level;
 
-import mods.lostages.config.LALogger;
+import mods.lostages.config.LogHandler;
 import mods.lostages.recipe.DoubleFurnaceRecipe;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -10,7 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-public class Recipes {
+public class RecipeHelper {
 	
 	public static void addToolRecipe(String toolType, ItemStack output, ItemStack toolMaterial) {
 		if (toolType.equals("sword"))
@@ -24,7 +24,7 @@ public class Recipes {
 		else if (toolType.equals("hammer"))
 			GameRegistry.addShapedRecipe(output, new Object[]{"XXX", "XXX", " S ", 'X', toolMaterial, 'S', Item.stick});
 		else
-			LALogger.log(Level.INFO, "The tool type, " + toolType + " is invalid.  The recipe for " + output.getDisplayName() + " will not work!");
+			LogHandler.log(Level.INFO, "The tool type, " + toolType + " is invalid.  The recipe for " + output.getDisplayName() + " will not work!");
 	}
 	
 	public static void addToolOreRecipe(String toolType, ItemStack output, String toolMaterial) {
@@ -39,7 +39,7 @@ public class Recipes {
 		else if (toolType.equals("hammer"))
 			GameRegistry.addRecipe(new ShapedOreRecipe(output, new Object[]{"XXX", "XXX", " S ", 'X', toolMaterial, 'S', Item.stick}));
 		else
-			LALogger.log(Level.INFO, "The tool type, " + toolType + " is invalid.  The recipe for " + output.getDisplayName() + " will not work!");
+			LogHandler.log(Level.INFO, "The tool type, " + toolType + " is invalid.  The recipe for " + output.getDisplayName() + " will not work!");
 	}
 	
 	public static void addArmorRecipe(String armorType, ItemStack output, ItemStack toolMaterial) {
@@ -52,7 +52,7 @@ public class Recipes {
 		else if (armorType.equals("boots"))
 			GameRegistry.addShapedRecipe(output, new Object[]{"X X", "X X", 'X', toolMaterial});
 		else
-			LALogger.log(Level.INFO, "The armor type, " + armorType + " is invalid.  The recipe for " + output.getDisplayName() + " will not work!");
+			LogHandler.log(Level.INFO, "The armor type, " + armorType + " is invalid.  The recipe for " + output.getDisplayName() + " will not work!");
 	}
 	
 	public static void addArmorOreRecipe(String armorType, ItemStack output, String toolMaterial) {
@@ -65,7 +65,7 @@ public class Recipes {
 		else if (armorType.equals("boots"))
 			GameRegistry.addRecipe(new ShapedOreRecipe(output, new Object[]{"X X", "X X", 'X', toolMaterial}));
 		else
-			LALogger.log(Level.INFO, "The armor type, " + armorType + " is invalid.  The recipe for " + output.getDisplayName() + " will not work!");
+			LogHandler.log(Level.INFO, "The armor type, " + armorType + " is invalid.  The recipe for " + output.getDisplayName() + " will not work!");
 	}
 	
 	public static void addDoubleFurnaceRecipe(ItemStack input1, ItemStack input2, ItemStack output) {

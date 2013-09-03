@@ -8,7 +8,7 @@ import cpw.mods.fml.common.FMLLog;
 import net.minecraftforge.common.Configuration;
 
 
-public class LAConfig {
+public class ConfigHandler {
 	
 	//Blocks
 	public static int oreBaseID;

@@ -1,7 +1,7 @@
 package mods.lostages.item;
 
 import mods.lostages.LostAges;
-import mods.lostages.util.Items;
+import mods.lostages.util.LAItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -73,7 +73,7 @@ public class ItemHammer extends Item {
 	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer player) {
 		if (player.isSneaking()) {
 			if (world.isRemote)
-				if (itemStack.itemID == Items.hammerMagic.itemID)
+				if (itemStack.itemID == LAItems.hammerMagic.itemID)
 					changeMode(world, player);
 		}
 		
@@ -82,7 +82,7 @@ public class ItemHammer extends Item {
 	
 	@Override
     public boolean onItemUse(ItemStack itemStack, EntityPlayer player, World world, int x, int y, int z, int side, float par8, float par9, float par10) {
-		if (itemStack.itemID == Items.hammerMagic.itemID) {
+		if (itemStack.itemID == LAItems.hammerMagic.itemID) {
 			if (hammerMode == HammerMode.STANDARD) {
 				changeStandard(itemStack, world, player, x, y, z);
 				return true;
@@ -104,7 +104,7 @@ public class ItemHammer extends Item {
 	@Override
     public boolean onBlockDestroyed(ItemStack itemStack, World world, int blockID, int x, int y, int z, EntityLivingBase entityLivingBase) {
 		EntityPlayer player = (EntityPlayer) entityLivingBase;
-		if (itemStack.itemID == Items.hammerMagic.itemID) {
+		if (itemStack.itemID == LAItems.hammerMagic.itemID) {
 			if (hammerMode == HammerMode.CHARGED) {
 				breakCharged(itemStack, world, player, x, y, z);
 				return true;
@@ -146,7 +146,7 @@ public class ItemHammer extends Item {
 	
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister iconRegister) {
-		itemIcon = iconRegister.registerIcon("lostages:" + this.getUnlocalizedName().substring(5));
+		itemIcon = iconRegister.registerIcon("LostAges:" + this.getUnlocalizedName().substring(5));
 	}
 	
 	@Override

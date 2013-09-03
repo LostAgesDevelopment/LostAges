@@ -2,7 +2,7 @@ package mods.lostages.tile;
 
 import mods.lostages.block.BlockDoubleFurnace;
 import mods.lostages.recipe.DoubleFurnaceRecipe;
-import mods.lostages.util.Blocks;
+import mods.lostages.util.LABlocks;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.Item;
@@ -33,6 +33,9 @@ public class TileDoubleFurnace extends TileEntity implements ISidedInventory {
 		boolean flag1 = false;
 		int metadata = getBlockMetadata();
 		int isActive = (metadata >> 3);
+		
+		DoubleFurnaceRecipe.smelting().isInOreDictionary(furnaceItems[0]);
+		DoubleFurnaceRecipe.smelting().isInOreDictionary(furnaceItems[1]);
 		
 		if (furnaceBurnTime > 0)
 			furnaceBurnTime--;
@@ -127,7 +130,7 @@ public class TileDoubleFurnace extends TileEntity implements ISidedInventory {
 	
 	@Override
 	public String getInvName() {
-		return isInvNameLocalized() ? customName : Blocks.furnaceDouble.getUnlocalizedName() + ".name";
+		return isInvNameLocalized() ? customName : LABlocks.furnaceDouble.getUnlocalizedName() + ".name";
 	}
 	
 	@Override

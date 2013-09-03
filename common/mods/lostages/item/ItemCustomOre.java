@@ -1,11 +1,10 @@
 package mods.lostages.item;
 
+import mods.lostages.block.BlockCustomOre;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
 public class ItemCustomOre extends ItemBlock {
-
-	private String[] names = { "oreCopper", "oreTin", "oreAdamant" };
 	
 	public ItemCustomOre(int par1) {
 		super(par1);
@@ -20,7 +19,8 @@ public class ItemCustomOre extends ItemBlock {
 	
 	@Override
 	public String getUnlocalizedName(ItemStack itemStack) {
-		return "block." +  names[itemStack.getItemDamage()];
+		int meta = itemStack.getItemDamage();
+		return "block." +  BlockCustomOre.EnumCustomOre.VALID_ORES[meta].unlocalName;
 	}
 	
 }

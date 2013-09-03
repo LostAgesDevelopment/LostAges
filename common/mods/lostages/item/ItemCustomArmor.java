@@ -28,10 +28,10 @@ public class ItemCustomArmor extends ItemArmor {
 	@Override
 	public String getArmorTexture(ItemStack itemStack, Entity entity, int slot, int layer) {
 		if (slot == 0 || slot == 1 || slot == 3)
-			return "lostages:textures/models/armor/" + armorMaterialName + "_1.png";
+			return "LostAges:textures/models/armor/" + armorMaterialName + "_1.png";
 		
 		if (slot == 2)
-			return "lostages:textures/models/armor/" + armorMaterialName + "_2.png";
+			return "LostAges:textures/models/armor/" + armorMaterialName + "_2.png";
 		
 		return null;
 	}

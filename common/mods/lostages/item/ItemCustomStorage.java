@@ -1,11 +1,10 @@
 package mods.lostages.item;
 
+import mods.lostages.block.BlockCustomStorage;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
 public class ItemCustomStorage extends ItemBlock {
-
-	private String[] names = { "blockCopper", "blockTin", "blockBronze", "blockSteel", "blockStrongGold", "blockAdamant" };
 	
 	public ItemCustomStorage(int par1) {
 		super(par1);
@@ -20,7 +19,8 @@ public class ItemCustomStorage extends ItemBlock {
 	
 	@Override
 	public String getUnlocalizedName(ItemStack itemStack) {
-		return "block." + names[itemStack.getItemDamage()];
+		int meta = itemStack.getItemDamage();
+		return "block." + BlockCustomStorage.EnumCustomStorage.VALID_BLOCKS[meta].unlocalName;
 	}
 
 }

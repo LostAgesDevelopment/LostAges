@@ -5,16 +5,19 @@ import java.util.HashMap;
 import java.util.List;
 
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class DoubleFurnaceRecipe {
 	
 	private static final DoubleFurnaceRecipe smeltBase = new DoubleFurnaceRecipe();
 	
-    private HashMap<List<Integer>, ItemStack> metaSmeltingList1 = new HashMap<List<Integer>, ItemStack>();
+	private HashMap<List<Integer>, ItemStack> metaSmeltingList1 = new HashMap<List<Integer>, ItemStack>();
     private HashMap<List<Integer>, ItemStack> metaSmeltingList2 = new HashMap<List<Integer>, ItemStack>();
     private HashMap<List<Integer>, ItemStack> metaSmeltingCheckList1 = new HashMap<List<Integer>, ItemStack>();
     private HashMap<List<Integer>, ItemStack> metaSmeltingCheckList2 = new HashMap<List<Integer>, ItemStack>();
 	
+    private String[] oreDictionaryList;
+    
 	public static final DoubleFurnaceRecipe smelting() {
 		return smeltBase;
 	}
@@ -55,8 +58,29 @@ public class DoubleFurnaceRecipe {
 			return outputItem2;
 	}
 	
+	public boolean isInOreDictionary(ItemStack itemStack) {
+		boolean flag = false;
+		oreDictionaryList = OreDictionary.getOreNames();
+		String itemName = itemStack.getItemName().substring(itemStack.getItemName().indexOf("."));
+		System.out.println(itemName);
+		for (int i = 0; i < oreDictionaryList.length; i++) {
+			if (oreDictionaryList[i].equals(itemName)) {
+				System.out.println("Is in Ore Dictionary");
+				flag = true;
+				break;
+			} else {
+				continue;
+			}
+		}
+		
+		if (!flag)
+			System.out.println("Is not in Ore Dictionary");
+		
+		return flag;
+	}
+	
 	public ItemStack getSlot1ReduceAmount(ItemStack input) {
-		return (ItemStack) this.metaSmeltingCheckList1.get(Arrays.asList(input.itemID, input.getItemDamage()));
+		return (ItemStack) metaSmeltingCheckList1.get(Arrays.asList(input.itemID, input.getItemDamage()));
 	}
 	
 	public ItemStack getSlot2ReduceAmount(ItemStack input) {

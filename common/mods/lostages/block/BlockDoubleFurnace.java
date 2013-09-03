@@ -4,7 +4,7 @@ import java.util.Random;
 
 import mods.lostages.LostAges;
 import mods.lostages.tile.TileDoubleFurnace;
-import mods.lostages.util.Blocks;
+import mods.lostages.util.LABlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -45,7 +45,7 @@ public class BlockDoubleFurnace extends BlockContainer {
 	
 	@Override
 	public int idDropped(int par1, Random random, int par3) {
-		return Blocks.furnaceDouble.blockID;
+		return LABlocks.furnaceDouble.blockID;
 	}
 	
 	@Override
@@ -144,10 +144,10 @@ public class BlockDoubleFurnace extends BlockContainer {
 		keepInventory = true;
 		
 		if (par0) {
-			world.setBlock(x, y, z, Blocks.furnaceDouble.blockID);
+			world.setBlock(x, y, z, LABlocks.furnaceDouble.blockID);
 			world.setBlockMetadataWithNotify(x, y, z, l + 4, 2);
 		} else {
-			world.setBlock(x, y, z, Blocks.furnaceDouble.blockID);
+			world.setBlock(x, y, z, LABlocks.furnaceDouble.blockID);
 			world.setBlockMetadataWithNotify(x, y, z, l - 4, 2);
 		}
 		
@@ -196,7 +196,7 @@ public class BlockDoubleFurnace extends BlockContainer {
 	
 	@Override
 	public int idPicked(World world, int x, int y, int z) {
-		return Blocks.furnaceDouble.blockID;
+		return LABlocks.furnaceDouble.blockID;
 	}
 	
 }

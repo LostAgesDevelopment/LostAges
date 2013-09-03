@@ -3,6 +3,7 @@ package mods.lostages.item;
 import java.util.List;
 
 import mods.lostages.LostAges;
+import mods.lostages.util.LAItems;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -10,9 +11,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 
 public class ItemCustomIngot extends Item {
-
-	private Icon[] icons;
-	private String[] names = { "ingotBone", "ingotCopper", "ingotTin", "ingotBronze", "ingotSteel", "ingotStrongGold", "ingotAdamant" };
 	
 	public ItemCustomIngot(int par1) {
 		super(par1);
@@ -30,25 +28,55 @@ public class ItemCustomIngot extends Item {
 	
 	@Override
 	public String getUnlocalizedName(ItemStack itemStack) {
-		return "item." + names[itemStack.getItemDamage()];
+		int meta = itemStack.getItemDamage();
+		return "item." + EnumCustomIngot.VALID_INGOTS[meta].unlocalName;
 	}
 	
 	@Override
 	public void registerIcons(IconRegister iconRegister) {
-		icons = new Icon[names.length];
-		for (int i = 0; i < icons.length; i++)
-			icons[i] = iconRegister.registerIcon("lostages:" + names[i]);
+		for (EnumCustomIngot ingot : EnumCustomIngot.VALID_INGOTS)
+			ingot.loadTextures(iconRegister);
 	}
 	
 	@Override
 	public Icon getIconFromDamage(int meta) {
-		return icons[meta];
+		return EnumCustomIngot.VALID_INGOTS[meta].texture;
 	}
 	
 	@Override
 	public void getSubItems(int id, CreativeTabs tab, List list) {
-		for (int i = 0; i < icons.length; i++)
-			list.add(new ItemStack(id, 1, i));
+		for (EnumCustomIngot ingot : EnumCustomIngot.VALID_INGOTS)
+			list.add(ingot.getItemStack());
+	}
+	
+	public enum EnumCustomIngot {
+		
+		INGOTBONE("ingotBone"),
+		INGOTCOPPER("ingotCopper"),
+		INGOTTIN("ingotTin"),
+		INGOTBRONZE("ingotBronze"),
+		INGOTSTEEL("ingotSteel"),
+		INGOTSTRONGGOLD("ingotStrongGold"),
+		INGOTADAMANT("ingotAdamant");
+		
+		public final String unlocalName;
+		public final int meta = ordinal();
+		public Icon texture;
+		
+		public static final EnumCustomIngot[] VALID_INGOTS = values();
+		
+		private EnumCustomIngot(String unlocalName) {
+			this.unlocalName = unlocalName;
+		}
+		
+		public void loadTextures(IconRegister iconRegister) {
+			texture = iconRegister.registerIcon("LostAges:" + unlocalName);
+		}
+		
+		public ItemStack getItemStack() {
+			return new ItemStack(LAItems.ingotBase.itemID, 1, meta);
+		}
+		
 	}
 	
 }

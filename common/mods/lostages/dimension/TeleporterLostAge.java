@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
-import mods.lostages.util.Blocks;
+import mods.lostages.util.LABlocks;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
@@ -90,8 +90,8 @@ public class TeleporterLostAge extends Teleporter {
 					double var24 = (double) var23 + 0.5D - par1Entity.posZ;
 
 					for (int var26 = this.field_85192_a.getActualHeight() - 1; var26 >= 0; --var26) {
-						if (this.field_85192_a.getBlockId(var48, var26, var23) == Blocks.portalLostAge.blockID) {
-							while (this.field_85192_a.getBlockId(var48, var26 - 1, var23) == Blocks.portalLostAge.blockID) {
+						if (this.field_85192_a.getBlockId(var48, var26, var23) == LABlocks.portalLostAge.blockID) {
+							while (this.field_85192_a.getBlockId(var48, var26 - 1, var23) == LABlocks.portalLostAge.blockID) {
 								--var26;
 							}
 
@@ -120,19 +120,19 @@ public class TeleporterLostAge extends Teleporter {
 			var27 = (double) var14 + 0.5D;
 			int var50 = -1;
 
-			if (this.field_85192_a.getBlockId(var12 - 1, var13, var14) == Blocks.portalLostAge.blockID) {
+			if (this.field_85192_a.getBlockId(var12 - 1, var13, var14) == LABlocks.portalLostAge.blockID) {
 				var50 = 2;
 			}
 
-			if (this.field_85192_a.getBlockId(var12 + 1, var13, var14) == Blocks.portalLostAge.blockID) {
+			if (this.field_85192_a.getBlockId(var12 + 1, var13, var14) == LABlocks.portalLostAge.blockID) {
 				var50 = 0;
 			}
 
-			if (this.field_85192_a.getBlockId(var12, var13, var14 - 1) == Blocks.portalLostAge.blockID) {
+			if (this.field_85192_a.getBlockId(var12, var13, var14 - 1) == LABlocks.portalLostAge.blockID) {
 				var50 = 3;
 			}
 
-			if (this.field_85192_a.getBlockId(var12, var13, var14 + 1) == Blocks.portalLostAge.blockID) {
+			if (this.field_85192_a.getBlockId(var12, var13, var14 + 1) == LABlocks.portalLostAge.blockID) {
 				var50 = 1;
 			}
 
@@ -381,7 +381,7 @@ public class TeleporterLostAge extends Teleporter {
 					var23 = var15 + var21;
 					var24 = var16 + (var20 - 1) * var18;
 					var33 = var20 == 0 || var20 == 3 || var21 == -1 || var21 == 3;
-					this.field_85192_a.setBlock(var22, var23, var24, var33 ? Block.cobblestoneMossy.blockID : Blocks.portalLostAge.blockID);
+					this.field_85192_a.setBlock(var22, var23, var24, var33 ? Block.cobblestoneMossy.blockID : LABlocks.portalLostAge.blockID);
 				}
 			}
 

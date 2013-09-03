@@ -2,8 +2,8 @@ package mods.lostages.worldgen;
 
 import java.util.Random;
 
-import mods.lostages.config.LAConfig;
-import mods.lostages.util.Blocks;
+import mods.lostages.config.ConfigHandler;
+import mods.lostages.util.LABlocks;
 import net.minecraft.block.Block;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
@@ -17,41 +17,41 @@ public class WorldGenLA implements IWorldGenerator {
 		if (world.provider.dimensionId != 1 || world.provider.dimensionId != -1) {
 			generateAdamant(world, random, chunkX, chunkZ);
 			
-			if (LAConfig.generateCopperOre)
+			if (ConfigHandler.generateCopperOre)
 				generateCopper(world, random, chunkX * 16, chunkZ * 16);
 			
-			if (LAConfig.generateTinOre)
+			if (ConfigHandler.generateTinOre)
 				generateTin(world, random, chunkX * 16, chunkZ * 16);
 		}
 	}
 	
 	private void generateCopper(World world, Random random, int chunkX, int chunkZ) {
-		for (int i = 1; i < LAConfig.copperVeinAmount; i++) {
+		for (int i = 1; i < ConfigHandler.copperVeinAmount; i++) {
 			int xCoord = chunkX + random.nextInt(16);
 			int yCoord = random.nextInt(64);
 			int zCoord = chunkZ + random.nextInt(16);
 			
-			new WorldGenMinable(Blocks.oreBase.blockID, 0, 6, Block.stone.blockID).generate(world, random, xCoord, yCoord, zCoord);
+			new WorldGenMinable(LABlocks.oreBase.blockID, 0, 6, Block.stone.blockID).generate(world, random, xCoord, yCoord, zCoord);
 		}
 	}
 	
 	private void generateTin(World world, Random random, int chunkX, int chunkZ) {
-		for (int i = 1; i < LAConfig.tinVeinAmount; i++) {
+		for (int i = 1; i < ConfigHandler.tinVeinAmount; i++) {
 			int xCoord = chunkX + random.nextInt(16);
 			int yCoord = random.nextInt(56);
 			int zCoord = chunkZ + random.nextInt(16);
 			
-			new WorldGenMinable(Blocks.oreBase.blockID, 1, 5, Block.stone.blockID).generate(world, random, xCoord, yCoord, zCoord);
+			new WorldGenMinable(LABlocks.oreBase.blockID, 1, 5, Block.stone.blockID).generate(world, random, xCoord, yCoord, zCoord);
 		}
 	}
 	
 	private void generateAdamant(World world, Random random, int chunkX, int chunkY) {
-		for (int i = 1; i < LAConfig.adamantVeinAmount; i++) {
+		for (int i = 1; i < ConfigHandler.adamantVeinAmount; i++) {
 			int xCoord = chunkX + random.nextInt(16);
 			int yCoord = random.nextInt(16);
 			int zCoord = chunkY + random.nextInt(16);
 			
-			new WorldGenMinable(Blocks.oreBase.blockID, 2, 2, Block.stone.blockID).generate(world, random, xCoord, yCoord, zCoord);
+			new WorldGenMinable(LABlocks.oreBase.blockID, 2, 2, Block.stone.blockID).generate(world, random, xCoord, yCoord, zCoord);
 		}
 	}
 

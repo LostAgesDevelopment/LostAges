@@ -14,7 +14,7 @@ public class ItemCustomAxe extends ItemAxe {
 	
 	@Override
 	public void registerIcons(IconRegister iconRegister) {
-		itemIcon = iconRegister.registerIcon("lostages:" + this.getUnlocalizedName().substring(5) + 1);
+		itemIcon = iconRegister.registerIcon("LostAges:" + this.getUnlocalizedName().substring(5));
 	}
 	
 }
